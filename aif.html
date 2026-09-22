@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alternative Investment Funds (AIF) | 4X Wealth Financial Services</title>
-  <meta name="description" content="SEBI-regulated Alternative Investment Funds (AIF) across Categories I, II, and III (₹1 Crore minimum commitment). Private equity, venture debt, and hedge mandates.">
+  <meta name="description" content="SEBI-regulated Alternative Investment Funds (AIF) across Categories I, II, and III for accredited and ultra-high-net-worth investors (₹1 Crore minimum).">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,9 @@
         <li class="sk-nav-item"><a href="about.html" class="sk-nav-link">About Us</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="index.html#consultation-section" class="vg-btn vg-btn-primary clickable"><span>Inquire AIF Access</span></a>
+        <button class="search-btn clickable" id="searchTrigger" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="vg-btn vg-btn-outline clickable login-trigger" data-login-mode="retail"><span>Login</span></button>
+        <a href="index.html#consultation-section" class="vg-btn vg-btn-primary clickable"><span>Inquire AIF Mandate</span></a>
       </div>
     </div>
   </header>
@@ -40,125 +42,78 @@
   <!-- Hero Section -->
   <section class="section-dark" style="padding-top: 180px; padding-bottom: 90px; text-align: center;">
     <div class="container-luxury">
-      <span class="section-tag-badge">07 / INVESTMENT SOLUTIONS</span>
+      <span class="section-tag-badge">08 / INVESTMENT SOLUTIONS</span>
       <h1 class="section-title" style="font-size: clamp(34px, 4.5vw, 56px);">
         Alternative Investment <span class="gold-highlight">Funds (AIF).</span>
       </h1>
       <p class="section-desc">
-        Privately pooled investment vehicles established under the SEBI (AIF) Regulations, managed according to sophisticated investment strategies and defined terms.
+        Privately pooled investment vehicles governed by SEBI (Alternative Investment Funds) Regulations 2012, tailored for sophisticated accredited investors seeking non-traditional alpha.
       </p>
     </div>
   </section>
 
-  <!-- Framework: Category I, II, III & ₹1 Crore Commitment (Slide 7) -->
+  <!-- Framework: ₹1 Crore Minimum & 3 Categories -->
   <section class="section-ivory">
     <div class="container-luxury">
       
-      <!-- ₹1 Crore Commitment Banner -->
       <div class="role-highlight-box" style="margin-bottom: 3.5rem; background: var(--navy-dark); text-align: center;">
-        <span class="role-tag">SEBI INVESTOR FRAMEWORK</span>
+        <span class="role-tag">SEBI INVESTOR THRESHOLD</span>
         <h2 style="font-family: var(--font-heading); font-size: 38px; color: var(--gold-primary); margin-bottom: 0.5rem;">₹1 CRORE*</h2>
-        <p style="font-size: 15px; color: rgba(253,248,242,0.85); max-width: 650px; margin: 0 auto;">
-          Standard minimum commitment per investor in a typical commitment-based SEBI AIF scheme. Accredited Investors may be subject to specific regulatory relaxations.
+        <p style="font-size: 15px; color: rgba(253,248,242,0.85); max-width: 600px; margin: 0 auto;">
+          Minimum statutory investment threshold for individual investors in SEBI registered Alternative Investment Funds (₹25 Lakhs for accredited investors/employees).
         </p>
       </div>
 
-      <!-- 3 AIF Categories -->
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4rem;">
-        
-        <div class="approach-card">
-          <div>
-            <span class="approach-badge-num">CATEGORY I</span>
-            <h3>Category I AIF</h3>
-            <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
-              Funds that invest in start-up or early stage ventures, social ventures, SMEs, infrastructure or other sectors which the government or regulators consider socially or economically desirable.
-            </p>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 13px; color: var(--navy-dark); font-weight: 600;">
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Venture Capital Funds (VCF)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Infrastructure Funds</li>
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Social Impact Funds</li>
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Special Situation Funds</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="approach-card">
-          <div>
-            <span class="approach-badge-num">CATEGORY II</span>
-            <h3>Category II AIF</h3>
-            <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
-              Funds that do not fall in Category I and III and which do not undertake leverage or borrowing other than to meet day-to-day operational requirements.
-            </p>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 13px; color: var(--navy-dark); font-weight: 600;">
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Private Equity (PE) Funds</li>
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Real Estate Funds (REIT/Debt)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Structured Private Debt Funds</li>
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Fund of Funds</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="approach-card">
-          <div>
-            <span class="approach-badge-num">CATEGORY III</span>
-            <h3>Category III AIF</h3>
-            <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
-              Funds that employ diverse or complex trading strategies and may employ leverage including through investment in listed or unlisted derivatives.
-            </p>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 13px; color: var(--navy-dark); font-weight: 600;">
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Long-Short Equity Hedge Funds</li>
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Quantitative & Algo Funds</li>
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Arbitrage & Derivative Strategies</li>
-              <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Multi-Strategy High Yield</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Structural Comparison Table -->
+      <!-- Categories Grid -->
       <div class="section-header center">
-        <span class="section-tag">HOW STRUCTURES DIFFER</span>
-        <h2 class="section-title">PMS vs AIF <span class="gold-highlight">Comparison.</span></h2>
+        <span class="section-tag">CLASSIFICATION MATRIX</span>
+        <h2 class="section-title">The Three SEBI <span class="gold-highlight">AIF Categories.</span></h2>
+        <div class="gold-divider-wrap">
+          <span class="gold-divider-line"></span>
+          <span class="gold-divider-diamond"></span>
+          <span class="gold-divider-line"></span>
+        </div>
       </div>
 
-      <div style="background: #FFF; border: 1px solid var(--border-gold); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-luxury);">
-        <table style="width: 100%; border-collapse: collapse; font-size: 13.5px; text-align: left;">
-          <thead>
-            <tr style="background: var(--navy-dark); color: #FFF; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em;">
-              <th style="padding: 1rem 1.4rem;">CRITERIA</th>
-              <th style="padding: 1rem 1.4rem;">PORTFOLIO MANAGEMENT (PMS)</th>
-              <th style="padding: 1rem 1.4rem;">ALTERNATIVE INVESTMENT FUNDS (AIF)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid rgba(214,179,132,0.2);">
-              <td style="padding: 1rem 1.4rem; font-weight: 700; color: var(--navy-dark);">Management</td>
-              <td style="padding: 1rem 1.4rem; color: var(--text-muted);">Client-specific customized portfolio management.</td>
-              <td style="padding: 1rem 1.4rem; color: var(--text-muted);">Pooled fund structure managed according to scheme strategy.</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(214,179,132,0.2);">
-              <td style="padding: 1rem 1.4rem; font-weight: 700; color: var(--navy-dark);">Structure</td>
-              <td style="padding: 1rem 1.4rem; color: var(--text-muted);">Portfolio managed for individual client under agreed mandate.</td>
-              <td style="padding: 1rem 1.4rem; color: var(--text-muted);">Investors participate in a pooled private investment vehicle.</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(214,179,132,0.2);">
-              <td style="padding: 1rem 1.4rem; font-weight: 700; color: var(--navy-dark);">Min. Threshold</td>
-              <td style="padding: 1rem 1.4rem; font-weight: 700; color: var(--gold-dark);">₹50 Lakhs</td>
-              <td style="padding: 1rem 1.4rem; font-weight: 700; color: var(--gold-dark);">₹1 Crore</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(214,179,132,0.2);">
-              <td style="padding: 1rem 1.4rem; font-weight: 700; color: var(--navy-dark);">Liquidity</td>
-              <td style="padding: 1rem 1.4rem; color: var(--text-muted);">Subject to portfolio agreement and market liquidity.</td>
-              <td style="padding: 1rem 1.4rem; color: var(--text-muted);">Depends on scheme structure, lock-in, and tenure terms.</td>
-            </tr>
-            <tr>
-              <td style="padding: 1rem 1.4rem; font-weight: 700; color: var(--navy-dark);">Documentation</td>
-              <td style="padding: 1rem 1.4rem; color: var(--text-muted);">PMS agreement & periodic disclosure statements.</td>
-              <td style="padding: 1rem 1.4rem; color: var(--text-muted);">Private Placement Memorandum (PPM) & contribution agreement.</td>
-            </tr>
-          </tbody>
-        </table>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-bottom: 4rem;">
+        <div class="approach-card">
+          <span class="approach-badge-num">CATEGORY I</span>
+          <h3>Early-Stage & Impact</h3>
+          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+            Venture Capital Funds (VCF), Angel Funds, SME Funds, and Social Venture Funds investing in startups, early-stage enterprises, and social impact models.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 13px; color: var(--navy-dark); font-weight: 600;">
+            <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> High growth potential</li>
+            <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Tax pass-through status</li>
+            <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> 5-7 year horizon</li>
+          </ul>
+        </div>
+
+        <div class="approach-card">
+          <span class="approach-badge-num">CATEGORY II</span>
+          <h3>Private Equity & Credit</h3>
+          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+            Private Equity (PE) Funds, Real Estate Funds, and Structured Private Credit Funds providing growth capital and mezzanine financing to established private companies.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 13px; color: var(--navy-dark); font-weight: 600;">
+            <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Predictable debt yields</li>
+            <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Real asset collateralization</li>
+            <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Tax pass-through status</li>
+          </ul>
+        </div>
+
+        <div class="approach-card">
+          <span class="approach-badge-num">CATEGORY III</span>
+          <h3>Hedge & Long-Short Funds</h3>
+          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+            Complex active trading strategies including Long-Short Equity, Quantitative Arbitrage, and Derivative Strategies seeking absolute alpha across market cycles.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 13px; color: var(--navy-dark); font-weight: 600;">
+            <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Market neutral hedging</li>
+            <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Leveraged trading allowed</li>
+            <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> Quarterly/semi-annual liquidity</li>
+          </ul>
+        </div>
       </div>
 
     </div>
@@ -168,12 +123,22 @@
   <footer class="luxury-footer">
     <div class="container-luxury">
       <div class="footer-disclaimer-box">
-        <p class="footer-disclaimer-bold">AIF SCHEMES CARRY SPECIFIC RISKS INCLUDING CAPITAL LOCK-IN, ILLIQUIDITY, AND LEVERAGE RISKS.</p>
+        <p class="footer-disclaimer-bold">AIF INVESTMENTS INVOLVE COMPLEX RISK PROFILES, LOCK-IN PERIODS, AND PRINCIPAL LOSS RISKS.</p>
+        <div class="legal-links-row" style="display: flex; justify-content: center; gap: 12px; margin: 10px 0; font-size: 12px; flex-wrap: wrap;">
+          <a href="#" class="clickable">Disclaimer</a> | 
+          <a href="#" class="clickable">Commission Disclosure</a> | 
+          <a href="#" class="clickable">Privacy Policy</a> | 
+          <a href="#" class="clickable">Terms & Conditions</a> | 
+          <a href="#" class="clickable">SID/SAI/KIM</a> | 
+          <a href="#" class="clickable">Investor Grievance Redressal</a> | 
+          <a href="#" class="clickable">Investor Charter</a>
+        </div>
         <p class="amfi-reg-text">4X Wealth Financial Services &bull; AMFI ARN-268488 &bull; APMI APRN00969</p>
       </div>
       <div class="footer-bottom-strip"><p>&copy; 2026 4X Wealth Financial Services. All Rights Reserved.</p></div>
     </div>
   </footer>
 
+  <script src="script.js?v=2.0"></script>
 </body>
 </html>

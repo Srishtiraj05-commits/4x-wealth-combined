@@ -731,57 +731,131 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 11. NAVIGATION & MODAL CONTROLS
+  // 11. NAVIGATION, SEARCH & COMPLIANCE MODALS
   // ==========================================
   const searchTrigger = document.getElementById('searchTrigger');
   const searchModal = document.getElementById('searchModal');
   const searchModalClose = document.getElementById('searchModalClose');
+  const searchInput = document.getElementById('searchInput');
+  const searchResultsList = document.getElementById('searchResultsList');
 
-  // Disappearing Navbar on Scroll (Visible only at top of home page, disappears on scroll)
+  // Header Scroll Class toggle (Always keep navbar accessible)
   const siteHeader = document.getElementById('mainHeader') || document.querySelector('.header-wrapper');
-
-  const handleScrollNavbar = () => {
-    const st = Math.max(window.pageYOffset || 0, window.scrollY || 0, document.documentElement.scrollTop || 0, document.body.scrollTop || 0);
-    
-    if (st > 20) {
-      if (siteHeader) siteHeader.classList.add('nav-hidden');
-    } else {
-      if (siteHeader) siteHeader.classList.remove('nav-hidden');
+  window.addEventListener('scroll', () => {
+    if (siteHeader) {
+      if (window.scrollY > 40) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
     }
-  };
+  }, { passive: true });
 
-  window.addEventListener('scroll', handleScrollNavbar, { passive: true });
-  document.addEventListener('scroll', handleScrollNavbar, { passive: true });
+  // --- A. LIVE SITE SEARCH INDEX & ENGINE ---
+  const SITE_INDEX = [
+    { title: "Mutual Funds Overview", desc: "Systematic SIP & Diversified Equity/Debt Funds", url: "mutual-funds.html", category: "Invest" },
+    { title: "Direct Equity & Stocks", desc: "Exchange-listed equities & fundamental diligence", url: "stocks.html", category: "Invest" },
+    { title: "Portfolio Management Services (PMS)", desc: "Discretionary & Non-Discretionary Mandates (₹50L+)", url: "pms.html", category: "Invest" },
+    { title: "Alternative Investment Funds (AIF)", desc: "Category I, II & III Private Mandates (₹1 Cr+)", url: "aif.html", category: "Invest" },
+    { title: "Specialized Investment Funds (SIF) Tracker", desc: "Live SIF Screener & NAV synchronizer (₹10L+)", url: "sif-tracker.html", category: "Tools" },
+    { title: "Full SIF Screener Engine", desc: "Institutional filtering with advanced metrics", url: "sif-screener.html", category: "Tools" },
+    { title: "Unlisted Shares & Pre-IPO", desc: "Private market assets & growth equity access", url: "unlisted-shares.html", category: "Invest" },
+    { title: "Government & Sovereign Bonds", desc: "Sovereign-backed dated securities & primary yield", url: "bonds.html", category: "Preserve" },
+    { title: "Corporate Fixed Income", desc: "Institutional yield structures & credit instruments", url: "bonds.html#corporate", category: "Preserve" },
+    { title: "Life & Asset Insurance", desc: "Keyman, Term & Comprehensive risk protection", url: "insurance.html", category: "Protect" },
+    { title: "National Pension System (NPS)", desc: "Tier I & Tier II low-cost pension wealth creation", url: "retirement-planning.html#nps", category: "Plan" },
+    { title: "Retirement Corpus Planner", desc: "Inflation-adjusted retirement income modeling", url: "retirement-planning.html", category: "Plan" },
+    { title: "Goal-Based Wealth Planning", desc: "Milestone-driven family wealth & legacy mandates", url: "goal-planning.html", category: "Plan" },
+    { title: "Tax Optimization & ELSS", desc: "Section 80C compliance & capital gains harvesting", url: "tax-planning.html", category: "Plan" },
+    { title: "Corporate Treasury & Cash Optimization", desc: "Enterprise cash flow & overnight liquidity yields", url: "corporate-wealth.html", category: "Corporate" },
+    { title: "GIFT City IFSC Cross-Border Desk", desc: "Foreign currency assets & global investment mandates", url: "gift-city.html", category: "Global" },
+    { title: "NRI Global Wealth Services", desc: "FEMA compliance, NRE/NRO portfolios & repatriation", url: "nri-services.html", category: "Global" },
+    { title: "SIP Compounding Calculator", desc: "Calculate compounding growth for monthly SIPs", url: "calculators.html#card-sip", category: "Calculators" },
+    { title: "Lumpsum Growth Planner", desc: "Project multi-year compound interest on lump sums", url: "calculators.html#card-lumpsum", category: "Calculators" },
+    { title: "SWP Cash Flow Engine", desc: "Systematic monthly payout withdrawal calculator", url: "calculators.html#card-swp", category: "Calculators" },
+    { title: "EMI & Loan Amortization", desc: "Schedule loan principal & interest payments", url: "calculators.html#card-emi", category: "Calculators" },
+    { title: "FIRE Freedom Calculator", desc: "Calculate Financial Independence Retire Early target", url: "calculators.html#card-fire", category: "Calculators" },
+    { title: "AI Hedge Lab & Quant Core", desc: "Quantitative conviction signals & volatility models", url: "hedge-lab.html", category: "Research" },
+    { title: "Market Insights & Blogs", desc: "Expert wealth intelligence & market commentary", url: "blogs.html", category: "Insights" },
+    { title: "About 4X Wealth", desc: "Leadership, working principles & institutional partners", url: "about.html", category: "About" }
+  ];
 
-  const loginModal = document.getElementById('loginModal');
-  const loginCloseBtn = document.getElementById('loginCloseBtn');
+  function renderSearchResults(query = '') {
+    if (!searchResultsList) return;
+    const q = query.trim().toLowerCase();
+    const results = q ? SITE_INDEX.filter(item => 
+      item.title.toLowerCase().includes(q) || 
+      item.desc.toLowerCase().includes(q) || 
+      item.category.toLowerCase().includes(q)
+    ) : SITE_INDEX.slice(0, 8);
 
-  const mobileMenuTrigger = document.getElementById('mobileMenuTrigger');
-  const mobileDrawer = document.getElementById('mobileDrawer');
-  const mobileDrawerClose = document.getElementById('mobileDrawerClose');
-  const mobileOverlay = document.getElementById('mobileOverlay');
+    if (results.length === 0) {
+      searchResultsList.innerHTML = `<div style="text-align: center; padding: 2rem; color: rgba(253,248,242,0.6); font-size: 14px;">No matching results found for "${query}". Try searching for <em>SIP</em>, <em>PMS</em>, <em>Bonds</em>, or <em>Calculators</em>.</div>`;
+      return;
+    }
 
-  // Search Open/Close
+    searchResultsList.innerHTML = results.map(item => `
+      <a href="${item.url}" class="search-result-item clickable">
+        <div class="search-result-info">
+          <h4>${item.title}</h4>
+          <p>${item.desc}</p>
+        </div>
+        <span class="search-result-badge">${item.category}</span>
+      </a>
+    `).join('');
+  }
+
   if (searchTrigger) {
     searchTrigger.addEventListener('click', () => {
-      if (searchModal) searchModal.classList.add('open');
-      const searchInput = document.getElementById('searchInput');
-      if (searchInput) searchInput.focus();
+      if (searchModal) {
+        searchModal.classList.add('open');
+        renderSearchResults('');
+        if (searchInput) {
+          searchInput.value = '';
+          setTimeout(() => searchInput.focus(), 100);
+        }
+      }
     });
   }
+
   if (searchModalClose) {
     searchModalClose.addEventListener('click', () => {
       if (searchModal) searchModal.classList.remove('open');
     });
   }
 
-  // 3-Tier Login/Sign-Up Modal Tab Switching (Retail, Corporate, Partner)
-  const switchLoginTab = (mode, authType = 'login') => {
+  if (searchModal) {
+    searchModal.addEventListener('click', (e) => {
+      if (e.target === searchModal) searchModal.classList.remove('open');
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      renderSearchResults(e.target.value);
+    });
+  }
+
+  document.querySelectorAll('.search-tag-chip').forEach(chip => {
+    chip.addEventListener('click', (e) => {
+      const tag = chip.getAttribute('data-tag') || chip.textContent.trim();
+      if (searchInput) {
+        searchInput.value = tag;
+        renderSearchResults(tag);
+      }
+    });
+  });
+
+  // --- B. 3-TIER LOGIN & SIGN-UP MODAL ENGINE ---
+  const loginModal = document.getElementById('loginModal');
+  const loginCloseBtn = document.getElementById('loginCloseBtn');
+
+  const switchLoginTab = (mode = 'retail', authType = 'login') => {
     if (mode === 'client') mode = 'corporate';
     
     const modalTypeHeader = document.getElementById('modalTypeHeader');
     if (modalTypeHeader) {
-      modalTypeHeader.textContent = authType === 'signup' ? `${mode.toUpperCase()} SIGN UP PORTAL` : `${mode.toUpperCase()} LOGIN PORTAL`;
+      modalTypeHeader.textContent = authType === 'signup' ? `${mode.toUpperCase()} SIGN UP PORTAL` : `${mode.toUpperCase()} CLIENT PORTAL`;
     }
 
     const tabRetailBtn = document.getElementById('tabRetailBtn');
@@ -835,6 +909,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (loginCloseBtn) loginCloseBtn.addEventListener('click', closeLogin);
+  if (loginModal) {
+    loginModal.addEventListener('click', (e) => {
+      if (e.target === loginModal) closeLogin();
+    });
+  }
 
   const elTabRetail = document.getElementById('tabRetailBtn');
   const elTabCorp = document.getElementById('tabCorporateBtn');
@@ -844,7 +923,173 @@ document.addEventListener('DOMContentLoaded', () => {
   if (elTabCorp) elTabCorp.addEventListener('click', () => switchLoginTab('corporate'));
   if (elTabPartner) elTabPartner.addEventListener('click', () => switchLoginTab('partner'));
 
-  // Mobile Drawer Toggle
+  // --- C. REGULATORY & LEGAL COMPLIANCE MODAL ---
+  const LEGAL_DOCS = {
+    disclaimer: {
+      title: "Regulatory & Investment Disclaimer",
+      badge: "AMFI & APMI REGULATORY MANDATE",
+      content: `
+        <h4>Mutual Fund & Market Risk Disclosure</h4>
+        <p>Mutual fund investments are subject to market risks, read all scheme related documents carefully. Past performance is not indicative of future returns. 4X Wealth Financial Services operates strictly as an AMFI Registered Mutual Fund Distributor (ARN-268488) and APMI Registered PMS Desk (APRN00969).</p>
+        <h4>No Guaranteed Returns</h4>
+        <p>None of the investment products, calculators, or market signals presented on this platform constitute a guarantee of principal capital or minimum periodic return. Asset allocation decisions should be made based on individual risk tolerance, investment horizon, and financial goals.</p>
+        <h4>Portfolio Management & AIF Regulations</h4>
+        <p>PMS investments are governed by SEBI (Portfolio Managers) Regulations 2020 with a minimum statutory investment threshold of ₹50 Lakhs. AIF Category I, II & III investments are governed by SEBI (Alternative Investment Funds) Regulations 2012 with a minimum statutory investment threshold of ₹1 Crore.</p>
+      `
+    },
+    commission: {
+      title: "Commission & Brokerage Disclosure",
+      badge: "SEBI CIRCULAR COMPLIANCE",
+      content: `
+        <h4>AMFI Code of Conduct Compliance</h4>
+        <p>In accordance with SEBI Circular No. SEBI/IMD/CIR No. 4/168230/09 and AMFI guidelines, 4X Wealth Financial Services discloses all transaction charges and trail commissions receivable from Asset Management Companies (AMCs) across regular mutual fund schemes.</p>
+        <h4>Commission Schedule Overview</h4>
+        <p>&bull; Equity & Growth Schemes: Trail commission ranging between 0.40% to 1.10% p.a.<br>
+        &bull; Hybrid & Multi-Asset Schemes: Trail commission ranging between 0.35% to 0.90% p.a.<br>
+        &bull; Debt & Fixed Income Schemes: Trail commission ranging between 0.10% to 0.50% p.a.<br>
+        &bull; Liquid & Overnight Funds: Trail commission ranging between 0.05% to 0.15% p.a.</p>
+        <p>Detailed AMC-wise commission sheets are furnished to clients annually and available on request.</p>
+      `
+    },
+    privacy: {
+      title: "Client Data Privacy Policy",
+      badge: "DPDP ACT 2023 & IT ACT COMPLIANT",
+      content: `
+        <h4>Commitment to Data Security</h4>
+        <p>4X Wealth Financial Services is committed to safeguarding client confidentiality. All PAN, KYC, financial holding, and bank communication records are encrypted with 256-bit SSL protocols.</p>
+        <h4>Use of Personal Data</h4>
+        <p>Client information collected is utilized exclusively for KYC compliance, portfolio reporting, AMFI/SEBI regulatory audits, and providing requested wealth services. We do not sell, rent, or monetize client personal data to third-party advertisers under any circumstances.</p>
+      `
+    },
+    terms: {
+      title: "Terms & Conditions of Service",
+      badge: "LEGAL USER AGREEMENT",
+      content: `
+        <h4>Website Usage & Intellectual Property</h4>
+        <p>The content, calculators, quant algorithms, research commentary, and visual layouts on this portal are the proprietary intellectual property of 4X Wealth Financial Services. Unauthorized scraping, reproduction, or distribution is strictly prohibited.</p>
+        <h4>Informational & Advisory Boundaries</h4>
+        <p>Digital calculators and wealth simulators provide indicative projections based on mathematical assumptions and user-entered variables. These do not constitute personalized tax or legal advice.</p>
+      `
+    },
+    sid: {
+      title: "SID / SAI / KIM Scheme Documents",
+      badge: "SCHEME DISCLOSURES",
+      content: `
+        <h4>Statutory Scheme Information Access</h4>
+        <p>Investors are advised to review the Scheme Information Document (SID), Statement of Additional Information (SAI), and Key Information Memorandum (KIM) before investing in any mutual fund or PMS mandate.</p>
+        <p>All official SID, SAI, and KIM documents for partnered AMCs are available on the respective AMC websites and AMFI India portal (amfiindia.com). Our advisors provide physical and digital copies upon request.</p>
+      `
+    },
+    grievance: {
+      title: "Investor Grievance Redressal Mechanism",
+      badge: "3-LEVEL ESCALATION MATRIX",
+      content: `
+        <h4>Level 1: Client Relations Desk</h4>
+        <p>Email: support@4xwealth.com | Phone: +91 98200 00000 | Response Time: Within 24-48 Business Hours.</p>
+        <h4>Level 2: Principal Compliance Officer</h4>
+        <p>Email: compliance@4xwealth.com | Address: 4X Wealth Financial Services, Thane, Mumbai (HQ), Maharashtra, India | Resolution Time: Within 7 Business Days.</p>
+        <h4>Level 3: Regulatory SCORES Portal</h4>
+        <p>If unresolved, investors may escalate grievances directly to SEBI through the SCORES portal at <strong>https://scores.gov.in</strong> or the SMART ODR platform at <strong>https://smartodr.in</strong>.</p>
+      `
+    },
+    charter: {
+      title: "AMFI & SEBI Investor Charter",
+      badge: "RIGHTS & DUTIES OF INVESTORS",
+      content: `
+        <h4>Rights of the Investor</h4>
+        <p>&bull; Right to receive fair, transparent, and non-discriminatory service.<br>
+        &bull; Right to transparent disclosure of fees, commissions, and risk factors.<br>
+        &bull; Right to periodic portfolio account statements and audited holding reports.<br>
+        &bull; Right to prompt grievance redressal within stipulated regulatory timelines.</p>
+        <h4>Duties of the Investor</h4>
+        <p>&bull; Provide accurate KYC documents, valid PAN, and updated bank records.<br>
+        &bull; Deal only through registered intermediaries with verified ARN/APRN credentials.<br>
+        &bull; Read scheme riskometers and asset allocation limits prior to transaction execution.</p>
+      `
+    }
+  };
+
+  function openLegalModal(docKey) {
+    const doc = LEGAL_DOCS[docKey] || LEGAL_DOCS.disclaimer;
+    let modal = document.getElementById('legalModal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.className = 'legal-modal';
+      modal.id = 'legalModal';
+      modal.innerHTML = `
+        <div class="legal-modal-card">
+          <button class="login-close" id="legalModalClose"><i class="fa-solid fa-xmark"></i></button>
+          <div class="legal-modal-header">
+            <span class="section-tag-badge" id="legalModalBadge" style="margin-bottom: 8px;"></span>
+            <h3 id="legalModalTitle"></h3>
+          </div>
+          <div class="legal-modal-body" id="legalModalBody"></div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target.closest('#legalModalClose')) {
+          modal.classList.remove('open');
+        }
+      });
+    }
+
+    document.getElementById('legalModalBadge').textContent = doc.badge;
+    document.getElementById('legalModalTitle').textContent = doc.title;
+    document.getElementById('legalModalBody').innerHTML = doc.content;
+    modal.classList.add('open');
+  }
+
+  // Bind all legal links across the page
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('a');
+    if (!target) return;
+    const text = target.textContent.trim().toLowerCase();
+    
+    if (text.includes('disclaimer') || text.includes('regulatory disclaimer')) {
+      e.preventDefault();
+      openLegalModal('disclaimer');
+    } else if (text.includes('commission')) {
+      e.preventDefault();
+      openLegalModal('commission');
+    } else if (text.includes('privacy')) {
+      e.preventDefault();
+      openLegalModal('privacy');
+    } else if (text.includes('terms')) {
+      e.preventDefault();
+      openLegalModal('terms');
+    } else if (text.includes('sid') || text.includes('sai') || text.includes('kim')) {
+      e.preventDefault();
+      openLegalModal('sid');
+    } else if (text.includes('grievance') || text.includes('redressal')) {
+      e.preventDefault();
+      openLegalModal('grievance');
+    } else if (text.includes('charter')) {
+      e.preventDefault();
+      openLegalModal('charter');
+    } else if (text.includes('arn registration')) {
+      e.preventDefault();
+      openLegalModal('disclaimer');
+    } else if (text.includes('forms & download') || text.includes('forms & downloads')) {
+      e.preventDefault();
+      alert("4X Wealth Document Vault: Client KYC Forms, Nominee Update Forms, and AMFI Transfer Requests are available by emailing support@4xwealth.com.");
+    } else if (text.includes('thane, mumbai') || text.includes('support terminal')) {
+      e.preventDefault();
+      const consult = document.getElementById('consultation-section') || document.querySelector('footer');
+      if (consult) consult.scrollIntoView({ behavior: 'smooth' });
+    } else if (text.includes('reset key') || text.includes('forgot password')) {
+      e.preventDefault();
+      alert("Password Reset: A secure verification OTP and link have been dispatched to your registered email/mobile.");
+    }
+  });
+
+  // --- D. MOBILE DRAWER & NAVBAR INTERACTION ---
+  const mobileMenuTrigger = document.getElementById('mobileMenuTrigger');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const mobileDrawerClose = document.getElementById('mobileDrawerClose');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+
   const openMobileMenu = () => {
     if (mobileDrawer) mobileDrawer.classList.add('open');
     if (mobileOverlay) mobileOverlay.classList.add('open');
@@ -857,31 +1102,27 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', closeMobileMenu);
   if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
 
-  // Close menus on drawer link clicks
   document.querySelectorAll('.sk-drawer-link').forEach(link => {
     link.addEventListener('click', closeMobileMenu);
   });
 
-  // Dropdown persistence and toggling behavior
+  // Dropdown hover & click behavior: Allow direct navigation on page links
   const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
   dropdownTriggers.forEach(trigger => {
     const triggerLink = trigger.querySelector('.sk-nav-link');
-    trigger.addEventListener('mouseenter', () => {
-      trigger.classList.add('active');
-    });
-    trigger.addEventListener('mouseleave', () => {
-      trigger.classList.remove('active');
-    });
+    trigger.addEventListener('mouseenter', () => trigger.classList.add('active'));
+    trigger.addEventListener('mouseleave', () => trigger.classList.remove('active'));
+    
     if (triggerLink) {
       triggerLink.addEventListener('click', (e) => {
-        // Prevent default hash jump so dropdown stays visible
-        e.preventDefault();
-        e.stopPropagation();
-        const isActive = trigger.classList.contains('active');
-        dropdownTriggers.forEach(t => t.classList.remove('active'));
-        if (!isActive) {
-          trigger.classList.add('active');
+        const href = triggerLink.getAttribute('href');
+        // If it points to an anchor on same page, toggle or scroll
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const targetEl = document.querySelector(href);
+          if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
         }
+        // If it points to another page (.html), let standard browser click proceed
       });
     }
   });
@@ -890,13 +1131,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.dropdown-link, .mega-link').forEach(link => {
     link.addEventListener('click', (e) => {
       dropdownTriggers.forEach(t => t.classList.remove('active'));
-      // Navigate to target href after closing
-      const href = link.getAttribute('href');
-      if (href && href !== '#') {
-        setTimeout(() => {
-          window.location.href = href;
-        }, 150);
-      }
     });
   });
 
@@ -907,29 +1141,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close dropdowns on scroll
-  window.addEventListener('scroll', () => {
-    dropdownTriggers.forEach(t => t.classList.remove('active'));
-  });
-
-  // Header Scroll Class toggle
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('mainHeader');
-    if (header) {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }
-  });
-
   // CTA consultation submit response
   const consultForm = document.getElementById('consultationForm');
   if (consultForm) {
     consultForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert("Consultation Request Logged! An AMFI Registered partner will contact you shortly to authorize your advisor link.");
+      alert("Consultation Request Logged! An AMFI Registered partner will contact you shortly to schedule your wealth review.");
       consultForm.reset();
     });
   }

@@ -32,6 +32,8 @@
         <li class="sk-nav-item"><a href="about.html" class="sk-nav-link">About Us</a></li>
       </ul>
       <div class="nav-actions">
+        <button class="search-btn clickable" id="searchTrigger" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="vg-btn vg-btn-outline clickable login-trigger" data-login-mode="retail"><span>Login</span></button>
         <a href="index.html#consultation-section" class="vg-btn vg-btn-primary clickable"><span>Inquire PMS Mandate</span></a>
       </div>
     </div>
@@ -45,12 +47,12 @@
         Portfolio Management <span class="gold-highlight">Services (PMS).</span>
       </h1>
       <p class="section-desc">
-        A SEBI-regulated, customized investment service where professional portfolio managers actively administer a client's portfolio under an agreed mandate.
+        A SEBI-regulated, customized investment service where professional portfolio managers actively administer high-conviction portfolios tailored to specific risk charters (APRN00969).
       </p>
     </div>
   </section>
 
-  <!-- Framework: Discretionary vs Non-Discretionary & ₹50 Lakh Minimum (Slide 7) -->
+  <!-- Framework: Discretionary vs Non-Discretionary & ₹50 Lakh Minimum -->
   <section class="section-ivory">
     <div class="container-luxury">
       
@@ -59,7 +61,7 @@
         <span class="role-tag">SEBI INVESTOR FRAMEWORK</span>
         <h2 style="font-family: var(--font-heading); font-size: 38px; color: var(--gold-primary); margin-bottom: 0.5rem;">₹50 LAKH*</h2>
         <p style="font-size: 15px; color: rgba(253,248,242,0.85); max-width: 600px; margin: 0 auto;">
-          Minimum statutory aggregate investment amount applicable to new client onboarding and fresh portfolio investments under SEBI (Portfolio Managers) Regulations.
+          Minimum statutory aggregate investment amount applicable to new client onboarding and fresh portfolio investments under SEBI (Portfolio Managers) Regulations 2020.
         </p>
       </div>
 
@@ -71,7 +73,7 @@
             <span class="approach-badge-num">MODEL 01</span>
             <h3>Discretionary PMS</h3>
             <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
-              The portfolio manager independently executes investment choices, asset allocation, and rebalancing decisions in accordance with the client's agreed investment charter without prior approval for each trade.
+              The portfolio manager independently executes investment choices, asset allocation, and rebalancing decisions in accordance with the client's agreed charter without requiring trade-by-trade consent.
             </p>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 13px; color: var(--navy-dark); font-weight: 600;">
               <li><i class="fa-solid fa-check" style="color: var(--gold-dark); margin-right: 6px;"></i> High execution agility</li>
@@ -102,28 +104,33 @@
       <div class="section-header center">
         <span class="section-tag">STRUCTURE SPECIFICATIONS</span>
         <h2 class="section-title">Key Attributes of <span class="gold-highlight">PMS Mandates.</span></h2>
+        <div class="gold-divider-wrap">
+          <span class="gold-divider-line"></span>
+          <span class="gold-divider-diamond"></span>
+          <span class="gold-divider-line"></span>
+        </div>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
         <div class="who-pillar-card">
           <i class="fa-solid fa-user-check"></i>
-          <h4>Structure</h4>
-          <p>Managed for an individual client under an agreed mandate with direct custody in the client's demat account.</p>
+          <h4>Custody Structure</h4>
+          <p>Direct demat holding in the client's name with institutional custodian safekeeping.</p>
         </div>
         <div class="who-pillar-card">
           <i class="fa-solid fa-shield-halved"></i>
-          <h4>Regulation</h4>
+          <h4>Regulatory Oversight</h4>
           <p>APMI Registered (APRN00969) & SEBI PMS Regulations 2020 ensuring transparent fee disclosure and auditing.</p>
         </div>
         <div class="who-pillar-card">
           <i class="fa-solid fa-droplet"></i>
-          <h4>Liquidity</h4>
-          <p>Subject to the specific portfolio management agreement and secondary market equity liquidity terms.</p>
+          <h4>Liquidity Terms</h4>
+          <p>Subject to individual strategy liquidity and prevailing secondary market volumes with no lock-in.</p>
         </div>
         <div class="who-pillar-card">
           <i class="fa-solid fa-file-signature"></i>
-          <h4>Documentation</h4>
-          <p>Portfolio management agreement, investment approach disclosure document, and audited annual performance report.</p>
+          <h4>Audited Reporting</h4>
+          <p>Comprehensive monthly performance factsheets, audited annual statements, and capital gains reports.</p>
         </div>
       </div>
 
@@ -135,11 +142,21 @@
     <div class="container-luxury">
       <div class="footer-disclaimer-box">
         <p class="footer-disclaimer-bold">PMS INVESTMENTS INVOLVE EQUITY MARKET RISKS AND DO NOT GUARANTEE PRINCIPAL OR MINIMUM RETURNS.</p>
+        <div class="legal-links-row" style="display: flex; justify-content: center; gap: 12px; margin: 10px 0; font-size: 12px; flex-wrap: wrap;">
+          <a href="#" class="clickable">Disclaimer</a> | 
+          <a href="#" class="clickable">Commission Disclosure</a> | 
+          <a href="#" class="clickable">Privacy Policy</a> | 
+          <a href="#" class="clickable">Terms & Conditions</a> | 
+          <a href="#" class="clickable">SID/SAI/KIM</a> | 
+          <a href="#" class="clickable">Investor Grievance Redressal</a> | 
+          <a href="#" class="clickable">Investor Charter</a>
+        </div>
         <p class="amfi-reg-text">4X Wealth Financial Services &bull; APMI Registered PMS Desk: APRN00969</p>
       </div>
       <div class="footer-bottom-strip"><p>&copy; 2026 4X Wealth Financial Services. All Rights Reserved.</p></div>
     </div>
   </footer>
 
+  <script src="script.js?v=2.0"></script>
 </body>
 </html>

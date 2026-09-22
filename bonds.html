@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bonds & Fixed Income Solutions | 4X Wealth Financial Services</title>
-  <meta name="description" content="Understanding income-oriented investment solutions: Government Bonds, Sovereign Securities, and Corporate Fixed Income. Contractual cash flows with 4X Wealth.">
+  <title>Government Bonds & Fixed Income | 4X Wealth Financial Services</title>
+  <meta name="description" content="Sovereign G-Secs, State Development Loans, Corporate AAA Bonds, and institutional fixed income yield structures with 4X Wealth.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,9 @@
         <li class="sk-nav-item"><a href="about.html" class="sk-nav-link">About Us</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="index.html#consultation-section" class="vg-btn vg-btn-primary clickable"><span>Explore Bond Yields</span></a>
+        <button class="search-btn clickable" id="searchTrigger" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="vg-btn vg-btn-outline clickable login-trigger" data-login-mode="retail"><span>Login</span></button>
+        <a href="index.html#consultation-section" class="vg-btn vg-btn-primary clickable"><span>Consult Bond Advisor</span></a>
       </div>
     </div>
   </header>
@@ -40,17 +42,17 @@
   <!-- Hero Section -->
   <section class="section-dark" style="padding-top: 180px; padding-bottom: 90px; text-align: center;">
     <div class="container-luxury">
-      <span class="section-tag-badge">09 / INVESTMENT SOLUTIONS</span>
+      <span class="section-tag-badge">02 / CAPITAL PRESERVATION</span>
       <h1 class="section-title" style="font-size: clamp(34px, 4.5vw, 56px);">
-        Bonds & <span class="gold-highlight">Fixed Income.</span>
+        Bonds & <span class="gold-highlight">Fixed Income Securities.</span>
       </h1>
       <p class="section-desc">
-        Understanding income-oriented investment solutions: fixed-income securities are debt instruments through which an investor provides capital in exchange for contractual cash flows and principal repayment.
+        Contractual debt instruments representing loans made by investors to governments or corporate borrowers, offering predictable coupon cash flows and principal preservation.
       </p>
     </div>
   </section>
 
-  <!-- How It Works Flow (Slide 9) -->
+  <!-- Lifecycle & Framework -->
   <section class="section-ivory">
     <div class="container-luxury">
       
@@ -64,92 +66,50 @@
         </div>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 4rem;">
-        <div class="approach-card">
-          <span class="approach-badge-num">01</span>
-          <h3>Capital</h3>
-          <p style="font-size: 13px; color: var(--text-muted);">Investor provides initial capital to an issuer (Government or Corporate).</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-bottom: 4rem;">
+        <div class="who-pillar-card">
+          <i class="fa-solid fa-file-contract"></i>
+          <h4>01. Primary Issuance</h4>
+          <p>The issuer issues debt securities at face value to raise capital, defining coupon frequency, tenor, and redemption dates.</p>
         </div>
-        <div class="approach-card">
-          <span class="approach-badge-num">02</span>
-          <h3>Debt Instrument</h3>
-          <p style="font-size: 13px; color: var(--text-muted);">Issuance of specified bond, debenture, or sovereign security.</p>
+        <div class="who-pillar-card">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <h4>02. Regular Coupon Payments</h4>
+          <p>Investors receive scheduled periodic interest payments directly into their designated bank account throughout the tenor.</p>
         </div>
-        <div class="approach-card">
-          <span class="approach-badge-num">03</span>
-          <h3>Contractual Cash Flows</h3>
-          <p style="font-size: 13px; color: var(--text-muted);">Periodic coupon interest payments distributed as per stated terms.</p>
-        </div>
-        <div class="approach-card">
-          <span class="approach-badge-num">04</span>
-          <h3>Maturity / Exit</h3>
-          <p style="font-size: 13px; color: var(--text-muted);">Repayment of principal at maturity or sale in secondary bond markets.</p>
+        <div class="who-pillar-card">
+          <i class="fa-solid fa-hand-holding-dollar"></i>
+          <h4>03. Principal Redemption</h4>
+          <p>Upon maturity, the issuer repays the original face value of the bond in full to the verified bondholder.</p>
         </div>
       </div>
 
-      <!-- Government vs Corporate Bonds (Slide 9) -->
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 4rem;">
-        
-        <div class="approach-card" style="background: #FFF;">
-          <span class="approach-badge-num">SOVEREIGN BACKED</span>
-          <h3>Government Bonds (G-Secs)</h3>
-          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
-            Domestic-currency Government securities issued by the Central or State Governments (Treasury Bills, Dated G-Secs, State Development Loans).
-          </p>
-          <div style="background: var(--ivory-bg); padding: 1rem; border-radius: 10px; border: 1px solid rgba(214,179,132,0.2); font-size: 12.5px; color: var(--navy-dark); font-weight: 600;">
-            <i class="fa-solid fa-landmark" style="color: var(--gold-dark); margin-right: 6px;"></i> Sovereign credit framework carrying zero credit default risk according to the RBI.
-          </div>
-        </div>
-
-        <div class="approach-card" style="background: #FFF;" id="corporate">
-          <span class="approach-badge-num">YIELD ENHANCEMENT</span>
-          <h3>Corporate & High-Yield Debt</h3>
-          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
-            Corporate bonds, debentures, and institutional fixed deposits represent financing raised by enterprises carrying higher coupon yields.
-          </p>
-          <div style="background: var(--ivory-bg); padding: 1rem; border-radius: 10px; border: 1px solid rgba(214,179,132,0.2); font-size: 12.5px; color: var(--navy-dark); font-weight: 600;">
-            <i class="fa-solid fa-building" style="color: var(--gold-dark); margin-right: 6px;"></i> Subject to credit rating evaluation (AAA/AA), seniority, and issuer financial health.
-          </div>
-        </div>
-
+      <!-- Categories Comparison Table -->
+      <div class="section-header center" id="corporate">
+        <span class="section-tag">PRODUCT MATRIX</span>
+        <h2 class="section-title">Fixed Income <span class="gold-highlight">Asset Classes.</span></h2>
       </div>
 
-      <!-- 6-Point Risk Matrix (Slide 9) -->
-      <div class="section-header center">
-        <span class="section-tag">RISK & DILIGENCE MATRIX</span>
-        <h2 class="section-title">What to Consider in <span class="gold-highlight">Fixed Income.</span></h2>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-        <div class="who-pillar-card">
-          <i class="fa-solid fa-shield-halved"></i>
-          <h4>Credit Risk</h4>
-          <p>Issuer's ability to meet contractual principal and periodic coupon payment obligations.</p>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+        <div class="approach-card">
+          <span class="approach-badge-num">TYPE 01</span>
+          <h3>Government Securities (G-Secs)</h3>
+          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">Issued by the Reserve Bank of India on behalf of the Central Government. Zero sovereign default risk.</p>
         </div>
-        <div class="who-pillar-card">
-          <i class="fa-solid fa-percent"></i>
-          <h4>Interest Rate Risk</h4>
-          <p>Bond prices move inversely to changes in prevailing market interest rates and RBI policy repo rates.</p>
+        <div class="approach-card">
+          <span class="approach-badge-num">TYPE 02</span>
+          <h3>State Development Loans (SDLs)</h3>
+          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">State government debt offering a 25-50 bps yield spread over Central G-Secs with RBI-managed servicing.</p>
         </div>
-        <div class="who-pillar-card">
-          <i class="fa-solid fa-arrows-spin"></i>
-          <h4>Liquidity Risk</h4>
-          <p>Ability to sell the security in secondary debt markets at or near its prevailing fair market value.</p>
+        <div class="approach-card">
+          <span class="approach-badge-num">TYPE 03</span>
+          <h3>Corporate AAA/AA Bonds</h3>
+          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">High-grade corporate debentures providing enhanced yields for institutional and private family offices.</p>
         </div>
-        <div class="who-pillar-card">
-          <i class="fa-solid fa-calendar-days"></i>
-          <h4>Maturity & Duration</h4>
-          <p>Time remaining until contractual principal repayment and modified duration price sensitivity.</p>
-        </div>
-        <div class="who-pillar-card">
-          <i class="fa-solid fa-layer-group"></i>
-          <h4>Instrument Structure</h4>
-          <p>Coupon frequency, security collateral, call/put options, and seniority in liquidation order.</p>
-        </div>
-        <div class="who-pillar-card">
-          <i class="fa-solid fa-rotate"></i>
-          <h4>Reinvestment Risk</h4>
-          <p>Future interest cash flows may need to be reinvested at different prevailing interest rates.</p>
+        <div class="approach-card">
+          <span class="approach-badge-num">TYPE 04</span>
+          <h3>Tax-Free PSU Bonds</h3>
+          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">Public sector enterprise bonds (PFC, REC, NHAI) offering 100% tax-exempt annual coupon payments.</p>
         </div>
       </div>
 
@@ -160,12 +120,22 @@
   <footer class="luxury-footer">
     <div class="container-luxury">
       <div class="footer-disclaimer-box">
-        <p class="footer-disclaimer-bold">FIXED INCOME INVESTMENTS CAN DIFFER MATERIALLY IN CREDIT QUALITY, LIQUIDITY, AND TENURE.</p>
+        <p class="footer-disclaimer-bold">FIXED INCOME SECURITIES ARE SUBJECT TO INTEREST RATE RISK, CREDIT RISK, AND LIQUIDITY CONDITIONS.</p>
+        <div class="legal-links-row" style="display: flex; justify-content: center; gap: 12px; margin: 10px 0; font-size: 12px; flex-wrap: wrap;">
+          <a href="#" class="clickable">Disclaimer</a> | 
+          <a href="#" class="clickable">Commission Disclosure</a> | 
+          <a href="#" class="clickable">Privacy Policy</a> | 
+          <a href="#" class="clickable">Terms & Conditions</a> | 
+          <a href="#" class="clickable">SID/SAI/KIM</a> | 
+          <a href="#" class="clickable">Investor Grievance Redressal</a> | 
+          <a href="#" class="clickable">Investor Charter</a>
+        </div>
         <p class="amfi-reg-text">4X Wealth Financial Services &bull; AMFI ARN-268488 &bull; APMI APRN00969</p>
       </div>
       <div class="footer-bottom-strip"><p>&copy; 2026 4X Wealth Financial Services. All Rights Reserved.</p></div>
     </div>
   </footer>
 
+  <script src="script.js?v=2.0"></script>
 </body>
 </html>

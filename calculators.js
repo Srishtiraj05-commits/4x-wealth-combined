@@ -41,12 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     if (triggerLink) {
       triggerLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const isActive = trigger.classList.contains('active');
-        dropdownTriggers.forEach(t => t.classList.remove('active'));
-        if (!isActive) {
-          trigger.classList.add('active');
+        const href = triggerLink.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const targetEl = document.querySelector(href);
+          if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
         }
       });
     }
@@ -103,10 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleScrollNavbar = () => {
     const st = Math.max(window.pageYOffset || 0, window.scrollY || 0, document.documentElement.scrollTop || 0, document.body.scrollTop || 0);
     
-    if (st > 20) {
-      if (siteHeader) siteHeader.classList.add('nav-hidden');
+    if (st > 40) {
+      if (siteHeader) siteHeader.classList.add('scrolled');
     } else {
-      if (siteHeader) siteHeader.classList.remove('nav-hidden');
+      if (siteHeader) siteHeader.classList.remove('scrolled');
     }
   };
 
