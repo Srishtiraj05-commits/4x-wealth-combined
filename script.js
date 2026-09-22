@@ -790,15 +790,15 @@ document.addEventListener('DOMContentLoaded', () => {
     ) : SITE_INDEX.slice(0, 8);
 
     if (results.length === 0) {
-      searchResultsList.innerHTML = `<div style="text-align: center; padding: 2rem; color: rgba(253,248,242,0.6); font-size: 14px;">No matching results found for "${query}". Try searching for <em>SIP</em>, <em>PMS</em>, <em>Bonds</em>, or <em>Calculators</em>.</div>`;
+      searchResultsList.innerHTML = `<div style="text-align: center; padding: 2rem; color: #6B7280; font-size: 14px;">No matching results found for "${query}". Try searching for <em>SIP</em>, <em>PMS</em>, <em>Bonds</em>, or <em>Calculators</em>.</div>`;
       return;
     }
 
     searchResultsList.innerHTML = results.map(item => `
       <a href="${item.url}" class="search-result-item clickable">
         <div class="search-result-info">
-          <h4>${item.title}</h4>
-          <p>${item.desc}</p>
+          <h4 style="color:#1C2333;">${item.title}</h4>
+          <p style="color:#6B7280;">${item.desc}</p>
         </div>
         <span class="search-result-badge">${item.category}</span>
       </a>

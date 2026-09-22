@@ -2128,13 +2128,13 @@ footer.luxury-footer {
 .search-result-info h4 {
   font-size: 14px;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #1C2333 !important;
   margin-bottom: 2px;
 }
 
 .search-result-info p {
   font-size: 12px;
-  color: rgba(253, 248, 242, 0.65);
+  color: #6B7280 !important;
 }
 
 .search-result-badge {
