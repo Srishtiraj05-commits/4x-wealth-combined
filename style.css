@@ -12,28 +12,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
 
 :root {
-  --navy-dark: #031E36;
-  --navy-rich: #052E50;
-  --navy-deep: #021627;
-  --navy-card: #082846;
-  --gold-primary: #D6B384;
-  --gold-dark: #C5A059;
-  --gold-light: #F5E8D1;
-  --gold-dim: rgba(214, 179, 132, 0.15);
-  --gold-border: rgba(214, 179, 132, 0.35);
-  --ivory-bg: #FDF8F2;
-  --ivory-card: #F8F3EA;
+  --navy-dark: #0B132B;
+  --navy-rich: #072244;
+  --navy-deep: #051930;
+  --navy-card: #FFFFFF;
+  --blue-electric: #0088FF;
+  --blue-cyan: #00A3FF;
+  --blue-deep: #0055FF;
+  --blue-light: #F0F7FF;
+  --blue-dim: rgba(0, 136, 255, 0.08);
+  --blue-border: rgba(0, 136, 255, 0.22);
+  --gold-primary: #0088FF;
+  --gold-dark: #0077EE;
+  --gold-light: #F0F7FF;
+  --gold-dim: rgba(0, 136, 255, 0.08);
+  --gold-border: #E2E8F0;
+  --ivory-bg: #FFFFFF;
+  --ivory-card: #F8FAFC;
   --card-white: #FFFFFF;
-  --text-dark: #151A1F;
-  --text-navy: #031E36;
-  --text-muted: #546477;
-  --text-light: #FDF8F2;
-  --text-gold: #D6B384;
-  --border-light: rgba(15, 23, 42, 0.08);
-  --border-gold: rgba(214, 179, 132, 0.3);
-  --shadow-luxury: 0 16px 40px -12px rgba(3, 30, 54, 0.08);
-  --shadow-hover: 0 22px 50px -10px rgba(3, 30, 54, 0.14);
-  --shadow-gold: 0 10px 30px rgba(214, 179, 132, 0.22);
+  --text-dark: #0F172A;
+  --text-navy: #0B132B;
+  --text-muted: #64748B;
+  --text-light: #FFFFFF;
+  --text-gold: #0088FF;
+  --border-light: #E2E8F0;
+  --border-gold: #E2E8F0;
+  --shadow-luxury: 0 10px 35px rgba(15, 23, 42, 0.05);
+  --shadow-hover: 0 20px 45px rgba(0, 136, 255, 0.14);
+  --shadow-gold: 0 8px 25px rgba(0, 136, 255, 0.35);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -41,18 +47,10 @@
   --font-mono: 'IBM Plex Mono', monospace;
 
   /* 4X Petal Brand Colors */
-  --c-blue: #1D70B8;
-  --c-cyan: #00B4D8;
+  --c-blue: #0088FF;
+  --c-cyan: #00A3FF;
   --c-coral: #F97316;
   --c-rose: #E11D48;
-
-  /* Legacy mappings */
-  --black: #031E36;
-  --dark-navy: #052E50;
-  --navy-light: #FDF8F2;
-  --champagne: #D6B384;
-  --gold-bright: #D6B384;
-  --white: #151A1F;
 }
 
 * {
@@ -2718,1383 +2716,9 @@ body {
   50% { transform: scale(1.3); opacity: 0.6; }
 }
 
-/* ============ MOBILE DRAWER COMPLETE FIX ============ */
-.sk-drawer-overlay {
-  position: fixed !important;
-  inset: 0 !important;
-  background: rgba(28, 35, 51, 0.6) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  z-index: 99998 !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: all 0.35s ease !important;
-  pointer-events: none !important;
-}
-
-.sk-drawer-overlay.open {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
-
-.sk-drawer {
-  position: fixed !important;
-  top: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 320px !important;
-  max-width: 85vw !important;
-  background: #FFFFFF !important;
-  color: var(--navy-dark) !important;
-  z-index: 99999 !important;
-  transform: translateX(100%) !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15) !important;
-  padding: 2rem 1.8rem !important;
-  overflow-y: auto !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-.sk-drawer.open {
-  transform: translateX(0) !important;
-}
-
-.sk-drawer-close {
-  position: absolute !important;
-  top: 1.2rem !important;
-  right: 1.2rem !important;
-  background: none !important;
-  border: none !important;
-  font-size: 28px !important;
-  line-height: 1 !important;
-  color: var(--navy-dark) !important;
-  cursor: pointer !important;
-  padding: 4px 8px !important;
-}
-
-.sk-drawer-header {
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  margin-bottom: 2rem !important;
-  padding-bottom: 1.2rem !important;
-  border-bottom: 1px solid rgba(201, 168, 105, 0.3) !important;
-}
-
-.sk-drawer-links {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 0 2rem 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0.8rem !important;
-}
-
-.sk-drawer-link {
-  font-family: var(--font-heading) !important;
-  font-size: 17px !important;
-  font-weight: 600 !important;
-  color: var(--navy-dark) !important;
-  text-decoration: none !important;
-  padding: 8px 0 !important;
-  display: block !important;
-  transition: color 0.2s ease, padding-left 0.2s ease !important;
-}
-
-.sk-drawer-link:hover {
-  color: var(--gold-dark) !important;
-  padding-left: 6px !important;
-}
-
-.sk-drawer-auth-section {
-  margin-top: auto !important;
-  padding-top: 1.5rem !important;
-  border-top: 1px solid rgba(201, 168, 105, 0.3) !important;
-}
-
-.sk-drawer-section-title {
-  font-family: var(--font-mono) !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  color: var(--gold-dark) !important;
-  letter-spacing: 0.1em !important;
-  margin-bottom: 1rem !important;
-  text-transform: uppercase !important;
-}
-
-.sk-drawer-btn-group {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0.6rem !important;
-}
-
-
-/* ============ WARM IVORY LIGHT THEME OVERRIDES (CONSULTANCY PALETTE) ============ */
-.role-highlight-box {
-  background: #FFFFFF !important;
-  color: var(--navy-dark) !important;
-  border-radius: 16px !important;
-  padding: 2.2rem !important;
-  border: 1px solid var(--border-gold) !important;
-  box-shadow: 0 10px 30px rgba(28, 35, 51, 0.05) !important;
-  position: relative !important;
-}
-
-.role-highlight-box span.role-tag {
-  color: var(--gold-dark) !important;
-  font-family: var(--font-mono) !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase !important;
-  display: block !important;
-  margin-bottom: 8px !important;
-}
-
-.role-highlight-box h3 {
-  font-family: var(--font-heading) !important;
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  color: var(--navy-dark) !important;
-}
-
-.philosophy-step-card {
-  background: #FFFFFF !important;
-  border: 1px solid var(--border-gold) !important;
-  border-radius: 16px !important;
-  padding: 2.2rem 1.8rem !important;
-  text-align: center !important;
-  box-shadow: 0 10px 30px rgba(28, 35, 51, 0.04) !important;
-  transition: transform 0.3s var(--ease), border-color 0.3s !important;
-}
-
-.philosophy-step-card:hover {
-  transform: translateY(-6px) !important;
-  border-color: var(--gold-dark) !important;
-}
-
-.philosophy-step-card .step-num {
-  font-family: var(--font-mono) !important;
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  color: var(--gold-dark) !important;
-  background: var(--ivory-card) !important;
-  border: 1px solid var(--border-gold) !important;
-  width: 38px !important;
-  height: 38px !important;
-  border-radius: 50% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto 1.2rem auto !important;
-}
-
-.philosophy-step-card h3 {
-  font-family: var(--font-heading) !important;
-  font-size: 20px !important;
-  color: var(--navy-dark) !important;
-  margin-bottom: 0.6rem !important;
-}
-
-.philosophy-step-card p {
-  font-size: 13.5px !important;
-  color: var(--text-muted) !important;
-  line-height: 1.55 !important;
-}
-
-.philosophy-loop-container {
-  background: #FFFFFF !important;
-  border: 1px solid var(--border-gold) !important;
-  border-radius: 18px !important;
-  padding: 2.5rem !important;
-  box-shadow: 0 10px 30px rgba(28, 35, 51, 0.04) !important;
-}
-
-.philosophy-loop-title {
-  color: var(--gold-dark) !important;
-  font-family: var(--font-mono) !important;
-  font-size: 11.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
-  text-align: center !important;
-  margin-bottom: 2rem !important;
-}
-
-.loop-step-item {
-  background: var(--ivory-card) !important;
-  border: 1px solid var(--border-gold) !important;
-  border-radius: 12px !important;
-  padding: 1.2rem 1rem !important;
-  text-align: center !important;
-  flex: 1 !important;
-}
-
-.loop-step-icon i {
-  color: var(--gold-dark) !important;
-  font-size: 20px !important;
-}
-
-.loop-step-text {
-  color: var(--navy-dark) !important;
-  font-size: 12.5px !important;
-  font-weight: 600 !important;
-  margin-top: 6px !important;
-  display: block !important;
-}
-
-.loop-arrow i {
-  color: var(--gold-dark) !important;
-}
-
-/* LIVE MARKET BAR (WARM IVORY / LUXURY GOLD MATCH) */
-.live-market-bar {
-  background: #FAF7F2 !important;
-  border-top: 1px solid rgba(201, 168, 105, 0.25) !important;
-  border-bottom: 1px solid rgba(201, 168, 105, 0.35) !important;
-  height: 48px !important;
-  display: flex !important;
-  align-items: center !important;
-}
-
-.live-market-title {
-  border-right: 1px solid rgba(201, 168, 105, 0.3) !important;
-}
-
-.live-label {
-  color: var(--gold-dark) !important;
-  font-family: var(--font-mono) !important;
-  font-weight: 700 !important;
-}
-
-.live-pulse {
-  background-color: var(--gold-dark) !important;
-  box-shadow: 0 0 8px rgba(197, 160, 89, 0.8) !important;
-}
-
-.ticker-item {
-  background: #FFFFFF !important;
-  border: 1px solid rgba(201, 168, 105, 0.35) !important;
-  color: var(--navy-dark) !important;
-  border-radius: 6px !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
-}
-
-.ticker-sym {
-  color: var(--gold-dark) !important;
-}
-
-.ticker-price {
-  color: var(--navy-dark) !important;
-}
-
-.view-market-link {
-  color: var(--gold-dark) !important;
-  font-weight: 700 !important;
-}
-
-.view-market-link:hover {
-  color: var(--navy-dark) !important;
-}
-
-/* HEADER ACTION BUTTONS (VG-BTN) */
-.vg-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  font-family: var(--font-body) !important;
-  font-size: 12.5px !important;
-  font-weight: 700 !important;
-  padding: 8px 18px !important;
-  border-radius: 8px !important;
-  cursor: pointer !important;
-  transition: all 0.3s ease !important;
-  text-decoration: none !important;
-}
-
-.vg-btn-primary {
-  background: linear-gradient(135deg, #C5A059, #9E7432) !important;
-  color: #FFFFFF !important;
-  border: 1px solid #C5A059 !important;
-  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3) !important;
-}
-
-.vg-btn-primary:hover {
-  background: linear-gradient(135deg, #D6B384, #C5A059) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 20px rgba(197, 160, 89, 0.4) !important;
-}
-
-.vg-btn-outline {
-  background: #FFFFFF !important;
-  color: var(--navy-dark) !important;
-  border: 1px solid rgba(201, 168, 105, 0.6) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.02) !important;
-}
-
-.vg-btn-outline:hover {
-  background: #FAF7F2 !important;
-  border-color: var(--gold-dark) !important;
-  color: var(--gold-dark) !important;
-  transform: translateY(-2px) !important;
-}
-
-
 /* ============================================================
-   DEEP LUXURY MIDNIGHT NAVY NAVBAR & GOLD STOCKS OVERRIDES
+   4X WEALTH — DEFINITIVE LUMINOUS WHITE & ELECTRIC BLUE DESIGN SYSTEM
    ============================================================ */
-
-/* 1. HEADER WRAPPER & NAV CONTAINER */
-.header-wrapper {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  z-index: 9990 !important;
-  background: transparent !important;
-}
-
-.nav-container {
-  position: relative !important;
-  z-index: 9999 !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  width: 100% !important;
-  padding: 0.95rem clamp(1.4rem, 2.5vw, 2.8rem) !important;
-  background: #031E36 !important;
-  border-bottom: 1px solid rgba(214, 179, 132, 0.35) !important;
-  box-shadow: 0 6px 30px rgba(2, 22, 39, 0.5) !important;
-  transition: all 0.35s ease !important;
-}
-
-.header-wrapper.scrolled .nav-container {
-  padding: 0.75rem clamp(1.4rem, 2.5vw, 2.8rem) !important;
-  background: #021627 !important;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6) !important;
-}
-
-/* LOGO IN DEEP NAVY HEADER */
-.logo-text {
-  color: #FFFFFF !important;
-  font-family: var(--font-heading) !important;
-  font-size: 22px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.04em !important;
-}
-
-.logo-text span {
-  color: #D6B384 !important;
-  font-weight: 800 !important;
-}
-
-.logo-sub {
-  color: #D6B384 !important;
-  font-family: var(--font-mono) !important;
-  font-size: 8.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.16em !important;
-}
-
-/* NAV LINKS IN DEEP NAVY HEADER */
-.sk-nav-menu {
-  position: relative !important;
-  z-index: 99999 !important;
-}
-
-.sk-nav-item {
-  position: relative !important;
-  z-index: 99999 !important;
-}
-
-.sk-nav-link {
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  color: rgba(253, 248, 242, 0.92) !important;
-  letter-spacing: 0.02em !important;
-  transition: color 0.25s ease !important;
-}
-
-.sk-nav-link:hover, .sk-nav-item:hover .sk-nav-link {
-  color: #D6B384 !important;
-}
-
-.sk-nav-link i {
-  color: #D6B384 !important;
-  font-size: 9.5px !important;
-}
-
-/* 2. FLOATING DROPDOWN MENUS (NO CLIPPING, FLOATS ON TOP OF MARKET BAR) */
-.dropdown-menu {
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
-  z-index: 999999 !important;
-  background: #052E50 !important;
-  border: 1px solid rgba(214, 179, 132, 0.4) !important;
-  border-radius: 14px !important;
-  box-shadow: 0 25px 60px rgba(2, 22, 39, 0.8) !important;
-  padding: 0.8rem 0 !important;
-  margin-top: 6px !important;
-}
-
-.dropdown-link {
-  color: #FDF8F2 !important;
-  font-size: 13.5px !important;
-  font-weight: 500 !important;
-}
-
-.dropdown-link:hover {
-  color: #D6B384 !important;
-  background: rgba(214, 179, 132, 0.15) !important;
-}
-
-.dropdown-link i {
-  color: #D6B384 !important;
-}
-
-.mega-dropdown {
-  position: absolute !important;
-  top: 100% !important;
-  left: -120px !important;
-  z-index: 999999 !important;
-  background: #052E50 !important;
-  border: 1px solid rgba(214, 179, 132, 0.4) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 30px 70px rgba(2, 22, 39, 0.85) !important;
-  margin-top: 6px !important;
-}
-
-.mega-col h4 {
-  color: #D6B384 !important;
-  border-bottom: 1px solid rgba(214, 179, 132, 0.3) !important;
-}
-
-.mega-link {
-  color: #FDF8F2 !important;
-}
-
-.mega-link span {
-  color: rgba(253, 248, 242, 0.65) !important;
-}
-
-.mega-link:hover {
-  color: #D6B384 !important;
-}
-
-.mega-link:hover span {
-  color: rgba(214, 179, 132, 0.9) !important;
-}
-
-/* 3. PROMINENT SEARCH BUTTON */
-.search-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 7px !important;
-  background: rgba(214, 179, 132, 0.14) !important;
-  border: 1px solid rgba(214, 179, 132, 0.4) !important;
-  color: #FDF8F2 !important;
-  padding: 8px 14px !important;
-  border-radius: 8px !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  cursor: pointer !important;
-  transition: all 0.25s ease !important;
-}
-
-.search-btn i {
-  color: #D6B384 !important;
-  font-size: 13.5px !important;
-}
-
-.search-btn span {
-  color: #FDF8F2 !important;
-}
-
-.search-btn:hover {
-  background: rgba(214, 179, 132, 0.25) !important;
-  border-color: #D6B384 !important;
-  transform: translateY(-1px) !important;
-}
-
-/* 4. BUTTON STYLING (LOGIN: OUTLINE / SIGN UP: GOLD GRADIENT) */
-.vg-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  font-family: var(--font-body) !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  padding: 8px 18px !important;
-  border-radius: 8px !important;
-  cursor: pointer !important;
-  transition: all 0.3s ease !important;
-  text-decoration: none !important;
-}
-
-/* Login Button: Sign Up Outline Style */
-.vg-btn-outline {
-  background: rgba(253, 248, 242, 0.08) !important;
-  color: #FDF8F2 !important;
-  border: 1px solid #D6B384 !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
-}
-
-.vg-btn-outline:hover {
-  background: #D6B384 !important;
-  color: #031E36 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 18px rgba(214, 179, 132, 0.4) !important;
-}
-
-/* Sign Up Button: Rich Gold Gradient */
-.vg-btn-primary {
-  background: linear-gradient(135deg, #D6B384, #C5A059) !important;
-  color: #031E36 !important;
-  border: 1px solid #E6C89D !important;
-  box-shadow: 0 4px 18px rgba(214, 179, 132, 0.35) !important;
-  font-weight: 800 !important;
-}
-
-.vg-btn-primary:hover {
-  background: linear-gradient(135deg, #EAD1A6, #D6B384) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(214, 179, 132, 0.5) !important;
-}
-
-.mobile-toggle {
-  color: #FDF8F2 !important;
-  background: none !important;
-  border: none !important;
-  font-size: 22px !important;
-  cursor: pointer !important;
-}
-
-/* 5. LIVE MARKET BAR & GOLD STOCK CARDS (MATCHING LOGIN BUTTON GOLD) */
-.live-market-bar {
-  position: relative !important;
-  z-index: 10 !important;
-  background: #021627 !important;
-  border-top: 1px solid rgba(214, 179, 132, 0.2) !important;
-  border-bottom: 1px solid rgba(214, 179, 132, 0.3) !important;
-  height: 48px !important;
-}
-
-.live-market-title {
-  border-right: 1px solid rgba(214, 179, 132, 0.25) !important;
-}
-
-.live-label {
-  color: #D6B384 !important;
-  font-family: var(--font-mono) !important;
-  font-weight: 700 !important;
-}
-
-.live-pulse {
-  background-color: #D6B384 !important;
-  box-shadow: 0 0 10px rgba(214, 179, 132, 0.9) !important;
-}
-
-/* STOCKS CARD COLOR -> LOGIN BUTTON GOLD COLOR */
-.stock-card {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  background: linear-gradient(135deg, #D6B384, #C5A059) !important;
-  border: 1px solid #E6C89D !important;
-  padding: 4px 14px !important;
-  border-radius: 16px !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
-  color: #031E36 !important;
-  font-size: 12.5px !important;
-  white-space: nowrap !important;
-  transition: transform 0.2s ease !important;
-}
-
-.stock-card:hover {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 14px rgba(214, 179, 132, 0.45) !important;
-}
-
-.stock-logo-container {
-  background: #031E36 !important;
-  color: #D6B384 !important;
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  border-radius: 4px !important;
-  padding: 1px 5px !important;
-  display: inline-block !important;
-}
-
-.stock-symbol {
-  font-weight: 800 !important;
-  color: #031E36 !important;
-  font-size: 12.5px !important;
-}
-
-.stock-price {
-  font-family: var(--font-mono) !important;
-  color: #031E36 !important;
-  font-weight: 800 !important;
-  font-size: 12.5px !important;
-}
-
-.stock-change {
-  font-weight: 800 !important;
-  font-size: 11px !important;
-  padding: 1px 5px !important;
-  border-radius: 4px !important;
-}
-
-.stock-card.positive .stock-change {
-  background: rgba(4, 120, 87, 0.2) !important;
-  color: #064E3B !important;
-}
-
-.stock-card.negative .stock-change {
-  background: rgba(185, 28, 28, 0.2) !important;
-  color: #7F1D1D !important;
-}
-
-.marquee-separator {
-  color: #D6B384 !important;
-}
-
-.view-market-container {
-  border-left: 1px solid rgba(214, 179, 132, 0.25) !important;
-}
-
-.view-market-link {
-  color: #D6B384 !important;
-  font-weight: 700 !important;
-}
-
-.view-market-link:hover {
-  color: #FFFFFF !important;
-}
-
-
-/* ============================================================
-   LUXURY GOLD NAVBAR THEME (MATCHING LOGIN BUTTON COLOR)
-   ============================================================ */
-
-/* 1. HEADER WRAPPER & GOLD NAV CONTAINER */
-.header-wrapper {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  z-index: 9990 !important;
-  background: transparent !important;
-}
-
-.nav-container {
-  position: relative !important;
-  z-index: 9999 !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  width: 100% !important;
-  padding: 0.95rem clamp(1.4rem, 2.5vw, 2.8rem) !important;
-  background: linear-gradient(135deg, #D6B384, #C5A059) !important;
-  border-bottom: 1px solid rgba(158, 116, 50, 0.4) !important;
-  box-shadow: 0 6px 25px rgba(158, 116, 50, 0.25) !important;
-  transition: all 0.35s ease !important;
-}
-
-.header-wrapper.scrolled .nav-container {
-  padding: 0.75rem clamp(1.4rem, 2.5vw, 2.8rem) !important;
-  background: linear-gradient(135deg, #C5A059, #B58A4A) !important;
-  box-shadow: 0 8px 30px rgba(158, 116, 50, 0.35) !important;
-}
-
-/* LOGO IN GOLD HEADER */
-.logo-text {
-  color: #031E36 !important;
-  font-family: var(--font-heading) !important;
-  font-size: 22px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.04em !important;
-}
-
-.logo-text span {
-  color: #FFFFFF !important;
-  font-weight: 800 !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
-}
-
-.logo-sub {
-  color: #031E36 !important;
-  font-family: var(--font-mono) !important;
-  font-size: 8.5px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.16em !important;
-}
-
-/* NAV LINKS IN GOLD HEADER */
-.sk-nav-menu {
-  position: relative !important;
-  z-index: 99999 !important;
-}
-
-.sk-nav-item {
-  position: relative !important;
-  z-index: 99999 !important;
-}
-
-.sk-nav-link {
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  color: #031E36 !important;
-  letter-spacing: 0.01em !important;
-  transition: all 0.25s ease !important;
-}
-
-.sk-nav-link:hover, .sk-nav-item:hover .sk-nav-link {
-  color: #FFFFFF !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
-}
-
-.sk-nav-link i {
-  color: #031E36 !important;
-  font-size: 9px !important;
-  transition: transform 0.3s !important;
-}
-
-.sk-nav-item:hover .sk-nav-link i {
-  color: #FFFFFF !important;
-  transform: rotate(180deg) !important;
-}
-
-/* 2. FLOATING DROPDOWN MENUS (ALWAYS ON TOP OF LIVE MARKET BAR) */
-.dropdown-menu {
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
-  z-index: 999999 !important;
-  background: #FFFFFF !important;
-  border: 1px solid rgba(197, 160, 89, 0.5) !important;
-  border-radius: 14px !important;
-  box-shadow: 0 25px 60px rgba(28, 35, 51, 0.18) !important;
-  padding: 0.8rem 0 !important;
-  margin-top: 8px !important;
-  min-width: 240px !important;
-}
-
-.dropdown-link {
-  color: #031E36 !important;
-  font-size: 13.5px !important;
-  font-weight: 600 !important;
-  padding: 0.75rem 1.4rem !important;
-}
-
-.dropdown-link:hover {
-  color: #9E7432 !important;
-  background: rgba(201, 168, 105, 0.12) !important;
-}
-
-.dropdown-link i {
-  color: #C5A059 !important;
-}
-
-.mega-dropdown {
-  position: absolute !important;
-  top: 100% !important;
-  left: -120px !important;
-  z-index: 999999 !important;
-  background: #FFFFFF !important;
-  border: 1px solid rgba(197, 160, 89, 0.5) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 30px 70px rgba(28, 35, 51, 0.2) !important;
-  margin-top: 8px !important;
-}
-
-.mega-col h4 {
-  color: #9E7432 !important;
-  border-bottom: 1px solid rgba(201, 168, 105, 0.25) !important;
-}
-
-.mega-link {
-  color: #031E36 !important;
-  font-weight: 700 !important;
-}
-
-.mega-link span {
-  color: #5B6270 !important;
-}
-
-.mega-link:hover {
-  color: #9E7432 !important;
-}
-
-.mega-link:hover span {
-  color: #031E36 !important;
-}
-
-/* 3. SEARCH BUTTON (PROMINENT ON GOLD NAVBAR) */
-.search-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 7px !important;
-  background: rgba(3, 30, 54, 0.1) !important;
-  border: 1px solid rgba(3, 30, 54, 0.25) !important;
-  color: #031E36 !important;
-  padding: 8px 14px !important;
-  border-radius: 8px !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  cursor: pointer !important;
-  transition: all 0.25s ease !important;
-}
-
-.search-btn i {
-  color: #031E36 !important;
-  font-size: 13px !important;
-}
-
-.search-btn span {
-  color: #031E36 !important;
-}
-
-.search-btn:hover {
-  background: #031E36 !important;
-  color: #FFFFFF !important;
-  border-color: #031E36 !important;
-  transform: translateY(-1px) !important;
-}
-
-.search-btn:hover i, .search-btn:hover span {
-  color: #FFFFFF !important;
-}
-
-/* 4. BUTTONS: LOGIN (WHITE PILL) & SIGN UP (CONTRASTING DARK NAVY) */
-.vg-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  font-family: var(--font-body) !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  padding: 8px 18px !important;
-  border-radius: 8px !important;
-  cursor: pointer !important;
-  transition: all 0.3s ease !important;
-  text-decoration: none !important;
-}
-
-/* Login Button: Sign Up Outline Style (White Pill with Gold Shadow) */
-.vg-btn-outline {
-  background: #FFFFFF !important;
-  color: #031E36 !important;
-  border: 1px solid rgba(3, 30, 54, 0.25) !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
-}
-
-.vg-btn-outline:hover {
-  background: #FAF7F2 !important;
-  color: #031E36 !important;
-  border-color: #031E36 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* Sign Up Button: Contrasting Dark Midnight Navy */
-.vg-btn-primary {
-  background: #031E36 !important;
-  color: #FFFFFF !important;
-  border: 1px solid #031E36 !important;
-  box-shadow: 0 4px 18px rgba(3, 30, 54, 0.35) !important;
-  font-weight: 800 !important;
-}
-
-.vg-btn-primary:hover {
-  background: #052E50 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(3, 30, 54, 0.45) !important;
-}
-
-.mobile-toggle {
-  color: #031E36 !important;
-  background: none !important;
-  border: none !important;
-  font-size: 22px !important;
-  cursor: pointer !important;
-}
-
-/* 5. LIVE MARKET BAR & GOLD STOCKS (EXACT LOGIN BUTTON GOLD GRADIENT) */
-.live-market-bar {
-  position: relative !important;
-  z-index: 10 !important;
-  background: #FAF7F2 !important;
-  border-top: 1px solid rgba(201, 168, 105, 0.25) !important;
-  border-bottom: 1px solid rgba(201, 168, 105, 0.35) !important;
-  height: 48px !important;
-}
-
-.live-market-title {
-  border-right: 1px solid rgba(201, 168, 105, 0.3) !important;
-}
-
-.live-label {
-  color: #9E7432 !important;
-  font-family: var(--font-mono) !important;
-  font-weight: 800 !important;
-}
-
-.live-pulse {
-  background-color: #C5A059 !important;
-  box-shadow: 0 0 10px rgba(197, 160, 89, 0.9) !important;
-}
-
-/* STOCKS CARD: GOLD LOGIN BUTTON COLOR */
-.stock-card {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  background: linear-gradient(135deg, #D6B384, #C5A059) !important;
-  border: 1px solid #E6C89D !important;
-  padding: 4px 14px !important;
-  border-radius: 16px !important;
-  box-shadow: 0 2px 10px rgba(158, 116, 50, 0.25) !important;
-  color: #031E36 !important;
-  font-size: 12.5px !important;
-  white-space: nowrap !important;
-  transition: transform 0.2s ease !important;
-}
-
-.stock-card:hover {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 14px rgba(158, 116, 50, 0.4) !important;
-}
-
-.stock-logo-container {
-  background: #031E36 !important;
-  color: #D6B384 !important;
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  border-radius: 4px !important;
-  padding: 1px 5px !important;
-  display: inline-block !important;
-}
-
-.stock-symbol {
-  font-weight: 800 !important;
-  color: #031E36 !important;
-  font-size: 12.5px !important;
-}
-
-.stock-price {
-  font-family: var(--font-mono) !important;
-  color: #031E36 !important;
-  font-weight: 800 !important;
-  font-size: 12.5px !important;
-}
-
-.stock-change {
-  font-weight: 800 !important;
-  font-size: 11px !important;
-  padding: 1px 5px !important;
-  border-radius: 4px !important;
-}
-
-.stock-card.positive .stock-change {
-  background: rgba(4, 120, 87, 0.2) !important;
-  color: #064E3B !important;
-}
-
-.stock-card.negative .stock-change {
-  background: rgba(185, 28, 28, 0.2) !important;
-  color: #7F1D1D !important;
-}
-
-.marquee-separator {
-  color: #C5A059 !important;
-}
-
-.view-market-container {
-  border-left: 1px solid rgba(201, 168, 105, 0.3) !important;
-}
-
-.view-market-link {
-  color: #9E7432 !important;
-  font-weight: 800 !important;
-}
-
-.view-market-link:hover {
-  color: #031E36 !important;
-}
-
-/* ============================================================
-   PROFESSIONAL INSTITUTIONAL TYPOGRAPHY & UNIVERSAL CENTERING
-   ============================================================ */
-
-body {
-  font-family: var(--font-body) !important;
-  letter-spacing: -0.01em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, .section-title, .fb-title {
-  font-family: var(--font-heading) !important;
-  letter-spacing: -0.02em !important;
-}
-
-.serif, .gold-highlight, .gold-text, .hero-title-sub-serif {
-  font-family: var(--font-serif) !important;
-}
-
-/* UNIVERSAL SUBTOPIC & SECTION HEADER CENTERING */
-.section-header,
-.section-header.center,
-.section-header-center,
-.section-tag,
-.section-tag-badge,
-.section-title,
-.section-desc,
-.gold-divider-wrap,
-.center {
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  justify-content: center !important;
-}
-
-/* ============ CONTINUOUS ROTATING TESTIMONIALS SLIDER ============ */
-.testimonials-marquee-wrapper {
-  width: 100% !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: center !important;
-  position: relative !important;
-  padding: 1.5rem 0 !important;
-  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent) !important;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent) !important;
-}
-
-.testimonials-track {
-  display: flex !important;
-  align-items: stretch !important;
-  gap: 2rem !important;
-  width: max-content !important;
-  animation: scrollTestimonials 55s linear infinite !important;
-  will-change: transform !important;
-}
-
-.testimonials-track:hover {
-  animation-play-state: paused !important;
-}
-
-@keyframes scrollTestimonials {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
-}
-
-.testimonial-card {
-  width: 380px !important;
-  min-width: 380px !important;
-  background: #FFFFFF !important;
-  border: 1px solid rgba(201, 168, 105, 0.35) !important;
-  border-radius: 18px !important;
-  padding: 2.2rem 2rem !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  box-shadow: 0 8px 25px rgba(28, 35, 51, 0.04) !important;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-6px) !important;
-  border-color: var(--gold-dark) !important;
-  box-shadow: 0 16px 35px rgba(197, 160, 89, 0.18) !important;
-}
-
-.testimonial-stars {
-  display: flex !important;
-  gap: 4px !important;
-  color: #F59E0B !important;
-  font-size: 13px !important;
-  margin-bottom: 1.2rem !important;
-}
-
-.test-quote {
-  font-size: 14px !important;
-  line-height: 1.7 !important;
-  color: #334155 !important;
-  font-style: italic !important;
-  margin-bottom: 1.8rem !important;
-}
-
-.test-author-row {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  border-top: 1px solid rgba(201, 168, 105, 0.25) !important;
-  padding-top: 1.2rem !important;
-}
-
-.test-avatar {
-  width: 42px !important;
-  height: 42px !important;
-  border-radius: 50% !important;
-  background: var(--ivory-card) !important;
-  border: 1px solid var(--border-gold) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: var(--gold-dark) !important;
-  font-size: 17px !important;
-}
-
-.test-author-row h4 {
-  font-family: var(--font-heading) !important;
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  color: var(--navy-dark) !important;
-  margin-bottom: 2px !important;
-}
-
-.test-author-row span {
-  font-family: var(--font-mono) !important;
-  font-size: 11px !important;
-  color: var(--gold-dark) !important;
-  font-weight: 600 !important;
-  display: block !important;
-}
-
-
-
-
-/* ============================================================
-   WARM PEACH SUBTOPICS, UNIVERSAL CENTERING & ROTATING MARQUEE
-   ============================================================ */
-
-:root {
-  --peach-gold: #C5824D;
-  --peach-subtopic: #D48B55;
-  --peach-accent: #E2A77A;
-  --peach-soft: #FDE8D7;
-}
-
-/* UNIVERSAL SUBTOPIC & SECTION HEADER CENTERING WITH PEACH COLOR */
-.section-tag,
-.section-tag-badge,
-.hero-tag,
-.calc-tag,
-.sub-topic,
-.eyebrow-tag,
-span.section-tag,
-span.subheading,
-.tag-badge {
-  color: #C5824D !important;
-  font-family: var(--font-mono) !important;
-  font-size: 11.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.15em !important;
-  text-transform: uppercase !important;
-  text-align: center !important;
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-bottom: 0.9rem !important;
-}
-
-.section-header,
-.section-header.center,
-.section-header-center,
-.section-title,
-.section-desc,
-.gold-divider-wrap,
-.center {
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  justify-content: center !important;
-}
-
-.gold-divider-line {
-  background: #C5824D !important;
-}
-
-.gold-divider-diamond {
-  background: #C5824D !important;
-}
-
-.gold-highlight, .gold-text {
-  color: #C5824D !important;
-}
-
-/* CONTINUOUS ROTATING TESTIMONIALS SLIDER */
-.testimonials-marquee-wrapper {
-  width: 100% !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: center !important;
-  position: relative !important;
-  padding: 1.5rem 0 !important;
-  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent) !important;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent) !important;
-}
-
-.testimonials-track {
-  display: flex !important;
-  align-items: stretch !important;
-  gap: 2rem !important;
-  width: max-content !important;
-  animation: scrollTestimonials 55s linear infinite !important;
-  will-change: transform !important;
-}
-
-.testimonials-track:hover {
-  animation-play-state: paused !important;
-}
-
-@keyframes scrollTestimonials {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
-}
-
-.testimonial-card {
-  width: 380px !important;
-  min-width: 380px !important;
-  background: #FFFFFF !important;
-  border: 1px solid rgba(197, 130, 77, 0.35) !important;
-  border-radius: 18px !important;
-  padding: 2.2rem 2rem !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  box-shadow: 0 8px 25px rgba(28, 35, 51, 0.04) !important;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-6px) !important;
-  border-color: #C5824D !important;
-  box-shadow: 0 16px 35px rgba(197, 130, 77, 0.22) !important;
-}
-
-/* ============================================================
-   DEFINITIVE CRISP WHITE NAVBAR LINK TYPOGRAPHY
-   ============================================================ */
-
-.nav-container {
-  max-width: 1440px !important;
-  padding: 0 1.5rem !important;
-  gap: 1rem !important;
-}
-
-.sk-nav-menu {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.8rem !important;
-}
-
-.sk-nav-link,
-a.sk-nav-link {
-  color: #FFFFFF !important;
-  font-family: var(--font-heading) !important;
-  font-size: 13.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.01em !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 5px !important;
-  padding: 6px 10px !important;
-  border-radius: 8px !important;
-  transition: all 0.2s ease !important;
-}
-
-.sk-nav-link:hover,
-a.sk-nav-link:hover,
-.sk-nav-item:hover .sk-nav-link {
-  color: #031E36 !important;
-  background: rgba(255, 255, 255, 0.35) !important;
-  text-shadow: none !important;
-}
-
-.sk-nav-link i,
-a.sk-nav-link i {
-  color: #FFFFFF !important;
-  font-size: 8.5px !important;
-  transition: transform 0.25s, color 0.25s !important;
-}
-
-.sk-nav-item:hover .sk-nav-link i {
-  color: #031E36 !important;
-  transform: rotate(180deg) !important;
-}
-
-.logo-sub {
-  color: #FFFFFF !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) !important;
-}
-
-.search-btn {
-  color: #FFFFFF !important;
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
-  background: rgba(255, 255, 255, 0.2) !important;
-}
-
-.search-btn i {
-  color: #FFFFFF !important;
-}
-
-.search-btn:hover {
-  background: #FFFFFF !important;
-  color: #031E36 !important;
-}
-
-.search-btn:hover i {
-  color: #031E36 !important;
-}
-
-
-
-/* ============================================================
-   4X WEALTH — LUMINOUS MODERN TECH-WEALTH THEME (IMAGE REFERENCE)
-   Palette:
-     - Pure Crisp White: #FFFFFF & #F8FAFC (Ice White)
-     - Radiant Electric Cyan / Sapphire Blue: #0088FF & #00A3FF & #0055FF
-     - Deep Midnight Navy: #072244 & #0B132B
-     - Charcoal Body Text: #0F172A & #334155
-     - Slate Muted: #64748B
-     - Border Slate: #E2E8F0 & rgba(0, 136, 255, 0.18)
-   ============================================================ */
-
-:root {
-  --navy-dark: #0B132B;
-  --navy-rich: #072244;
-  --navy-deep: #051930;
-  --navy-card: #FFFFFF;
-  --blue-electric: #0088FF;
-  --blue-cyan: #00A3FF;
-  --blue-deep: #0055FF;
-  --blue-light: #F0F7FF;
-  --blue-dim: rgba(0, 136, 255, 0.08);
-  --blue-border: rgba(0, 136, 255, 0.22);
-  --ivory-bg: #FFFFFF;
-  --ivory-card: #F8FAFC;
-  --card-white: #FFFFFF;
-  --text-dark: #0F172A;
-  --text-navy: #0B132B;
-  --text-muted: #64748B;
-  --text-light: #FFFFFF;
-  --text-blue: #0088FF;
-  --border-light: #E2E8F0;
-  --border-gold: #E2E8F0;
-  --shadow-luxury: 0 10px 35px rgba(15, 23, 42, 0.05);
-  --shadow-hover: 0 20px 45px rgba(0, 136, 255, 0.14);
-  --shadow-blue: 0 8px 25px rgba(0, 136, 255, 0.35);
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
-}
 
 body {
   background-color: #FFFFFF !important;
@@ -4105,7 +2729,12 @@ body {
 
 /* ============ HEADER NAVIGATION (CLEAN PURE WHITE) ============ */
 .header-wrapper {
-  background: transparent !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 99999 !important;
+  background: #FFFFFF !important;
 }
 
 .nav-container {
@@ -4119,17 +2748,24 @@ body {
   justify-content: space-between !important;
   gap: 1.2rem !important;
   position: relative !important;
-  z-index: 9999 !important;
+  z-index: 99999 !important;
+  margin: 0 auto !important;
 }
 
-.header-wrapper.scrolled .nav-container {
-  background: rgba(255, 255, 255, 0.96) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  box-shadow: 0 6px 25px rgba(15, 23, 42, 0.08) !important;
+/* LOGO: 4X (NAVY) + WEALTH (ELECTRIC CYAN/BLUE) */
+.logo-wrapper, .logo-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  flex-shrink: 0 !important;
 }
 
-/* LOGO: 4X (NAVY) + WEALTH (CYAN/BLUE) */
+.brand-logo-img {
+  height: 38px !important;
+  width: auto !important;
+}
+
 .logo-text {
   font-family: var(--font-heading) !important;
   font-size: 22px !important;
@@ -4139,6 +2775,7 @@ body {
   display: flex !important;
   align-items: baseline !important;
   gap: 2px !important;
+  line-height: 1 !important;
 }
 
 .logo-text span {
@@ -4155,6 +2792,7 @@ body {
   letter-spacing: 0.16em !important;
   text-shadow: none !important;
   display: block !important;
+  margin-top: 2px !important;
 }
 
 /* NAV LINKS (DEEP NAVY WITH ELECTRIC BLUE HOVER) */
@@ -4221,6 +2859,7 @@ a.sk-nav-link i {
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12) !important;
   padding: 0.8rem 0 !important;
   margin-top: 8px !important;
+  min-width: 240px !important;
 }
 
 .dropdown-link {
@@ -4334,7 +2973,7 @@ a.sk-nav-link i {
   transition: all 0.25s ease !important;
 }
 
-.client-portal-btn i.fa-shield-halved {
+.client-portal-btn i, .vg-btn-outline i.fa-shield-halved {
   color: #0088FF !important;
 }
 
@@ -4646,6 +3285,31 @@ span.subheading,
   animation-play-state: paused !important;
 }
 
+@keyframes scrollTestimonials {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.testimonial-card {
+  width: 380px !important;
+  min-width: 380px !important;
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 18px !important;
+  padding: 2.2rem 2rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04) !important;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: #0088FF !important;
+  box-shadow: 0 16px 35px rgba(0, 136, 255, 0.16) !important;
+}
+
 .test-avatar {
   background: #F0F7FF !important;
   border: 1px solid #D0E2FF !important;
@@ -4654,6 +3318,79 @@ span.subheading,
 
 .test-author-row span {
   color: #0077EE !important;
+}
+
+/* ============ MOBILE DRAWER COMPLETE FIX ============ */
+.sk-drawer-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(11, 19, 43, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  z-index: 9999998 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: all 0.35s ease !important;
+}
+
+.sk-drawer-overlay.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.sk-drawer {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 320px !important;
+  max-width: 85vw !important;
+  height: 100vh !important;
+  background: #FFFFFF !important;
+  border-left: 1px solid #E2E8F0 !important;
+  box-shadow: -10px 0 35px rgba(0,0,0,0.15) !important;
+  z-index: 9999999 !important;
+  transform: translateX(100%) !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 2rem 1.5rem !important;
+  overflow-y: auto !important;
+}
+
+.sk-drawer.active {
+  transform: translateX(0) !important;
+}
+
+.sk-drawer-close {
+  align-self: flex-end !important;
+  background: #F1F5F9 !important;
+  border: none !important;
+  font-size: 20px !important;
+  color: #0F172A !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.sk-drawer-link {
+  font-family: var(--font-heading) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #0F172A !important;
+  text-decoration: none !important;
+  display: block !important;
+  padding: 0.8rem 0 !important;
+  border-bottom: 1px solid #F1F5F9 !important;
+}
+
+.sk-drawer-link:hover {
+  color: #0088FF !important;
 }
 
 /* ============ FOOTER THEME ============ */
