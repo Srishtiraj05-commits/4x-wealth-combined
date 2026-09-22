@@ -3425,12 +3425,11 @@ body {
 }
 
 .logo-sub {
-  color: #FFCBA4 !important;
+  color: #031E36 !important;
   font-family: var(--font-mono) !important;
   font-size: 8.5px !important;
   font-weight: 800 !important;
   letter-spacing: 0.16em !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* NAV LINKS IN GOLD HEADER */
@@ -3445,22 +3444,21 @@ body {
 }
 
 .sk-nav-link {
-  font-size: 14.5px !important;
+  font-size: 14px !important;
   font-weight: 700 !important;
-  color: #FFCBA4 !important; /* Elegant Peach */
+  color: #031E36 !important;
   letter-spacing: 0.01em !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45) !important;
   transition: all 0.25s ease !important;
 }
 
 .sk-nav-link:hover, .sk-nav-item:hover .sk-nav-link {
   color: #FFFFFF !important;
-  text-shadow: 0 0 10px rgba(255, 203, 164, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
 }
 
 .sk-nav-link i {
-  color: #FFDAB9 !important; /* Soft Peach */
-  font-size: 9.5px !important;
+  color: #031E36 !important;
+  font-size: 9px !important;
   transition: transform 0.3s !important;
 }
 
@@ -3534,36 +3532,35 @@ body {
   color: #031E36 !important;
 }
 
-/* 3. SEARCH BUTTON (PEACH ACCENT ON NAVBAR) */
+/* 3. SEARCH BUTTON (PROMINENT ON GOLD NAVBAR) */
 .search-btn {
   display: inline-flex !important;
   align-items: center !important;
   gap: 7px !important;
-  background: rgba(255, 203, 164, 0.15) !important;
-  border: 1px solid rgba(255, 203, 164, 0.45) !important;
-  color: #FFCBA4 !important;
+  background: rgba(3, 30, 54, 0.1) !important;
+  border: 1px solid rgba(3, 30, 54, 0.25) !important;
+  color: #031E36 !important;
   padding: 8px 14px !important;
   border-radius: 8px !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   cursor: pointer !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) !important;
   transition: all 0.25s ease !important;
 }
 
 .search-btn i {
-  color: #FFCBA4 !important;
+  color: #031E36 !important;
   font-size: 13px !important;
 }
 
 .search-btn span {
-  color: #FFCBA4 !important;
+  color: #031E36 !important;
 }
 
 .search-btn:hover {
-  background: rgba(255, 203, 164, 0.3) !important;
+  background: #031E36 !important;
   color: #FFFFFF !important;
-  border-color: #FFFFFF !important;
+  border-color: #031E36 !important;
   transform: translateY(-1px) !important;
 }
 
@@ -3869,6 +3866,7 @@ h1, h2, h3, h4, .section-title, .fb-title {
 
 
 
+
 /* ============================================================
    WARM PEACH SUBTOPICS, UNIVERSAL CENTERING & ROTATING MARQUEE
    ============================================================ */
@@ -3979,44 +3977,78 @@ span.subheading,
 }
 
 /* ============================================================
-   DEFINITIVE PEACH NAVBAR & ACCENTS OVERRIDES
+   DEFINITIVE CRISP WHITE NAVBAR LINK TYPOGRAPHY
    ============================================================ */
-.nav-container .sk-nav-link,
-.sk-nav-menu .sk-nav-link,
+
+.nav-container {
+  max-width: 1440px !important;
+  padding: 0 1.5rem !important;
+  gap: 1rem !important;
+}
+
+.sk-nav-menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.8rem !important;
+}
+
 .sk-nav-link,
 a.sk-nav-link {
-  color: #FFCBA4 !important; /* Elegant Warm Peach */
+  color: #FFFFFF !important;
+  font-family: var(--font-heading) !important;
+  font-size: 13.5px !important;
   font-weight: 700 !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45) !important;
+  letter-spacing: 0.01em !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 6px 10px !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
 }
 
-.nav-container .sk-nav-link i,
-.sk-nav-menu .sk-nav-link i,
-.sk-nav-link i {
-  color: #FFDAB9 !important; /* Soft Peach */
+.sk-nav-link:hover,
+a.sk-nav-link:hover,
+.sk-nav-item:hover .sk-nav-link {
+  color: #031E36 !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+  text-shadow: none !important;
 }
 
-.nav-container .sk-nav-link:hover,
-.sk-nav-menu .sk-nav-link:hover,
-.sk-nav-item:hover > .sk-nav-link,
-.sk-nav-item.active > .sk-nav-link {
+.sk-nav-link i,
+a.sk-nav-link i {
   color: #FFFFFF !important;
-  text-shadow: 0 0 10px rgba(255, 203, 164, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+  font-size: 8.5px !important;
+  transition: transform 0.25s, color 0.25s !important;
 }
 
-.sk-nav-item:hover > .sk-nav-link i {
+.sk-nav-item:hover .sk-nav-link i {
+  color: #031E36 !important;
+  transform: rotate(180deg) !important;
+}
+
+.logo-sub {
   color: #FFFFFF !important;
-}
-
-.search-btn,
-.search-btn span,
-.search-btn i {
-  color: #FFCBA4 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) !important;
 }
 
 .search-btn {
-  background: rgba(255, 203, 164, 0.15) !important;
-  border: 1px solid rgba(255, 203, 164, 0.45) !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.search-btn i {
+  color: #FFFFFF !important;
+}
+
+.search-btn:hover {
+  background: #FFFFFF !important;
+  color: #031E36 !important;
+}
+
+.search-btn:hover i {
+  color: #031E36 !important;
 }
 
