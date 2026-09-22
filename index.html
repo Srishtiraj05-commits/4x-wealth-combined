@@ -29,6 +29,7 @@
   <div class="cursor-dot" id="cursorDot"></div>
 
   <!-- Header Navigation -->
+    <!-- Header Navigation -->
   <header class="header-wrapper" id="mainHeader">
     <div class="nav-container">
       
@@ -45,14 +46,14 @@
         
         <!-- Home Dropdown -->
         <li class="sk-nav-item dropdown-trigger">
-          <a href="#hero-section" class="sk-nav-link clickable">Home <i class="fa-solid fa-chevron-down"></i></a>
+          <a href="index.html" class="sk-nav-link clickable">Home <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="#who-we-are" class="dropdown-link clickable"><i class="fa-solid fa-compass"></i> Who We Are</a></li>
-            <li><a href="#philosophy-section" class="dropdown-link clickable"><i class="fa-solid fa-scale-balanced"></i> Investment Philosophy</a></li>
-            <li><a href="#approach-section" class="dropdown-link clickable"><i class="fa-solid fa-route"></i> The 4X Approach</a></li>
-            <li><a href="#universe-section" class="dropdown-link clickable"><i class="fa-solid fa-atom"></i> Investment Universe</a></li>
-            <li><a href="#fundzbazar-section" class="dropdown-link clickable"><i class="fa-solid fa-mobile-screen"></i> Digital Journey</a></li>
-            <li><a href="#consultation-section" class="dropdown-link clickable"><i class="fa-solid fa-phone"></i> Contact Advisors</a></li>
+            <li><a href="index.html#who-we-are" class="dropdown-link clickable"><i class="fa-solid fa-compass"></i> Who We Are</a></li>
+            <li><a href="index.html#philosophy-section" class="dropdown-link clickable"><i class="fa-solid fa-scale-balanced"></i> Investment Philosophy</a></li>
+            <li><a href="index.html#approach-section" class="dropdown-link clickable"><i class="fa-solid fa-route"></i> The 4X Approach</a></li>
+            <li><a href="index.html#universe-section" class="dropdown-link clickable"><i class="fa-solid fa-atom"></i> Investment Universe</a></li>
+            <li><a href="index.html#fundzbazar-section" class="dropdown-link clickable"><i class="fa-solid fa-mobile-screen"></i> Digital Journey</a></li>
+            <li><a href="index.html#consultation-section" class="dropdown-link clickable"><i class="fa-solid fa-phone"></i> Contact Advisors</a></li>
           </ul>
         </li>
 
@@ -106,9 +107,9 @@
 
         <!-- Research & AI Hedge Lab -->
         <li class="sk-nav-item dropdown-trigger">
-          <a class="sk-nav-link clickable" href="#research-section">Research <i class="fa-solid fa-chevron-down"></i></a>
+          <a class="sk-nav-link clickable" href="hedge-lab.html">Research <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-link clickable" href="#research-section"><i class="fa-solid fa-chart-line"></i> Market Conviction Signals</a></li>
+            <li><a class="dropdown-link clickable" href="index.html#research-section"><i class="fa-solid fa-chart-line"></i> Market Conviction Signals</a></li>
             <li><a class="dropdown-link clickable" href="hedge-lab.html"><i class="fa-solid fa-brain"></i> AI Hedge Lab & Quant Core</a></li>
             <li><a class="dropdown-link clickable" href="sif-tracker.html"><i class="fa-solid fa-filter"></i> SIF Screener & Tracker</a></li>
           </ul>
@@ -197,13 +198,41 @@
         </div>
       </div>
       <div class="view-market-container">
-        <a href="#research-section" class="view-market-link">
+        <a href="index.html#research-section" class="view-market-link">
           <span>View Pulse</span>
           <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="sk-drawer-overlay" id="mobileOverlay"></div>
+  <div class="sk-drawer" id="mobileDrawer">
+    <button class="sk-drawer-close clickable" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+    <div class="sk-drawer-header">
+      <img src="logo.png" alt="4X Wealth Logo" class="brand-logo-img">
+      <div class="logo-text">4X<span>WEALTH</span></div>
+    </div>
+    <ul class="sk-drawer-links">
+      <li><a href="index.html" class="sk-drawer-link clickable">Home</a></li>
+      <li><a href="solutions.html" class="sk-drawer-link clickable">Solutions</a></li>
+      <li><a href="hedge-lab.html" class="sk-drawer-link clickable">AI Hedge Lab</a></li>
+      <li><a href="sif-tracker.html" class="sk-drawer-link clickable">SIF Tracker</a></li>
+      <li><a href="calculators.html" class="sk-drawer-link clickable">Calculators</a></li>
+      <li><a href="blogs.html" class="sk-drawer-link clickable">Insights</a></li>
+      <li><a href="about.html" class="sk-drawer-link clickable">About Us</a></li>
+    </ul>
+
+    <div class="sk-drawer-auth-section">
+      <div class="sk-drawer-section-title">CLIENT ACCESS</div>
+      <div class="sk-drawer-btn-group">
+        <button class="vg-btn vg-btn-primary clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Login</button>
+        <button class="vg-btn vg-btn-primary clickable login-trigger" data-login-mode="corporate"><i class="fa-solid fa-building"></i> Corporate Login</button>
+        <button class="vg-btn vg-btn-primary clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner Login</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Main Scroll Container -->
   <main id="main-content">
@@ -1014,82 +1043,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         10. THE PEOPLE BEHIND 4X WEALTH (SLIDES 18 & 19 PREVIEW)
-         ============================================================ -->
-    <section id="team-section" class="section-ivory">
-      <div class="container-luxury">
-        
-        <div class="section-header center">
-          <span class="section-tag">10 / OUR LEADERSHIP</span>
-          <h2 class="section-title">The People Behind <span class="gold-highlight">4X Wealth.</span></h2>
-          <div class="gold-divider-wrap">
-            <span class="gold-divider-line"></span>
-            <span class="gold-divider-diamond"></span>
-            <span class="gold-divider-line"></span>
-          </div>
-          <p class="section-desc">Experience, professional credentials, and a client-first fiduciary approach.</p>
-        </div>
-
-        <!-- 5 Leadership Members -->
-        <div class="team-leadership-grid">
-          
-          <div class="team-card">
-            <div>
-              <div class="team-avatar-wrap"><i class="fa-solid fa-user-tie"></i></div>
-              <h3>Bhavesh Sethiya</h3>
-              <div class="team-role">Founder & CEO</div>
-              <p class="team-bio">Steering business strategy, wealth solutions and client relationships, backed by ongoing CA Final & CFA Level II pursuits.</p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <div>
-              <div class="team-avatar-wrap"><i class="fa-solid fa-user-gear"></i></div>
-              <h3>Aniket Pawar</h3>
-              <div class="team-role">Co-Founder & COO</div>
-              <p class="team-bio">Overseeing operations, execution and client delivery, backed by a B.Tech background and ongoing CFP qualification pursuits.</p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <div>
-              <div class="team-avatar-wrap"><i class="fa-solid fa-scale-balanced"></i></div>
-              <h3>CA Jitendrachand Thakur</h3>
-              <div class="team-role">Taxation & Compliance</div>
-              <p class="team-bio">Bringing professional expertise in corporate taxation, regulatory frameworks, and wealth decisions as a Chartered Accountant.</p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <div>
-              <div class="team-avatar-wrap"><i class="fa-solid fa-handshake"></i></div>
-              <h3>Ravindra Kumar Sethiya</h3>
-              <div class="team-role">Strategic Business Advisor</div>
-              <p class="team-bio">Bringing strategic business perspective to long-term firm growth, fiduciary key decisions, and value creation.</p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <div>
-              <div class="team-avatar-wrap"><i class="fa-solid fa-code"></i></div>
-              <h3>Ayush Gourav</h3>
-              <div class="team-role">Co-Founder & CTO</div>
-              <p class="team-bio">Advancing technology initiatives, quantitative architecture, and digital capabilities, with an academic background from IIT Madras.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="about.html#team" class="btn-primary clickable">
-            <span>View Full Execution Team & Bios</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-
-      </div>
-    </section>
 
     <!-- ============================================================
          11. INSTITUTIONAL PARTNERS (SLIDE 20)

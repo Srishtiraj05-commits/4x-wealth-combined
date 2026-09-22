@@ -15,29 +15,210 @@
 <body>
 
   <!-- Navigation -->
+    <!-- Header Navigation -->
   <header class="header-wrapper" id="mainHeader">
     <div class="nav-container">
-      <a href="index.html" class="logo-link">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="logo-link clickable" id="logoContainer">
         <div class="logo-wrapper">
           <img src="logo.png" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text">4X<span>WEALTH</span></div>
         </div>
       </a>
-      <ul class="sk-nav-menu">
-        <li class="sk-nav-item"><a href="index.html" class="sk-nav-link">Home</a></li>
-        <li class="sk-nav-item active"><a href="solutions.html" class="sk-nav-link">Solutions</a></li>
-        <li class="sk-nav-item"><a href="hedge-lab.html" class="sk-nav-link">Research & AI</a></li>
-        <li class="sk-nav-item"><a href="calculators.html" class="sk-nav-link">Calculators</a></li>
-        <li class="sk-nav-item"><a href="blogs.html" class="sk-nav-link">Insights</a></li>
-        <li class="sk-nav-item"><a href="about.html" class="sk-nav-link">About Us</a></li>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="sk-nav-menu" id="desktopMenu">
+        
+        <!-- Home Dropdown -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="index.html" class="sk-nav-link clickable">Home <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#who-we-are" class="dropdown-link clickable"><i class="fa-solid fa-compass"></i> Who We Are</a></li>
+            <li><a href="index.html#philosophy-section" class="dropdown-link clickable"><i class="fa-solid fa-scale-balanced"></i> Investment Philosophy</a></li>
+            <li><a href="index.html#approach-section" class="dropdown-link clickable"><i class="fa-solid fa-route"></i> The 4X Approach</a></li>
+            <li><a href="index.html#universe-section" class="dropdown-link clickable"><i class="fa-solid fa-atom"></i> Investment Universe</a></li>
+            <li><a href="index.html#fundzbazar-section" class="dropdown-link clickable"><i class="fa-solid fa-mobile-screen"></i> Digital Journey</a></li>
+            <li><a href="index.html#consultation-section" class="dropdown-link clickable"><i class="fa-solid fa-phone"></i> Contact Advisors</a></li>
+          </ul>
+        </li>
+
+        <!-- Solutions Mega Menu -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a class="sk-nav-link clickable" href="solutions.html">Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-dropdown">
+            <div class="mega-menu-content">
+              
+              <!-- Col 1: Invest -->
+              <div class="mega-col">
+                <h4>01 / Invest</h4>
+                <ul class="mega-links">
+                  <li><a class="mega-link clickable" href="mutual-funds.html">Mutual Funds <span>Systematic SIP & Diversified Funds</span></a></li>
+                  <li><a class="mega-link clickable" href="stocks.html">Direct Equity <span>Exchange-listed equities</span></a></li>
+                  <li><a class="mega-link clickable" href="pms.html">PMS Desk <span>Discretionary & Non-Discretionary (₹50L+)</span></a></li>
+                  <li><a class="mega-link clickable" href="aif.html">AIF Funds <span>Categories I, II & III (₹1 Cr+)</span></a></li>
+                  <li><a class="mega-link clickable" href="sif-tracker.html">SIF Tracker <span>Specialized Investment Funds (₹10L+)</span></a></li>
+                  <li><a class="mega-link clickable" href="unlisted-shares.html">Unlisted Shares <span>Pre-IPO & Private Market Assets</span></a></li>
+                </ul>
+              </div>
+
+              <!-- Col 2: Preserve & Protect -->
+              <div class="mega-col">
+                <h4>02 / Preserve & Protect</h4>
+                <ul class="mega-links">
+                  <li><a class="mega-link clickable" href="bonds.html">Government Bonds <span>Sovereign backed dated securities</span></a></li>
+                  <li><a class="mega-link clickable" href="bonds.html#corporate">Corporate Fixed Income <span>Institutional yield structures</span></a></li>
+                  <li><a class="mega-link clickable" href="insurance.html">Life & Asset Insurance <span>Risk protection shields</span></a></li>
+                  <li><a class="mega-link clickable" href="retirement-planning.html#nps">National Pension System <span>Tier I & Tier II schemes</span></a></li>
+                  <li><a class="mega-link clickable" href="tax-planning.html#ppf">PPF & ULIP <span>Tax-advantaged compounding</span></a></li>
+                </ul>
+              </div>
+
+              <!-- Col 3: Plan & Expand -->
+              <div class="mega-col">
+                <h4>03 / Plan & Expand</h4>
+                <ul class="mega-links">
+                  <li><a class="mega-link clickable" href="retirement-planning.html">Retirement Planning <span>Inflation-adjusted corpus creation</span></a></li>
+                  <li><a class="mega-link clickable" href="goal-planning.html">Goal-Based Wealth <span>Targeted family milestones</span></a></li>
+                  <li><a class="mega-link clickable" href="tax-planning.html">Tax Optimization <span>ELSS & compliance wrappers</span></a></li>
+                  <li><a class="mega-link clickable" href="corporate-wealth.html">Corporate Treasury <span>Enterprise cash flow optimization</span></a></li>
+                  <li><a class="mega-link clickable" href="gift-city.html">GIFT City IFSC <span>Cross-border capital & global mandates</span></a></li>
+                  <li><a class="mega-link clickable" href="nri-services.html">NRI Wealth Desk <span>FEMA & foreign currency solutions</span></a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <!-- Research & AI Hedge Lab -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a class="sk-nav-link clickable" href="hedge-lab.html">Research <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-link clickable" href="index.html#research-section"><i class="fa-solid fa-chart-line"></i> Market Conviction Signals</a></li>
+            <li><a class="dropdown-link clickable" href="hedge-lab.html"><i class="fa-solid fa-brain"></i> AI Hedge Lab & Quant Core</a></li>
+            <li><a class="dropdown-link clickable" href="sif-tracker.html"><i class="fa-solid fa-filter"></i> SIF Screener & Tracker</a></li>
+          </ul>
+        </li>
+
+        <!-- Calculators -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a class="sk-nav-link clickable" href="calculators.html">Calculators <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-link clickable" href="calculators.html#card-sip"><i class="fa-solid fa-seedling"></i> SIP Compounding Engine</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#card-lumpsum"><i class="fa-solid fa-piggy-bank"></i> Lumpsum Growth Planner</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#card-swp"><i class="fa-solid fa-hand-holding-dollar"></i> SWP Cash Flow Engine</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#card-emi"><i class="fa-solid fa-house-laptop"></i> EMI & Loan Amortization</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#card-retirement"><i class="fa-solid fa-umbrella"></i> Retirement Corpus Planner</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#card-fire"><i class="fa-solid fa-fire-flame-curved"></i> FIRE Freedom Calculator</a></li>
+          </ul>
+        </li>
+
+        <!-- Resources / Blogs -->
+        <li class="sk-nav-item">
+          <a class="sk-nav-link clickable" href="blogs.html">Insights</a>
+        </li>
+
+        <!-- About Us -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a class="sk-nav-link clickable" href="about.html">About Us <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-link clickable" href="about.html#who-we-are"><i class="fa-solid fa-building"></i> Company Overview</a></li>
+            <li><a class="dropdown-link clickable" href="about.html#leadership"><i class="fa-solid fa-users-viewfinder"></i> Leadership & Team</a></li>
+            <li><a class="dropdown-link clickable" href="about.html#principles"><i class="fa-solid fa-award"></i> 4 Working Principles</a></li>
+            <li><a class="dropdown-link clickable" href="about.html#partners"><i class="fa-solid fa-handshake"></i> Institutional Partners</a></li>
+          </ul>
+        </li>
+
       </ul>
+
+      <!-- Header Action Items -->
       <div class="nav-actions">
-        <button class="search-btn clickable" id="searchTrigger" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="vg-btn vg-btn-outline clickable login-trigger" data-login-mode="retail"><span>Login</span></button>
-        <a href="index.html#consultation-section" class="vg-btn vg-btn-primary clickable"><span>Inquire AIF Mandate</span></a>
+        
+        <!-- Search Trigger -->
+        <button class="search-btn clickable" id="searchTrigger" aria-label="Search site">
+          <i class="fa-solid fa-magnifying-glass"></i> <span>Search</span>
+        </button>
+
+        <!-- Login Dropdown -->
+        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
+          <button class="vg-btn vg-btn-primary clickable">
+            <span>Login</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
+          </button>
+          <ul class="dropdown-menu auth-dropdown-menu">
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Investor</a></li>
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="corporate"><i class="fa-solid fa-building"></i> Corporate Treasury</a></li>
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner / ARN</a></li>
+          </ul>
+        </div>
+
+        <!-- Sign Up Dropdown -->
+        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
+          <button class="vg-btn vg-btn-outline clickable">
+            <span>Sign Up</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
+          </button>
+          <ul class="dropdown-menu auth-dropdown-menu">
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Retail Account</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Account</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="partner"><i class="fa-solid fa-handshake-angle"></i> Channel Partner</a></li>
+          </ul>
+        </div>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-toggle clickable" id="mobileMenuTrigger" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Live Market Ticker -->
+    <div class="live-market-bar">
+      <div class="live-market-title">
+        <span class="live-pulse"></span>
+        <span class="live-label">LIVE MARKET</span>
+      </div>
+      <div class="marquee-wrapper">
+        <div class="marquee-track" id="marketMarqueeTrack">
+          <!-- Dynamically populated via script.js -->
+        </div>
+      </div>
+      <div class="view-market-container">
+        <a href="index.html#research-section" class="view-market-link">
+          <span>View Pulse</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="sk-drawer-overlay" id="mobileOverlay"></div>
+  <div class="sk-drawer" id="mobileDrawer">
+    <button class="sk-drawer-close clickable" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+    <div class="sk-drawer-header">
+      <img src="logo.png" alt="4X Wealth Logo" class="brand-logo-img">
+      <div class="logo-text">4X<span>WEALTH</span></div>
+    </div>
+    <ul class="sk-drawer-links">
+      <li><a href="index.html" class="sk-drawer-link clickable">Home</a></li>
+      <li><a href="solutions.html" class="sk-drawer-link clickable">Solutions</a></li>
+      <li><a href="hedge-lab.html" class="sk-drawer-link clickable">AI Hedge Lab</a></li>
+      <li><a href="sif-tracker.html" class="sk-drawer-link clickable">SIF Tracker</a></li>
+      <li><a href="calculators.html" class="sk-drawer-link clickable">Calculators</a></li>
+      <li><a href="blogs.html" class="sk-drawer-link clickable">Insights</a></li>
+      <li><a href="about.html" class="sk-drawer-link clickable">About Us</a></li>
+    </ul>
+
+    <div class="sk-drawer-auth-section">
+      <div class="sk-drawer-section-title">CLIENT ACCESS</div>
+      <div class="sk-drawer-btn-group">
+        <button class="vg-btn vg-btn-primary clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Login</button>
+        <button class="vg-btn vg-btn-primary clickable login-trigger" data-login-mode="corporate"><i class="fa-solid fa-building"></i> Corporate Login</button>
+        <button class="vg-btn vg-btn-primary clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner Login</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="section-dark" style="padding-top: 180px; padding-bottom: 90px; text-align: center;">
@@ -140,5 +321,115 @@
   </footer>
 
   <script src="script.js?v=2.0"></script>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon-inside"></i>
+        <input type="text" class="search-input" placeholder="Search mutual funds, PMS, AIF, calculators, bonds, blogs..." id="searchInput" autocomplete="off">
+        <button class="search-close-btn clickable" id="searchModalClose" aria-label="Close search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="search-quick-tags">
+        <span class="search-quick-label">Quick:</span>
+        <button class="search-tag-chip" data-tag="SIP">SIP Calculator</button>
+        <button class="search-tag-chip" data-tag="PMS">PMS Desk</button>
+        <button class="search-tag-chip" data-tag="SIF">SIF Tracker</button>
+        <button class="search-tag-chip" data-tag="AIF">AIF Funds</button>
+        <button class="search-tag-chip" data-tag="Bonds">Bonds</button>
+        <button class="search-tag-chip" data-tag="Tax">Tax Planning</button>
+      </div>
+
+      <div class="search-results-list" id="searchResultsList">
+        <!-- Dynamically rendered via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 3-Tier Account Access & Sign Up Modal -->
+  <div class="login-modal" id="loginModal">
+    <div class="login-card">
+      <button class="login-close clickable" id="loginCloseBtn" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div style="text-align: center; margin-bottom: 1.2rem;">
+        <span class="section-tag-badge" id="modalTypeHeader" style="margin-bottom: 6px;">RETAIL CLIENT PORTAL</span>
+        <h3 style="font-family: var(--font-heading); font-size: 22px; color: #FFF;">4X Wealth Client Gateway</h3>
+      </div>
+
+      <!-- Account Role Tabs -->
+      <div class="login-tabs">
+        <button type="button" class="login-tab-btn active" id="tabRetailBtn">Retail</button>
+        <button type="button" class="login-tab-btn" id="tabCorporateBtn">Corporate</button>
+        <button type="button" class="login-tab-btn" id="tabPartnerBtn">Partner / ARN</button>
+      </div>
+
+      <!-- Retail Form Container -->
+      <div id="retailFormContainer">
+        <form onsubmit="event.preventDefault(); alert('Authentication Successful: Redirecting to 4X Wealth Retail Portfolio Dashboard...'); document.getElementById('loginModal').classList.remove('open');">
+          <div class="form-field-group">
+            <label>Registered Mobile / PAN / Email</label>
+            <input type="text" required placeholder="e.g. 9820000000 or ABCDE1234F">
+          </div>
+          <div class="form-field-group">
+            <label>Password / Security PIN</label>
+            <input type="password" required placeholder="Enter password or 6-digit PIN">
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; font-size: 12px;">
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: rgba(253,248,242,0.7);">
+              <input type="checkbox" checked style="width: auto;"> Remember device
+            </label>
+            <a href="#" class="clickable" style="color: var(--gold-primary);">Forgot PIN?</a>
+          </div>
+          <button type="submit" class="btn-primary clickable" style="width: 100%; justify-content: center; padding: 12px;">
+            <span>Secure Portal Access</span> <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Corporate Form Container -->
+      <div id="corporateFormContainer" style="display: none;">
+        <form onsubmit="event.preventDefault(); alert('Corporate Gateway Access: Redirecting to Treasury Desk...'); document.getElementById('loginModal').classList.remove('open');">
+          <div class="form-field-group">
+            <label>Corporate Entity PAN / CIN</label>
+            <input type="text" required placeholder="e.g. L12345MH2020PLC000000">
+          </div>
+          <div class="form-field-group">
+            <label>Authorized Signatory Email</label>
+            <input type="email" required placeholder="treasury@corporate.com">
+          </div>
+          <div class="form-field-group">
+            <label>Enterprise Security Key</label>
+            <input type="password" required placeholder="Enter enterprise key">
+          </div>
+          <button type="submit" class="btn-primary clickable" style="width: 100%; justify-content: center; padding: 12px;">
+            <span>Authorize Treasury Session</span> <i class="fa-solid fa-lock"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Channel Partner Form Container -->
+      <div id="partnerFormContainer" style="display: none;">
+        <form onsubmit="event.preventDefault(); alert('Partner Desk Authorized: Accessing Channel Desk...'); document.getElementById('loginModal').classList.remove('open');">
+          <div class="form-field-group">
+            <label>AMFI ARN Number</label>
+            <input type="text" required placeholder="e.g. ARN-268488">
+          </div>
+          <div class="form-field-group">
+            <label>Partner Registered Email</label>
+            <input type="email" required placeholder="partner@domain.com">
+          </div>
+          <div class="form-field-group">
+            <label>Partner Access PIN</label>
+            <input type="password" required placeholder="Enter 6-digit PIN">
+          </div>
+          <button type="submit" class="btn-primary clickable" style="width: 100%; justify-content: center; padding: 12px;">
+            <span>Enter Partner Terminal</span> <i class="fa-solid fa-handshake"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
