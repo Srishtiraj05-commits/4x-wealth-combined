@@ -41,11 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     if (triggerLink) {
       triggerLink.addEventListener('click', (e) => {
-        const href = triggerLink.getAttribute('href');
-        if (href && href.startsWith('#')) {
-          e.preventDefault();
-          const targetEl = document.querySelector(href);
-          if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+        e.preventDefault();
+        e.stopPropagation();
+        const isActive = trigger.classList.contains('active');
+        dropdownTriggers.forEach(t => t.classList.remove('active'));
+        if (!isActive) {
+          trigger.classList.add('active');
         }
       });
     }
@@ -102,10 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleScrollNavbar = () => {
     const st = Math.max(window.pageYOffset || 0, window.scrollY || 0, document.documentElement.scrollTop || 0, document.body.scrollTop || 0);
     
-    if (st > 40) {
-      if (siteHeader) siteHeader.classList.add('scrolled');
+    if (st > 20) {
+      if (siteHeader) siteHeader.classList.add('nav-hidden');
     } else {
-      if (siteHeader) siteHeader.classList.remove('scrolled');
+      if (siteHeader) siteHeader.classList.remove('nav-hidden');
     }
   };
 
@@ -289,26 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  
-  // ==========================================
-  // URL HASH TAB ACTIVATION HANDLER
-  // ==========================================
-  const handleUrlHash = () => {
-    let hash = window.location.hash.toLowerCase().replace('#card-', '').replace('#pane-', '').replace('#sec-', '').replace('#', '');
-    if (hash) {
-      const targetBtn = document.querySelector(`.calc-tab-btn[data-tab="${hash}"]`);
-      if (targetBtn) {
-        targetBtn.click();
-        const workspaceCard = document.querySelector('.calc-workspace-card') || targetBtn;
-        if (workspaceCard) {
-          workspaceCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    }
-  };
-  setTimeout(handleUrlHash, 150);
-  window.addEventListener('hashchange', handleUrlHash);
-
   // 4. TAB CONTROLS PANEL SWITCHER
   // ==========================================
   const tabButtons = document.querySelectorAll('.calc-tab-btn');
@@ -340,6 +321,39 @@ document.addEventListener('DOMContentLoaded', () => {
       style: 'currency',
       currency: 'INR'
     }).format(val).replace('.00', '');
+  };
+
+  // Safe input readers that fall back to the element's default value
+  const readInputNum = (el) => {
+    if (!el) return 0;
+    const val = parseFloat(el.value);
+    if (!isNaN(val)) return val;
+    const def = parseFloat(el.getAttribute('value'));
+    return !isNaN(def) ? def : 0;
+  };
+
+  const readInputInt = (el) => {
+    if (!el) return 0;
+    const val = parseInt(el.value, 10);
+    if (!isNaN(val)) return val;
+    const def = parseInt(el.getAttribute('value'), 10);
+    return !isNaN(def) ? def : 0;
+  };
+
+  const clampNumberToRange = (rangeEl, numEl) => {
+    if (!rangeEl || !numEl) return;
+    const min = parseFloat(rangeEl.min) || 0;
+    const max = rangeEl.max !== '' ? parseFloat(rangeEl.max) : Infinity;
+    const step = parseFloat(rangeEl.step) || 1;
+    let v = parseFloat(numEl.value);
+    if (isNaN(v)) v = readInputNum(rangeEl);
+    v = Math.max(min, Math.min(max, v));
+    if (step > 0) {
+      v = Math.round((v - min) / step) * step + min;
+      v = parseFloat(v.toFixed(10));
+    }
+    rangeEl.value = v;
+    numEl.value = v;
   };
 
   const triggerCalculation = (type) => {
@@ -409,10 +423,6 @@ document.addEventListener('DOMContentLoaded', () => {
       numEl.value = rangeEl.value;
       calculateSIP();
     });
-    rangeEl.addEventListener('change', () => {
-      numEl.value = rangeEl.value;
-      calculateSIP();
-    });
     numEl.addEventListener('input', () => {
       if (numEl.value !== '') {
         rangeEl.value = numEl.value;
@@ -420,10 +430,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     numEl.addEventListener('change', () => {
-      if (numEl.value !== '') {
-        rangeEl.value = numEl.value;
-        calculateSIP();
-      }
+      clampNumberToRange(rangeEl, numEl);
+      calculateSIP();
     });
   };
 
@@ -503,10 +511,6 @@ document.addEventListener('DOMContentLoaded', () => {
       numEl.value = rangeEl.value;
       calcFn();
     });
-    rangeEl.addEventListener('change', () => {
-      numEl.value = rangeEl.value;
-      calcFn();
-    });
     numEl.addEventListener('input', () => {
       if (numEl.value !== '') {
         rangeEl.value = numEl.value;
@@ -514,10 +518,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     numEl.addEventListener('change', () => {
-      if (numEl.value !== '') {
-        rangeEl.value = numEl.value;
-        calcFn();
-      }
+      clampNumberToRange(rangeEl, numEl);
+      calcFn();
     });
   };
 
@@ -789,12 +791,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const calculateSIP = () => {
     if (!sipAmtInput) return;
-    const P = Math.max(0, parseFloat(sipAmtInput.value) || 0);
-    const annualRate = Math.max(0, parseFloat(sipRateInput.value) || 0);
+    const P = Math.max(0, readInputNum(sipAmtInput));
+    const annualRate = Math.max(0, readInputNum(sipRateInput));
     const r = annualRate / 100 / 12;
-    const years = Math.max(1, parseInt(sipYearsInput.value) || 1);
+    const years = Math.max(1, readInputInt(sipYearsInput));
     const totalMonths = years * 12;
-    const stepUpPercent = currentSipType === 'stepup' ? Math.max(0, parseFloat(sipStepupInput ? sipStepupInput.value : 0) || 0) : 0;
+    const stepUpPercent = currentSipType === 'stepup' ? Math.max(0, readInputNum(sipStepupInput)) : 0;
 
     let invested = 0;
     let total = 0;
@@ -943,9 +945,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const calculateLumpsum = () => {
     if (!lumpAmtInput) return;
-    const P = parseFloat(lumpAmtInput.value);
-    const R = parseFloat(lumpRateInput.value) / 100;
-    const t = parseInt(lumpYearsInput.value);
+    const P = Math.max(0, readInputNum(lumpAmtInput));
+    const R = Math.max(0, readInputNum(lumpRateInput)) / 100;
+    const t = Math.max(1, readInputInt(lumpYearsInput));
 
     const invested = P;
     const total = P * Math.pow(1 + R, t);
@@ -1025,12 +1027,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGraphAxes('lumpChart', total, t);
   };
 
-  if (lumpAmtInput) {
-    [lumpAmtInput, lumpRateInput, lumpYearsInput].forEach(inp => {
-      inp.addEventListener('input', calculateLumpsum);
-    });
-  }
-
   // ==========================================
   // 6.5. MATHS PIPELINE FOR SWP CALCULATOR
   // ==========================================
@@ -1049,10 +1045,6 @@ document.addEventListener('DOMContentLoaded', () => {
       numEl.value = rangeEl.value;
       calculateSWP();
     });
-    rangeEl.addEventListener('change', () => {
-      numEl.value = rangeEl.value;
-      calculateSWP();
-    });
     numEl.addEventListener('input', () => {
       if (numEl.value !== '') {
         rangeEl.value = numEl.value;
@@ -1060,10 +1052,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     numEl.addEventListener('change', () => {
-      if (numEl.value !== '') {
-        rangeEl.value = numEl.value;
-        calculateSWP();
-      }
+      clampNumberToRange(rangeEl, numEl);
+      calculateSWP();
     });
   };
 
@@ -1074,10 +1064,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const calculateSWP = () => {
     if (!swpAmtInput) return;
-    const initialCorpus = Math.max(0, parseFloat(swpAmtInput.value) || 0);
-    const monthlyWithdrawal = Math.max(0, parseFloat(swpWithdrawInput.value) || 0);
-    const r = Math.max(0, parseFloat(swpRateInput.value) || 0) / 100 / 12;
-    const years = Math.max(1, parseInt(swpYearsInput.value) || 1);
+    const initialCorpus = Math.max(0, readInputNum(swpAmtInput));
+    const monthlyWithdrawal = Math.max(0, readInputNum(swpWithdrawInput));
+    const r = Math.max(0, readInputNum(swpRateInput)) / 100 / 12;
+    const years = Math.max(1, readInputInt(swpYearsInput));
     const totalMonths = years * 12;
 
     let balance = initialCorpus;
@@ -1217,9 +1207,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const calculateEMI = () => {
     if (!emiAmtInput || !emiRateInput || !emiYearsInput) return;
-    const P = Math.max(0, parseFloat(emiAmtInput.value) || 0);
-    const r = Math.max(0, parseFloat(emiRateInput.value) || 0) / 12 / 100;
-    const yearsVal = Math.max(1, parseInt(emiYearsInput.value) || 1);
+    const P = Math.max(0, readInputNum(emiAmtInput));
+    const r = Math.max(0, readInputNum(emiRateInput)) / 12 / 100;
+    const yearsVal = Math.max(1, readInputInt(emiYearsInput));
     const n = yearsVal * 12;
 
     const elValAmt = document.getElementById('emiVal-amount');
@@ -1327,12 +1317,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGraphAxes('emiChart', P, yearsVal);
   };
 
-  if (emiAmtInput) {
-    [emiAmtInput, emiRateInput, emiYearsInput].filter(Boolean).forEach(inp => {
-      inp.addEventListener('input', calculateEMI);
-    });
-  }
-
   // ==========================================
   // 8. MATHS PIPELINE FOR RETIREMENT PLANNER
   // ==========================================
@@ -1343,10 +1327,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const calculateRetirement = () => {
     if (!retCurrentInput || !retRetireInput || !retExpensesInput || !retInflationInput) return;
-    
+
     // Safety check: planned retirement age must be > current age
-    let currentAge = parseInt(retCurrentInput.value) || 30;
-    let retireAge = parseInt(retRetireInput.value) || 60;
+    let currentAge = readInputInt(retCurrentInput);
+    let retireAge = readInputInt(retRetireInput);
     if (retireAge <= currentAge) {
       retireAge = currentAge + 1;
       retRetireInput.value = retireAge;
@@ -1354,8 +1338,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (numInput) numInput.value = retireAge;
     }
 
-    const expToday = Math.max(0, parseFloat(retExpensesInput.value) || 0);
-    const inflation = Math.max(0, parseFloat(retInflationInput.value) || 0) / 100;
+    const expToday = Math.max(0, readInputNum(retExpensesInput));
+    const inflation = Math.max(0, readInputNum(retInflationInput)) / 100;
     const yearsToRetire = Math.max(1, retireAge - currentAge);
     const lifeExpectancy = 85; // Standard cap
     const yearsInRetire = Math.max(1, lifeExpectancy - retireAge);
@@ -1468,12 +1452,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  if (retCurrentInput) {
-    [retCurrentInput, retRetireInput, retExpensesInput, retInflationInput].filter(Boolean).forEach(inp => {
-      inp.addEventListener('input', calculateRetirement);
-    });
-  }
-
   // ==========================================
   // 9. MATHS PIPELINE FOR FIRE CALCULATOR
   // ==========================================
@@ -1483,9 +1461,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const calculateFIRE = () => {
     if (!fireExpInput || !fireWealthInput || !fireSwrInput) return;
-    const exp = Math.max(0, parseFloat(fireExpInput.value) || 0);
-    const wealth = Math.max(0, parseFloat(fireWealthInput.value) || 0);
-    const swrVal = parseFloat(fireSwrInput.value) || 4;
+    const exp = Math.max(0, readInputNum(fireExpInput));
+    const wealth = Math.max(0, readInputNum(fireWealthInput));
+    const swrVal = Math.max(0.1, readInputNum(fireSwrInput));
     const swr = Math.max(0.001, swrVal / 100);
 
     const elValExp = document.getElementById('fireVal-expenses');
@@ -1561,12 +1539,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderGraphAxes('fireChart', targetFIRE, 30);
   };
-
-  if (fireExpInput) {
-    [fireExpInput, fireWealthInput, fireSwrInput].filter(Boolean).forEach(inp => {
-      inp.addEventListener('input', calculateFIRE);
-    });
-  }
 
   // Sync input pairs across all calculator tabs
   syncGenericInputPair(lumpAmtInput, document.getElementById('lump-amount-num'), calculateLumpsum);
