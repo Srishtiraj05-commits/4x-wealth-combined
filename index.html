@@ -43,7 +43,7 @@
         </div>
       </a>
 
-                  <!-- Desktop Navigation Menu -->
+                        <!-- Desktop Navigation Menu -->
       <ul class="sk-nav-menu" id="desktopMenu">
         
         <!-- Home Dropdown -->
@@ -144,7 +144,7 @@
         <li class="sk-nav-item dropdown-trigger">
           <a class="sk-nav-link clickable" href="blogs.html">Resources <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-link clickable" href="sif-tracker.html"><i class="fa-solid fa-filter"></i> SIF Screener <span class="nav-badge-new" style="background: #D6B384; color: #031E36; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-family: var(--font-mono);">NEW</span></a></li>
+            <li><a class="dropdown-link clickable" href="sif-tracker.html"><i class="fa-solid fa-filter"></i> SIF Screener <span class="nav-badge-new" style="background: #0088FF; color: #FFFFFF; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-family: var(--font-mono);">NEW</span></a></li>
             <li><a class="dropdown-link clickable" href="blogs.html"><i class="fa-solid fa-book-open"></i> Blogs & Knowledge Base</a></li>
             <li><a class="dropdown-link clickable" href="blogs.html#reports"><i class="fa-solid fa-file-invoice-dollar"></i> Wealth Guides & Reports</a></li>
           </ul>
@@ -163,19 +163,19 @@
 
       </ul>
 
-<!-- Header Action Items: Clearly Visible Search + Login (White/Outline) + Sign Up (Dark Navy) -->
+      <!-- Header Action Items: Clearly Visible Search + Client Portal (Login) + Book Consultation (Sign Up) -->
       <div class="nav-actions">
         
-        <!-- Search Trigger (Prominent on Gold Navbar) -->
+        <!-- Search Trigger -->
         <button class="search-btn clickable" id="searchTrigger" aria-label="Search site">
           <i class="fa-solid fa-magnifying-glass"></i>
           <span>Search</span>
         </button>
 
-        <!-- Login Dropdown (Sign Up Outline Color - White Pill) -->
+        <!-- Client Portal (Login Dropdown) -->
         <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <button class="vg-btn vg-btn-outline clickable">
-            <i class="fa-regular fa-user"></i> <span>Login</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
+          <button class="vg-btn vg-btn-outline client-portal-btn clickable">
+            <i class="fa-solid fa-shield-halved"></i> <span>Client Portal</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
           </button>
           <ul class="dropdown-menu auth-dropdown-menu">
             <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Investor</a></li>
@@ -184,15 +184,15 @@
           </ul>
         </div>
 
-        <!-- Sign Up Dropdown (Contrasting Dark Navy Pill) -->
+        <!-- Book Consultation (Primary Pill) -->
         <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <button class="vg-btn vg-btn-primary clickable">
-            <span>Sign Up</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
-          </button>
+          <a href="index.html#consultation-section" class="vg-btn vg-btn-primary book-consult-btn clickable" style="text-decoration: none;">
+            <span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
           <ul class="dropdown-menu auth-dropdown-menu">
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Retail Account</a></li>
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Account</a></li>
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="partner"><i class="fa-solid fa-handshake-angle"></i> Channel Partner</a></li>
+            <li><a href="index.html#consultation-section" class="dropdown-link clickable"><i class="fa-solid fa-calendar-check"></i> Book 1-on-1 Consultation</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Open Retail Account</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Treasury Account</a></li>
           </ul>
         </div>
 
@@ -202,9 +202,7 @@
         </button>
 
       </div>
-    </div>
-
-    <!-- Live Market Ticker -->
+    </div><!-- Live Market Ticker -->
     <div class="live-market-bar">
       <div class="live-market-title">
         <span class="live-pulse"></span>
@@ -232,7 +230,7 @@
       <img src="logo.png" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
-            <ul class="sk-drawer-links">
+                <ul class="sk-drawer-links">
       <li><a href="index.html" class="sk-drawer-link clickable">Home</a></li>
       <li><a href="solutions.html" class="sk-drawer-link clickable">Solutions</a></li>
       <li><a href="hedge-lab.html" class="sk-drawer-link clickable">Research</a></li>
@@ -256,42 +254,39 @@
   <main id="main-content">
 
     <!-- ============================================================
-         01. CONTRASTING DUAL-TONE HERO (SLIDE 1 & 2: BRAND & SPLIT SLASH)
+         01. LUMINOUS TECH-WEALTH HERO (MATCHING THEME)
          ============================================================ -->
-        <!-- ============================================================
-         01. WARM LUXURY IVORY HERO (MATCHING IMAGE 3)
-         ============================================================ -->
-    <section id="hero-section" class="section-ivory" style="padding-top: 45px; padding-bottom: 90px; text-align: center; position: relative; overflow: hidden; background: #FAF7F2;">
-      <!-- Subtle Ambient Warm Glow -->
-      <div style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 700px; height: 350px; background: radial-gradient(ellipse, rgba(226, 193, 136, 0.2) 0%, rgba(250, 247, 242, 0) 70%); pointer-events: none; z-index: 1;"></div>
+    <section id="hero-section" class="section-ivory" style="padding-top: 45px; padding-bottom: 90px; text-align: center; position: relative; overflow: hidden; background: #FFFFFF;">
+      <!-- Subtle Ambient Cyan Glow -->
+      <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 900px; height: 450px; background: radial-gradient(ellipse at 50% 0%, rgba(0, 163, 255, 0.12) 0%, rgba(255, 255, 255, 0) 70%); pointer-events: none; z-index: 1;"></div>
       
       <div class="container-luxury" style="position: relative; z-index: 2;">
         
-        <!-- Regulatory Credentials Pill (Image 3) -->
+        <!-- Regulatory Credentials Pill (Image Match) -->
         <div class="hero-ivory-badge">
-          <span class="live-green-dot"></span>
-          <span>AMFI Registered MFD (ARN-268488) &bull; APMI PMS Desk (APRN00969)</span>
+          <span class="live-cyan-dot"></span>
+          <span>SEBI Compliant Fiduciary Wealth Architecture &bull; ARN-268488 &bull; APRN00969</span>
         </div>
 
-        <!-- Main Title (Image 3) -->
-        <h1 class="hero-title-main" style="color: var(--navy-dark); font-size: clamp(38px, 5.8vw, 68px); font-weight: 700; line-height: 1.15; margin-bottom: 0.6rem; letter-spacing: -0.02em;">
+        <!-- Main Title (Image Match) -->
+        <h1 class="hero-title-main">
           Building Wealth.
         </h1>
-        <div class="hero-title-sub-serif" style="color: var(--gold-dark); font-family: var(--font-heading); font-size: clamp(26px, 3.8vw, 46px); font-style: italic; font-weight: 400; margin-bottom: 1.8rem; letter-spacing: -0.01em;">
+        <div class="hero-title-sub-serif">
           Managing Risk. Creating Possibilities.
         </div>
 
         <!-- Subtitle Copy -->
-        <p class="hero-sub-text" style="color: var(--text-muted); font-size: 17.5px; line-height: 1.65; max-width: 780px; margin: 0 auto 2.8rem; text-align: center;">
+        <p class="hero-sub-text">
           A premier private wealth management firm bringing together human conviction, institutional discipline, and data-driven intelligence — under one roof, in full daylight.
         </p>
 
-        <!-- CTA Buttons (Image 3) -->
+        <!-- CTA Buttons -->
         <div class="hero-cta-group" style="display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 3.5rem;">
-          <a href="#consultation-section" class="btn-primary clickable" style="border-radius: 50px; padding: 15px 34px; font-size: 15px; font-weight: 700; box-shadow: 0 8px 24px rgba(197, 160, 89, 0.4);">
+          <a href="#consultation-section" class="btn-primary clickable">
             <span>Schedule Advisory Consultation</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
-          <a href="solutions.html" class="btn-secondary-ivory clickable" style="border-radius: 50px; padding: 15px 34px; font-size: 15px; font-weight: 600; background: #FFFFFF; color: var(--navy-dark); border: 1px solid rgba(201, 168, 105, 0.6); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+          <a href="solutions.html" class="btn-secondary-ivory clickable">
             <span>Explore Solutions</span>
           </a>
         </div>

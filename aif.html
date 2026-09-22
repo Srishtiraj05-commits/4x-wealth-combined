@@ -30,7 +30,7 @@
         </div>
       </a>
 
-                  <!-- Desktop Navigation Menu -->
+                        <!-- Desktop Navigation Menu -->
       <ul class="sk-nav-menu" id="desktopMenu">
         
         <!-- Home Dropdown -->
@@ -131,7 +131,7 @@
         <li class="sk-nav-item dropdown-trigger">
           <a class="sk-nav-link clickable" href="blogs.html">Resources <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-link clickable" href="sif-tracker.html"><i class="fa-solid fa-filter"></i> SIF Screener <span class="nav-badge-new" style="background: #D6B384; color: #031E36; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-family: var(--font-mono);">NEW</span></a></li>
+            <li><a class="dropdown-link clickable" href="sif-tracker.html"><i class="fa-solid fa-filter"></i> SIF Screener <span class="nav-badge-new" style="background: #0088FF; color: #FFFFFF; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-family: var(--font-mono);">NEW</span></a></li>
             <li><a class="dropdown-link clickable" href="blogs.html"><i class="fa-solid fa-book-open"></i> Blogs & Knowledge Base</a></li>
             <li><a class="dropdown-link clickable" href="blogs.html#reports"><i class="fa-solid fa-file-invoice-dollar"></i> Wealth Guides & Reports</a></li>
           </ul>
@@ -150,19 +150,19 @@
 
       </ul>
 
-<!-- Header Action Items: Clearly Visible Search + Login (White/Outline) + Sign Up (Dark Navy) -->
+      <!-- Header Action Items: Clearly Visible Search + Client Portal (Login) + Book Consultation (Sign Up) -->
       <div class="nav-actions">
         
-        <!-- Search Trigger (Prominent on Gold Navbar) -->
+        <!-- Search Trigger -->
         <button class="search-btn clickable" id="searchTrigger" aria-label="Search site">
           <i class="fa-solid fa-magnifying-glass"></i>
           <span>Search</span>
         </button>
 
-        <!-- Login Dropdown (Sign Up Outline Color - White Pill) -->
+        <!-- Client Portal (Login Dropdown) -->
         <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <button class="vg-btn vg-btn-outline clickable">
-            <i class="fa-regular fa-user"></i> <span>Login</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
+          <button class="vg-btn vg-btn-outline client-portal-btn clickable">
+            <i class="fa-solid fa-shield-halved"></i> <span>Client Portal</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
           </button>
           <ul class="dropdown-menu auth-dropdown-menu">
             <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Investor</a></li>
@@ -171,15 +171,15 @@
           </ul>
         </div>
 
-        <!-- Sign Up Dropdown (Contrasting Dark Navy Pill) -->
+        <!-- Book Consultation (Primary Pill) -->
         <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <button class="vg-btn vg-btn-primary clickable">
-            <span>Sign Up</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
-          </button>
+          <a href="index.html#consultation-section" class="vg-btn vg-btn-primary book-consult-btn clickable" style="text-decoration: none;">
+            <span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
           <ul class="dropdown-menu auth-dropdown-menu">
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Retail Account</a></li>
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Account</a></li>
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="partner"><i class="fa-solid fa-handshake-angle"></i> Channel Partner</a></li>
+            <li><a href="index.html#consultation-section" class="dropdown-link clickable"><i class="fa-solid fa-calendar-check"></i> Book 1-on-1 Consultation</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Open Retail Account</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Treasury Account</a></li>
           </ul>
         </div>
 
@@ -189,9 +189,7 @@
         </button>
 
       </div>
-    </div>
-
-    <!-- Live Market Ticker -->
+    </div><!-- Live Market Ticker -->
     <div class="live-market-bar">
       <div class="live-market-title">
         <span class="live-pulse"></span>
@@ -219,7 +217,7 @@
       <img src="logo.png" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
-            <ul class="sk-drawer-links">
+                <ul class="sk-drawer-links">
       <li><a href="index.html" class="sk-drawer-link clickable">Home</a></li>
       <li><a href="solutions.html" class="sk-drawer-link clickable">Solutions</a></li>
       <li><a href="hedge-lab.html" class="sk-drawer-link clickable">Research</a></li>
