@@ -4,7 +4,7 @@
   const knowledge = {
     greetings: {
       keywords: ['hi', 'hello', 'hey', 'namaste', 'hola', 'good morning', 'good afternoon', 'good evening'],
-      response: 'Hi there! 🤖 I\'m 4X Wealth Assistant. How can I help you today — explore services, check calculators, or get in touch?'
+      response: 'Hi there! I\'m <strong>Xiyi</strong>, your 4X Wealth Assistant. How can I help you today — explore services, check calculators, or get in touch?'
     },
     calculators: {
       keywords: ['calculator', 'sip', 'lumpsum', 'swp', 'emi', 'retirement calculator', 'fire calculator', 'calculate'],
@@ -163,6 +163,13 @@
         transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
       .x4-chat-fab:hover { transform: scale(1.08); box-shadow: 0 12px 32px rgba(158, 116, 50, 0.45); }
+      .x4-chat-fab img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: #fff;
+      }
       .x4-chat-fab.bounce { animation: x4FabBounce 0.5s ease; }
       @keyframes x4FabBounce {
         0%, 100% { transform: scale(1); }
@@ -199,14 +206,19 @@
         gap: 12px;
       }
       .x4-chat-avatar {
-        width: 38px;
-        height: 38px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #C5A059, #9E7432);
+        background: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 20px;
+        overflow: hidden;
+      }
+      .x4-chat-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
       .x4-chat-title { flex: 1; }
       .x4-chat-title strong { display: block; font-size: 15px; }
@@ -331,17 +343,17 @@
     fab.className = 'x4-chat-fab';
     fab.id = 'x4-chatbot-fab';
     fab.setAttribute('aria-label', 'Open chat');
-    fab.innerHTML = '🤖';
+    fab.innerHTML = '<img src="xiyi-bot.png" alt="Xiyi">';
 
     const win = document.createElement('div');
     win.className = 'x4-chat-window';
     win.id = 'x4-chatbot-window';
     win.innerHTML = `
       <div class="x4-chat-header">
-        <div class="x4-chat-avatar">🤖</div>
+        <div class="x4-chat-avatar"><img src="xiyi-bot.png" alt="Xiyi"></div>
         <div class="x4-chat-title">
-          <strong>4X Wealth Assistant</strong>
-          <span>Ask me about investments, calculators & more</span>
+          <strong>Xiyi</strong>
+          <span>Your 4X Wealth Assistant</span>
         </div>
         <button class="x4-chat-close" aria-label="Close chat">×</button>
       </div>
