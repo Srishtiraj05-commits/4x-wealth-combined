@@ -13,7 +13,7 @@
 </head>
 <body class="dark-theme">
 
-    <!-- Header Navigation (Warm Luxury Ivory Theme - Matching Image 3) -->
+      <!-- Header Navigation (Warm Luxury Ivory Theme with Login & Sign Up) -->
   <header class="header-wrapper" id="mainHeader">
     <div class="nav-container">
       
@@ -124,16 +124,16 @@
         <li class="sk-nav-item dropdown-trigger">
           <a class="sk-nav-link clickable" href="about.html">About Us <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-link clickable" href="about.html#who-we-are"><i class="fa-solid fa-building"></i> Company Overview</a></li>
-            <li><a class="dropdown-link clickable" href="about.html#leadership"><i class="fa-solid fa-users-viewfinder"></i> Leadership & Team</a></li>
-            <li><a class="dropdown-link clickable" href="about.html#principles"><i class="fa-solid fa-award"></i> 4 Working Principles</a></li>
-            <li><a class="dropdown-link clickable" href="about.html#partners"><i class="fa-solid fa-handshake"></i> Institutional Partners</a></li>
+            <li><a href="about.html#who-we-are" class="dropdown-link clickable"><i class="fa-solid fa-building"></i> Company Overview</a></li>
+            <li><a href="about.html#leadership" class="dropdown-link clickable"><i class="fa-solid fa-users-viewfinder"></i> Leadership & Team</a></li>
+            <li><a href="about.html#principles" class="dropdown-link clickable"><i class="fa-solid fa-award"></i> 4 Working Principles</a></li>
+            <li><a href="about.html#partners" class="dropdown-link clickable"><i class="fa-solid fa-handshake"></i> Institutional Partners</a></li>
           </ul>
         </li>
 
       </ul>
 
-      <!-- Header Action Items (Matching Image 3: Client Portal Pill & Schedule Consultation Gold Pill) -->
+      <!-- Header Action Items: Login & Sign Up Buttons -->
       <div class="nav-actions">
         
         <!-- Search Trigger -->
@@ -141,25 +141,29 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
 
-        <!-- Client Portal Dropdown Button (Pill with border) -->
+        <!-- Login Dropdown -->
         <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <button class="nav-pill-btn nav-pill-portal clickable">
-            <i class="fa-regular fa-user"></i> <span>Client Portal</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
+          <button class="vg-btn vg-btn-primary clickable">
+            <span>Login</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
           </button>
           <ul class="dropdown-menu auth-dropdown-menu">
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Investor Login</a></li>
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Investor</a></li>
             <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="corporate"><i class="fa-solid fa-building"></i> Corporate Treasury</a></li>
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner / ARN Login</a></li>
-            <li style="border-top: 1px solid rgba(201,168,105,0.25); margin-top: 4px; padding-top: 4px;">
-              <a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Open Digital Account</a>
-            </li>
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner / ARN</a></li>
           </ul>
         </div>
 
-        <!-- Schedule Consultation Button (Warm Gold Pill - Image 3) -->
-        <a href="index.html#consultation-section" class="nav-pill-btn nav-pill-cta clickable">
-          <span>Schedule Consultation</span> <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        <!-- Sign Up Dropdown -->
+        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
+          <button class="vg-btn vg-btn-outline clickable">
+            <span>Sign Up</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
+          </button>
+          <ul class="dropdown-menu auth-dropdown-menu">
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Retail Account</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Account</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="partner"><i class="fa-solid fa-handshake-angle"></i> Channel Partner</a></li>
+          </ul>
+        </div>
 
         <!-- Mobile Drawer Toggle -->
         <button class="mobile-toggle clickable" id="mobileMenuTrigger" aria-label="Toggle menu">
@@ -169,7 +173,7 @@
       </div>
     </div>
 
-    <!-- Live Market Ticker -->
+    <!-- Live Market Ticker (Matching Warm Ivory Theme) -->
     <div class="live-market-bar">
       <div class="live-market-title">
         <span class="live-pulse"></span>

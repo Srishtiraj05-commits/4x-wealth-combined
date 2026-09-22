@@ -7,15 +7,23 @@
   <meta name="description" content="Calculate mutual fund SIP growth, lumpsum compounding, EMI loan tenures, retirement targets, and early retirement FIRE indexes with 4X Wealth.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=3.2">
+  <link rel="stylesheet" href="style.css?v=3.5">
   <style>
-    /* Custom styles for calculators workspace */
+    body {
+      background-color: #FAF7F2 !important;
+      color: #1C2333 !important;
+    }
+    .calc-page-wrapper {
+      padding-top: 180px;
+      padding-bottom: 100px;
+      background: #FAF7F2;
+    }
     .calc-layout-grid {
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 3rem;
+      grid-template-columns: 290px 1fr;
+      gap: 2.5rem;
       align-items: flex-start;
       margin-top: 3rem;
     }
@@ -26,46 +34,53 @@
     }
     .calc-tab-btn {
       width: 100%;
-      padding: 1.2rem 1.5rem;
-      background: rgba(255, 255, 255, 0.65);
-      border: 1px solid rgba(15, 23, 42, 0.05);
-      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(201, 168, 105, 0.35);
+      border-radius: 12px;
       font-family: var(--font-heading);
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 600;
-      color: var(--white);
+      color: #1C2333;
       text-align: left;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 12px;
-      transition: all 0.3s var(--ease);
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(28, 35, 51, 0.02);
     }
     .calc-tab-btn i {
       font-size: 16px;
-      color: var(--text-muted);
-      transition: color 0.3s;
+      color: #C5A059;
+      transition: color 0.25s;
     }
     .calc-tab-btn:hover {
       transform: translateX(4px);
-      border-color: rgba(0, 122, 255, 0.2);
+      border-color: #C5A059;
+      background: #FAF7F2;
     }
     .calc-tab-btn.active {
-      background: var(--champagne);
-      color: var(--black);
-      border-color: var(--champagne);
+      background: linear-gradient(135deg, #C5A059, #9E7432);
+      color: #FFFFFF;
+      border-color: #C5A059;
+      box-shadow: 0 8px 24px rgba(197, 160, 89, 0.35);
     }
     .calc-tab-btn.active i {
-      color: var(--black);
+      color: #FFFFFF;
     }
     .calc-workspace-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(201, 168, 105, 0.35);
+      border-radius: 20px;
       padding: 3rem;
+      box-shadow: 0 15px 45px rgba(28, 35, 51, 0.06);
       min-height: 480px;
     }
     .calc-pane {
       display: none;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 4rem;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 3.5rem;
     }
     .calc-pane.active {
       display: grid;
@@ -73,7 +88,7 @@
     .calc-inputs {
       display: flex;
       flex-direction: column;
-      gap: 2.2rem;
+      gap: 2rem;
     }
     .calc-input-group {
       display: flex;
@@ -84,65 +99,51 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: var(--font-heading);
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--white);
-    }
-    .calc-input-val {
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: var(--font-body);
       font-size: 14px;
-      color: #0f172a;
       font-weight: 600;
-      background: #ffffff;
-      padding: 4px 10px;
-      border-radius: 4px;
+      color: #1C2333;
     }
     .calc-num-input {
-      background: #ffffff !important;
-      color: #007aff !important;
-      border: 1px solid rgba(15, 23, 42, 0.15) !important;
-      border-radius: 6px !important;
+      background: #FFFFFF !important;
+      color: #1C2333 !important;
+      border: 1px solid rgba(201, 168, 105, 0.5) !important;
+      border-radius: 8px !important;
       font-family: 'IBM Plex Mono', monospace !important;
       font-size: 14px !important;
       font-weight: 700 !important;
-      padding: 4px 8px !important;
+      padding: 5px 10px !important;
       text-align: right !important;
       outline: none !important;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
       transition: all 0.2s ease !important;
     }
     .calc-num-input:focus {
-      border-color: #007aff !important;
-      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2) !important;
-    }
-    .calc-num-input::-webkit-outer-spin-button,
-    .calc-num-input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-    .calc-num-input[type=number] {
-      -moz-appearance: textfield;
+      border-color: #C5A059 !important;
+      box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2) !important;
     }
     .calc-range {
       width: 100%;
-      height: 4px;
-      background: rgba(15, 23, 42, 0.08);
-      border-radius: 2px;
+      height: 6px;
+      background: #E8DFD3;
+      border-radius: 3px;
       outline: none;
       -webkit-appearance: none;
     }
     .calc-range::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
-      background: var(--champagne);
+      background: #C5A059;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       cursor: pointer;
       transition: transform 0.2s;
     }
     .calc-range::-webkit-slider-thumb:hover {
       transform: scale(1.2);
+      background: #9E7432;
     }
     .calc-outputs {
       display: flex;
@@ -152,45 +153,51 @@
     .calc-results-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
     }
     .calc-result-box {
-      border-top: 1px solid rgba(15, 23, 42, 0.06);
-      padding-top: 10px;
+      background: #FAF7F2;
+      border: 1px solid rgba(201, 168, 105, 0.3);
+      border-radius: 12px;
+      padding: 1.1rem 1.3rem;
     }
     .calc-result-box.total-span {
       grid-column: span 2;
+      background: linear-gradient(135deg, #FAF7F2, #F3ECE1);
+      border: 1px solid #C5A059;
     }
     .calc-result-box span {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 9.5px;
-      color: var(--text-muted);
+      font-size: 10px;
+      color: #786C5E;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       display: block;
+      font-weight: 700;
     }
     .calc-result-box b {
       font-family: var(--font-heading);
       font-size: 20px;
-      color: var(--white);
+      color: #1C2333;
       display: block;
       margin-top: 4px;
     }
     .calc-result-box.total-span b {
       font-size: 28px;
-      color: var(--champagne);
+      color: #9E7432;
+      font-weight: 700;
     }
     .calc-chart-box {
       width: 100%;
       height: 245px;
       position: relative;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
+      background: #FFFFFF;
+      border: 1px solid rgba(201, 168, 105, 0.3);
       border-radius: 14px;
       padding: 1.1rem 1.4rem 0.6rem;
-      margin-top: 1.5rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      margin-top: 1rem;
+      box-shadow: 0 4px 15px rgba(28, 35, 51, 0.03);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -224,15 +231,15 @@
       display: inline-block;
     }
     .legend-dot.cyan {
-      background: #007aff;
-      box-shadow: 0 0 6px rgba(0, 122, 255, 0.4);
+      background: #C5A059;
+      box-shadow: 0 0 6px rgba(197, 160, 89, 0.5);
     }
     .legend-dot.gold {
-      background: #d97706;
-      box-shadow: 0 0 6px rgba(217, 119, 6, 0.4);
+      background: #1C2333;
+      box-shadow: 0 0 6px rgba(28, 35, 51, 0.3);
     }
     .legend-dot.orange {
-      background: #ea580c;
+      background: #EA580C;
       box-shadow: 0 0 6px rgba(234, 88, 12, 0.4);
     }
     .chart-badge {
@@ -241,9 +248,9 @@
       font-weight: 700;
       padding: 3px 10px;
       border-radius: 20px;
-      background: #f0f7ff;
-      color: #007aff;
-      border: 1px solid #bae6fd;
+      background: #FAF7F2;
+      color: #9E7432;
+      border: 1px solid rgba(201, 168, 105, 0.4);
       letter-spacing: 0.05em;
     }
     .calc-chart-box svg {
@@ -251,18 +258,10 @@
       height: 175px;
       overflow: visible;
     }
-    @keyframes pulseMarker {
-      0% { r: 4.5px; opacity: 1; stroke-width: 1.5px; }
-      50% { r: 8px; opacity: 0.65; stroke-width: 3.5px; }
-      100% { r: 4.5px; opacity: 1; stroke-width: 1.5px; }
-    }
-    .pulse-marker {
-      animation: pulseMarker 2s infinite ease-in-out;
-    }
     @media (max-width: 991px) {
       .calc-layout-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
       }
       .calc-sidebar {
         flex-direction: row;
@@ -275,14 +274,14 @@
       }
       .calc-pane {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
       }
     }
   </style>
 </head>
-<body class="dark-theme">
+<body>
 
-    <!-- Header Navigation (Warm Luxury Ivory Theme - Matching Image 3) -->
+  <!-- Header Navigation (Warm Luxury Ivory Theme with Login & Sign Up) -->
   <header class="header-wrapper" id="mainHeader">
     <div class="nav-container">
       
@@ -393,16 +392,16 @@
         <li class="sk-nav-item dropdown-trigger">
           <a class="sk-nav-link clickable" href="about.html">About Us <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-link clickable" href="about.html#who-we-are"><i class="fa-solid fa-building"></i> Company Overview</a></li>
-            <li><a class="dropdown-link clickable" href="about.html#leadership"><i class="fa-solid fa-users-viewfinder"></i> Leadership & Team</a></li>
-            <li><a class="dropdown-link clickable" href="about.html#principles"><i class="fa-solid fa-award"></i> 4 Working Principles</a></li>
-            <li><a class="dropdown-link clickable" href="about.html#partners"><i class="fa-solid fa-handshake"></i> Institutional Partners</a></li>
+            <li><a href="about.html#who-we-are" class="dropdown-link clickable"><i class="fa-solid fa-building"></i> Company Overview</a></li>
+            <li><a href="about.html#leadership" class="dropdown-link clickable"><i class="fa-solid fa-users-viewfinder"></i> Leadership & Team</a></li>
+            <li><a href="about.html#principles" class="dropdown-link clickable"><i class="fa-solid fa-award"></i> 4 Working Principles</a></li>
+            <li><a href="about.html#partners" class="dropdown-link clickable"><i class="fa-solid fa-handshake"></i> Institutional Partners</a></li>
           </ul>
         </li>
 
       </ul>
 
-      <!-- Header Action Items (Matching Image 3: Client Portal Pill & Schedule Consultation Gold Pill) -->
+      <!-- Header Action Items: Login & Sign Up Buttons -->
       <div class="nav-actions">
         
         <!-- Search Trigger -->
@@ -410,25 +409,29 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
 
-        <!-- Client Portal Dropdown Button (Pill with border) -->
+        <!-- Login Dropdown -->
         <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <button class="nav-pill-btn nav-pill-portal clickable">
-            <i class="fa-regular fa-user"></i> <span>Client Portal</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
+          <button class="vg-btn vg-btn-primary clickable">
+            <span>Login</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
           </button>
           <ul class="dropdown-menu auth-dropdown-menu">
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Investor Login</a></li>
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Investor</a></li>
             <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="corporate"><i class="fa-solid fa-building"></i> Corporate Treasury</a></li>
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner / ARN Login</a></li>
-            <li style="border-top: 1px solid rgba(201,168,105,0.25); margin-top: 4px; padding-top: 4px;">
-              <a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Open Digital Account</a>
-            </li>
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner / ARN</a></li>
           </ul>
         </div>
 
-        <!-- Schedule Consultation Button (Warm Gold Pill - Image 3) -->
-        <a href="index.html#consultation-section" class="nav-pill-btn nav-pill-cta clickable">
-          <span>Schedule Consultation</span> <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        <!-- Sign Up Dropdown -->
+        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
+          <button class="vg-btn vg-btn-outline clickable">
+            <span>Sign Up</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
+          </button>
+          <ul class="dropdown-menu auth-dropdown-menu">
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Retail Account</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Account</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="partner"><i class="fa-solid fa-handshake-angle"></i> Channel Partner</a></li>
+          </ul>
+        </div>
 
         <!-- Mobile Drawer Toggle -->
         <button class="mobile-toggle clickable" id="mobileMenuTrigger" aria-label="Toggle menu">
@@ -438,7 +441,7 @@
       </div>
     </div>
 
-    <!-- Live Market Ticker -->
+    <!-- Live Market Ticker (Matching Warm Ivory Theme) -->
     <div class="live-market-bar">
       <div class="live-market-title">
         <span class="live-pulse"></span>
@@ -486,12 +489,19 @@
     </div>
   </div>
 
-  <div class="main-wrapper">
-    <div class="lab-page-container">
+  <!-- Main Calculator Content -->
+  <main class="calc-page-wrapper">
+    <div class="container-luxury">
+      
       <div class="section-header center">
-        <span class="section-tag">ANALYTICAL SUITE</span>
-        <h1 class="section-title">Calculators <span style="background: linear-gradient(135deg, #007aff, #ff2d55); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">& Projections</span></h1>
-        <p class="section-desc">Evaluate systemic wealth accumulation, credit boundaries, retirement curves, and capital compounding paths using institutional metrics.</p>
+        <span class="section-tag" style="color: var(--gold-dark); font-weight: 700; letter-spacing: 0.15em;">ANALYTICAL WEALTH ENGINES</span>
+        <h1 class="section-title" style="color: var(--navy-dark); font-size: clamp(32px, 4.5vw, 52px);">Financial Calculators <span class="gold-highlight" style="color: var(--gold-dark);">& Projections.</span></h1>
+        <div class="gold-divider-wrap">
+          <span class="gold-divider-line"></span>
+          <span class="gold-divider-diamond"></span>
+          <span class="gold-divider-line"></span>
+        </div>
+        <p class="section-desc" style="color: var(--text-muted); font-size: 16px; max-width: 720px; margin: 0 auto;">Simulate compounding growth, loan amortizations, retirement pathways, and early retirement metrics using quantitative models.</p>
       </div>
 
       <div class="calc-layout-grid">
@@ -518,35 +528,35 @@
         </div>
 
         <!-- Calculator Panel Cards -->
-        <div class="calc-workspace-card glass-card">
+        <div class="calc-workspace-card">
           
           <!-- Tab 1: SIP Calculator -->
           <div class="calc-pane active" id="pane-sip">
             <div class="calc-inputs">
               <!-- SIP Type Switcher -->
               <div class="sip-type-toggle" style="display: flex; gap: 10px; margin-bottom: 0.5rem;">
-                <button type="button" class="sip-type-btn active" id="sipTypeRegular" data-sip-type="regular" style="flex: 1; padding: 8px 12px; border-radius: 6px; border: 1px solid var(--champagne); background: var(--champagne); color: var(--black); font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Regular SIP</button>
-                <button type="button" class="sip-type-btn" id="sipTypeStepUp" data-sip-type="stepup" style="flex: 1; padding: 8px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: var(--white); font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Step-Up SIP </button>
+                <button type="button" class="sip-type-btn active" id="sipTypeRegular" data-sip-type="regular" style="flex: 1; padding: 9px 14px; border-radius: 8px; border: 1px solid #C5A059; background: #C5A059; color: #FFFFFF; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s;">Regular SIP</button>
+                <button type="button" class="sip-type-btn" id="sipTypeStepUp" data-sip-type="stepup" style="flex: 1; padding: 9px 14px; border-radius: 8px; border: 1px solid rgba(201, 168, 105, 0.4); background: #FAF7F2; color: #1C2333; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Step-Up SIP</button>
               </div>
 
               <div class="calc-input-group">
                 <div class="calc-input-label-row">
                   <span>Monthly Investment</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">₹</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">₹</span>
                     <input type="number" id="sip-amount-num" min="500" max="1000000" step="500" value="25000" class="calc-num-input" style="width: 110px;">
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="sip-amount" min="500" max="1000000" step="500" value="25000">
               </div>
 
-              <!-- Step-Up % Input Group (Shown in Step-Up mode) -->
+              <!-- Step-Up % Input Group -->
               <div class="calc-input-group" id="sip-stepup-group" style="display: none;">
                 <div class="calc-input-label-row">
                   <span>Annual Step-Up Rate</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="sip-stepup-num" min="1" max="30" step="1" value="10" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">%</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">%</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="sip-stepup" min="1" max="30" step="1" value="10">
@@ -557,7 +567,7 @@
                   <span>Expected Return Rate (p.a.)</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="sip-rate-num" min="1" max="30" step="0.5" value="12" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">%</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">%</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="sip-rate" min="1" max="30" step="0.5" value="12">
@@ -568,7 +578,7 @@
                   <span>Time Period</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="sip-years-num" min="1" max="40" step="1" value="15" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">Yr</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">Yr</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="sip-years" min="1" max="40" step="1" value="15">
@@ -600,25 +610,25 @@
                 <svg id="sipChart" viewBox="0 0 500 160" fill="none">
                   <defs>
                     <linearGradient id="sip-grad-total" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#007aff" stop-opacity="0.20"/>
-                      <stop offset="100%" stop-color="#007aff" stop-opacity="0.0"/>
+                      <stop offset="0%" stop-color="#C5A059" stop-opacity="0.30"/>
+                      <stop offset="100%" stop-color="#C5A059" stop-opacity="0.0"/>
                     </linearGradient>
                     <linearGradient id="sip-grad-inv" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#d97706" stop-opacity="0.15"/>
-                      <stop offset="100%" stop-color="#d97706" stop-opacity="0.0"/>
+                      <stop offset="0%" stop-color="#1C2333" stop-opacity="0.18"/>
+                      <stop offset="100%" stop-color="#1C2333" stop-opacity="0.0"/>
                     </linearGradient>
                   </defs>
-                  <g class="chart-grid" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4">
+                  <g class="chart-grid" stroke="#E2D9CC" stroke-width="1" stroke-dasharray="4 4">
                     <line x1="0" y1="30" x2="500" y2="30"/>
                     <line x1="0" y1="75" x2="500" y2="75"/>
                     <line x1="0" y1="120" x2="500" y2="120"/>
                   </g>
                   <path id="sipChart-invested-area" fill="url(#sip-grad-inv)"></path>
                   <path id="sipChart-total-area" fill="url(#sip-grad-total)"></path>
-                  <path id="sipChart-invested" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"></path>
-                  <path id="sipChart-total" stroke="#007aff" stroke-width="3.5" stroke-linecap="round"></path>
-                  <circle id="sipChart-dot-inv" r="5" fill="#d97706" stroke="#ffffff" stroke-width="2" class="pulse-marker"></circle>
-                  <circle id="sipChart-dot-tot" r="6" fill="#007aff" stroke="#ffffff" stroke-width="2" class="pulse-marker"></circle>
+                  <path id="sipChart-invested" stroke="#1C2333" stroke-width="2.5" stroke-linecap="round"></path>
+                  <path id="sipChart-total" stroke="#C5A059" stroke-width="3.5" stroke-linecap="round"></path>
+                  <circle id="sipChart-dot-inv" r="5" fill="#1C2333" stroke="#FFFFFF" stroke-width="2" class="pulse-marker"></circle>
+                  <circle id="sipChart-dot-tot" r="6" fill="#C5A059" stroke="#FFFFFF" stroke-width="2" class="pulse-marker"></circle>
                 </svg>
               </div>
             </div>
@@ -631,7 +641,7 @@
                 <div class="calc-input-label-row">
                   <span>Total Principal Investment</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">₹</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">₹</span>
                     <input type="number" id="lump-amount-num" min="1000" max="50000000" step="5000" value="500000" class="calc-num-input" style="width: 120px;">
                   </div>
                 </div>
@@ -642,7 +652,7 @@
                   <span>Expected Return Rate (p.a.)</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="lump-rate-num" min="1" max="30" step="0.5" value="12" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">%</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">%</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="lump-rate" min="1" max="30" step="0.5" value="12">
@@ -652,7 +662,7 @@
                   <span>Time Period</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="lump-years-num" min="1" max="40" step="1" value="15" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">Yr</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">Yr</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="lump-years" min="1" max="40" step="1" value="15">
@@ -676,46 +686,46 @@
               <div class="calc-chart-box">
                 <div class="chart-header-bar">
                   <div class="chart-legend">
-                    <span class="legend-item"><i class="legend-dot cyan"></i> Compounded Future Value</span>
-                    <span class="legend-item"><i class="legend-dot gold"></i> Initial Principal</span>
+                    <span class="legend-item"><i class="legend-dot cyan"></i> Future Value</span>
+                    <span class="legend-item"><i class="legend-dot gold"></i> Principal</span>
                   </div>
                   <span class="chart-badge" id="lumpChart-badge">5.5x ROI</span>
                 </div>
                 <svg id="lumpChart" viewBox="0 0 500 160" fill="none">
                   <defs>
                     <linearGradient id="lump-grad-total" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#007aff" stop-opacity="0.20"/>
-                      <stop offset="100%" stop-color="#007aff" stop-opacity="0.0"/>
+                      <stop offset="0%" stop-color="#C5A059" stop-opacity="0.30"/>
+                      <stop offset="100%" stop-color="#C5A059" stop-opacity="0.0"/>
                     </linearGradient>
                     <linearGradient id="lump-grad-inv" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#d97706" stop-opacity="0.15"/>
-                      <stop offset="100%" stop-color="#d97706" stop-opacity="0.0"/>
+                      <stop offset="0%" stop-color="#1C2333" stop-opacity="0.18"/>
+                      <stop offset="100%" stop-color="#1C2333" stop-opacity="0.0"/>
                     </linearGradient>
                   </defs>
-                  <g class="chart-grid" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4">
+                  <g class="chart-grid" stroke="#E2D9CC" stroke-width="1" stroke-dasharray="4 4">
                     <line x1="0" y1="30" x2="500" y2="30"/>
                     <line x1="0" y1="75" x2="500" y2="75"/>
                     <line x1="0" y1="120" x2="500" y2="120"/>
                   </g>
                   <path id="lumpChart-invested-area" fill="url(#lump-grad-inv)"></path>
                   <path id="lumpChart-total-area" fill="url(#lump-grad-total)"></path>
-                  <path id="lumpChart-invested" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"></path>
-                  <path id="lumpChart-total" stroke="#007aff" stroke-width="3.5" stroke-linecap="round"></path>
-                  <circle id="lumpChart-dot-inv" r="5" fill="#d97706" stroke="#ffffff" stroke-width="2" class="pulse-marker"></circle>
-                  <circle id="lumpChart-dot-tot" r="6" fill="#007aff" stroke="#ffffff" stroke-width="2" class="pulse-marker"></circle>
+                  <path id="lumpChart-invested" stroke="#1C2333" stroke-width="2.5" stroke-linecap="round"></path>
+                  <path id="lumpChart-total" stroke="#C5A059" stroke-width="3.5" stroke-linecap="round"></path>
+                  <circle id="lumpChart-dot-inv" r="5" fill="#1C2333" stroke="#FFFFFF" stroke-width="2" class="pulse-marker"></circle>
+                  <circle id="lumpChart-dot-tot" r="6" fill="#C5A059" stroke="#FFFFFF" stroke-width="2" class="pulse-marker"></circle>
                 </svg>
               </div>
             </div>
           </div>
 
-          <!-- Tab 3: SWP Calculator (Systematic Withdrawal Plan) -->
+          <!-- Tab 3: SWP Calculator -->
           <div class="calc-pane" id="pane-swp">
             <div class="calc-inputs">
               <div class="calc-input-group">
                 <div class="calc-input-label-row">
                   <span>Total Investment (Corpus)</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">₹</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">₹</span>
                     <input type="number" id="swp-amount-num" min="100000" max="50000000" step="50000" value="5000000" class="calc-num-input" style="width: 120px;">
                   </div>
                 </div>
@@ -726,7 +736,7 @@
                 <div class="calc-input-label-row">
                   <span>Monthly Withdrawal</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">₹</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">₹</span>
                     <input type="number" id="swp-withdraw-num" min="1000" max="500000" step="1000" value="30000" class="calc-num-input" style="width: 110px;">
                   </div>
                 </div>
@@ -738,7 +748,7 @@
                   <span>Expected Return Rate (p.a.)</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="swp-rate-num" min="1" max="30" step="0.5" value="10" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">%</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">%</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="swp-rate" min="1" max="30" step="0.5" value="10">
@@ -749,7 +759,7 @@
                   <span>Time Period</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="swp-years-num" min="1" max="40" step="1" value="10" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">Yr</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">Yr</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="swp-years" min="1" max="40" step="1" value="10">
@@ -763,7 +773,7 @@
                 </div>
                 <div class="calc-result-box">
                   <span>Total Withdrawn</span>
-                  <b id="swpResult-withdrawn" style="color: var(--gold-bright);">₹0</b>
+                  <b id="swpResult-withdrawn" style="color: #C5A059;">₹0</b>
                 </div>
                 <div class="calc-result-box total-span">
                   <span>Final Remaining Value</span>
@@ -781,38 +791,38 @@
                 <svg id="swpChart" viewBox="0 0 500 160" fill="none">
                   <defs>
                     <linearGradient id="swp-grad-rem" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#007aff" stop-opacity="0.20"/>
-                      <stop offset="100%" stop-color="#007aff" stop-opacity="0.0"/>
+                      <stop offset="0%" stop-color="#C5A059" stop-opacity="0.30"/>
+                      <stop offset="100%" stop-color="#C5A059" stop-opacity="0.0"/>
                     </linearGradient>
                     <linearGradient id="swp-grad-with" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.18"/>
-                      <stop offset="100%" stop-color="#ea580c" stop-opacity="0.0"/>
+                      <stop offset="0%" stop-color="#EA580C" stop-opacity="0.22"/>
+                      <stop offset="100%" stop-color="#EA580C" stop-opacity="0.0"/>
                     </linearGradient>
                   </defs>
-                  <g class="chart-grid" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4">
+                  <g class="chart-grid" stroke="#E2D9CC" stroke-width="1" stroke-dasharray="4 4">
                     <line x1="0" y1="30" x2="500" y2="30"/>
                     <line x1="0" y1="75" x2="500" y2="75"/>
                     <line x1="0" y1="120" x2="500" y2="120"/>
                   </g>
                   <path id="swpChart-remaining-area" fill="url(#swp-grad-rem)"></path>
                   <path id="swpChart-withdrawn-area" fill="url(#swp-grad-with)"></path>
-                  <path id="swpChart-remaining" stroke="#007aff" stroke-width="3.5" stroke-linecap="round"></path>
-                  <path id="swpChart-withdrawn" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4"></path>
-                  <circle id="swpChart-dot-rem" r="6" fill="#007aff" stroke="#ffffff" stroke-width="2" class="pulse-marker"></circle>
-                  <circle id="swpChart-dot-with" r="5" fill="#ea580c" stroke="#ffffff" stroke-width="2" class="pulse-marker"></circle>
+                  <path id="swpChart-remaining" stroke="#C5A059" stroke-width="3.5" stroke-linecap="round"></path>
+                  <path id="swpChart-withdrawn" stroke="#EA580C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4"></path>
+                  <circle id="swpChart-dot-rem" r="6" fill="#C5A059" stroke="#FFFFFF" stroke-width="2" class="pulse-marker"></circle>
+                  <circle id="swpChart-dot-with" r="5" fill="#EA580C" stroke="#FFFFFF" stroke-width="2" class="pulse-marker"></circle>
                 </svg>
               </div>
             </div>
           </div>
 
-          <!-- Tab 3: EMI Calculator -->
+          <!-- Tab 4: EMI Calculator -->
           <div class="calc-pane" id="pane-emi">
             <div class="calc-inputs">
               <div class="calc-input-group">
                 <div class="calc-input-label-row">
                   <span>Loan Amount</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">₹</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">₹</span>
                     <input type="number" id="emi-amount-num" min="100000" max="50000000" step="50000" value="3000000" class="calc-num-input" style="width: 120px;">
                   </div>
                 </div>
@@ -823,7 +833,7 @@
                   <span>Annual Interest Rate</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="emi-rate-num" min="3" max="25" step="0.1" value="8.5" class="calc-num-input" style="width: 75px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">%</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">%</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="emi-rate" min="3" max="25" step="0.1" value="8.5">
@@ -833,7 +843,7 @@
                   <span>Loan Tenure</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="emi-years-num" min="1" max="30" step="1" value="20" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">Yr</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">Yr</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="emi-years" min="1" max="30" step="1" value="20">
@@ -843,7 +853,7 @@
               <div class="calc-results-grid">
                 <div class="calc-result-box">
                   <span>Monthly EMI payment</span>
-                  <b id="emiResult-monthly" style="color: var(--champagne);">₹0</b>
+                  <b id="emiResult-monthly" style="color: #9E7432;">₹0</b>
                 </div>
                 <div class="calc-result-box">
                   <span>Total Interest Payable</span>
@@ -863,23 +873,23 @@
                   <span class="chart-badge" id="emiChart-badge">Loan Amortization</span>
                 </div>
                 <svg id="emiChart" viewBox="0 0 500 160" fill="none">
-                  <g class="chart-grid" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4">
+                  <g class="chart-grid" stroke="#E2D9CC" stroke-width="1" stroke-dasharray="4 4">
                     <line x1="0" y1="30" x2="500" y2="30"/>
                     <line x1="0" y1="75" x2="500" y2="75"/>
                     <line x1="0" y1="120" x2="500" y2="120"/>
                   </g>
                   <path id="emiChart-principal-area" fill="url(#sip-grad-total)"></path>
                   <path id="emiChart-total-area" fill="url(#swp-grad-with)"></path>
-                  <path id="emiChart-principal" stroke="#007aff" stroke-width="3.5" stroke-linecap="round"></path>
-                  <path id="emiChart-total" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"></path>
-                  <circle id="emiChart-dot-prin" r="6" fill="#007aff" stroke="#ffffff" stroke-width="2" class="pulse-marker"></circle>
-                  <circle id="emiChart-dot-tot" r="5" fill="#ea580c" stroke="#ffffff" stroke-width="2" class="pulse-marker"></circle>
+                  <path id="emiChart-principal" stroke="#C5A059" stroke-width="3.5" stroke-linecap="round"></path>
+                  <path id="emiChart-total" stroke="#EA580C" stroke-width="2.5" stroke-linecap="round"></path>
+                  <circle id="emiChart-dot-prin" r="6" fill="#C5A059" stroke="#FFFFFF" stroke-width="2" class="pulse-marker"></circle>
+                  <circle id="emiChart-dot-tot" r="5" fill="#EA580C" stroke="#FFFFFF" stroke-width="2" class="pulse-marker"></circle>
                 </svg>
               </div>
             </div>
           </div>
 
-          <!-- Tab 4: Retirement Planner -->
+          <!-- Tab 5: Retirement Planner -->
           <div class="calc-pane" id="pane-retirement">
             <div class="calc-inputs">
               <div class="calc-input-group">
@@ -887,7 +897,7 @@
                   <span>Current Age</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="ret-current-num" min="18" max="59" step="1" value="30" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">Yr</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">Yr</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="ret-current" min="18" max="59" step="1" value="30">
@@ -897,7 +907,7 @@
                   <span>Planned Retirement Age</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="ret-retire-num" min="40" max="75" step="1" value="60" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">Yr</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">Yr</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="ret-retire" min="40" max="75" step="1" value="60">
@@ -906,7 +916,7 @@
                 <div class="calc-input-label-row">
                   <span>Monthly Expenses (Today)</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">₹</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">₹</span>
                     <input type="number" id="ret-expenses-num" min="10000" max="500000" step="2000" value="50000" class="calc-num-input" style="width: 110px;">
                   </div>
                 </div>
@@ -917,7 +927,7 @@
                   <span>Expected Inflation (annual)</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="ret-inflation-num" min="2" max="15" step="0.5" value="6" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">%</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">%</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="ret-inflation" min="2" max="15" step="0.5" value="6">
@@ -931,7 +941,7 @@
                 </div>
                 <div class="calc-result-box">
                   <span>Monthly SIP to Save</span>
-                  <b id="retResult-sip" style="color: var(--gold-bright);">₹0</b>
+                  <b id="retResult-sip" style="color: #9E7432;">₹0</b>
                 </div>
                 <div class="calc-result-box total-span">
                   <span>Total Target Pension Corpus</span>
@@ -942,35 +952,35 @@
                 <div class="chart-header-bar">
                   <div class="chart-legend">
                     <span class="legend-item"><i class="legend-dot cyan"></i> Target Savings Corpus</span>
-                    <span class="legend-item"><i class="legend-dot orange"></i> Inflation Expense Curve</span>
+                    <span class="legend-item"><i class="legend-dot orange"></i> Inflation Curve</span>
                   </div>
                   <span class="chart-badge" id="retChart-badge">Corpus Target</span>
                 </div>
                 <svg id="retChart" viewBox="0 0 500 160" fill="none">
-                  <g class="chart-grid" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4">
+                  <g class="chart-grid" stroke="#E2D9CC" stroke-width="1" stroke-dasharray="4 4">
                     <line x1="0" y1="30" x2="500" y2="30"/>
                     <line x1="0" y1="75" x2="500" y2="75"/>
                     <line x1="0" y1="120" x2="500" y2="120"/>
                   </g>
                   <path id="retChart-inflation-area" fill="url(#swp-grad-with)"></path>
                   <path id="retChart-corpus-area" fill="url(#sip-grad-total)"></path>
-                  <path id="retChart-inflation" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4"></path>
-                  <path id="retChart-corpus" stroke="#007aff" stroke-width="3.5" stroke-linecap="round"></path>
-                  <circle id="retChart-dot-inf" r="5" fill="#ea580c" stroke="#ffffff" stroke-width="2" class="pulse-marker"></circle>
-                  <circle id="retChart-dot-corp" r="6" fill="#007aff" stroke="#ffffff" stroke-width="2" class="pulse-marker"></circle>
+                  <path id="retChart-inflation" stroke="#EA580C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4"></path>
+                  <path id="retChart-corpus" stroke="#C5A059" stroke-width="3.5" stroke-linecap="round"></path>
+                  <circle id="retChart-dot-inf" r="5" fill="#EA580C" stroke="#FFFFFF" stroke-width="2" class="pulse-marker"></circle>
+                  <circle id="retChart-dot-corp" r="6" fill="#C5A059" stroke="#FFFFFF" stroke-width="2" class="pulse-marker"></circle>
                 </svg>
               </div>
             </div>
           </div>
 
-          <!-- Tab 5: FIRE (Early Retirement) -->
+          <!-- Tab 6: FIRE (Early Retirement) -->
           <div class="calc-pane" id="pane-fire">
             <div class="calc-inputs">
               <div class="calc-input-group">
                 <div class="calc-input-label-row">
                   <span>Annual Household Expenses</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">₹</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">₹</span>
                     <input type="number" id="fire-expenses-num" min="100000" max="30000000" step="25000" value="600000" class="calc-num-input" style="width: 120px;">
                   </div>
                 </div>
@@ -980,7 +990,7 @@
                 <div class="calc-input-label-row">
                   <span>Current Accumulated Wealth</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">₹</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">₹</span>
                     <input type="number" id="fire-wealth-num" min="0" max="50000000" step="50000" value="1500000" class="calc-num-input" style="width: 120px;">
                   </div>
                 </div>
@@ -991,7 +1001,7 @@
                   <span>Safe Withdrawal Rate (SWR)</span>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <input type="number" id="fire-swr-num" min="2.5" max="10" step="0.1" value="4" class="calc-num-input" style="width: 70px;">
-                    <span style="color: var(--champagne); font-family: 'IBM Plex Mono', monospace; font-size: 14px;">%</span>
+                    <span style="color: #C5A059; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700;">%</span>
                   </div>
                 </div>
                 <input type="range" class="calc-range" id="fire-swr" min="2.5" max="10" step="0.1" value="4">
@@ -1005,7 +1015,7 @@
                 </div>
                 <div class="calc-result-box">
                   <span>Deficit to FIRE</span>
-                  <b id="fireResult-deficit" style="color: var(--gold-bright);">₹0</b>
+                  <b id="fireResult-deficit" style="color: #9E7432;">₹0</b>
                 </div>
                 <div class="calc-result-box total-span">
                   <span>FIRE Readiness Ratio</span>
@@ -1015,22 +1025,22 @@
               <div class="calc-chart-box">
                 <div class="chart-header-bar">
                   <div class="chart-legend">
-                    <span class="legend-item"><i class="legend-dot cyan"></i> Current Wealth Progress</span>
-                    <span class="legend-item"><i class="legend-dot gold"></i> Target FIRE Threshold</span>
+                    <span class="legend-item"><i class="legend-dot cyan"></i> Wealth Progress</span>
+                    <span class="legend-item"><i class="legend-dot gold"></i> Target Threshold</span>
                   </div>
                   <span class="chart-badge" id="fireChart-badge">FIRE Index</span>
                 </div>
                 <svg id="fireChart" viewBox="0 0 500 160" fill="none">
-                  <g class="chart-grid" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4">
+                  <g class="chart-grid" stroke="#E2D9CC" stroke-width="1" stroke-dasharray="4 4">
                     <line x1="0" y1="30" x2="500" y2="30"/>
                     <line x1="0" y1="75" x2="500" y2="75"/>
                     <line x1="0" y1="120" x2="500" y2="120"/>
                   </g>
-                  <path id="fireChart-target-area" fill="rgba(241,245,249,0.5)"></path>
+                  <path id="fireChart-target-area" fill="rgba(243, 236, 225, 0.6)"></path>
                   <path id="fireChart-current-area" fill="url(#sip-grad-total)"></path>
-                  <path id="fireChart-target" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4"></path>
-                  <path id="fireChart-current" stroke="#007aff" stroke-width="3.5" stroke-linecap="round"></path>
-                  <circle id="fireChart-dot-cur" r="6" fill="#007aff" stroke="#ffffff" stroke-width="2" class="pulse-marker"></circle>
+                  <path id="fireChart-target" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 4"></path>
+                  <path id="fireChart-current" stroke="#C5A059" stroke-width="3.5" stroke-linecap="round"></path>
+                  <circle id="fireChart-dot-cur" r="6" fill="#C5A059" stroke="#FFFFFF" stroke-width="2" class="pulse-marker"></circle>
                 </svg>
               </div>
             </div>
@@ -1039,153 +1049,133 @@
         </div>
       </div>
     </div>
+  </main>
 
-    <!-- MINIMAL FOOTER SECTION -->
-    <footer id="footer-section">
-      <div class="footer-wrapper">
-        <div class="footer-primary-grid">
-          <!-- Logo & Brand Description -->
-          <div class="footer-brand-info">
-            <div class="logo-wrapper" style="display: flex; align-items: center; gap: 10px;">
-              <img src="logo.png" alt="4X Wealth Logo" style="height: 32px; width: auto;" class="brand-logo-img">
-              <div class="logo-text">4X<span>WEALTH</span></div>
-            </div>
-            <p class="brand-sub">Registered AMFI Mutual Fund distributor partner (ARN-268488) specializing in quantitative-research wealth mapping structures.</p>
-            <div class="social-channels">
-              <a href="https://www.instagram.com/4x_wealth_financial_services" class="social-link clickable" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/4x-wealth-financial-services" class="social-link clickable" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="#" class="social-link clickable" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-            </div>
-          </div>
-
-          <!-- Links -->
-          <div class="footer-links-col">
-            <h4>Mandates</h4>
-            <ul class="footer-nav">
-              <li><a href="index.html#services-section" class="clickable">Mutual Funds</a></li>
-              <li><a href="index.html#services-section" class="clickable">PMS Portfolios</a></li>
-              <li><a href="index.html#services-section" class="clickable">Alternative Funds</a></li>
-              <li><a href="index.html#services-section" class="clickable">Corporate Bonds</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-col">
-            <h4>Strategies</h4>
-            <ul class="footer-nav">
-              <li><a href="index.html#services-section" class="clickable">Retirement Shield</a></li>
-              <li><a href="index.html#services-section" class="clickable">Goal Compounding</a></li>
-              <li><a href="index.html#services-section" class="clickable">Tax Maximization</a></li>
-              <li><a href="index.html#services-section" class="clickable">Estate Insurance</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-col">
-            <h4>Ingest Tools</h4>
-            <ul class="footer-nav">
-              <li><a href="calculators.html" class="clickable">SIP Calculator</a></li>
-              <li><a href="index.html#dashboard-section" class="clickable">System conviction</a></li>
-              <li><a href="index.html#intelligence-section" class="clickable">Ingest Calendar</a></li>
-              <li><a href="#" class="clickable">Forms & Downloads</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-col">
-            <h4>Offices</h4>
-            <ul class="footer-nav">
-              <li><a href="#" class="clickable">Thane, Mumbai (HQ)</a></li>
-              <li><a href="#" class="clickable">ARN Registrations</a></li>
-              <li><a href="#" class="clickable">Support Terminal</a></li>
-            </ul>
-          </div>
+  <!-- Footer -->
+  <footer class="luxury-footer">
+    <div class="container-luxury">
+      <div class="footer-disclaimer-box">
+        <p class="footer-disclaimer-bold">MUTUAL FUND INVESTMENTS ARE SUBJECT TO MARKET RISKS, READ ALL SCHEME RELATED DOCUMENTS CAREFULLY.</p>
+        <div class="legal-links-row" style="display: flex; justify-content: center; gap: 12px; margin: 10px 0; font-size: 12px; flex-wrap: wrap;">
+          <a href="#" class="clickable">Disclaimer</a> | 
+          <a href="#" class="clickable">Commission Disclosure</a> | 
+          <a href="#" class="clickable">Privacy Policy</a> | 
+          <a href="#" class="clickable">Terms & Conditions</a> | 
+          <a href="#" class="clickable">SID/SAI/KIM</a> | 
+          <a href="#" class="clickable">Investor Grievance Redressal</a> | 
+          <a href="#" class="clickable">Investor Charter</a>
         </div>
-
-        <div class="footer-bottom-compliance">
-          <p>&copy; 2026 4X Wealth Financial Services. All rights reserved. Registered ARN-268488. Mutual fund investments are subject to market risks, read all scheme related documents carefully. Past performance does not guarantee future capital yield trajectories.</p>
-          <p class="location-stamp">HQ Terminal Location: Thane, Mumbai, India</p>
-        </div>
+        <p class="amfi-reg-text">4X Wealth Financial Services &bull; AMFI ARN-268488 &bull; APMI APRN00969</p>
       </div>
-    </footer>
-  </div>
+      <div class="footer-bottom-strip"><p>&copy; 2026 4X Wealth Financial Services. All Rights Reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=3.5"></script>
+  <script src="calculators.js?v=3.5"></script>
 
   <!-- Search Modal -->
   <div class="search-modal" id="searchModal">
     <div class="search-modal-content">
       <div class="search-input-wrapper">
-        <input type="text" class="search-input" placeholder="Search wealth products, calculators, or blogs..." id="searchInput">
-        <button class="search-close-btn clickable" id="searchModalClose"><i class="fa-solid fa-xmark"></i></button>
+        <i class="fa-solid fa-magnifying-glass search-icon-inside"></i>
+        <input type="text" class="search-input" placeholder="Search mutual funds, PMS, AIF, calculators, bonds, blogs..." id="searchInput" autocomplete="off">
+        <button class="search-close-btn clickable" id="searchModalClose" aria-label="Close search"><i class="fa-solid fa-xmark"></i></button>
       </div>
+
+      <div class="search-quick-tags">
+        <span class="search-quick-label">Quick:</span>
+        <button class="search-tag-chip" data-tag="SIP">SIP Calculator</button>
+        <button class="search-tag-chip" data-tag="PMS">PMS Desk</button>
+        <button class="search-tag-chip" data-tag="SIF">SIF Tracker</button>
+        <button class="search-tag-chip" data-tag="AIF">AIF Funds</button>
+        <button class="search-tag-chip" data-tag="Bonds">Bonds</button>
+        <button class="search-tag-chip" data-tag="Tax">Tax Planning</button>
+      </div>
+
+      <div class="search-results-list" id="searchResultsList"></div>
     </div>
   </div>
 
-  <!-- Dual Login Modal (Client & Retail) -->
+  <!-- 3-Tier Account Access & Sign Up Modal -->
   <div class="login-modal" id="loginModal">
-    <div class="login-card glass-card">
-      <button class="login-close clickable" id="loginCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    <div class="login-card">
+      <button class="login-close clickable" id="loginCloseBtn" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
       
-      <!-- Dual Tier Switcher -->
+      <div style="text-align: center; margin-bottom: 1.2rem;">
+        <span class="section-tag-badge" id="modalTypeHeader" style="margin-bottom: 6px;">RETAIL CLIENT PORTAL</span>
+        <h3 style="font-family: var(--font-heading); font-size: 22px; color: #FFF;">4X Wealth Client Gateway</h3>
+      </div>
+
       <div class="login-tabs">
-        <button class="login-tab-btn active" id="tabClientBtn">
-          <i class="fa-solid fa-building-columns"></i> Client Login
-        </button>
-        <button class="login-tab-btn" id="tabRetailBtn">
-          <i class="fa-solid fa-user-tie"></i> Retail Login
-        </button>
+        <button type="button" class="login-tab-btn active" id="tabRetailBtn">Retail</button>
+        <button type="button" class="login-tab-btn" id="tabCorporateBtn">Corporate</button>
+        <button type="button" class="login-tab-btn" id="tabPartnerBtn">Partner / ARN</button>
       </div>
 
-      <!-- CLIENT LOGIN FORM -->
-      <div class="login-form-container active" id="clientFormContainer">
-        <div class="login-header">
-          <h3>Institutional & HNW Terminal</h3>
-          <p>Authorized ARN / Mandate Client Access</p>
-        </div>
-        <form class="login-form" onsubmit="event.preventDefault();">
-          <div class="form-group">
-            <label for="c-username">AUTHORIZED ARN / CLIENT ID</label>
-            <input type="text" id="c-username" placeholder="e.g. ARN-268488 / HNW-9402" required>
+      <div id="retailFormContainer">
+        <form onsubmit="event.preventDefault(); alert('Authentication Successful: Redirecting to 4X Wealth Retail Portfolio Dashboard...'); document.getElementById('loginModal').classList.remove('open');">
+          <div class="form-field-group">
+            <label>Registered Mobile / PAN / Email</label>
+            <input type="text" required placeholder="e.g. 9820000000 or ABCDE1234F">
           </div>
-          <div class="form-group">
-            <label for="c-password">SECURE TERMINAL KEY</label>
-            <input type="password" id="c-password" placeholder="Enter encrypted passphrase" required>
+          <div class="form-field-group">
+            <label>Password / Security PIN</label>
+            <input type="password" required placeholder="Enter password or 6-digit PIN">
           </div>
-          <div class="form-footer">
-            <label class="remember-me">
-              <input type="checkbox"> Save session
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; font-size: 12px;">
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: rgba(253,248,242,0.7);">
+              <input type="checkbox" checked style="width: auto;"> Remember device
             </label>
-            <a href="#" class="forgot-pwd clickable">Reset Key</a>
+            <a href="#" class="clickable" style="color: var(--gold-primary);">Forgot PIN?</a>
           </div>
-          <button type="submit" class="vg-btn vg-btn-primary submit-btn clickable">Establish Client Link</button>
+          <button type="submit" class="btn-primary clickable" style="width: 100%; justify-content: center; padding: 12px;">
+            <span>Secure Portal Access</span> <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </form>
       </div>
 
-      <!-- RETAIL LOGIN FORM -->
-      <div class="login-form-container" id="retailFormContainer" style="display: none;">
-        <div class="login-header">
-          <h3>Retail Investor Portal</h3>
-          <p>Mutual Funds, SIP Tracker & Direct Wealth Access</p>
-        </div>
-        <form class="login-form" onsubmit="event.preventDefault();">
-          <div class="form-group">
-            <label for="r-username">MOBILE NUMBER / REGISTERED EMAIL</label>
-            <input type="text" id="r-username" placeholder="Enter mobile or email address" required>
+      <div id="corporateFormContainer" style="display: none;">
+        <form onsubmit="event.preventDefault(); alert('Corporate Gateway Access: Redirecting to Treasury Desk...'); document.getElementById('loginModal').classList.remove('open');">
+          <div class="form-field-group">
+            <label>Corporate Entity PAN / CIN</label>
+            <input type="text" required placeholder="e.g. L12345MH2020PLC000000">
           </div>
-          <div class="form-group">
-            <label for="r-password">PASSWORD / OTP PIN</label>
-            <input type="password" id="r-password" placeholder="Enter account password" required>
+          <div class="form-field-group">
+            <label>Authorized Signatory Email</label>
+            <input type="email" required placeholder="treasury@corporate.com">
           </div>
-          <div class="form-footer">
-            <label class="remember-me">
-              <input type="checkbox"> Remember me
-            </label>
-            <a href="#" class="forgot-pwd clickable">Forgot Password?</a>
+          <div class="form-field-group">
+            <label>Enterprise Security Key</label>
+            <input type="password" required placeholder="Enter enterprise key">
           </div>
-          <button type="submit" class="vg-btn vg-btn-primary submit-btn clickable">Access Retail Dashboard</button>
+          <button type="submit" class="btn-primary clickable" style="width: 100%; justify-content: center; padding: 12px;">
+            <span>Authorize Treasury Session</span> <i class="fa-solid fa-lock"></i>
+          </button>
         </form>
       </div>
 
+      <div id="partnerFormContainer" style="display: none;">
+        <form onsubmit="event.preventDefault(); alert('Partner Desk Authorized: Accessing Channel Desk...'); document.getElementById('loginModal').classList.remove('open');">
+          <div class="form-field-group">
+            <label>AMFI ARN Number</label>
+            <input type="text" required placeholder="e.g. ARN-268488">
+          </div>
+          <div class="form-field-group">
+            <label>Partner Registered Email</label>
+            <input type="email" required placeholder="partner@domain.com">
+          </div>
+          <div class="form-field-group">
+            <label>Partner Access PIN</label>
+            <input type="password" required placeholder="Enter 6-digit PIN">
+          </div>
+          <button type="submit" class="btn-primary clickable" style="width: 100%; justify-content: center; padding: 12px;">
+            <span>Enter Partner Terminal</span> <i class="fa-solid fa-handshake"></i>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 
-  <!-- CDN scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  
-  <!-- Local scripts -->
-  <script src="calculators.js?v=3.2"></script>
 </body>
 </html>
