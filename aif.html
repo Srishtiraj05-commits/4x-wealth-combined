@@ -15,7 +15,7 @@
 <body>
 
   <!-- Navigation -->
-    <!-- Header Navigation -->
+      <!-- Header Navigation (Warm Luxury Ivory Theme - Matching Image 3) -->
   <header class="header-wrapper" id="mainHeader">
     <div class="nav-container">
       
@@ -23,7 +23,10 @@
       <a href="index.html" class="logo-link clickable" id="logoContainer">
         <div class="logo-wrapper">
           <img src="logo.png" alt="4X Wealth Logo" class="brand-logo-img">
-          <div class="logo-text">4X<span>WEALTH</span></div>
+          <div class="logo-text-group">
+            <div class="logo-text">4X<span>WEALTH</span></div>
+            <span class="logo-sub">FINANCIAL SERVICES</span>
+          </div>
         </div>
       </a>
 
@@ -105,12 +108,12 @@
         <li class="sk-nav-item dropdown-trigger">
           <a class="sk-nav-link clickable" href="calculators.html">Calculators <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-link clickable" href="calculators.html#card-sip"><i class="fa-solid fa-seedling"></i> SIP Compounding Engine</a></li>
-            <li><a class="dropdown-link clickable" href="calculators.html#card-lumpsum"><i class="fa-solid fa-piggy-bank"></i> Lumpsum Growth Planner</a></li>
-            <li><a class="dropdown-link clickable" href="calculators.html#card-swp"><i class="fa-solid fa-hand-holding-dollar"></i> SWP Cash Flow Engine</a></li>
-            <li><a class="dropdown-link clickable" href="calculators.html#card-emi"><i class="fa-solid fa-house-laptop"></i> EMI & Loan Amortization</a></li>
-            <li><a class="dropdown-link clickable" href="calculators.html#card-retirement"><i class="fa-solid fa-umbrella"></i> Retirement Corpus Planner</a></li>
-            <li><a class="dropdown-link clickable" href="calculators.html#card-fire"><i class="fa-solid fa-fire-flame-curved"></i> FIRE Freedom Calculator</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-sip"><i class="fa-solid fa-seedling"></i> SIP Compounding Engine</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-lumpsum"><i class="fa-solid fa-piggy-bank"></i> Lumpsum Growth Planner</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-swp"><i class="fa-solid fa-hand-holding-dollar"></i> SWP Cash Flow Engine</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-emi"><i class="fa-solid fa-house-laptop"></i> EMI & Loan Amortization</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-retirement"><i class="fa-solid fa-umbrella"></i> Retirement Corpus Planner</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-fire"><i class="fa-solid fa-fire-flame-curved"></i> FIRE Freedom Calculator</a></li>
           </ul>
         </li>
 
@@ -132,37 +135,33 @@
 
       </ul>
 
-      <!-- Header Action Items -->
+      <!-- Header Action Items (Matching Image 3: Client Portal Pill & Schedule Consultation Gold Pill) -->
       <div class="nav-actions">
         
         <!-- Search Trigger -->
         <button class="search-btn clickable" id="searchTrigger" aria-label="Search site">
-          <i class="fa-solid fa-magnifying-glass"></i> <span>Search</span>
+          <i class="fa-solid fa-magnifying-glass"></i>
         </button>
 
-        <!-- Login Dropdown -->
+        <!-- Client Portal Dropdown Button (Pill with border) -->
         <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <button class="vg-btn vg-btn-primary clickable">
-            <span>Login</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
+          <button class="nav-pill-btn nav-pill-portal clickable">
+            <i class="fa-regular fa-user"></i> <span>Client Portal</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
           </button>
           <ul class="dropdown-menu auth-dropdown-menu">
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Investor</a></li>
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Investor Login</a></li>
             <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="corporate"><i class="fa-solid fa-building"></i> Corporate Treasury</a></li>
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner / ARN</a></li>
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner / ARN Login</a></li>
+            <li style="border-top: 1px solid rgba(201,168,105,0.25); margin-top: 4px; padding-top: 4px;">
+              <a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Open Digital Account</a>
+            </li>
           </ul>
         </div>
 
-        <!-- Sign Up Dropdown -->
-        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <button class="vg-btn vg-btn-outline clickable">
-            <span>Sign Up</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
-          </button>
-          <ul class="dropdown-menu auth-dropdown-menu">
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Retail Account</a></li>
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Account</a></li>
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="partner"><i class="fa-solid fa-handshake-angle"></i> Channel Partner</a></li>
-          </ul>
-        </div>
+        <!-- Schedule Consultation Button (Warm Gold Pill - Image 3) -->
+        <a href="index.html#consultation-section" class="nav-pill-btn nav-pill-cta clickable">
+          <span>Schedule Consultation</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
         <!-- Mobile Drawer Toggle -->
         <button class="mobile-toggle clickable" id="mobileMenuTrigger" aria-label="Toggle menu">
@@ -220,7 +219,6 @@
     </div>
   </div>
 
-  <!-- Hero Section -->
   <section class="section-dark" style="padding-top: 180px; padding-bottom: 90px; text-align: center;">
     <div class="container-luxury">
       <span class="section-tag-badge">08 / INVESTMENT SOLUTIONS</span>
