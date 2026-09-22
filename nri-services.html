@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NRI Global Wealth & Cross-Border Mandates | 4X Wealth Financial Services</title>
+  <meta name="description" content="Seamless NRE/NRO investment accounts, FEMA compliance, DTAA tax optimization, and repatriable wealth structures for Non-Resident Indians.">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css?v=3.2">
+
+  <style>
+    .product-page-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 160px;
+      padding-bottom: 120px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .product-hero-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(238, 246, 255, 0.96));
+      border: 1px solid rgba(0, 122, 255, 0.22);
+      border-radius: 28px;
+      padding: 3.5rem 3rem;
+      box-shadow: 0 25px 60px rgba(0, 122, 255, 0.08);
+      margin-bottom: 3rem;
+    }
+
+    .product-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: #007aff;
+      background: rgba(0, 122, 255, 0.1);
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 122, 255, 0.2);
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .product-hero-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 400;
+      color: #0f172a;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .product-hero-desc {
+      font-size: 17px;
+      color: #475569;
+      line-height: 1.65;
+      max-width: 850px;
+      margin-bottom: 2.5rem;
+    }
+
+    .product-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border-radius: 20px;
+      padding: 2.2rem 2.5rem;
+      color: #ffffff;
+      margin-bottom: 3rem;
+    }
+
+    .prod-metric-box span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .prod-metric-box b {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 24px;
+      color: #38bdf8;
+      font-weight: 700;
+    }
+
+    .features-section-title {
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: #0f172a;
+      margin-bottom: 1.5rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border: 1px solid rgba(0, 122, 255, 0.16);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0, 122, 255, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 122, 255, 0.1);
+      border-color: rgba(0, 122, 255, 0.3);
+    }
+
+    .feature-card i {
+      font-size: 26px;
+      color: #007aff;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .cta-consult-box {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(238, 246, 255, 0.96));
+      border: 1px solid rgba(0, 122, 255, 0.25);
+      border-radius: 24px;
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      box-shadow: 0 15px 40px rgba(0, 122, 255, 0.08);
+      flex-wrap: wrap;
+    }
+
+    .cta-consult-text h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-consult-text p {
+      font-size: 14.5px;
+      color: #475569;
+    }
+
+    @media (max-width: 992px) {
+      .product-metrics-grid, .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="sk-dark-theme">
+
+  <!-- Header Navigation -->
+  <header class="header-wrapper" id="mainHeader">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link clickable" id="logoContainer">
+        <div class="logo-wrapper" style="display: flex; align-items: center; gap: 10px;">
+          <img src="logo.png?v=2" alt="4X Wealth Logo" style="height: 42px; width: auto;" class="brand-logo-img">
+          <div class="logo-text">4X<span>WEALTH</span></div>
+        </div>
+      </a>
+
+      <ul class="sk-nav-menu" id="desktopMenu">
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="index.html#hero-section" class="sk-nav-link clickable">Home <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#services-section" class="dropdown-link clickable">Services Overview</a></li>
+            <li><a href="index.html#testimonials-section" class="dropdown-link clickable">Testimonials</a></li>
+            <li><a href="blogs.html" class="dropdown-link clickable">Latest Insights</a></li>
+            <li><a href="index.html#consultation-section" class="dropdown-link clickable">Contact</a></li>
+          </ul>
+        </li>
+
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="solutions.html" class="sk-nav-link clickable">Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-dropdown">
+            <div class="mega-menu-content">
+              <div class="mega-col">
+                <h4>Investments</h4>
+                <ul class="mega-links">
+                  <li><a href="mutual-funds.html" class="mega-link clickable">Mutual Funds <span>Diversified growth schemes</span></a></li>
+                  <li><a href="stocks.html" class="mega-link clickable">Stocks <span>Direct equities tracking</span></a></li>
+                  <li><a href="etfs.html" class="mega-link clickable">ETFs <span>Low-cost index trackers</span></a></li>
+                  <li><a href="bonds.html" class="mega-link clickable">Bonds <span>High-yield fixed income</span></a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <h4>Wealth</h4>
+                <ul class="mega-links">
+                  <li><a href="retirement-planning.html" class="mega-link clickable">Retirement Planning <span>Tax optimized corpus creation</span></a></li>
+                  <li><a href="goal-planning.html" class="mega-link clickable">Goal Planning <span>Targeted estate milestones</span></a></li>
+                  <li><a href="tax-planning.html" class="mega-link clickable">Tax Planning <span>ELSS & compliance wrappers</span></a></li>
+                  <li><a href="insurance.html" class="mega-link clickable">Insurance <span>Comprehensive asset cover</span></a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <h4>Advanced</h4>
+                <ul class="mega-links">
+                  <li><a href="pms.html" class="mega-link clickable">PMS <span>Bespoke active portfolio strategies</span></a></li>
+                  <li><a href="aif.html" class="mega-link clickable">AIF <span>Alternative private fund assets</span></a></li>
+                  <li><a href="corporate-wealth.html" class="mega-link clickable">Corporate Wealth <span>Treasury optimization structures</span></a></li>
+                  <li><a href="nri-services.html" class="mega-link clickable">NRI Services <span>Global cross-border mandates</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="index.html#dashboard-section" class="sk-nav-link clickable">Research <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#dashboard-section" class="dropdown-link clickable">Live Signals</a></li>
+            <li><a href="index.html#dashboard-section" class="dropdown-link clickable">Market Movers</a></li>
+          </ul>
+        </li>
+
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="hedge-lab.html" class="sk-nav-link clickable">AI Hedge Lab <i class="fa-solid fa-chevron-down"></i></a>
+        </li>
+
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="calculators.html" class="sk-nav-link clickable">Calculators <i class="fa-solid fa-chevron-down"></i></a>
+        </li>
+
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="blogs.html" class="sk-nav-link clickable">Resources <i class="fa-solid fa-chevron-down"></i></a>
+        </li>
+
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="about.html" class="sk-nav-link clickable">About Us</a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="search-btn clickable" id="searchTrigger" style="display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-magnifying-glass"></i> <span>Search</span>
+        </button>
+
+        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
+          <button class="vg-btn vg-btn-primary clickable"><span>Login</span> <i class="fa-solid fa-chevron-down"></i></button>
+        </div>
+        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
+          <button class="vg-btn vg-btn-outline clickable"><span>Sign Up</span> <i class="fa-solid fa-chevron-down"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <div class="main-wrapper">
+    <div class="product-page-container">
+      
+      <!-- Hero Header -->
+      <div class="product-hero-card">
+        <span class="product-badge">ADVANCED MANDATE</span>
+        <h1 class="product-hero-title">NRI Global Wealth & Cross-Border Mandates</h1>
+        <p class="product-hero-desc">Seamless NRE/NRO investment accounts, FEMA compliance, DTAA tax optimization, and repatriable wealth structures for Non-Resident Indians.</p>
+
+        <div class="product-metrics-grid">
+          <div class="prod-metric-box">
+            <span>Minimum Capital Allocation</span>
+            <b>₹2,00,000</b>
+          </div>
+          <div class="prod-metric-box">
+            <span>Target CAGR Horizon</span>
+            <b>USD / INR Hedged</b>
+          </div>
+          <div class="prod-metric-box">
+            <span>Risk Framework</span>
+            <b>Global Cross-Border</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Pillars -->
+      <h2 class="features-section-title">Institutional Mandate Pillars</h2>
+      <div class="features-grid">
+        
+        <div class="feature-card">
+          <i class="fa-solid fa-globe"></i>
+          <h3>NRE & NRO Account Integration</h3>
+          <p>Seamless onboarding for US, UK, UAE, Singapore, and global NRIs with full 100% repatriability assistance.</p>
+        </div>
+        
+        <div class="feature-card">
+          <i class="fa-solid fa-passport"></i>
+          <h3>FEMA & Tax Compliance Wrapper</h3>
+          <p>Complete Double Taxation Avoidance Agreement (DTAA) guidance preventing double tax deduction.</p>
+        </div>
+        
+        <div class="feature-card">
+          <i class="fa-solid fa-arrow-right-left"></i>
+          <h3>FX Currency Hedging Analysis</h3>
+          <p>Evaluating INR growth vs USD/EUR/AED depreciation to ensure positive net hard-currency returns.</p>
+        </div>
+        
+        <div class="feature-card">
+          <i class="fa-solid fa-laptop-code"></i>
+          <h3>100% Digital Onboarding & KYC</h3>
+          <p>Paperless online video KYC and digital portfolio management accessible anywhere in the world.</p>
+        </div>
+        
+      </div>
+
+      <!-- CTA Box -->
+      <div class="cta-consult-box">
+        <div class="cta-consult-text">
+          <h3>Structure Your NRI Global Wealth & Cross-Border Mandates Mandate</h3>
+          <p>Schedule a 1-on-1 strategy briefing with our SEBI & AMFI registered wealth specialists.</p>
+        </div>
+        <a href="index.html#consultation-section" class="vg-btn vg-btn-primary clickable">Book Advisory Consultation <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i></a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER SECTION -->
+  <footer id="footer-section">
+    <div class="footer-new-container">
+      <div class="footer-top-grid">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html#footer-section">About Us</a></li>
+            <li><a href="solutions.html">Products & Solutions</a></li>
+            <li><a href="index.html#dashboard-section">Risk Analysis</a></li>
+            <li><a href="calculators.html">SIP & Financial Calculators</a></li>
+            <li><a href="blogs.html">Blogs & Insights</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Client Portal</h4>
+          <ul class="footer-list">
+            <li><a href="hedge-lab.html">AI Hedge Lab</a></li>
+            <li><a href="#" class="login-trigger" data-login-mode="retail">Client Area</a></li>
+            <li><a href="index.html#consultation-section">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get In Touch</h4>
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <i class="fa-regular fa-envelope"></i>
+              <a href="mailto:info@4xwealthfinancialservices.com">info@4xwealthfinancialservices.com</a>
+            </div>
+            <div class="contact-info-item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+919372207675">+91 9372 207 675</a>
+            </div>
+            <div class="contact-info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Shop No. 101, First Floor, Ganesh Tower, Thane West, 400602</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Connect With Us</h4>
+          <div class="social-circles-grid">
+            <a href="https://x.com/4X_Wealth?t=gUkuVnt19KYRhMpVWFDnEw&s=09" target="_blank" aria-label="X (Twitter)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/4x_wealth_financial_services?igsh=MTE1NXlzb3M1eTJpZw%3D%3D" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@4xwealthfinancialservices" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/company/4x-wealth-financial-services/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://api.whatsapp.com/send/?phone=919372207675&text&type=phone_number&app_absent=0" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-disclaimer-block">
+        <p class="disclaimer-bold">MUTUAL FUND INVESTMENTS ARE SUBJECT TO MARKET RISKS, READ ALL SCHEME RELATED DOCUMENTS CAREFULLY.</p>
+        <div class="legal-links-row">
+          <a href="#">Disclaimer</a> | 
+          <a href="#">Commission Disclosure</a> | 
+          <a href="#">Privacy Policy</a> | 
+          <a href="#">Terms & Conditions</a> | 
+          <a href="#">SID/SAI/KIM</a> | 
+          <a href="#">Investor Grievance Redressal</a> | 
+          <a href="#">Investor Charter</a>
+        </div>
+        <p class="amfi-text">AMFI Registered Mutual Fund Distributor | ARN- 268488 | Current validity: 24-04-2026</p>
+        <p class="apmi-text">APMI Registered PMS Distributor | APRN Code - APRN00969 | Current validity: 04-05-2027</p>
+      </div>
+    </div>
+    <div class="footer-bottom-strip">
+      <p>&copy; 2026 4X Wealth Financial Services. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=3.2"></script>
+</body>
+</html>

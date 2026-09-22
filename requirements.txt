@@ -1,0 +1,7 @@
+# 4X Wealth Backend Dependencies
+# Install with: pip install -r requirements.txt
+
+yfinance>=0.2.54
+requests>=2.31.0
+nsepython>=2.8
+nselib>=1.0

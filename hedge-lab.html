@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Hedge Lab | 4X Wealth Financial Services</title>
+  <meta name="description" content="Access the core quantitative intelligence systems of 4X Wealth. Monitor real-time risk compliance, portfolio optimization, and sentiment forecast nodes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=3.2">
+</head>
+<body class="dark-theme">
+
+  <!-- Header Navigation -->
+  <header class="header-wrapper scrolled" id="mainHeader">
+    <div class="nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="logo-link clickable" id="logoContainer">
+        <div class="logo-wrapper" style="display: flex; align-items: center; gap: 10px;">
+          <img src="logo.png" alt="4X Wealth Logo" style="height: 34px; width: auto;" class="brand-logo-img">
+          <div class="logo-text">4X<span>WEALTH</span></div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="sk-nav-menu" id="desktopMenu">
+        <!-- Home Dropdown -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="index.html#hero-section" class="sk-nav-link clickable">Home <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#services-section" class="dropdown-link clickable">Services Overview</a></li>
+            <li><a href="index.html#testimonials-section" class="dropdown-link clickable">Testimonials</a></li>
+            <li><a href="blogs.html" class="dropdown-link clickable">Latest Insights</a></li>
+            <li><a href="index.html#consultation-section" class="dropdown-link clickable">Contact CTA</a></li>
+          </ul>
+        </li>
+
+        <!-- Solutions Mega Menu -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="index.html#services-section" class="sk-nav-link clickable">Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-dropdown">
+            <div class="mega-menu-content">
+              <div class="mega-col">
+                <h4>Investments</h4>
+                <ul class="mega-links">
+                  <li><a href="index.html#services-section" class="mega-link clickable">Mutual Funds <span>Diversified growth schemes</span></a></li>
+                  <li><a href="index.html#dashboard-section" class="mega-link clickable">Stocks <span>Direct equities tracking</span></a></li>
+                  <li><a href="index.html#services-section" class="mega-link clickable">ETFs <span>Low-cost index trackers</span></a></li>
+                  <li><a href="index.html#services-section" class="mega-link clickable">Bonds <span>High-yield fixed income</span></a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <h4>Wealth</h4>
+                <ul class="mega-links">
+                  <li><a href="index.html#services-section" class="mega-link clickable">Retirement Planning <span>Tax optimized corpus creation</span></a></li>
+                  <li><a href="index.html#services-section" class="mega-link clickable">Goal Planning <span>Targeted estate milestones</span></a></li>
+                  <li><a href="index.html#services-section" class="mega-link clickable">Tax Planning <span>ELSS & compliance wrappers</span></a></li>
+                  <li><a href="index.html#services-section" class="mega-link clickable">Insurance <span>Comprehensive asset cover</span></a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <h4>Advanced</h4>
+                <ul class="mega-links">
+                  <li><a href="index.html#services-section" class="mega-link clickable">PMS <span>Bespoke active portfolio strategies</span></a></li>
+                  <li><a href="index.html#services-section" class="mega-link clickable">AIF <span>Alternative private fund assets</span></a></li>
+                  <li><a href="index.html#services-section" class="mega-link clickable">Corporate Wealth <span>Treasury optimization structures</span></a></li>
+                  <li><a href="index.html#services-section" class="mega-link clickable">NRI Services <span>Global cross-border mandates</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Research Dropdown -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="index.html#dashboard-section" class="sk-nav-link clickable">Research <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#dashboard-section" class="dropdown-link clickable">Live Signals</a></li>
+            <li><a href="index.html#dashboard-section" class="dropdown-link clickable">Market Movers</a></li>
+            <li><a href="index.html#dashboard-section" class="dropdown-link clickable">AI Forecasts</a></li>
+          </ul>
+        </li>
+
+        <!-- AI Hedge Lab Dropdown -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="hedge-lab.html" class="sk-nav-link clickable">AI Hedge Lab <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="hedge-lab.html" class="dropdown-link clickable">Quantitative Core</a></li>
+            <li><a href="hedge-lab.html" class="dropdown-link clickable">Risk Management</a></li>
+            <li><a href="hedge-lab.html" class="dropdown-link clickable">Forecast Systems</a></li>
+            <li><a href="hedge-lab.html" class="dropdown-link clickable">Alternative Analytics</a></li>
+          </ul>
+        </li>
+
+        <!-- Calculators Dropdown -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="calculators.html" class="sk-nav-link clickable">Calculators <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="calculators.html" class="dropdown-link clickable">SIP Calculator</a></li>
+            <li><a href="calculators.html" class="dropdown-link clickable">Lump-sum Planner</a></li>
+            <li><a href="calculators.html" class="dropdown-link clickable">Retirement Goal Projection</a></li>
+            <li><a href="calculators.html" class="dropdown-link clickable">Tax Savings & ELSS</a></li>
+            <li><a href="calculators.html" class="dropdown-link clickable">All Financial Calculators</a></li>
+          </ul>
+        </li>
+
+        <!-- Resources Dropdown -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="blogs.html" class="sk-nav-link clickable">Resources <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="sif-tracker.html" class="dropdown-link clickable">SIF Screener <span class="badge-new">NEW</span></a></li>
+            <li><a href="blogs.html" class="dropdown-link clickable">Blogs & Knowledge Base</a></li>
+            <li><a href="blogs.html" class="dropdown-link clickable">Wealth Guides & Reports</a></li>
+          </ul>
+        </li>
+
+        <!-- About Dropdown -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a href="index.html#footer-section" class="sk-nav-link clickable">About <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#footer-section" class="dropdown-link clickable">Compliance Profile</a></li>
+            <li><a href="index.html#footer-section" class="dropdown-link clickable">Registered Partner Info</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Header Action Items -->
+      <div class="nav-actions">
+        <button class="search-btn clickable" id="searchTrigger" aria-label="Search site" style="display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-magnifying-glass"></i> <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;">Search</span>
+        </button>
+
+        <!-- Login Dropdown -->
+        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
+          <button class="vg-btn vg-btn-primary clickable" style="display: flex; align-items: center; gap: 6px;">
+            <span>Login</span> <i class="fa-solid fa-chevron-down" style="font-size: 9px;"></i>
+          </button>
+          <ul class="dropdown-menu auth-dropdown-menu">
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Login</a></li>
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="corporate"><i class="fa-solid fa-building"></i> Corporate Login</a></li>
+            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner Login</a></li>
+          </ul>
+        </div>
+
+        <!-- Sign Up Dropdown -->
+        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
+          <button class="vg-btn vg-btn-outline clickable" style="display: flex; align-items: center; gap: 6px;">
+            <span>Sign Up</span> <i class="fa-solid fa-chevron-down" style="font-size: 9px;"></i>
+          </button>
+          <ul class="dropdown-menu auth-dropdown-menu">
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Retail Sign Up</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Sign Up</a></li>
+            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="partner"><i class="fa-solid fa-handshake-angle"></i> Partner Sign Up</a></li>
+          </ul>
+        </div>
+
+        <button class="mobile-toggle clickable" id="mobileMenuTrigger" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Market Movers Ticker -->
+    <div class="live-market-bar">
+      <div class="live-market-title">
+        <span class="live-pulse"></span>
+        <span class="live-label">LIVE MARKET</span>
+      </div>
+      <div class="marquee-wrapper">
+        <div class="marquee-track" id="marketMarqueeTrack">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+      <div class="view-market-container">
+        <a href="index.html#dashboard-section" class="view-market-link">
+          <span>View Market</span>
+          <span class="arrow-right">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="sk-drawer-overlay" id="mobileOverlay"></div>
+  <div class="sk-drawer" id="mobileDrawer">
+    <button class="sk-drawer-close clickable" id="mobileDrawerClose">&times;</button>
+    <div class="sk-drawer-header">
+      <img src="logo.png" alt="4X Wealth Logo" class="brand-logo-img">
+      <div class="logo-text">4X<span>WEALTH</span></div>
+    </div>
+    <ul class="sk-drawer-links">
+      <li><a href="index.html#hero-section" class="sk-drawer-link clickable">Home</a></li>
+      <li><a href="index.html#services-section" class="sk-drawer-link clickable">Solutions</a></li>
+      <li><a href="index.html#dashboard-section" class="sk-drawer-link clickable">Research</a></li>
+      <li><a href="hedge-lab.html" class="sk-drawer-link clickable">AI Hedge Lab</a></li>
+      <li><a href="sif-tracker.html" class="sk-drawer-link clickable">SIF Tracker</a></li>
+      <li><a href="blogs.html" class="sk-drawer-link clickable">Blogs Portal</a></li>
+      <li><a href="calculators.html" class="sk-drawer-link clickable">Calculators Portal</a></li>
+      <li><a href="index.html#footer-section" class="sk-drawer-link clickable">About</a></li>
+    </ul>
+
+    <div class="sk-drawer-auth-section">
+      <div class="sk-drawer-section-title">LOGIN OPTIONS</div>
+      <div class="sk-drawer-btn-group">
+        <button class="vg-btn vg-btn-primary clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Login</button>
+        <button class="vg-btn vg-btn-primary clickable login-trigger" data-login-mode="corporate"><i class="fa-solid fa-building"></i> Corporate Login</button>
+        <button class="vg-btn vg-btn-primary clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner Login</button>
+      </div>
+      
+      <div class="sk-drawer-section-title sign-up-title">SIGN UP OPTIONS</div>
+      <div class="sk-drawer-btn-group">
+        <button class="vg-btn vg-btn-outline clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Retail Sign Up</button>
+        <button class="vg-btn vg-btn-outline clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Sign Up</button>
+        <button class="vg-btn vg-btn-outline clickable signup-trigger" data-signup-mode="partner"><i class="fa-solid fa-handshake-angle"></i> Partner Sign Up</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Scroll Layout Wrapper -->
+  <div class="main-wrapper">
+    <div class="lab-page-container">
+      <div class="section-header">
+        <span class="section-tag">CORE INFRASTRUCTURE</span>
+        <h1 class="section-title">Institutional <span style="background: linear-gradient(135deg, #007aff, #ff2d55); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Quant Core</span></h1>
+        <p class="section-desc">Analyze risk metrics, portfolio optimization bounds, and NLP sentiment forecasts generated by our neural processing core.</p>
+      </div>
+
+      <div class="lab-page-grid">
+        <!-- Sidebar Panel -->
+        <div class="lab-sidebar">
+          <div class="module-info-panel glass-card" id="moduleInfoPanel" style="margin-top: 0;">
+            <h4 class="info-title" id="infoTitle">QUANTITATIVE CORE</h4>
+            <p class="info-desc" id="infoDesc">Hover over or tap a neural module card to initialize diagnostics and check the real-time load parameters.</p>
+            <div class="info-data-row">
+              <span class="data-label">ACTIVATION LEVEL:</span>
+              <span class="data-value" id="infoActivation">100% ONLINE</span>
+            </div>
+            <div class="info-data-row">
+              <span class="data-label">ALGORITHMIC LOAD:</span>
+              <span class="data-value" id="infoLoad">0.00 FLOPS</span>
+            </div>
+          </div>
+
+          <!-- 3D WebGL Canvas Card -->
+          <div class="lab-canvas-card">
+            <canvas id="labCanvas3d"></canvas>
+          </div>
+        </div>
+
+        <!-- HTML Overlay Grid for Modules -->
+        <div class="lab-modules-container">
+          <div class="module-node glass-card hover-tilt clickable" data-module="portfolio">
+            <i class="fa-solid fa-chart-pie" style="color: #007aff;"></i>
+            <h5>Portfolio Intelligence</h5>
+            <p>Mathematical optimization of cross-asset allocations using Markowitz frontiers and Black-Litterman conviction modeling overlays.</p>
+          </div>
+          <div class="module-node glass-card hover-tilt clickable" data-module="risk">
+            <i class="fa-solid fa-shield-halved" style="color: #ff2d55;"></i>
+            <h5>Risk Engine</h5>
+            <p>Stochastic analysis of structural downside vectors, executing Monte Carlo stress testing against global macro fluctuations.</p>
+          </div>
+          <div class="module-node glass-card hover-tilt clickable" data-module="forecast">
+            <i class="fa-solid fa-brain" style="color: #ff9500;"></i>
+            <h5>Market Forecast</h5>
+            <p>Predictive temporal modeling on historical structures using multi-layer LSTM neural nets to map vector momentum.</p>
+          </div>
+          <div class="module-node glass-card hover-tilt clickable" data-module="alternative">
+            <i class="fa-solid fa-satellite" style="color: #34aadc;"></i>
+            <h5>Alternative Data</h5>
+            <p>NLP analysis on unstructured global feeds, tracking institutional filings, news sentiment, and capital pipeline routing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MINIMAL FOOTER SECTION -->
+    <footer id="footer-section">
+      <div class="footer-wrapper">
+        <div class="footer-primary-grid">
+          <!-- Logo & Brand Description -->
+          <div class="footer-brand-info">
+            <div class="logo-wrapper" style="display: flex; align-items: center; gap: 10px;">
+              <img src="logo.png" alt="4X Wealth Logo" style="height: 32px; width: auto;" class="brand-logo-img">
+              <div class="logo-text">4X<span>WEALTH</span></div>
+            </div>
+            <p class="brand-sub">Registered AMFI Mutual Fund distributor partner (ARN-268488) specializing in quantitative-research wealth mapping structures.</p>
+            <div class="social-channels">
+              <a href="https://www.instagram.com/4x_wealth_financial_services" class="social-link clickable" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/4x-wealth-financial-services" class="social-link clickable" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#" class="social-link clickable" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="footer-links-col">
+            <h4>Mandates</h4>
+            <ul class="footer-nav">
+              <li><a href="index.html#services-section" class="clickable">Mutual Funds</a></li>
+              <li><a href="index.html#services-section" class="clickable">PMS Portfolios</a></li>
+              <li><a href="index.html#services-section" class="clickable">Alternative Funds</a></li>
+              <li><a href="index.html#services-section" class="clickable">Corporate Bonds</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Strategies</h4>
+            <ul class="footer-nav">
+              <li><a href="index.html#services-section" class="clickable">Retirement Shield</a></li>
+              <li><a href="index.html#services-section" class="clickable">Goal Compounding</a></li>
+              <li><a href="index.html#services-section" class="clickable">Tax Maximization</a></li>
+              <li><a href="index.html#services-section" class="clickable">Estate Insurance</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Ingest Tools</h4>
+            <ul class="footer-nav">
+              <li><a href="index.html#simulator-section" class="clickable">SIP Calculator</a></li>
+              <li><a href="index.html#dashboard-section" class="clickable">System conviction</a></li>
+              <li><a href="index.html#intelligence-section" class="clickable">Ingest Calendar</a></li>
+              <li><a href="#" class="clickable">Forms & Downloads</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Offices</h4>
+            <ul class="footer-nav">
+              <li><a href="#" class="clickable">Thane, Mumbai (HQ)</a></li>
+              <li><a href="#" class="clickable">ARN Registrations</a></li>
+              <li><a href="#" class="clickable">Support Terminal</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom-compliance">
+          <p>&copy; 2026 4X Wealth Financial Services. All rights reserved. Registered ARN-268488. Mutual fund investments are subject to market risks, read all scheme related documents carefully. Past performance does not guarantee future capital yield trajectories.</p>
+          <p class="location-stamp">HQ Terminal Location: Thane, Mumbai, India</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-input-wrapper">
+        <input type="text" class="search-input" placeholder="Search wealth products, calculators, or blogs..." id="searchInput">
+        <button class="search-close-btn clickable" id="searchModalClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dual Login Modal (Client & Retail) -->
+  <div class="login-modal" id="loginModal">
+    <div class="login-card glass-card">
+      <button class="login-close clickable" id="loginCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+      
+      <!-- Dual Tier Switcher -->
+      <div class="login-tabs">
+        <button class="login-tab-btn active" id="tabClientBtn">
+          <i class="fa-solid fa-building-columns"></i> Client Login
+        </button>
+        <button class="login-tab-btn" id="tabRetailBtn">
+          <i class="fa-solid fa-user-tie"></i> Retail Login
+        </button>
+      </div>
+
+      <!-- CLIENT LOGIN FORM -->
+      <div class="login-form-container active" id="clientFormContainer">
+        <div class="login-header">
+          <h3>Institutional & HNW Terminal</h3>
+          <p>Authorized ARN / Mandate Client Access</p>
+        </div>
+        <form class="login-form" onsubmit="event.preventDefault();">
+          <div class="form-group">
+            <label for="c-username">AUTHORIZED ARN / CLIENT ID</label>
+            <input type="text" id="c-username" placeholder="e.g. ARN-268488 / HNW-9402" required>
+          </div>
+          <div class="form-group">
+            <label for="c-password">SECURE TERMINAL KEY</label>
+            <input type="password" id="c-password" placeholder="Enter encrypted passphrase" required>
+          </div>
+          <div class="form-footer">
+            <label class="remember-me">
+              <input type="checkbox"> Save session
+            </label>
+            <a href="#" class="forgot-pwd clickable">Reset Key</a>
+          </div>
+          <button type="submit" class="vg-btn vg-btn-primary submit-btn clickable">Establish Client Link</button>
+        </form>
+      </div>
+
+      <!-- RETAIL LOGIN FORM -->
+      <div class="login-form-container" id="retailFormContainer" style="display: none;">
+        <div class="login-header">
+          <h3>Retail Investor Portal</h3>
+          <p>Mutual Funds, SIP Tracker & Direct Wealth Access</p>
+        </div>
+        <form class="login-form" onsubmit="event.preventDefault();">
+          <div class="form-group">
+            <label for="r-username">MOBILE NUMBER / REGISTERED EMAIL</label>
+            <input type="text" id="r-username" placeholder="Enter mobile or email address" required>
+          </div>
+          <div class="form-group">
+            <label for="r-password">PASSWORD / OTP PIN</label>
+            <input type="password" id="r-password" placeholder="Enter account password" required>
+          </div>
+          <div class="form-footer">
+            <label class="remember-me">
+              <input type="checkbox"> Remember me
+            </label>
+            <a href="#" class="forgot-pwd clickable">Forgot Password?</a>
+          </div>
+          <button type="submit" class="vg-btn vg-btn-primary submit-btn clickable">Access Retail Dashboard</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CDN scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  
+  <!-- Local scripts -->
+  <script src="hedge-lab.js?v=3.2"></script>
+</body>
+</html>

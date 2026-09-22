@@ -1,0 +1,392 @@
+/* ==========================================
+   SKIPER UI - Modern Layout & Component Library
+   Designed for High-End Financial Portals
+   ========================================== */
+
+/* Layout Containers & Grids */
+.sk-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.sk-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.sk-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.sk-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.sk-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 991px) {
+    .sk-grid-3, .sk-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .sk-grid-2 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px) {
+    .sk-grid-2, .sk-grid-3, .sk-grid-4 { grid-template-columns: 1fr; }
+    .sk-container { padding: 0 1rem; }
+}
+
+/* Flexbox Layout Utilities */
+.sk-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sk-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mega Menu Structure */
+.sk-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sk-nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.sk-nav-item {
+    position: relative;
+    padding: 1.5rem 0;
+}
+
+.sk-nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.sk-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0.8rem;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sk-nav-item:hover .sk-nav-link::after {
+    width: 100%;
+}
+
+.sk-nav-link svg {
+    width: 10px;
+    height: 10px;
+    transition: transform 0.3s ease;
+}
+
+.sk-nav-item:hover .sk-nav-link svg {
+    transform: rotate(180deg);
+}
+
+/* Mega Dropdown Panel */
+.sk-mega-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    width: 760px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1010;
+}
+
+.sk-nav-item:hover .sk-mega-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.sk-mega-menu-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.sk-mega-col-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 0.5rem;
+}
+
+.sk-mega-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.sk-mega-links li {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sk-nav-item:hover .sk-mega-links li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sk-mega-links li:nth-child(1) { transition-delay: 0.04s; }
+.sk-mega-links li:nth-child(2) { transition-delay: 0.08s; }
+.sk-mega-links li:nth-child(3) { transition-delay: 0.12s; }
+.sk-mega-links li:nth-child(4) { transition-delay: 0.16s; }
+
+.sk-mega-link {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.sk-mega-link span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+}
+
+.sk-mega-link:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+/* Custom Input Controls - Range Sliders */
+.sk-slider-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.sk-slider-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.sk-slider-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.sk-slider-val {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.sk-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #e2e8f0;
+    outline: none;
+    margin: 10px 0;
+}
+
+.sk-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.sk-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Standard Dropdown */
+.sk-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(20px);
+    width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    z-index: 1010;
+}
+
+.sk-nav-item:hover .sk-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.sk-dropdown-link {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.sk-dropdown-link:hover {
+    background: var(--bg-hover);
+    color: var(--primary-color);
+    padding-left: 0.9rem;
+}
+
+/* Slide Drawer for Mobile */
+.sk-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 1500;
+}
+
+.sk-drawer {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1600;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.sk-drawer.active {
+    right: 0;
+}
+
+.sk-drawer-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sk-drawer-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+/* Tab Layouts */
+.sk-tabs-nav {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 2px solid var(--border-light);
+    margin-bottom: 2rem;
+}
+
+.sk-tab-btn {
+    background: none;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.sk-tab-btn.active {
+    color: var(--primary-color);
+}
+
+.sk-tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sk-tab-btn.active::after {
+    width: 100%;
+}
+
+.sk-tab-pane {
+    display: none;
+}
+
+.sk-tab-pane.active {
+    display: block;
+    animation: fadeInTab 0.5s ease forwards;
+}
+
+@keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

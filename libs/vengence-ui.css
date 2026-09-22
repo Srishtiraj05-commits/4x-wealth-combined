@@ -1,0 +1,244 @@
+/* ==========================================
+   VENGENCE UI - High-End Aesthetic & FX Library
+   Focuses on Glassmorphism, Glowing Borders, & Gradients
+   ========================================== */
+
+/* Design Tokens & Roots */
+:root {
+    --primary-color: #0b1a30;      /* Deep Sapphire Navy */
+    --primary-light: #162a4a;      /* Medium Dark Sapphire */
+    --accent-color: #d4af37;       /* Premium Gold */
+    --accent-glow: rgba(212, 175, 55, 0.4);
+    --bg-color: #f7f9fc;           /* Clean Off-white/Light Gray */
+    --text-color: #1a202c;         /* Dark Slate Charcoal */
+    --text-muted: #64748b;         /* Slate Gray */
+    --border-light: rgba(226, 232, 240, 0.8);
+    --border-glass: rgba(255, 255, 255, 0.4);
+    --glow-color: rgba(11, 26, 48, 0.05);
+    --shadow-soft: 0 4px 20px rgba(11, 26, 48, 0.03);
+    --shadow-medium: 0 10px 30px rgba(11, 26, 48, 0.06);
+    --shadow-deep: 0 20px 50px rgba(11, 26, 48, 0.1);
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* Glassmorphism Classes */
+.vg-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: var(--shadow-soft);
+}
+
+.vg-glass-premium {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Aurora Gradient Backgrounds */
+.vg-aurora-bg {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-color);
+}
+
+.vg-aurora-bg::before,
+.vg-aurora-bg::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.vg-aurora-bg::before {
+    top: -200px;
+    left: -200px;
+    background: radial-gradient(circle, rgba(11,26,48,0.15) 0%, rgba(255,255,255,0) 70%);
+}
+
+.vg-aurora-bg::after {
+    bottom: -200px;
+    right: -200px;
+    background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, rgba(255,255,255,0) 70%);
+}
+
+/* Glowing Border Card with Glare swipe */
+.vg-glow-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid var(--border-light);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.vg-glow-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(212, 175, 55, 0.12), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Light glare overlay swipe */
+.vg-glow-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        115deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.vg-glow-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.45);
+    box-shadow: var(--shadow-deep);
+}
+
+.vg-glow-card:hover::before {
+    opacity: 1;
+}
+
+.vg-glow-card:hover::after {
+    transform: translateX(50%);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glowing Border Overlay for absolute elegance */
+.vg-border-glow-wrapper {
+    position: relative;
+    border-radius: 20px;
+    padding: 1px;
+    background: var(--border-light);
+    transition: background 0.3s ease;
+}
+
+.vg-border-glow-wrapper:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+}
+
+/* Premium Button Designs */
+.vg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none;
+    outline: none;
+}
+
+.vg-btn-primary {
+    background: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(11, 26, 48, 0.2);
+}
+
+.vg-btn-primary:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(11, 26, 48, 0.3);
+}
+
+.vg-btn-accent {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+}
+
+.vg-btn-accent:hover {
+    background: #e5c158;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.vg-btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.vg-btn-outline:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.vg-btn-glowing {
+    position: relative;
+    background: var(--primary-color);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.vg-btn-glowing::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.vg-btn-glowing:hover::after {
+    left: 120%;
+    opacity: 1;
+}
+
+/* Floating Card Effect */
+.vg-float-card {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Depth shadow effects */
+.vg-shadow-soft { box-shadow: var(--shadow-soft); }
+.vg-shadow-medium { box-shadow: var(--shadow-medium); }
+.vg-shadow-deep { box-shadow: var(--shadow-deep); }

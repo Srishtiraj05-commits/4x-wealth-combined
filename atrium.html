@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4X Wealth Financial Services — Building Wealth Beyond Markets</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       4X WEALTH — "THE ATRIUM" HERO
+       Palette: Pure White / Ivory / Warm Beige / Champagne Gold / Matte Navy / Crystal Blue
+       Signature: light itself — a moving column of sunlight and glass reflection
+       the visitor walks through, rather than a static banner.
+       ============================================================ */
+    :root {
+      --white: #fdfcfa;
+      --ivory: #f5f1e8;
+      --beige: #e9e0cf;
+      --champagne: #c9a869;
+      --champagne-bright: #e2c188;
+      --navy: #1c2333;
+      --navy-soft: #3a4358;
+      --crystal: #bcd4e6;
+      --ink: #20242c;
+      --ink-soft: #5b6270;
+      --hairline: rgba(28, 35, 51, 0.1);
+      --hairline-gold: rgba(201, 168, 105, 0.45);
+      --ease: cubic-bezier(.16, .84, .44, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    ::selection {
+      background: var(--champagne);
+      color: var(--white);
+    }
+
+    h1,
+    .serif {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ============ CURSOR SPOTLIGHT ============ */
+    .spotlight {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 5;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(226, 193, 136, 0.12) 40%, transparent 70%);
+      transform: translate(-50%, -50%);
+      mix-blend-mode: overlay;
+      transition: opacity 0.3s;
+    }
+
+    .cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(28, 35, 51, 0.4);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 900;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s var(--ease), height 0.3s var(--ease), border-color 0.3s;
+    }
+
+    .cursor-ring.hovered {
+      width: 56px;
+      height: 56px;
+      border-color: var(--champagne);
+      background: rgba(201, 168, 105, 0.08);
+    }
+
+    .cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--navy);
+      pointer-events: none;
+      z-index: 900;
+      transform: translate(-50%, -50%);
+    }
+
+    @media (hover: none) {
+
+      .spotlight,
+      .cursor-ring,
+      .cursor-dot {
+        display: none;
+      }
+
+      body {
+        cursor: auto;
+      }
+    }
+
+    /* ============ NAV ============ */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: block;
+      mix-blend-mode: normal;
+    }
+
+    .nav-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 52px;
+    }
+
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 19px;
+      color: var(--navy);
+    }
+
+    .logo b {
+      color: var(--champagne);
+      font-weight: 500;
+    }
+
+    .nav-cta {
+      padding: 12px 26px;
+      border: 1px solid var(--navy);
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      position: relative;
+      overflow: hidden;
+      border-radius: 1px;
+    }
+
+    .nav-cta span {
+      position: relative;
+      z-index: 2;
+      transition: color 0.4s var(--ease);
+    }
+
+    .nav-cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--navy);
+      transform: translateY(101%);
+      transition: transform 0.4s var(--ease);
+    }
+
+    .nav-cta:hover::before {
+      transform: translateY(0);
+    }
+
+    .nav-cta:hover span {
+      color: var(--white);
+    }
+
+    /* ============ HERO STAGE ============ */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 680px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    #atriumCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* stylized walking figure, layered SVG silhouette */
+    .figure-wrap {
+      position: absolute;
+      left: 50%;
+      bottom: 8%;
+      width: 120px;
+      height: 46%;
+      transform: translateX(-50%);
+      z-index: 6;
+      opacity: 0;
+      transition: opacity 1.6s var(--ease) 1.4s;
+    }
+
+    .figure-wrap.in {
+      opacity: 1;
+    }
+
+    .figure-wrap svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .fig-shadow {
+      fill: rgba(28, 35, 51, 0.14);
+      filter: blur(6px);
+    }
+
+    .fig-body {
+      fill: var(--navy);
+    }
+
+    .fig-accent {
+      fill: var(--champagne);
+    }
+
+    /* floating glass panels */
+    .glass-panel {
+      position: absolute;
+      z-index: 8;
+      padding: 20px 22px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(18px) saturate(160%);
+      border: 1px solid var(--hairline-gold);
+      box-shadow: 0 20px 50px -20px rgba(28, 35, 51, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
+      animation: floaty 7s ease-in-out infinite;
+    }
+
+    .glass-panel.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes floaty {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .glass-panel .gp-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.1em;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+    }
+
+    .glass-panel .gp-value {
+      font-family: 'Fraunces', serif;
+      font-size: 24px;
+      color: var(--navy);
+      margin-top: 4px;
+    }
+
+    .glass-panel .gp-value.up {
+      color: #5f8f6a;
+    }
+
+    .glass-panel canvas {
+      display: block;
+      margin-top: 8px;
+    }
+
+    .gp-growth {
+      top: 170px;
+      left: 34%;
+      width: 186px;
+      animation-delay: 0.2s;
+    }
+
+    .gp-ai {
+      top: 180px;
+      right: 4%;
+      width: 172px;
+      animation-delay: 1.1s;
+    }
+
+    .gp-risk {
+      top: 320px;
+      right: 6%;
+      width: 168px;
+      animation-delay: 0.6s;
+    }
+
+    .gp-markets {
+      top: 310px;
+      left: 36%;
+      width: 196px;
+      animation-delay: 1.6s;
+    }
+
+    @media (max-width: 1280px) {
+      .gp-growth {
+        left: 32%;
+      }
+
+      .gp-markets {
+        left: 34%;
+      }
+    }
+
+    @media (max-width: 1100px) {
+
+      .gp-growth,
+      .gp-markets {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .glass-panel {
+        display: none;
+      }
+    }
+
+    /* light rays */
+    .rays {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: 0;
+      transition: opacity 2s ease 0.4s;
+    }
+
+    .rays.in {
+      opacity: 1;
+    }
+
+    /* hero copy */
+    .hero-copy {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      max-width: 760px;
+      width: 90%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 1s var(--ease) 0.3s, transform 1s var(--ease) 0.3s;
+    }
+
+    .eyebrow.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--champagne);
+    }
+
+    .headline {
+      margin-top: 20px;
+      font-size: clamp(32px, 4.5vw, 64px);
+      line-height: 1.05;
+      color: var(--navy);
+      max-width: 13ch;
+    }
+
+    .headline .line {
+      overflow: hidden;
+    }
+
+    .headline .line span {
+      display: inline-block;
+      transform: translateY(115%);
+      transition: transform 1.1s var(--ease);
+    }
+
+    .headline .line:nth-child(1) span {
+      transition-delay: 0.5s;
+    }
+
+    .headline .line:nth-child(2) span {
+      transition-delay: 0.68s;
+    }
+
+    .headline.in .line span {
+      transform: translateY(0);
+    }
+
+    .headline em {
+      font-style: italic;
+      color: var(--champagne-bright);
+      font-weight: 300;
+    }
+
+    .hero-sub {
+      margin-top: 24px;
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: var(--ink-soft);
+      max-width: 42ch;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 1s var(--ease) 1s, transform 1s var(--ease) 1s;
+    }
+
+    .hero-sub.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-cta {
+      margin-top: 34px;
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 1s var(--ease) 1.25s, transform 1s var(--ease) 1.25s;
+    }
+
+    .hero-cta.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn-primary {
+      position: relative;
+      padding: 15px 32px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .btn-primary span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-primary::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--champagne);
+      transform: translateY(101%);
+      transition: transform 0.45s var(--ease);
+    }
+
+    .btn-primary:hover::before {
+      transform: translateY(0);
+    }
+
+    .btn-primary:hover span {
+      color: var(--navy);
+    }
+
+    .btn-ghost {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+    }
+
+    .btn-ghost .underline {
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 1px;
+      width: 0;
+      background: var(--champagne);
+      transition: width 0.4s var(--ease);
+    }
+
+    .btn-ghost:hover .underline {
+      width: 100%;
+    }
+
+    .hero-stats {
+      position: absolute;
+      right: 52px;
+      bottom: 120px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      font-family: 'IBM Plex Mono', monospace;
+      text-align: right;
+      opacity: 0;
+      transition: opacity 1s ease 1.6s;
+    }
+
+    .hero-stats.in {
+      opacity: 1;
+    }
+
+    .hero-stats div {
+      border-top: 1px solid var(--hairline);
+      padding-top: 10px;
+    }
+
+    .hero-stats b {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      color: var(--navy);
+      font-weight: 400;
+    }
+
+    .hero-stats span {
+      font-size: 9.5px;
+      color: var(--ink-soft);
+      letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-stats {
+        display: none;
+      }
+    }
+
+    .scroll-cue {
+      position: absolute;
+      bottom: 34px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.2em;
+      color: var(--ink-soft);
+      opacity: 0;
+      transition: opacity 1s ease 2s;
+    }
+
+    .scroll-cue.in {
+      opacity: 1;
+    }
+
+    .scroll-cue .line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--champagne), transparent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-cue .line::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--navy);
+      animation: drop 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+    }
+
+    @keyframes drop {
+      0% {
+        top: -100%;
+      }
+
+      60% {
+        top: 100%;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    .gold-sweep {
+      position: absolute;
+      top: 0;
+      left: -30%;
+      width: 18%;
+      height: 100%;
+      z-index: 4;
+      pointer-events: none;
+      background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+      transform: skewX(-18deg);
+      animation: sweep 9s ease-in-out infinite;
+    }
+
+    @keyframes sweep {
+      0% {
+        left: -30%;
+      }
+
+      45% {
+        left: 120%;
+      }
+
+      100% {
+        left: 120%;
+      }
+    }
+
+    /* ============================================================
+       LIVE MARKET MOVERS SECTION
+       ============================================================ */
+    .live-market-bar {
+      width: 100%;
+      height: 52px;
+      background: #081526;
+      border-top: 1px solid rgba(201, 162, 39, 0.25);
+      border-bottom: 1px solid rgba(201, 162, 39, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 52px;
+      z-index: 999;
+      overflow: hidden;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .live-market-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      padding-right: 20px;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 2;
+      background: #081526;
+      height: 100%;
+    }
+
+    .live-pulse {
+      width: 8px;
+      height: 8px;
+      background-color: #d4af37;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 0 8px #d4af37;
+      animation: pulseGlow 1.8s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+      }
+
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(212, 175, 55, 0);
+      }
+
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+      }
+    }
+
+    .live-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: #d4af37;
+      letter-spacing: 0.1em;
+    }
+
+    .marquee-wrapper {
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      margin: 0 1.5rem;
+      mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      width: max-content;
+      animation: scrollMarquee 35s linear infinite;
+      will-change: transform;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scrollMarquee {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    /* Stock Card */
+    .stock-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 6px 14px;
+      border-radius: 30px;
+      color: #e2e8f0;
+      font-size: 12.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+      user-select: none;
+      white-space: nowrap;
+      backdrop-filter: blur(4px);
+    }
+
+    .stock-card:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+
+    .stock-card.positive:hover {
+      box-shadow: 0 0 12px rgba(95, 143, 106, 0.2);
+      border-color: rgba(95, 143, 106, 0.4);
+    }
+
+    .stock-card.negative:hover {
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.15);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .stock-logo-container {
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      color: #d4af37;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .stock-symbol {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .stock-price {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: #cbd5e1;
+      display: inline-block;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .stock-change {
+      font-weight: 600;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .stock-card.positive .stock-change {
+      color: #5f8f6a;
+    }
+
+    .stock-card.negative .stock-change {
+      color: #ef4444;
+    }
+
+    .marquee-separator {
+      color: rgba(212, 175, 55, 0.3);
+      font-size: 8px;
+      user-select: none;
+    }
+
+    .view-market-container {
+      z-index: 2;
+      background: #081526;
+      padding-left: 20px;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .view-market-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    .view-market-link:hover {
+      color: #fce8ad;
+    }
+
+    .view-market-link .arrow-right {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .view-market-link:hover .arrow-right {
+      transform: translateX(4px);
+    }
+
+    /* Price Update Animation Classes */
+    .price-up {
+      animation: animatePriceUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .price-down {
+      animation: animatePriceDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes animatePriceUp {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      30% {
+        transform: translateY(-6px);
+        opacity: 0;
+      }
+
+      35% {
+        transform: translateY(6px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes animatePriceDown {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      30% {
+        transform: translateY(6px);
+        opacity: 0;
+      }
+
+      35% {
+        transform: translateY(-6px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Responsiveness for Movers Bar */
+    @media (max-width: 991px) {
+      .live-market-bar {
+        padding: 0 1.5rem;
+      }
+
+      .marquee-wrapper {
+        margin: 0 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .live-label {
+        display: none;
+      }
+
+      .live-market-title {
+        padding-right: 12px;
+      }
+
+      .view-market-container {
+        padding-left: 12px;
+      }
+
+      .view-market-link span:not(.arrow-right) {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Spotlight & Custom Cursor -->
+  <div class="spotlight" id="spotlight"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-main">
+      <div class="logo">4X <b>WEALTH</b></div>
+      <a href="#" class="nav-cta" data-hover><span>Book Consultation</span></a>
+    </div>
+
+    <!-- Live Market Movers Bar -->
+    <div class="live-market-bar">
+      <div class="live-market-title">
+        <span class="live-pulse"></span>
+        <span class="live-label">LIVE MARKET MOVERS</span>
+      </div>
+      <div class="marquee-wrapper">
+        <div class="marquee-track" id="marketMarqueeTrack">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+      <div class="view-market-container">
+        <a href="#" class="view-market-link">
+          <span>View Market</span>
+          <span class="arrow-right">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <canvas id="atriumCanvas"></canvas>
+    <canvas class="rays" id="rayCanvas"></canvas>
+    <div class="gold-sweep"></div>
+
+    <!-- Floating Glass Panels -->
+    <div class="glass-panel gp-growth" id="p1">
+      <div class="gp-label">Portfolio Growth</div>
+      <div class="gp-value up" id="gv1">+0.0%</div>
+      <canvas width="300" height="60" style="width: 100%; height: 44px;"></canvas>
+    </div>
+
+    <div class="glass-panel gp-ai" id="p2">
+      <div class="gp-label">AI Forecast</div>
+      <div class="gp-value" id="gv2">— confidence</div>
+    </div>
+
+    <div class="glass-panel gp-risk" id="p3">
+      <div class="gp-label">Risk Analysis</div>
+      <div class="gp-value">Balanced</div>
+    </div>
+
+    <div class="glass-panel gp-markets" id="p4">
+      <div class="gp-label">Global Markets</div>
+      <div class="gp-value up" id="gv4">+0.0%</div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-copy">
+      <div class="eyebrow" id="eyebrow">4X WEALTH FINANCIAL SERVICES</div>
+      <h1 class="headline" id="headline">
+        <div class="line"><span>Building Wealth</span></div>
+        <div class="line"><span><em>Beyond</em> Markets.</span></div>
+      </h1>
+      <p class="hero-sub" id="heroSub">A private investment house where human conviction and machine intelligence meet —
+        under one roof, in full daylight.</p>
+      <div class="hero-cta" id="heroCta">
+        <a href="#" class="btn-primary" data-hover><span>Begin Your Portfolio</span></a>
+        <a href="#" class="btn-ghost" data-hover>Explore the AI Hedge Lab<span class="underline"></span></a>
+      </div>
+    </div>
+
+    <!-- Stats Overlay -->
+    <div class="hero-stats" id="heroStats">
+      <div><b id="s1">$0.0B</b><span>ASSETS GUIDED</span></div>
+      <div><b id="s2">0 YRS</b><span>AVG. CLIENT HORIZON</span></div>
+      <div><b>0.4s</b><span>AI SIGNAL LATENCY</span></div>
+    </div>
+
+    <!-- Scroll Cue -->
+    <div class="scroll-cue" id="scrollCue">
+      <span class="line"></span>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- Interactive Logic & Animation -->
+  <script>
+    /* ============ CURSOR + SPOTLIGHT ============ */
+    const spot = document.getElementById('spotlight');
+    const ring = document.getElementById('cursorRing');
+    const dot = document.getElementById('cursorDot');
+    let mx = window.innerWidth / 2;
+    let my = window.innerHeight / 2;
+    let rx = mx;
+    let ry = my;
+
+    window.addEventListener('mousemove', e => {
+      mx = e.clientX;
+      my = e.clientY;
+      spot.style.left = mx + 'px';
+      spot.style.top = my + 'px';
+      dot.style.left = mx + 'px';
+      dot.style.top = my + 'px';
+    });
+
+    function cursorLoop() {
+      rx += (mx - rx) * 0.18;
+      ry += (my - ry) * 0.18;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(cursorLoop);
+    }
+    cursorLoop();
+
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest('[data-hover], a, .glass-panel')) {
+        ring.classList.add('hovered');
+      }
+    });
+
+    document.addEventListener('mouseout', e => {
+      if (e.target.closest('[data-hover], a, .glass-panel')) {
+        ring.classList.remove('hovered');
+      }
+    });
+
+    /* ============ ATRIUM SCENE — marble floor, glass walls, volumetric light ============ */
+    const canvas = document.getElementById('atriumCanvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, DPR;
+
+    function resize() {
+      DPR = Math.min(window.devicePixelRatio || 1, 2);
+      W = canvas.clientWidth = canvas.offsetWidth;
+      H = canvas.clientHeight = canvas.offsetHeight;
+      canvas.width = W * DPR;
+      canvas.height = H * DPR;
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+    window.addEventListener('resize', resize);
+
+    function drawAtrium(t) {
+      ctx.clearRect(0, 0, W, H);
+      requestAnimationFrame(drawAtrium);
+    }
+    resize();
+    requestAnimationFrame(drawAtrium);
+
+    /* ============ LIGHT RAYS CANVAS ============ */
+    const rayCanvas = document.getElementById('rayCanvas');
+    const rctx = rayCanvas.getContext('2d');
+
+    function sizeRays() {
+      rayCanvas.width = rayCanvas.clientWidth * 1.5;
+      rayCanvas.height = rayCanvas.clientHeight * 1.5;
+    }
+    window.addEventListener('resize', sizeRays);
+    sizeRays();
+
+    function drawRays(t) {
+      const w = rayCanvas.width;
+      const h = rayCanvas.height;
+      rctx.clearRect(0, 0, w, h);
+      const originX = w * 0.62;
+      const originY = -20;
+      rctx.save();
+      for (let i = 0; i < 6; i++) {
+        const spread = 0.09 + i * 0.02;
+        const angle = -Math.PI / 2 + (i - 2.5) * spread + Math.sin(t * 0.00008 + i) * 0.01;
+        const len = h * 1.3;
+        const x2 = originX + Math.cos(angle) * len;
+        const y2 = originY + Math.sin(angle) * len + len;
+        const grd = rctx.createLinearGradient(originX, originY, x2, y2);
+        grd.addColorStop(0, 'rgba(255, 248, 225, 0.22)');
+        grd.addColorStop(1, 'rgba(255, 248, 225, 0)');
+        rctx.fillStyle = grd;
+        rctx.beginPath();
+        rctx.moveTo(originX - 4, originY);
+        rctx.lineTo(originX + 4, originY);
+        rctx.lineTo(x2 + 40, y2);
+        rctx.lineTo(x2 - 40, y2);
+        rctx.closePath();
+        rctx.fill();
+      }
+      rctx.restore();
+      requestAnimationFrame(drawRays);
+    }
+    requestAnimationFrame(drawRays);
+
+    /* ============ WALKING CYCLE ============ */
+    let walkT = 0;
+    function animateWalker() {
+      walkT += 0.05;
+      const swing = Math.sin(walkT) * 16;
+      document.getElementById('legL').setAttribute('transform', `rotate(${swing} 51 148)`);
+      document.getElementById('legR').setAttribute('transform', `rotate(${-swing} 68 148)`);
+      document.getElementById('armL').setAttribute('transform', `rotate(${-swing * 0.8} 40 78)`);
+      document.getElementById('armR').setAttribute('transform', `rotate(${swing * 0.8} 80 78)`);
+      const bob = Math.abs(Math.sin(walkT)) * 2;
+      document.getElementById('walker').setAttribute('transform', `translate(0 ${-bob})`);
+      requestAnimationFrame(animateWalker);
+    }
+    animateWalker();
+
+    /* ============ REVEAL SEQUENCE ============ */
+    window.addEventListener('load', () => {
+      const ids = ['eyebrow', 'headline', 'heroSub', 'heroCta', 'heroStats', 'scrollCue', 'figureWrap'];
+      ids.forEach(id => document.getElementById(id).classList.add('in'));
+
+      ['p1', 'p2', 'p3', 'p4'].forEach((id, i) => {
+        setTimeout(() => document.getElementById(id).classList.add('in'), 900 + i * 220);
+      });
+
+      // sparkline in growth panel
+      const spark = document.querySelector('.gp-growth canvas');
+      const sctx = spark.getContext('2d');
+      let pts = [30, 26, 32, 20, 24, 14, 18, 8, 12, 4];
+      sctx.strokeStyle = '#5f8f6a';
+      sctx.lineWidth = 2;
+      sctx.beginPath();
+      pts.forEach((p, i) => {
+        const x = (i / (pts.length - 1)) * 300;
+        const y = 40 + p * 0.5;
+        if (i === 0) sctx.moveTo(x, y);
+        else sctx.lineTo(x, y);
+      });
+      sctx.stroke();
+
+      // counters
+      countUp('gv1', 12.4, '%', 1, true);
+      countUp('gv4', 1.8, '%', 1, true);
+      countUp('s1', 14.2, 'B', 1, false, '$');
+      countUp('s2', 27, ' YRS', 0);
+      countUp('gv2', 91, '% confidence', 0);
+    });
+
+    function countUp(id, target, suffix, decimals, plus, prefix) {
+      const el = document.getElementById(id);
+      const start = performance.now();
+      const dur = 1600;
+
+      function step(t) {
+        const p = Math.min(1, (t - start) / dur);
+        const cur = target * (1 - Math.pow(1 - p, 3));
+        el.textContent = (prefix || '') + (plus ? '+' : '') + cur.toFixed(decimals) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    /* ============ MAGNETIC BUTTON ============ */
+    document.querySelectorAll('.btn-primary, .nav-cta').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r = btn.getBoundingClientRect();
+        const bx = e.clientX - r.left - r.width / 2;
+        const by = e.clientY - r.top - r.height / 2;
+        btn.style.transform = `translate(${bx * 0.16}px, ${by * 0.3}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0,0)';
+      });
+    });
+
+    /* ============ LIVE MARKET MOVERS TICKER ============ */
+    const moversData = [
+      { symbol: "RELIANCE", name: "Reliance", price: 3245.80, change: 2.35, logo: "R" },
+      { symbol: "TCS", name: "TCS", price: 4198.60, change: -0.82, logo: "T" },
+      { symbol: "HDFC BANK", name: "HDFC Bank", price: 1876.40, change: 1.10, logo: "H" },
+      { symbol: "INFOSYS", name: "Infosys", price: 1589.20, change: -1.24, logo: "I" },
+      { symbol: "ICICI BANK", name: "ICICI Bank", price: 1463.00, change: 0.95, logo: "I" },
+      { symbol: "SBI", name: "SBI", price: 876.20, change: 1.42, logo: "S" },
+      { symbol: "ADANI PORTS", name: "Adani Ports", price: 1520.50, change: -0.55, logo: "A" },
+      { symbol: "TATA MOTORS", name: "Tata Motors", price: 948.80, change: 3.12, logo: "T" }
+    ];
+
+    const marqueeTrack = document.getElementById('marketMarqueeTrack');
+    if (marqueeTrack) {
+      const formatPrice = (val) => {
+        return new Intl.NumberFormat('en-IN', {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }).format(val);
+      };
+
+      const renderMovers = () => {
+        let htmlContent = '';
+        moversData.forEach(stock => {
+          const isPositive = stock.change >= 0;
+          const cardClass = isPositive ? 'positive' : 'negative';
+          const arrow = isPositive ? '▲' : '▼';
+          const sign = isPositive ? '+' : '';
+
+          htmlContent += `
+            <div class="stock-card ${cardClass}" data-symbol="${stock.symbol}">
+              <div class="stock-logo-container">${stock.logo}</div>
+              <span class="stock-symbol">${stock.name}</span>
+              <span class="stock-price">₹${formatPrice(stock.price)}</span>
+              <span class="stock-change">${arrow} ${sign}${stock.change.toFixed(2)}%</span>
+            </div>
+            <span class="marquee-separator">✦</span>
+          `;
+        });
+        marqueeTrack.innerHTML = htmlContent + htmlContent;
+      };
+
+      renderMovers();
+
+      setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * moversData.length);
+        const stock = moversData[randomIndex];
+
+        const percentChange = (Math.random() * 0.5 - 0.25) / 100;
+        const priceDelta = stock.price * percentChange;
+        const oldPrice = stock.price;
+        stock.price += priceDelta;
+
+        stock.change += percentChange * 100;
+        if (stock.change > 6) stock.change = 6;
+        if (stock.change < -6) stock.change = -6;
+
+        const isPositive = stock.change >= 0;
+        const cardClass = isPositive ? 'positive' : 'negative';
+        const arrow = isPositive ? '▲' : '▼';
+        const sign = isPositive ? '+' : '';
+        const isUp = stock.price > oldPrice;
+
+        const cards = marqueeTrack.querySelectorAll(`[data-symbol="${stock.symbol}"]`);
+        cards.forEach(card => {
+          card.className = `stock-card ${cardClass}`;
+          const priceEl = card.querySelector('.stock-price');
+          const changeEl = card.querySelector('.stock-change');
+
+          if (priceEl && changeEl) {
+            priceEl.textContent = `₹${formatPrice(stock.price)}`;
+            changeEl.textContent = `${arrow} ${sign}${stock.change.toFixed(2)}%`;
+
+            const animationClass = isUp ? 'price-up' : 'price-down';
+            priceEl.classList.remove('price-up', 'price-down');
+            changeEl.classList.remove('price-up', 'price-down');
+
+            void priceEl.offsetWidth;
+
+            priceEl.classList.add(animationClass);
+            changeEl.classList.add(animationClass);
+          }
+        });
+      }, 3500);
+    }
+  </script>
+</body>
+
+</html>
