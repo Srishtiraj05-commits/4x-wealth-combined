@@ -2404,3 +2404,39 @@ footer.luxury-footer {
 .product-hero-title {
   text-align: center !important;
 }
+
+/* UNIVERSAL SUBHEADING & HEADER CENTER ALIGNMENT */
+.section-header,
+.section-header.center,
+.section-header-center {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.section-tag,
+.section-tag-badge {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.section-title {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.section-desc {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.gold-divider-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

@@ -289,6 +289,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
+  
+  // ==========================================
+  // URL HASH TAB ACTIVATION HANDLER
+  // ==========================================
+  const handleUrlHash = () => {
+    let hash = window.location.hash.toLowerCase().replace('#card-', '').replace('#pane-', '').replace('#sec-', '').replace('#', '');
+    if (hash) {
+      const targetBtn = document.querySelector(`.calc-tab-btn[data-tab="${hash}"]`);
+      if (targetBtn) {
+        targetBtn.click();
+        const workspaceCard = document.querySelector('.calc-workspace-card') || targetBtn;
+        if (workspaceCard) {
+          workspaceCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+  };
+  setTimeout(handleUrlHash, 150);
+  window.addEventListener('hashchange', handleUrlHash);
+
   // 4. TAB CONTROLS PANEL SWITCHER
   // ==========================================
   const tabButtons = document.querySelectorAll('.calc-tab-btn');
