@@ -2647,7 +2647,7 @@ img.brand-logo-img,
 
 /* ============ DEDICATED AI HEDGE LAB PAGE ============ */
 .lab-page-container {
-  padding-top: 180px;
+  padding-top: 45px;
   padding-bottom: 120px;
   max-width: 1380px;
   margin: 0 auto;
@@ -5159,7 +5159,7 @@ px;
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu -->
+            <!-- Desktop Navigation Menu -->
       <ul class="sk-nav-menu" id="desktopMenu">
         
         <!-- Home Dropdown -->
@@ -5223,13 +5223,23 @@ px;
           </div>
         </li>
 
-        <!-- Research & AI Hedge Lab -->
+        <!-- Research (WITHOUT SIF Screener) -->
         <li class="sk-nav-item dropdown-trigger">
           <a class="sk-nav-link clickable" href="hedge-lab.html">Research <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-link clickable" href="index.html#research-section"><i class="fa-solid fa-chart-line"></i> Market Conviction Signals</a></li>
             <li><a class="dropdown-link clickable" href="hedge-lab.html"><i class="fa-solid fa-brain"></i> AI Hedge Lab & Quant Core</a></li>
-            <li><a class="dropdown-link clickable" href="sif-tracker.html"><i class="fa-solid fa-filter"></i> SIF Screener & Tracker</a></li>
+            <li><a class="dropdown-link clickable" href="hedge-lab.html#risk-engine"><i class="fa-solid fa-shield-halved"></i> Volatility & Risk Models</a></li>
+          </ul>
+        </li>
+
+        <!-- AI Hedge Lab -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a class="sk-nav-link clickable" href="hedge-lab.html">AI Hedge Lab <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-link clickable" href="hedge-lab.html"><i class="fa-solid fa-microchip"></i> Quant Core Neural Engine</a></li>
+            <li><a class="dropdown-link clickable" href="hedge-lab.html#risk-engine"><i class="fa-solid fa-shield-halved"></i> Multi-Asset Risk Regime</a></li>
+            <li><a class="dropdown-link clickable" href="hedge-lab.html#backtest"><i class="fa-solid fa-clock-rotate-left"></i> Alpha Backtest Suite</a></li>
           </ul>
         </li>
 
@@ -5246,14 +5256,19 @@ px;
           </ul>
         </li>
 
-        <!-- Resources / Blogs -->
-        <li class="sk-nav-item">
-          <a class="sk-nav-link clickable" href="blogs.html">Insights</a>
+        <!-- Resources (WITH SIF Screener + Blogs + Reports) -->
+        <li class="sk-nav-item dropdown-trigger">
+          <a class="sk-nav-link clickable" href="blogs.html">Resources <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-link clickable" href="sif-tracker.html"><i class="fa-solid fa-filter"></i> SIF Screener <span class="nav-badge-new" style="background: #D6B384; color: #031E36; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-family: var(--font-mono);">NEW</span></a></li>
+            <li><a class="dropdown-link clickable" href="blogs.html"><i class="fa-solid fa-book-open"></i> Blogs & Knowledge Base</a></li>
+            <li><a class="dropdown-link clickable" href="blogs.html#reports"><i class="fa-solid fa-file-invoice-dollar"></i> Wealth Guides & Reports</a></li>
+          </ul>
         </li>
 
         <!-- About Us -->
         <li class="sk-nav-item dropdown-trigger">
-          <a class="sk-nav-link clickable" href="about.html">About Us <i class="fa-solid fa-chevron-down"></i></a>
+          <a class="sk-nav-link clickable" href="about.html">About <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
             <li><a href="about.html#who-we-are" class="dropdown-link clickable"><i class="fa-solid fa-building"></i> Company Overview</a></li>
             <li><a href="about.html#leadership" class="dropdown-link clickable"><i class="fa-solid fa-users-viewfinder"></i> Leadership & Team</a></li>
@@ -5264,7 +5279,7 @@ px;
 
       </ul>
 
-      <!-- Header Action Items: Clearly Visible Search + Login (White/Outline) + Sign Up (Dark Navy) -->
+<!-- Header Action Items: Clearly Visible Search + Login (White/Outline) + Sign Up (Dark Navy) -->
       <div class="nav-actions">
         
         <!-- Search Trigger (Prominent on Gold Navbar) -->
@@ -5333,13 +5348,14 @@ px;
       <img src="logo.png" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
-    <ul class="sk-drawer-links">
+        <ul class="sk-drawer-links">
       <li><a href="index.html" class="sk-drawer-link clickable">Home</a></li>
       <li><a href="solutions.html" class="sk-drawer-link clickable">Solutions</a></li>
+      <li><a href="hedge-lab.html" class="sk-drawer-link clickable">Research</a></li>
       <li><a href="hedge-lab.html" class="sk-drawer-link clickable">AI Hedge Lab</a></li>
-      <li><a href="sif-tracker.html" class="sk-drawer-link clickable">SIF Tracker</a></li>
       <li><a href="calculators.html" class="sk-drawer-link clickable">Calculators</a></li>
-      <li><a href="blogs.html" class="sk-drawer-link clickable">Insights</a></li>
+      <li><a href="sif-tracker.html" class="sk-drawer-link clickable">SIF Screener</a></li>
+      <li><a href="blogs.html" class="sk-drawer-link clickable">Resources</a></li>
       <li><a href="about.html" class="sk-drawer-link clickable">About Us</a></li>
     </ul>
 
