@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { symbol: "RELIANCE", name: "Reliance", price: 1322.0, change: 1.5, logo: "R" },
     { symbol: "TCS", name: "Tcs", price: 2304.0, change: -0.69, logo: "T" },
     { symbol: "HDFC BANK", name: "Hdfc Bank", price: 712.1, change: 0.77, logo: "H" },
-    { symbol: "INFOSYS", name: "Infosys", price: 1132.0, change: -0.03, logo: "I" },
+    { symbol: "INFOSYS", name: "Infosys", price: 1133.0, change: -0.03, logo: "I" },
     { symbol: "ICICI BANK", name: "Icici Bank", price: 1423.2, change: -0.48, logo: "I" },
     { symbol: "SBI", name: "Sbi", price: 1016.1, change: -0.71, logo: "S" },
     { symbol: "ADANI PORTS", name: "Adani Ports", price: 1707.3, change: 0.05, logo: "A" },
