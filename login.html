@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal Login — 4X Wealth Financial Services</title>
+  <meta name="description" content="Secure Client Access Portal for Retail Investors, Corporate Treasury, and Empaneled Institutional Partners at 4X Wealth Financial Services.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=70.0">
+</head>
+<body class="auth-page-body">
+
+  <!-- Header Navigation -->
+  <header class="header-wrapper" id="mainHeader">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <div class="logo-wrapper">
+          <img src="logo.png" alt="4X Wealth Logo" class="brand-logo-img">
+          <div class="logo-text-group">
+            <div class="logo-text">4X<span>WEALTH</span></div>
+            <span class="logo-sub">FINANCIAL SERVICES</span>
+          </div>
+        </div>
+      </a>
+      
+      <div class="nav-actions">
+        <a href="index.html" class="client-portal-btn">
+          <i class="fa-solid fa-house"></i> <span>Back to Home</span>
+        </a>
+        <a href="signup.html" class="book-consult-btn">
+          <span>Create Account</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Login Workspace -->
+  <main class="auth-main-wrapper">
+    <div class="auth-container">
+      
+      <div class="auth-card-panel">
+        
+        <!-- Header / Logo Subtitle -->
+        <div class="auth-header-block">
+          <div class="auth-badge">
+            <i class="fa-solid fa-shield-halved"></i> 256-BIT SSL ENCRYPTED SECURE ACCESS
+          </div>
+          <h1 class="auth-title">Client Access Portal</h1>
+          <p class="auth-subtitle">Select your account classification to access your investment portfolio, analytics, and reports.</p>
+        </div>
+
+        <!-- 3-Tier Mode Selector Tabs -->
+        <div class="auth-tabs-row" id="authModeTabs">
+          <button class="auth-tab active" data-target="retail-login">
+            <i class="fa-solid fa-user"></i>
+            <span>Retail Investor</span>
+          </button>
+          <button class="auth-tab" data-target="corporate-login">
+            <i class="fa-solid fa-building-columns"></i>
+            <span>Corporate Treasury</span>
+          </button>
+          <button class="auth-tab" data-target="partner-login">
+            <i class="fa-solid fa-handshake"></i>
+            <span>Partner / ARN</span>
+          </button>
+        </div>
+
+        <!-- Tab Content 1: Retail Investor Login -->
+        <div class="auth-tab-content active" id="retail-login">
+          <div class="auth-type-pill">
+            <i class="fa-solid fa-user"></i> Individual & HUF Portfolios
+          </div>
+          <form class="auth-form" onsubmit="event.preventDefault(); alert('Redirecting to Retail Investor Dashboard...');">
+            <div class="form-group-field">
+              <label><i class="fa-solid fa-id-card"></i> PAN Card / Client Code</label>
+              <input type="text" placeholder="e.g. ABCDE1234F" required maxlength="10" style="text-transform: uppercase;">
+            </div>
+            <div class="form-group-field">
+              <label><i class="fa-solid fa-mobile-screen"></i> Registered Mobile Number</label>
+              <input type="tel" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
+            </div>
+            <div class="form-group-field">
+              <label><i class="fa-solid fa-lock"></i> Password / MPIN</label>
+              <input type="password" placeholder="••••••••" required>
+            </div>
+            <div class="auth-form-aux">
+              <label class="auth-remember">
+                <input type="checkbox" checked> <span>Remember PAN on this device</span>
+              </label>
+              <a href="#" class="auth-forgot" onclick="alert('Password reset link has been sent to your registered email/phone.');">Forgot Password?</a>
+            </div>
+            <button type="submit" class="auth-submit-btn">
+              <span>Login to Portfolio</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- Tab Content 2: Corporate Treasury Login -->
+        <div class="auth-tab-content" id="corporate-login" style="display: none;">
+          <div class="auth-type-pill">
+            <i class="fa-solid fa-building-columns"></i> Enterprise & Treasury Desk
+          </div>
+          <form class="auth-form" onsubmit="event.preventDefault(); alert('Redirecting to Corporate Treasury Desk...');">
+            <div class="form-group-field">
+              <label><i class="fa-solid fa-building"></i> Corporate Entity PAN</label>
+              <input type="text" placeholder="e.g. AAACX1234K" required maxlength="10" style="text-transform: uppercase;">
+            </div>
+            <div class="form-group-field">
+              <label><i class="fa-solid fa-user-tie"></i> Authorized Signatory ID / Email</label>
+              <input type="email" placeholder="treasury@company.com" required>
+            </div>
+            <div class="form-group-field">
+              <label><i class="fa-solid fa-key"></i> Enterprise 2FA Password</label>
+              <input type="password" placeholder="••••••••" required>
+            </div>
+            <div class="auth-form-aux">
+              <label class="auth-remember">
+                <input type="checkbox"> <span>Require 2FA token on next login</span>
+              </label>
+              <a href="#" class="auth-forgot" onclick="alert('Contact corporate support desk at support@4xwealthfinancialservices.com');">Corporate Support</a>
+            </div>
+            <button type="submit" class="auth-submit-btn">
+              <span>Access Treasury Portal</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- Tab Content 3: Partner / ARN Login -->
+        <div class="auth-tab-content" id="partner-login" style="display: none;">
+          <div class="auth-type-pill">
+            <i class="fa-solid fa-handshake"></i> Sub-Broker & Distributor Desk
+          </div>
+          <form class="auth-form" onsubmit="event.preventDefault(); alert('Redirecting to Partner ARN Portal...');">
+            <div class="form-group-field">
+              <label><i class="fa-solid fa-certificate"></i> AMFI Registration Number (ARN)</label>
+              <input type="text" placeholder="e.g. ARN-268488" required>
+            </div>
+            <div class="form-group-field">
+              <label><i class="fa-solid fa-envelope"></i> Empaneled Partner Email</label>
+              <input type="email" placeholder="partner@domain.com" required>
+            </div>
+            <div class="form-group-field">
+              <label><i class="fa-solid fa-lock"></i> Partner Portal Password</label>
+              <input type="password" placeholder="••••••••" required>
+            </div>
+            <div class="auth-form-aux">
+              <label class="auth-remember">
+                <input type="checkbox" checked> <span>Keep ARN logged in</span>
+              </label>
+              <a href="#" class="auth-forgot" onclick="alert('Partner reset instructions sent to registered ARN email.');">Partner Helpdesk</a>
+            </div>
+            <button type="submit" class="auth-submit-btn">
+              <span>Sign In to Partner Desk</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- Bottom Switcher to Sign Up Page -->
+        <div class="auth-footer-prompt">
+          <p>Don't have an active account with 4X Wealth?</p>
+          <a href="signup.html" class="auth-switch-link">
+            <span>Open a New Account / Register Here</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Institutional Regulatory Footnote -->
+      <div class="auth-compliance-footer">
+        <span>AMFI Registered Mutual Fund Distributor (ARN-268488) &bull; APMI Registered PMS Desk (APRN00969)</span>
+        <p>Investments in securities market are subject to market risks. Read all scheme related documents carefully before investing.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Tab Switching Logic
+    document.querySelectorAll('.auth-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.auth-tab-content').forEach(c => {
+          c.classList.remove('active');
+          c.style.display = 'none';
+        });
+        
+        tab.classList.add('active');
+        const targetId = tab.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.classList.add('active');
+          targetContent.style.display = 'block';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

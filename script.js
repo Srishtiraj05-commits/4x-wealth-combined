@@ -1519,92 +1519,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 15. AUTH MODE SWITCHER (LOGIN VS SIGN UP)
+  // 15. DEDICATED AUTH PAGE NAVIGATION (LOGIN & SIGN UP)
   // ==========================================
-  const authModeLogin = document.getElementById('authModeLogin');
-  const authModeSignup = document.getElementById('authModeSignup');
-  const loginTabsWrapper = document.getElementById('loginTabsWrapper');
-  const signupFormContainer = document.getElementById('signupFormContainer');
-
-  const setAuthMode = (mode) => {
-    if (mode === 'signup') {
-      if (authModeSignup) {
-        authModeSignup.classList.add('active');
-        authModeSignup.style.background = '#007aff';
-        authModeSignup.style.color = '#ffffff';
-      }
-      if (authModeLogin) {
-        authModeLogin.classList.remove('active');
-        authModeLogin.style.background = 'transparent';
-        authModeLogin.style.color = '#0f172a';
-      }
-      if (loginTabsWrapper) loginTabsWrapper.style.display = 'none';
-      if (signupFormContainer) signupFormContainer.style.display = 'block';
-    } else {
-      if (authModeLogin) {
-        authModeLogin.classList.add('active');
-        authModeLogin.style.background = '#007aff';
-        authModeLogin.style.color = '#ffffff';
-      }
-      if (authModeSignup) {
-        authModeSignup.classList.remove('active');
-        authModeSignup.style.background = 'transparent';
-        authModeSignup.style.color = '#0f172a';
-      }
-      if (loginTabsWrapper) loginTabsWrapper.style.display = 'block';
-      if (signupFormContainer) signupFormContainer.style.display = 'none';
-    }
-  };
-
-  if (authModeLogin) authModeLogin.addEventListener('click', () => setAuthMode('login'));
-  if (authModeSignup) authModeSignup.addEventListener('click', () => setAuthMode('signup'));
-
-  // Handle all Sign Up button triggers
   document.querySelectorAll('.signup-trigger').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const loginModal = document.getElementById('loginModal');
-      if (loginModal) {
-        setAuthMode('signup');
-        loginModal.classList.add('open');
-      }
+      window.location.href = 'signup.html';
     });
   });
 
-  // Handle all Login button triggers
   document.querySelectorAll('.login-trigger').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const loginModal = document.getElementById('loginModal');
-      if (loginModal) {
-        setAuthMode('login');
-        loginModal.classList.add('open');
-      }
+      window.location.href = 'login.html';
     });
   });
-
-  // Generic Navbar Auth Buttons
-  const authNavBtns = document.querySelectorAll('.auth-dropdown-item button');
-  if (authNavBtns.length >= 2) {
-    // First button is Login
-    authNavBtns[0].addEventListener('click', (e) => {
-      e.preventDefault();
-      const loginModal = document.getElementById('loginModal');
-      if (loginModal) {
-        setAuthMode('login');
-        loginModal.classList.add('open');
-      }
-    });
-    // Second button is Sign Up
-    authNavBtns[1].addEventListener('click', (e) => {
-      e.preventDefault();
-      const loginModal = document.getElementById('loginModal');
-      if (loginModal) {
-        setAuthMode('signup');
-        loginModal.classList.add('open');
-      }
-    });
-  }
 
   // ==========================================
   // 12. SCROLL TO TOP FLOATING BUTTON

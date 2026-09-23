@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=60.0">
+<link rel="stylesheet" href="style.css?v=70.0">
 </head>
 <body>
 
@@ -151,7 +151,7 @@
       </ul>
 
       <!-- Header Action Items: Clearly Visible Search + Client Portal (Login) + Book Consultation (Sign Up) -->
-      <div class="nav-actions">
+            <div class="nav-actions">
         
         <!-- Search Trigger -->
         <button class="search-btn clickable" id="searchTrigger" aria-label="Search site">
@@ -159,29 +159,15 @@
           <span>Search</span>
         </button>
 
-        <!-- Client Portal (Login Dropdown) -->
-        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <button class="vg-btn vg-btn-outline client-portal-btn clickable">
-            <i class="fa-solid fa-shield-halved"></i> <span>Client Portal</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
-          </button>
-          <ul class="dropdown-menu auth-dropdown-menu">
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Investor</a></li>
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="corporate"><i class="fa-solid fa-building"></i> Corporate Treasury</a></li>
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner / ARN</a></li>
-          </ul>
-        </div>
+        <!-- Client Login Direct Button -->
+        <a href="login.html" class="vg-btn vg-btn-outline client-portal-btn clickable">
+          <i class="fa-solid fa-user-shield"></i> <span>Client Login</span>
+        </a>
 
-        <!-- Book Consultation (Primary Pill) -->
-        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <a href="index.html#consultation-section" class="vg-btn vg-btn-primary book-consult-btn clickable" style="text-decoration: none;">
-            <span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i>
-          </a>
-          <ul class="dropdown-menu auth-dropdown-menu">
-            <li><a href="index.html#consultation-section" class="dropdown-link clickable"><i class="fa-solid fa-calendar-check"></i> Book 1-on-1 Consultation</a></li>
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Open Retail Account</a></li>
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Treasury Account</a></li>
-          </ul>
-        </div>
+        <!-- Book Consultation Primary Button -->
+        <a href="index.html#consultation-section" class="vg-btn vg-btn-primary book-consult-btn clickable" style="text-decoration: none;">
+          <span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
         <!-- Mobile Drawer Toggle -->
         <button class="mobile-toggle clickable" id="mobileMenuTrigger" aria-label="Toggle menu">
@@ -197,7 +183,7 @@
       </div>
       <div class="marquee-wrapper">
         <div class="marquee-track" id="marketMarqueeTrack">
-          <!-- Dynamically populated via script.js?v=60.0 -->
+          <!-- Dynamically populated via script.js?v=70.0 -->
         </div>
       </div>
       <div class="view-market-container">
@@ -345,7 +331,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=60.0"></script>
+  <script src="script.js?v=70.0"></script>
 
   <!-- Search Modal -->
   <div class="search-modal" id="searchModal">
@@ -367,7 +353,7 @@
       </div>
 
       <div class="search-results-list" id="searchResultsList">
-        <!-- Dynamically rendered via script.js?v=60.0 -->
+        <!-- Dynamically rendered via script.js?v=70.0 -->
       </div>
     </div>
   </div>

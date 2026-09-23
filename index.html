@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=60.0">
+  <link rel="stylesheet" href="style.css?v=70.0">
 </head>
 <body>
 
@@ -164,7 +164,7 @@
       </ul>
 
       <!-- Header Action Items: Clearly Visible Search + Client Portal (Login) + Book Consultation (Sign Up) -->
-      <div class="nav-actions">
+            <div class="nav-actions">
         
         <!-- Search Trigger -->
         <button class="search-btn clickable" id="searchTrigger" aria-label="Search site">
@@ -172,29 +172,15 @@
           <span>Search</span>
         </button>
 
-        <!-- Client Portal (Login Dropdown) -->
-        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <button class="vg-btn vg-btn-outline client-portal-btn clickable">
-            <i class="fa-solid fa-shield-halved"></i> <span>Client Portal</span> <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i>
-          </button>
-          <ul class="dropdown-menu auth-dropdown-menu">
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="retail"><i class="fa-solid fa-user"></i> Retail Investor</a></li>
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="corporate"><i class="fa-solid fa-building"></i> Corporate Treasury</a></li>
-            <li><a href="#" class="dropdown-link clickable login-trigger" data-login-mode="partner"><i class="fa-solid fa-handshake"></i> Partner / ARN</a></li>
-          </ul>
-        </div>
+        <!-- Client Login Direct Button -->
+        <a href="login.html" class="vg-btn vg-btn-outline client-portal-btn clickable">
+          <i class="fa-solid fa-user-shield"></i> <span>Client Login</span>
+        </a>
 
-        <!-- Book Consultation (Primary Pill) -->
-        <div class="sk-nav-item dropdown-trigger auth-dropdown-item">
-          <a href="index.html#consultation-section" class="vg-btn vg-btn-primary book-consult-btn clickable" style="text-decoration: none;">
-            <span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i>
-          </a>
-          <ul class="dropdown-menu auth-dropdown-menu">
-            <li><a href="index.html#consultation-section" class="dropdown-link clickable"><i class="fa-solid fa-calendar-check"></i> Book 1-on-1 Consultation</a></li>
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="retail"><i class="fa-solid fa-user-plus"></i> Open Retail Account</a></li>
-            <li><a href="#" class="dropdown-link clickable signup-trigger" data-signup-mode="corporate"><i class="fa-solid fa-building-circle-check"></i> Corporate Treasury Account</a></li>
-          </ul>
-        </div>
+        <!-- Book Consultation Primary Button -->
+        <a href="index.html#consultation-section" class="vg-btn vg-btn-primary book-consult-btn clickable" style="text-decoration: none;">
+          <span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
         <!-- Mobile Drawer Toggle -->
         <button class="mobile-toggle clickable" id="mobileMenuTrigger" aria-label="Toggle menu">
@@ -210,7 +196,7 @@
       </div>
       <div class="marquee-wrapper">
         <div class="marquee-track" id="marketMarqueeTrack">
-          <!-- Dynamically populated via script.js?v=60.0 -->
+          <!-- Dynamically populated via script.js?v=70.0 -->
         </div>
       </div>
       <div class="view-market-container">
@@ -441,46 +427,80 @@
 
         </div>
 
-        <!-- 6-Step Diligence Loop -->
-        <div class="philosophy-loop-container">
-          <div class="philosophy-loop-title">OUR SIX-STEP FIDUCIARY DILIGENCE LOOP</div>
-          <div class="loop-steps-flex">
+        <!-- 6-Step Diligence Loop (Diagrammatic Connected Process) -->
+        <div class="diligence-diagram-wrap">
+          <div class="diligence-diagram-header">
+            <span class="diligence-diagram-badge"><i class="fa-solid fa-arrows-spin"></i> CONTINUOUS FIDUCIARY ARCHITECTURE</span>
+            <h3>Our Six-Step Investment Diligence Loop</h3>
+          </div>
+
+          <div class="diligence-steps-grid">
             
-            <div class="loop-step-item">
-              <div class="loop-step-icon"><i class="fa-solid fa-bullseye"></i></div>
-              <span class="loop-step-text">Understanding Objectives</span>
-            </div>
-            <span class="loop-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-
-            <div class="loop-step-item">
-              <div class="loop-step-icon"><i class="fa-solid fa-chart-pie"></i></div>
-              <span class="loop-step-text">Understanding Risk</span>
-            </div>
-            <span class="loop-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-
-            <div class="loop-step-item">
-              <div class="loop-step-icon"><i class="fa-solid fa-diagram-project"></i></div>
-              <span class="loop-step-text">Diversification</span>
-            </div>
-            <span class="loop-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-
-            <div class="loop-step-item">
-              <div class="loop-step-icon"><i class="fa-solid fa-list-check"></i></div>
-              <span class="loop-step-text">Selecting Solutions</span>
-            </div>
-            <span class="loop-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-
-            <div class="loop-step-item">
-              <div class="loop-step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-              <span class="loop-step-text">Monitoring</span>
-            </div>
-            <span class="loop-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-
-            <div class="loop-step-item">
-              <div class="loop-step-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
-              <span class="loop-step-text">Reviewing Over Time</span>
+            <!-- Step 01 -->
+            <div class="diligence-step-node">
+              <div class="diligence-node-top">
+                <span class="diligence-node-badge">STEP 01</span>
+                <div class="diligence-node-icon"><i class="fa-solid fa-bullseye"></i></div>
+              </div>
+              <h4>Understanding Objectives</h4>
+              <p>Comprehensive discovery of liquidity horizons, family milestones, and cash flow requirements.</p>
             </div>
 
+            <!-- Step 02 -->
+            <div class="diligence-step-node">
+              <div class="diligence-node-top">
+                <span class="diligence-node-badge">STEP 02</span>
+                <div class="diligence-node-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              </div>
+              <h4>Understanding Risk</h4>
+              <p>Quantifying downside vulnerability, drawdown thresholds, and stress-testing market regimes.</p>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="diligence-step-node">
+              <div class="diligence-node-top">
+                <span class="diligence-node-badge">STEP 03</span>
+                <div class="diligence-node-icon"><i class="fa-solid fa-diagram-project"></i></div>
+              </div>
+              <h4>Strategic Diversification</h4>
+              <p>Multi-asset allocation spanning Mutual Funds, Equities, PMS, AIF, and Fixed Income.</p>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="diligence-step-node">
+              <div class="diligence-node-top">
+                <span class="diligence-node-badge">STEP 04</span>
+                <div class="diligence-node-icon"><i class="fa-solid fa-list-check"></i></div>
+              </div>
+              <h4>Selecting Solutions</h4>
+              <p>Rigorous institutional manager evaluation, risk-adjusted alpha screening, and product fitment.</p>
+            </div>
+
+            <!-- Step 05 -->
+            <div class="diligence-step-node">
+              <div class="diligence-node-top">
+                <span class="diligence-node-badge">STEP 05</span>
+                <div class="diligence-node-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+              </div>
+              <h4>Active Monitoring</h4>
+              <p>Continuous tracking of scheme NAV performance, style drifts, and changing market dynamics.</p>
+            </div>
+
+            <!-- Step 06 -->
+            <div class="diligence-step-node">
+              <div class="diligence-node-top">
+                <span class="diligence-node-badge">STEP 06</span>
+                <div class="diligence-node-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+              </div>
+              <h4>Reviewing Over Time</h4>
+              <p>Systematic rebalancing, milestone alignment, and tactical adjustments feeding back to Step 01.</p>
+            </div>
+
+          </div>
+
+          <div class="diligence-loop-connector">
+            <i class="fa-solid fa-rotate"></i>
+            <span>Perpetual Governance Cycle — Step 06 seamlessly informs Step 01 for compounding over generations.</span>
           </div>
         </div>
 
@@ -1584,7 +1604,7 @@
       </div>
 
       <div class="search-results-list" id="searchResultsList">
-        <!-- Dynamically rendered via script.js?v=60.0 -->
+        <!-- Dynamically rendered via script.js?v=70.0 -->
       </div>
     </div>
   </div>
@@ -1679,6 +1699,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   
   <!-- Main Logic -->
-  <script src="script.js?v=60.0"></script>
+  <script src="script.js?v=70.0"></script>
 </body>
 </html>
