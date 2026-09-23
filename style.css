@@ -230,7 +230,7 @@ a {
   justify-content: space-between !important;
   align-items: center !important;
   width: 100% !important;
-  padding: 0.85rem clamp(1rem, 2vw, 2rem) !important;
+  padding: 0.65rem clamp(0.75rem, 1.5vw, 1.5rem) !important;
   background: #FFFFFF !important;
   background-color: #FFFFFF !important;
   transition: padding 0.3s var(--ease);
@@ -243,14 +243,14 @@ a {
 }
 
 .header-wrapper.scrolled .nav-container, #mainHeader.scrolled .nav-container {
-  padding: 0.6rem clamp(1rem, 2vw, 2rem) !important;
+  padding: 0.5rem clamp(0.75rem, 1.5vw, 1.5rem) !important;
 }
 
 /* BRAND LOGO INTEGRATION (PROMINENT & ENLARGED) */
 .logo-box, .logo-wrapper, a.logo-link {
   display: flex !important;
   align-items: center !important;
-  gap: 12px !important;
+  gap: 10px !important;
   text-decoration: none !important;
   flex-shrink: 0 !important;
   background: transparent !important;
@@ -259,9 +259,9 @@ a {
 }
 
 .brand-logo-img, img.brand-logo-img {
-  height: 52px !important;
+  height: 44px !important;
   width: auto !important;
-  max-height: 54px !important;
+  max-height: 46px !important;
   object-fit: contain !important;
   background: transparent !important;
   filter: none !important;
@@ -280,14 +280,14 @@ a {
 
 .logo-text {
   font-family: var(--font-heading) !important;
-  font-size: 26px !important;
+  font-size: 23px !important;
   font-weight: 800 !important;
   color: #0F172A !important;
   letter-spacing: -0.025em !important;
   line-height: 1 !important;
   display: flex !important;
   align-items: baseline !important;
-  gap: 3px !important;
+  gap: 2px !important;
   text-shadow: none !important;
 }
 
@@ -299,12 +299,12 @@ a {
 
 .logo-sub {
   font-family: var(--font-mono) !important;
-  font-size: 9.5px !important;
+  font-size: 8.5px !important;
   color: #64748B !important;
-  letter-spacing: 0.18em !important;
+  letter-spacing: 0.16em !important;
   font-weight: 700 !important;
   display: block !important;
-  margin-top: 4px !important;
+  margin-top: 3px !important;
   text-shadow: none !important;
 }
 
@@ -312,7 +312,7 @@ a {
 .sk-nav-menu {
   display: flex !important;
   list-style: none !important;
-  gap: 0.1rem !important;
+  gap: 0.08rem !important;
   align-items: center !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -324,11 +324,11 @@ a {
 
 .sk-nav-link, a.sk-nav-link {
   font-family: var(--font-heading) !important;
-  font-size: 13px !important;
+  font-size: 12.5px !important;
   font-weight: 600 !important;
   color: #0F172A !important;
   letter-spacing: -0.01em !important;
-  padding: 5px 7px !important;
+  padding: 5px 6px !important;
   border-radius: 6px !important;
   display: flex !important;
   align-items: center !important;
@@ -587,31 +587,32 @@ a {
   font-size: 15px !important;
 }
 
-/* ============ LIVE MARKET TICKER BAR (CONTINUOUS STICKER TAPE) ============ */
+/* ============ LIVE MARKET TICKER BAR (TRANSPARENT FROSTED GLASS TAPE) ============ */
 .live-market-bar {
   width: 100% !important;
   height: 44px !important;
-  background: rgba(11, 30, 54, 0.88) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border-top: 1px solid #E2E8F0 !important;
+  border-bottom: 1px solid #E2E8F0 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  padding: 0 2rem !important;
+  padding: 0 1.5rem !important;
   overflow: hidden !important;
   position: relative !important;
-  z-index: 1 !important;
+  z-index: 10 !important;
 }
 
 .live-market-title {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding-right: 18px;
-  border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+  padding-right: 16px;
+  border-right: 1px solid #E2E8F0 !important;
   height: 100%;
+  flex-shrink: 0;
 }
 
 .live-pulse {
@@ -632,7 +633,7 @@ a {
   font-family: var(--font-mono) !important;
   font-size: 11px !important;
   font-weight: 700 !important;
-  color: #10B981 !important;
+  color: #0F172A !important;
   letter-spacing: 0.1em !important;
   white-space: nowrap !important;
 }
@@ -649,9 +650,9 @@ a {
 .marquee-track {
   display: flex !important;
   align-items: center !important;
-  gap: 14px !important;
+  gap: 16px !important;
   width: max-content !important;
-  animation: scrollMarquee 38s linear infinite !important;
+  animation: scrollMarquee 75s linear infinite !important; /* Calmer & normal readable speed */
 }
 
 .marquee-track:hover {
@@ -667,26 +668,27 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.06) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
   padding: 4px 12px;
   border-radius: 20px;
-  color: #FFFFFF !important;
+  color: #0F172A !important;
   font-size: 12.5px;
   white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04) !important;
 }
 
 .stock-symbol, .stock-name {
   font-weight: 600 !important;
-  color: #FFFFFF !important;
+  color: #0F172A !important;
   font-size: 12px !important;
 }
 
 .stock-price {
   font-family: var(--font-mono) !important;
   font-variant-numeric: tabular-nums !important;
-  color: #00D2FF !important;
-  font-weight: 600;
+  color: #0077FF !important;
+  font-weight: 700;
 }
 
 .stock-change {
@@ -696,6 +698,14 @@ a {
   font-weight: 600;
 }
 
+.stock-change.positive, .stock-change.up {
+  color: #10B981 !important;
+}
+
+.stock-change.negative, .stock-change.down {
+  color: #EF4444 !important;
+}
+
 .view-market-link {
   display: flex;
   align-items: center;
@@ -703,7 +713,9 @@ a {
   font-family: var(--font-mono);
   font-size: 11.5px;
   font-weight: 700;
-  color: #38BDF8;
+  color: #0077FF !important;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* ============ HERO SECTION ============ */
@@ -2564,7 +2576,7 @@ footer.luxury-footer, .footer-wrapper {
   .diligence-steps-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 992px) {
   .sk-nav-menu, .nav-actions .auth-dropdown-item { display: none !important; }
   .mobile-toggle { display: flex !important; }
   .who-we-are-grid { grid-template-columns: 1fr; }
