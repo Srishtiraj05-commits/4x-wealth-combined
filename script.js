@@ -1572,8 +1572,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==========================================
+  // 16. BOOK CONSULTATION & CONSULTATION SECTION SMOOTH SCROLL
+  // ==========================================
+  document.querySelectorAll('a[href*="#consultation-section"], .book-consult-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const href = btn.getAttribute('href') || '';
+      const targetId = 'consultation-section';
+      const targetEl = document.getElementById(targetId);
+      
+      // If we are already on index.html or the page containing #consultation-section
+      if (targetEl) {
+        e.preventDefault();
+        const headerOffset = 80;
+        const elementPosition = targetEl.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Handle direct hash navigation on page load
+  if (window.location.hash === '#consultation-section') {
+    setTimeout(() => {
+      const targetEl = document.getElementById('consultation-section');
+      if (targetEl) {
+        const headerOffset = 80;
+        const elementPosition = targetEl.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 300);
+  }
+
   const x4ChatLoader = document.createElement('script');
   x4ChatLoader.src = 'chatbot.js?v=1.1';
   x4ChatLoader.defer = true;
   document.body.appendChild(x4ChatLoader);
 });
+
