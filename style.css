@@ -343,15 +343,15 @@ a {
   background: #F0F7FF !important;
 }
 
-.sk-nav-link i {
-  font-size: 8.5px !important;
-  color: #64748B !important;
-  transition: transform 0.25s, color 0.25s !important;
-}
-
-.sk-nav-item:hover .sk-nav-link i {
-  color: #0077FF !important;
-  transform: rotate(180deg) !important;
+.sk-nav-link i, 
+.dropdown-link i, 
+.mega-dropdown i, 
+.search-btn i, 
+.book-consult-btn i, 
+.client-portal-btn i, 
+.view-market-link i,
+.marquee-separator {
+  display: none !important;
 }
 
 /* FLOATING DROPDOWN MENUS (LUXURY FROSTED WHITE GLASS) */
