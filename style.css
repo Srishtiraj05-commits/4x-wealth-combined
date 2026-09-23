@@ -210,18 +210,17 @@ a {
   .spotlight, .cursor-ring, .cursor-dot { display: none; }
 }
 
-/* ============ FROSTED GLASSMORPHISM NAVBAR (THEME MATCHED) ============ */
-.header-wrapper {
+/* ============ PURE SOLID WHITE LUXURY NAVBAR ============ */
+.header-wrapper, #mainHeader {
   position: relative !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   z-index: 90000 !important;
-  background: rgba(255, 255, 255, 0.94) !important;
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
   border-bottom: 1px solid #E2E8F0 !important;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04) !important;
+  box-shadow: 0 4px 25px rgba(15, 23, 42, 0.05) !important;
 }
 
 .nav-container {
@@ -231,20 +230,27 @@ a {
   justify-content: space-between !important;
   align-items: center !important;
   width: 100% !important;
-  padding: 0.75rem clamp(1rem, 2vw, 2rem) !important;
-  background: transparent !important;
+  padding: 0.85rem clamp(1rem, 2vw, 2rem) !important;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
   transition: padding 0.3s var(--ease);
 }
 
-.header-wrapper.scrolled .nav-container {
-  padding: 0.55rem clamp(1rem, 2vw, 2rem) !important;
+.header-wrapper.scrolled, #mainHeader.scrolled {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08) !important;
 }
 
-/* BRAND LOGO INTEGRATION (MATCHING LIGHT THEME) */
+.header-wrapper.scrolled .nav-container, #mainHeader.scrolled .nav-container {
+  padding: 0.6rem clamp(1rem, 2vw, 2rem) !important;
+}
+
+/* BRAND LOGO INTEGRATION (PROMINENT & ENLARGED) */
 .logo-box, .logo-wrapper, a.logo-link {
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
+  gap: 12px !important;
   text-decoration: none !important;
   flex-shrink: 0 !important;
   background: transparent !important;
@@ -253,8 +259,9 @@ a {
 }
 
 .brand-logo-img, img.brand-logo-img {
-  height: 40px !important;
+  height: 52px !important;
   width: auto !important;
+  max-height: 54px !important;
   object-fit: contain !important;
   background: transparent !important;
   filter: none !important;
@@ -262,7 +269,7 @@ a {
 }
 
 .logo-link:hover .brand-logo-img, .logo-wrapper:hover .brand-logo-img {
-  transform: translateY(-1px);
+  transform: scale(1.04);
 }
 
 .logo-text-group {
@@ -273,14 +280,14 @@ a {
 
 .logo-text {
   font-family: var(--font-heading) !important;
-  font-size: 22px !important;
+  font-size: 26px !important;
   font-weight: 800 !important;
   color: #0F172A !important;
   letter-spacing: -0.025em !important;
   line-height: 1 !important;
   display: flex !important;
   align-items: baseline !important;
-  gap: 2px !important;
+  gap: 3px !important;
   text-shadow: none !important;
 }
 
@@ -292,12 +299,12 @@ a {
 
 .logo-sub {
   font-family: var(--font-mono) !important;
-  font-size: 8.5px !important;
+  font-size: 9.5px !important;
   color: #64748B !important;
-  letter-spacing: 0.16em !important;
-  font-weight: 600 !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 700 !important;
   display: block !important;
-  margin-top: 3px !important;
+  margin-top: 4px !important;
   text-shadow: none !important;
 }
 
@@ -471,7 +478,7 @@ a {
 }
 
 .mega-link:hover span {
-  color: #BAE6FD !important;
+  color: #0077FF !important;
 }
 
 /* ============ NAV ACTIONS (BUTTONS) ============ */
