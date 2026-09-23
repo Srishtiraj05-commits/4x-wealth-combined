@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=70.0">
+<link rel="stylesheet" href="style.css?v=71.0">
   <style>
     body {
       background-color: #FFFFFF !important;
@@ -594,7 +594,7 @@
       </div>
       <div class="marquee-wrapper">
         <div class="marquee-track" id="marketMarqueeTrack">
-          <!-- Populated dynamically via script.js?v=70.0 -->
+          <!-- Populated dynamically via script.js?v=71.0 -->
         </div>
       </div>
       <div class="view-market-container">
@@ -1296,72 +1296,7 @@
   </div>
 
   <!-- Dual Login Modal (Client & Retail) -->
-  <div class="login-modal" id="loginModal">
-    <div class="login-card glass-card">
-      <button class="login-close clickable" id="loginCloseBtn"><i class="fa-solid fa-xmark"></i></button>
-      
-      <!-- Dual Tier Switcher -->
-      <div class="login-tabs">
-        <button class="login-tab-btn active" id="tabClientBtn">
-          <i class="fa-solid fa-building-columns"></i> Client Login
-        </button>
-        <button class="login-tab-btn" id="tabRetailBtn">
-          <i class="fa-solid fa-user-tie"></i> Retail Login
-        </button>
-      </div>
-
-      <!-- CLIENT LOGIN FORM -->
-      <div class="login-form-container active" id="clientFormContainer">
-        <div class="login-header">
-          <h3>Institutional & HNW Terminal</h3>
-          <p>Authorized ARN / Mandate Client Access</p>
-        </div>
-        <form class="login-form" onsubmit="event.preventDefault();">
-          <div class="form-group">
-            <label for="c-username">AUTHORIZED ARN / CLIENT ID</label>
-            <input type="text" id="c-username" placeholder="e.g. ARN-268488 / HNW-9402" required>
-          </div>
-          <div class="form-group">
-            <label for="c-password">SECURE TERMINAL KEY</label>
-            <input type="password" id="c-password" placeholder="Enter encrypted passphrase" required>
-          </div>
-          <div class="form-footer">
-            <label class="remember-me">
-              <input type="checkbox"> Save session
-            </label>
-            <a href="#" class="forgot-pwd clickable">Reset Key</a>
-          </div>
-          <button type="submit" class="vg-btn vg-btn-primary submit-btn clickable">Establish Client Link</button>
-        </form>
-      </div>
-
-      <!-- RETAIL LOGIN FORM -->
-      <div class="login-form-container" id="retailFormContainer" style="display: none;">
-        <div class="login-header">
-          <h3>Retail Investor Portal</h3>
-          <p>Mutual Funds, SIP Tracker & Direct Wealth Access</p>
-        </div>
-        <form class="login-form" onsubmit="event.preventDefault();">
-          <div class="form-group">
-            <label for="r-username">MOBILE NUMBER / REGISTERED EMAIL</label>
-            <input type="text" id="r-username" placeholder="Enter mobile or email address" required>
-          </div>
-          <div class="form-group">
-            <label for="r-password">PASSWORD / OTP PIN</label>
-            <input type="password" id="r-password" placeholder="Enter account password" required>
-          </div>
-          <div class="form-footer">
-            <label class="remember-me">
-              <input type="checkbox"> Remember me
-            </label>
-            <a href="#" class="forgot-pwd clickable">Forgot Password?</a>
-          </div>
-          <button type="submit" class="vg-btn vg-btn-primary submit-btn clickable">Access Retail Dashboard</button>
-        </form>
-      </div>
-
-    </div>
-  </div>
+  
 
   <!-- CDN scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

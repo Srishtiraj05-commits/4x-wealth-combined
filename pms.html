@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=70.0">
+<link rel="stylesheet" href="style.css?v=71.0">
 </head>
 <body>
 
@@ -183,7 +183,7 @@
       </div>
       <div class="marquee-wrapper">
         <div class="marquee-track" id="marketMarqueeTrack">
-          <!-- Dynamically populated via script.js?v=70.0 -->
+          <!-- Dynamically populated via script.js?v=71.0 -->
         </div>
       </div>
       <div class="view-market-container">
@@ -340,7 +340,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=70.0"></script>
+  <script src="script.js?v=71.0"></script>
 
   <!-- Search Modal -->
   <div class="search-modal" id="searchModal">
@@ -362,94 +362,12 @@
       </div>
 
       <div class="search-results-list" id="searchResultsList">
-        <!-- Dynamically rendered via script.js?v=70.0 -->
+        <!-- Dynamically rendered via script.js?v=71.0 -->
       </div>
     </div>
   </div>
 
-  <!-- 3-Tier Account Access & Sign Up Modal -->
-  <div class="login-modal" id="loginModal">
-    <div class="login-card">
-      <button class="login-close clickable" id="loginCloseBtn" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
-      
-      <div style="text-align: center; margin-bottom: 1.2rem;">
-        <span class="section-tag-badge" id="modalTypeHeader" style="margin-bottom: 6px;">RETAIL CLIENT PORTAL</span>
-        <h3 style="font-family: var(--font-heading); font-size: 22px; color: #FFF;">4X Wealth Client Gateway</h3>
-      </div>
-
-      <!-- Account Role Tabs -->
-      <div class="login-tabs">
-        <button type="button" class="login-tab-btn active" id="tabRetailBtn">Retail</button>
-        <button type="button" class="login-tab-btn" id="tabCorporateBtn">Corporate</button>
-        <button type="button" class="login-tab-btn" id="tabPartnerBtn">Partner / ARN</button>
-      </div>
-
-      <!-- Retail Form Container -->
-      <div id="retailFormContainer">
-        <form onsubmit="event.preventDefault(); alert('Authentication Successful: Redirecting to 4X Wealth Retail Portfolio Dashboard...'); document.getElementById('loginModal').classList.remove('open');">
-          <div class="form-field-group">
-            <label>Registered Mobile / PAN / Email</label>
-            <input type="text" required placeholder="e.g. 9820000000 or ABCDE1234F">
-          </div>
-          <div class="form-field-group">
-            <label>Password / Security PIN</label>
-            <input type="password" required placeholder="Enter password or 6-digit PIN">
-          </div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; font-size: 12px;">
-            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: rgba(253,248,242,0.7);">
-              <input type="checkbox" checked style="width: auto;"> Remember device
-            </label>
-            <a href="#" class="clickable" style="color: var(--gold-primary);">Forgot PIN?</a>
-          </div>
-          <button type="submit" class="btn-primary clickable" style="width: 100%; justify-content: center; padding: 12px;">
-            <span>Secure Portal Access</span> <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </form>
-      </div>
-
-      <!-- Corporate Form Container -->
-      <div id="corporateFormContainer" style="display: none;">
-        <form onsubmit="event.preventDefault(); alert('Corporate Gateway Access: Redirecting to Treasury Desk...'); document.getElementById('loginModal').classList.remove('open');">
-          <div class="form-field-group">
-            <label>Corporate Entity PAN / CIN</label>
-            <input type="text" required placeholder="e.g. L12345MH2020PLC000000">
-          </div>
-          <div class="form-field-group">
-            <label>Authorized Signatory Email</label>
-            <input type="email" required placeholder="treasury@corporate.com">
-          </div>
-          <div class="form-field-group">
-            <label>Enterprise Security Key</label>
-            <input type="password" required placeholder="Enter enterprise key">
-          </div>
-          <button type="submit" class="btn-primary clickable" style="width: 100%; justify-content: center; padding: 12px;">
-            <span>Authorize Treasury Session</span> <i class="fa-solid fa-lock"></i>
-          </button>
-        </form>
-      </div>
-
-      <!-- Channel Partner Form Container -->
-      <div id="partnerFormContainer" style="display: none;">
-        <form onsubmit="event.preventDefault(); alert('Partner Desk Authorized: Accessing Channel Desk...'); document.getElementById('loginModal').classList.remove('open');">
-          <div class="form-field-group">
-            <label>AMFI ARN Number</label>
-            <input type="text" required placeholder="e.g. ARN-268488">
-          </div>
-          <div class="form-field-group">
-            <label>Partner Registered Email</label>
-            <input type="email" required placeholder="partner@domain.com">
-          </div>
-          <div class="form-field-group">
-            <label>Partner Access PIN</label>
-            <input type="password" required placeholder="Enter 6-digit PIN">
-          </div>
-          <button type="submit" class="btn-primary clickable" style="width: 100%; justify-content: center; padding: 12px;">
-            <span>Enter Partner Terminal</span> <i class="fa-solid fa-handshake"></i>
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
+  
 
 </body>
 </html>
