@@ -6,47 +6,28 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
-  // 1. ENTRANCE SEQUENCE & WORD-BY-WORD POP (SMOOTH & ZERO BLINK)
+  // 1. ENTRANCE SEQUENCE (SMOOTH, ZERO-BLINK GSAP ENTRANCE)
+  // Note: .hero-word is animated via pure 60fps CSS keyframes to prevent JS flicker
   // ==========================================
   function initializeEntranceAnimations() {
-    const heroWords = document.querySelectorAll('.hero-word');
-    if (heroWords.length > 0) {
-      if (typeof gsap !== 'undefined') {
-        gsap.fromTo(heroWords, 
-          { 
-            opacity: 0, 
-            y: 18, 
-            scale: 0.92
-          }, 
-          { 
-            opacity: 1, 
-            y: 0, 
-            scale: 1,
-            duration: 0.55, 
-            stagger: 0.14, 
-            ease: 'back.out(1.5)',
-            delay: 0.2
-          }
-        );
-      } else {
-        heroWords.forEach((el) => {
-          el.style.opacity = '1';
-          el.style.transform = 'none';
-        });
-      }
-    }
     if (typeof gsap !== 'undefined') {
+      const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
       if (document.querySelector('.hero-ivory-badge')) {
-        gsap.from('.hero-ivory-badge', { opacity: 0, y: -10, duration: 0.5, delay: 0.05, ease: 'power2.out' });
+        tl.from('.hero-ivory-badge', { opacity: 0, y: -12, duration: 0.45 }, 0.05);
       }
       if (document.querySelector('.hero-sub-text')) {
-        gsap.from('.hero-sub-text', { opacity: 0, y: 12, duration: 0.6, delay: 1.1, ease: 'power2.out' });
+        tl.from('.hero-sub-text', { opacity: 0, y: 14, duration: 0.5 }, 0.65);
       }
       if (document.querySelector('.hero-cta-group')) {
-        gsap.from('.hero-cta-group', { opacity: 0, y: 12, duration: 0.6, delay: 1.25, ease: 'power2.out' });
+        tl.from('.hero-cta-group', { opacity: 0, y: 14, duration: 0.5 }, 0.8);
       }
-      if (document.querySelector('.hero-credentials-strip')) {
-        gsap.from('.hero-credentials-strip', { opacity: 0, y: 12, duration: 0.6, delay: 1.4, ease: 'power2.out' });
+      const trustCards = document.querySelectorAll('.hero-trust-grid > div');
+      if (trustCards.length > 0) {
+        tl.fromTo(trustCards, 
+          { opacity: 0, y: 18, scale: 0.94 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.45, stagger: 0.09, ease: 'back.out(1.5)' },
+          0.95
+        );
       }
     }
   }
@@ -58,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function initGlobalCardScrollPop() {
     const cardSelectors = [
       '.who-pillars-list',
+      '.who-we-are-grid',
       '.philosophy-cycle-grid',
       '.diligence-steps-grid',
       '.approach-steps-container',
@@ -70,14 +52,20 @@ document.addEventListener('DOMContentLoaded', () => {
       '.partners-cards-grid',
       '.fb-steps-3',
       '.fb-metrics-bar',
+      '.fb-grid',
       '.lab-stats-grid',
       '.lab-modules-container',
       '.sector-heatmap-grid',
       '.features-grid',
       '.product-metrics-grid',
       '.calc-layout-grid',
+      '.calc-results-grid',
       '.blog-grid',
-      '.reports-grid'
+      '.blogs-page-grid',
+      '.reports-grid',
+      '.sif-kpi-grid',
+      '.sif-controls-grid',
+      '.testimonials-track'
     ];
 
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -85,18 +73,21 @@ document.addEventListener('DOMContentLoaded', () => {
       cardSelectors.forEach(selector => {
         const containers = document.querySelectorAll(selector);
         containers.forEach(container => {
-          const items = Array.from(container.children);
+          const items = Array.from(container.children).filter(el => 
+            !el.classList.contains('gold-divider-wrap') && 
+            !el.classList.contains('diligence-loop-connector')
+          );
           if (items.length > 0) {
             gsap.fromTo(items, 
               { 
                 opacity: 0, 
-                y: 30, 
+                y: 32, 
                 scale: 0.94 
               },
               {
                 scrollTrigger: {
                   trigger: container,
-                  start: 'top 88%',
+                  start: 'top 86%',
                   toggleActions: 'play none none none',
                   once: true
                 },
@@ -104,8 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 y: 0,
                 scale: 1,
                 duration: 0.55,
-                stagger: 0.1,
-                ease: 'power2.out'
+                stagger: 0.09,
+                ease: 'back.out(1.4)'
               }
             );
           }
@@ -116,7 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              const children = Array.from(entry.target.children);
+              const children = Array.from(entry.target.children).filter(el => 
+                !el.classList.contains('gold-divider-wrap') && 
+                !el.classList.contains('diligence-loop-connector')
+              );
               children.forEach((child, index) => {
                 setTimeout(() => {
                   child.style.opacity = '1';
@@ -126,14 +120,16 @@ document.addEventListener('DOMContentLoaded', () => {
               observer.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.12 });
 
         cardSelectors.forEach(selector => {
           document.querySelectorAll(selector).forEach(c => {
             Array.from(c.children).forEach(child => {
-              child.style.opacity = '0';
-              child.style.transform = 'translateY(28px) scale(0.94)';
-              child.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+              if (!child.classList.contains('gold-divider-wrap') && !child.classList.contains('diligence-loop-connector')) {
+                child.style.opacity = '0';
+                child.style.transform = 'translateY(30px) scale(0.94)';
+                child.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+              }
             });
             observer.observe(c);
           });
@@ -1727,7 +1723,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const x4ChatLoader = document.createElement('script');
-  x4ChatLoader.src = 'chatbot.js?v=1.1';
+  x4ChatLoader.src = 'chatbot.js?v=135.0';
   x4ChatLoader.defer = true;
   document.body.appendChild(x4ChatLoader);
 });

@@ -816,37 +816,29 @@ a {
   animation: pulseEmerald 2s infinite cubic-bezier(0.4, 0, 0.6, 1) !important;
 }
 
-/* Sequential Word Pop Animation */
+/* Sequential Word Pop Animation (Smooth, Non-Blinking 60fps) */
 .hero-word {
-  display: inline-block;
+  display: inline-block !important;
   opacity: 0;
-  transform: translateY(24px) scale(0.85);
-  filter: blur(5px);
-  animation: heroWordPop 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: calc(0.2s + (var(--w-i, 1) * 0.16s));
-  margin-right: 0.22em;
-  will-change: transform, opacity, filter;
+  transform: translateY(18px) scale(0.92);
+  animation: heroWordPop 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  animation-delay: calc(0.15s + (var(--w-i, 1) * 0.12s)) !important;
+  margin-right: 0.22em !important;
+  will-change: transform, opacity !important;
 }
 
 .hero-word:last-child {
-  margin-right: 0;
+  margin-right: 0 !important;
 }
 
 @keyframes heroWordPop {
   0% {
     opacity: 0;
-    transform: translateY(24px) scale(0.85);
-    filter: blur(5px);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-4px) scale(1.06);
-    filter: blur(0px);
+    transform: translateY(18px) scale(0.92);
   }
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
-    filter: blur(0px);
   }
 }
 
