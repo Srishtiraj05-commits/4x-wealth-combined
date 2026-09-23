@@ -425,25 +425,48 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 6. REAL-TIME SEARCH TEXT FILTER
+  // 6. REAL-TIME SEARCH & CATEGORY PILL FILTERS
   // ==========================================
   const blogSearch = document.getElementById('blogSearch');
-  if (blogSearch) {
-    blogSearch.addEventListener('input', (e) => {
-      const query = (e.target.value || '').toLowerCase().trim();
-      document.querySelectorAll('.blog-card').forEach(card => {
-        const titleEl = card.querySelector('h3');
-        const badgeEl = card.querySelector('.blog-category-badge');
-        const titleText = titleEl ? titleEl.textContent.toLowerCase() : '';
-        const categoryText = badgeEl ? badgeEl.textContent.toLowerCase() : '';
-        
-        if (titleText.includes(query) || categoryText.includes(query)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+  const filterPills = document.querySelectorAll('.blog-filter-pill');
+  let currentFilter = 'all';
+
+  const filterCards = () => {
+    const query = blogSearch ? (blogSearch.value || '').toLowerCase().trim() : '';
+    document.querySelectorAll('.blog-card').forEach(card => {
+      const cardCategory = card.getAttribute('data-category') || '';
+      const titleEl = card.querySelector('h3');
+      const tagEl = card.querySelector('.blog-sde-tag');
+      const excerptEl = card.querySelector('.blog-excerpt');
+      
+      const titleText = titleEl ? titleEl.textContent.toLowerCase() : '';
+      const tagText = tagEl ? tagEl.textContent.toLowerCase() : '';
+      const excerptText = excerptEl ? excerptEl.textContent.toLowerCase() : '';
+      
+      const matchesSearch = !query || titleText.includes(query) || tagText.includes(query) || excerptText.includes(query);
+      const matchesCategory = currentFilter === 'all' || cardCategory === currentFilter;
+
+      if (matchesSearch && matchesCategory) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  };
+
+  if (filterPills.length > 0) {
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentFilter = pill.getAttribute('data-filter') || 'all';
+        filterCards();
       });
     });
+  }
+
+  if (blogSearch) {
+    blogSearch.addEventListener('input', filterCards);
   }
 
   // ==========================================

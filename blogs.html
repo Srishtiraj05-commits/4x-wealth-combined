@@ -7,9 +7,9 @@
   <meta name="description" content="Explore quantitative wealth management reviews, tax-saving mutual fund plans, retirement projections, and fixed-income guides compiled by 4X Wealth.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=136.0">
+<link rel="stylesheet" href="style.css?v=137.0">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
       <!-- Brand Logo -->
       <a href="index.html" class="logo-link clickable" id="logoContainer">
         <div class="logo-wrapper">
-          <img src="logo.png?v=136.0" alt="4X Wealth Logo" class="brand-logo-img">
+          <img src="logo.png?v=137.0" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text-group">
             <div class="logo-text">4X<span>WEALTH</span></div>
             <span class="logo-sub">FINANCIAL SERVICES</span>
@@ -234,7 +234,7 @@
   <div class="sk-drawer" id="mobileDrawer">
     <button class="sk-drawer-close clickable" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
     <div class="sk-drawer-header">
-      <img src="logo.png?v=136.0" alt="4X Wealth Logo" class="brand-logo-img">
+      <img src="logo.png?v=137.0" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
                 <ul class="sk-drawer-links">
@@ -271,155 +271,219 @@
         <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #0077FF; pointer-events: none;"></i>
       </div>
 
-      <!-- Grid Layout for Blogs (Non-moving page list) -->
+      <!-- Category Filter Pills Bar -->
+      <div class="blog-filter-pills-bar">
+        <button class="blog-filter-pill active" data-filter="all">All Analyses (6)</button>
+        <button class="blog-filter-pill" data-filter="mutual-funds">Mutual Funds</button>
+        <button class="blog-filter-pill" data-filter="compounding">Compounding & SIP</button>
+        <button class="blog-filter-pill" data-filter="nps">Retirement & NPS</button>
+        <button class="blog-filter-pill" data-filter="pms">PMS & High-Net-Worth</button>
+        <button class="blog-filter-pill" data-filter="debt">Fixed Income & Bonds</button>
+      </div>
+
+      <!-- Grid Layout for Blogs (Technical SDE Architecture) -->
       <div class="blogs-page-grid" id="blogPageGrid">
         
         <!-- Blog 1 -->
-        <div class="blog-card clickable" data-blog-id="mutual-funds">
-          <div class="blog-card-image">
-            <svg viewBox="0 0 400 220" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);">
-              <g opacity="0.85">
-                <path d="M0,40 L400,40 M0,80 L400,80 M0,120 L400,120 M0,160 L400,160 M0,200 L400,200" stroke="rgba(0,122,255,0.06)" stroke-width="1"/>
-                <path d="M50,0 L50,220 M100,0 L100,220 M150,0 L150,220 M200,0 L200,220 M250,0 L250,220 M300,0 L300,220 M350,0 L350,220" stroke="rgba(0,122,255,0.06)" stroke-width="1"/>
-              </g>
-              <rect x="80" y="80" width="240" height="70" rx="30" fill="#1e293b"/>
-              <path d="M120,80 L160,45 L260,45 L290,80 Z" fill="#334155"/>
-              <path d="M130,75 L162,48 L200,48 L200,75 Z" fill="#bae6fd" opacity="0.8"/>
-              <path d="M210,75 L210,48 L254,48 L278,75 Z" fill="#bae6fd" opacity="0.8"/>
-              <circle cx="155" cy="65" r="9" fill="#475569"/>
-              <circle cx="185" cy="65" r="9" fill="#64748b"/>
-              <circle cx="225" cy="65" r="9" fill="#475569"/>
-              <circle cx="255" cy="65" r="9" fill="#64748b"/>
-              <circle cx="130" cy="150" r="24" fill="#0f172a" stroke="#fff" stroke-width="3"/>
-              <circle cx="130" cy="150" r="10" fill="#cbd5e1"/>
-              <circle cx="270" cy="150" r="24" fill="#0f172a" stroke="#fff" stroke-width="3"/>
-              <circle cx="270" cy="150" r="10" fill="#cbd5e1"/>
-              <text x="145" y="118" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="15" letter-spacing="0.05em">MUTUAL FUND</text>
-              <path d="M10,180 C80,180 140,110 200,105 C260,100 320,60 380,40" fill="none" stroke="#007aff" stroke-width="3.5" stroke-linecap="round"/>
-              <circle cx="380" cy="40" r="6" fill="#ff2d55"/>
-            </svg>
-            <div class="blog-category-badge">mutual-fund</div>
+        <div class="blog-card clickable" data-blog-id="mutual-funds" data-category="mutual-funds">
+          <div class="blog-terminal-header">
+            <div class="terminal-dots">
+              <span class="t-dot red"></span>
+              <span class="t-dot yellow"></span>
+              <span class="t-dot green"></span>
+            </div>
+            <span class="terminal-title">ALLOCATION_ENGINE // MUTUAL_FUNDS.ts</span>
+            <span class="terminal-badge">ARN-268488</span>
+          </div>
+          <div class="blog-terminal-body">
+            <pre><code><span class="code-keyword">const</span> portfolio = <span class="code-keyword">new</span> <span class="code-fn">EquityAllocator</span>({
+  <span class="code-prop">benchmark</span>: <span class="code-str">"NIFTY 50 TRI"</span>,
+  <span class="code-prop">activeShare</span>: <span class="code-num">0.78</span>, <span class="code-comment">// Alpha over index</span>
+  <span class="code-prop">rebalance</span>: <span class="code-str">"Quarterly Mean Reversion"</span>
+});</code></pre>
           </div>
           <div class="blog-card-content">
-            <h3>What is mutual fund?</h3>
-            <span class="blog-card-link">Read Article <i class="fa-solid fa-arrow-right-long"></i></span>
+            <div class="blog-card-meta-strip">
+              <span class="blog-sde-tag"><i class="fa-solid fa-layer-group"></i> MUTUAL FUNDS</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 4 MIN READ</span>
+            </div>
+            <h3>What is a Mutual Fund? Active Alpha vs. Index Replication</h3>
+            <p class="blog-excerpt">
+              A systematic analysis of unit-holding structures, daily NAV mechanics, active versus passive tracking error, and fiduciary distribution channels.
+            </p>
+            <div class="blog-footer-action">
+              <span class="blog-desk-tag">Quant Research Desk</span>
+              <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
         </div>
 
         <!-- Blog 2 -->
-        <div class="blog-card clickable" data-blog-id="compounding">
-          <div class="blog-card-image">
-            <svg viewBox="0 0 400 220" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);">
-              <g opacity="0.8">
-                <path d="M0,40 L400,40 M0,80 L400,80 M0,120 L400,120 M0,160 L400,160 M0,200 L400,200" stroke="rgba(52,211,153,0.06)" stroke-width="1"/>
-                <path d="M50,0 L50,220 M100,0 L100,220 M150,0 L150,220 M200,0 L200,220 M250,0 L250,220 M300,0 L300,220 M350,0 L350,220" stroke="rgba(52,211,153,0.06)" stroke-width="1"/>
-              </g>
-              <rect x="40" y="90" width="70" height="40" rx="6" fill="#1e293b"/>
-              <text x="60" y="115" fill="#fff" font-size="12" font-weight="700">SIP</text>
-              <rect x="165" y="90" width="70" height="40" rx="6" fill="#007aff"/>
-              <text x="184" y="115" fill="#fff" font-size="12" font-weight="700">STP</text>
-              <rect x="290" y="90" width="70" height="40" rx="6" fill="#ff2d55"/>
-              <text x="308" y="115" fill="#fff" font-size="12" font-weight="700">SWP</text>
-              <path d="M110,110 C130,110 145,80 165,110" fill="none" stroke="#34d399" stroke-width="3" stroke-dasharray="4"/>
-              <path d="M235,110 C255,110 270,140 290,110" fill="none" stroke="#34d399" stroke-width="3"/>
-              <path d="M325,90 C325,40 75,40 75,90" fill="none" stroke="#ff9500" stroke-width="2"/>
-              <path d="M71,80 L75,90 L79,80 Z" fill="#ff9500"/>
-            </svg>
-            <div class="blog-category-badge">general</div>
+        <div class="blog-card clickable" data-blog-id="compounding" data-category="compounding">
+          <div class="blog-terminal-header">
+            <div class="terminal-dots">
+              <span class="t-dot red"></span>
+              <span class="t-dot yellow"></span>
+              <span class="t-dot green"></span>
+            </div>
+            <span class="terminal-title">LIQUIDITY_ROUTER // CASHFLOW.ts</span>
+            <span class="terminal-badge">SYSTEMATIC</span>
+          </div>
+          <div class="blog-terminal-body">
+            <pre><code><span class="code-keyword">const</span> routing = <span class="code-fn">executeSystematicPlan</span>({
+  <span class="code-prop">accumulation</span>: <span class="code-str">"SIP (Rupee Cost Avg)"</span>,
+  <span class="code-prop">migration</span>: <span class="code-str">"STP (Debt -> Equity)"</span>,
+  <span class="code-prop">harvest</span>: <span class="code-str">"SWP (Tax-Shield Payout)"</span>
+});</code></pre>
           </div>
           <div class="blog-card-content">
-            <h3>Difference between SIP SWP and STP, when to use</h3>
-            <span class="blog-card-link">Read Article <i class="fa-solid fa-arrow-right-long"></i></span>
+            <div class="blog-card-meta-strip">
+              <span class="blog-sde-tag"><i class="fa-solid fa-arrows-rotate"></i> CASHFLOW ROUTING</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 5 MIN READ</span>
+            </div>
+            <h3>SIP vs. SWP vs. STP: Capital Accumulation, Migration & Harvest</h3>
+            <p class="blog-excerpt">
+              Deconstructing the three essential cash-flow mechanisms. How to deploy capital via STP during market corrections and harvest tax-efficient SWP yields.
+            </p>
+            <div class="blog-footer-action">
+              <span class="blog-desk-tag">Advisory Desk</span>
+              <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
         </div>
 
         <!-- Blog 3 -->
-        <div class="blog-card clickable" data-blog-id="growth">
-          <div class="blog-card-image">
-            <svg viewBox="0 0 400 220" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: linear-gradient(135deg, #fee2e2 0%, #fecdd3 100%);">
-              <g opacity="0.85">
-                <path d="M0,40 L400,40 M0,80 L400,80 M0,120 L400,120 M0,160 L400,160 M0,200 L400,200" stroke="rgba(255,45,85,0.06)" stroke-width="1"/>
-                <path d="M50,0 L50,220 M100,0 L100,220 M150,0 L150,220 M200,0 L200,220 M250,0 L250,220 M300,0 L300,220 M350,0 L350,220" stroke="rgba(255,45,85,0.06)" stroke-width="1"/>
-              </g>
-              <rect x="60" y="170" width="24" height="30" rx="3" fill="#007aff" opacity="0.6"/>
-              <rect x="100" y="150" width="24" height="50" rx="3" fill="#007aff" opacity="0.7"/>
-              <rect x="140" y="130" width="24" height="70" rx="3" fill="#007aff" opacity="0.8"/>
-              <rect x="180" y="100" width="24" height="100" rx="3" fill="#007aff" opacity="0.9"/>
-              <rect x="220" y="70" width="24" height="130" rx="3" fill="#007aff"/>
-              <path d="M40,195 Q 160,170 200,110 T 320,40" fill="none" stroke="#ff2d55" stroke-width="5" stroke-linecap="round"/>
-              <path d="M305,40 L325,35 L322,56 Z" fill="#ff2d55"/>
-              <circle cx="260" cy="120" r="10" fill="#ff9500" stroke="#fff" stroke-width="1.5"/>
-              <text x="257" y="123" fill="#fff" font-size="8" font-weight="700">₹</text>
-              <circle cx="295" cy="80" r="12" fill="#ff9500" stroke="#fff" stroke-width="1.5"/>
-              <text x="291" y="84" fill="#fff" font-size="10" font-weight="700">₹</text>
-            </svg>
-            <div class="blog-category-badge">general</div>
+        <div class="blog-card clickable" data-blog-id="growth" data-category="compounding">
+          <div class="blog-terminal-header">
+            <div class="terminal-dots">
+              <span class="t-dot red"></span>
+              <span class="t-dot yellow"></span>
+              <span class="t-dot green"></span>
+            </div>
+            <span class="terminal-title">COMPOUNDING_MATH // EXPONENTIAL.ts</span>
+            <span class="terminal-badge">MATHEMATICS</span>
+          </div>
+          <div class="blog-terminal-body">
+            <pre><code><span class="code-keyword">function</span> <span class="code-fn">futureValue</span>(P, r, n, t) {
+  <span class="code-keyword">return</span> P * Math.<span class="code-fn">pow</span>(1 + (r / n), n * t);
+}
+<span class="code-comment">// Age 25 vs 35: 3.5x Final Corpus Multiplier</span></code></pre>
           </div>
           <div class="blog-card-content">
-            <h3>How Compounding Works: Making Time Your Wealth Accelerator</h3>
-            <span class="blog-card-link">Read Article <i class="fa-solid fa-arrow-right-long"></i></span>
+            <div class="blog-card-meta-strip">
+              <span class="blog-sde-tag"><i class="fa-solid fa-chart-line"></i> QUANT FORMULA</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 6 MIN READ</span>
+            </div>
+            <h3>The Compounding Equation: Mathematical Time Horizon Model</h3>
+            <p class="blog-excerpt">
+              Why time horizon dominates nominal return yield. Step-by-step mathematical proofs demonstrating the massive capital cost of delay in systematic investing.
+            </p>
+            <div class="blog-footer-action">
+              <span class="blog-desk-tag">Quant Lab</span>
+              <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
         </div>
 
         <!-- Blog 4 -->
-        <div class="blog-card clickable" data-blog-id="nps">
-          <div class="blog-card-image">
-            <svg viewBox="0 0 400 220" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
-              <g opacity="0.8">
-                <path d="M0,40 L400,40 M0,80 L400,80 M0,120 L400,120 M0,160 L400,160 M0,200 L400,200" stroke="rgba(217,119,6,0.06)" stroke-width="1"/>
-              </g>
-              <rect x="120" y="50" width="160" height="110" rx="8" fill="#1e293b"/>
-              <path d="M140,80 L260,80 M140,105 L260,105 M140,130 L220,130" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
-              <circle cx="200" cy="105" r="30" fill="#007aff" stroke="#fff" stroke-width="2"/>
-              <text x="188" y="113" fill="#fff" font-size="22" font-weight="700">NPS</text>
-            </svg>
-            <div class="blog-category-badge">retirement</div>
+        <div class="blog-card clickable" data-blog-id="nps" data-category="nps">
+          <div class="blog-terminal-header">
+            <div class="terminal-dots">
+              <span class="t-dot red"></span>
+              <span class="t-dot yellow"></span>
+              <span class="t-dot green"></span>
+            </div>
+            <span class="terminal-title">TAX_SHIELD // SEC_80CCD.ts</span>
+            <span class="terminal-badge">PFRDA REG</span>
+          </div>
+          <div class="blog-terminal-body">
+            <pre><code><span class="code-keyword">const</span> taxBenefit = <span class="code-fn">calculateHarvest</span>({
+  <span class="code-prop">sec80CCD_1B</span>: <span class="code-num">50000</span>, <span class="code-comment">// Exclusive NPS</span>
+  <span class="code-prop">marginalTaxRate</span>: <span class="code-num">0.312</span>, <span class="code-comment">// 30% + cess</span>
+  <span class="code-prop">annualSavings</span>: <span class="code-str">"₹15,600 / Year"</span>
+});</code></pre>
           </div>
           <div class="blog-card-content">
-            <h3>Understanding NPS: How to Maximize Tax-Savings and Pension Yields</h3>
-            <span class="blog-card-link">Read Article <i class="fa-solid fa-arrow-right-long"></i></span>
+            <div class="blog-card-meta-strip">
+              <span class="blog-sde-tag"><i class="fa-solid fa-shield-halved"></i> TAX OPTIMIZER</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 4 MIN READ</span>
+            </div>
+            <h3>Understanding NPS: Fiduciary Tax Optimization & Pension Shell</h3>
+            <p class="blog-excerpt">
+              Analyzing Section 80CCD(1B) tax write-offs, Active vs Auto lifecycle allocations, and Tier-1 vs Tier-2 operational mechanics for senior professionals.
+            </p>
+            <div class="blog-footer-action">
+              <span class="blog-desk-tag">Tax Strategy Desk</span>
+              <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
         </div>
 
         <!-- Blog 5 -->
-        <div class="blog-card clickable" data-blog-id="pms">
-          <div class="blog-card-image">
-            <svg viewBox="0 0 400 220" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);">
-              <g opacity="0.8">
-                <path d="M0,40 L400,40 M0,80 L400,80 M0,120 L400,120 M0,160 L400,160 M0,200 L400,200" stroke="rgba(79,70,229,0.06)" stroke-width="1"/>
-              </g>
-              <rect x="80" y="60" width="100" height="100" rx="12" fill="#1e293b"/>
-              <text x="110" y="118" fill="#fff" font-size="16" font-weight="700">MF</text>
-              <rect x="220" y="60" width="100" height="100" rx="12" fill="#007aff"/>
-              <text x="248" y="118" fill="#fff" font-size="16" font-weight="700">PMS</text>
-              <path d="M190,110 L210,110" stroke="#ff2d55" stroke-width="4" stroke-linecap="round"/>
-              <circle cx="200" cy="110" r="6" fill="#ff2d55"/>
-            </svg>
-            <div class="blog-category-badge">advanced</div>
+        <div class="blog-card clickable" data-blog-id="pms" data-category="pms">
+          <div class="blog-terminal-header">
+            <div class="terminal-dots">
+              <span class="t-dot red"></span>
+              <span class="t-dot yellow"></span>
+              <span class="t-dot green"></span>
+            </div>
+            <span class="terminal-title">HNW_MANDATE // DISCRETIONARY_PMS.ts</span>
+            <span class="terminal-badge">APRN00969</span>
+          </div>
+          <div class="blog-terminal-body">
+            <pre><code><span class="code-keyword">const</span> pmsMandate = <span class="code-keyword">new</span> <span class="code-fn">PMSDesk</span>({
+  <span class="code-prop">minTicket</span>: <span class="code-str">"₹50,00,000"</span>,
+  <span class="code-prop">custody</span>: <span class="code-str">"Direct Demat Ownership (PoA)"</span>,
+  <span class="code-prop">drawdownLimit</span>: <span class="code-num">12.4%</span>
+});</code></pre>
           </div>
           <div class="blog-card-content">
-            <h3>PMS vs. Mutual Funds: Which Investment Route Fits Your Portfolio?</h3>
-            <span class="blog-card-link">Read Article <i class="fa-solid fa-arrow-right-long"></i></span>
+            <div class="blog-card-meta-strip">
+              <span class="blog-sde-tag"><i class="fa-solid fa-briefcase"></i> PMS DESK</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 5 MIN READ</span>
+            </div>
+            <h3>PMS vs. Mutual Funds: Strategic High-Ticket Allocation (₹50L+)</h3>
+            <p class="blog-excerpt">
+              Comparative study of regulatory tick sizes, Demat equity ownership under PoA, pass-through capital gains liabilities, and bespoke sector exclusions.
+            </p>
+            <div class="blog-footer-action">
+              <span class="blog-desk-tag">PMS Portfolio Desk</span>
+              <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
         </div>
 
         <!-- Blog 6 -->
-        <div class="blog-card clickable" data-blog-id="debt">
-          <div class="blog-card-image">
-            <svg viewBox="0 0 400 220" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: linear-gradient(135deg, #fae8ff 0%, #f5d0fe 100%);">
-              <g opacity="0.8">
-                <path d="M0,40 L400,40 M0,80 L400,80 M0,120 L400,120 M0,160 L400,160 M0,200 L400,200" stroke="rgba(162,28,175,0.06)" stroke-width="1"/>
-              </g>
-              <rect x="90" y="70" width="220" height="80" rx="10" fill="#1e293b"/>
-              <path d="M120,110 L280,110" stroke="rgba(255,255,255,0.2)" stroke-width="8" stroke-linecap="round"/>
-              <path d="M120,110 L210,110" stroke="#ff9500" stroke-width="8" stroke-linecap="round"/>
-              <text x="145" y="98" fill="#ffffff" font-size="11" font-weight="700" letter-spacing="0.1em">FIXED INCOME</text>
-            </svg>
-            <div class="blog-category-badge">bonds</div>
+        <div class="blog-card clickable" data-blog-id="debt" data-category="debt">
+          <div class="blog-terminal-header">
+            <div class="terminal-dots">
+              <span class="t-dot red"></span>
+              <span class="t-dot yellow"></span>
+              <span class="t-dot green"></span>
+            </div>
+            <span class="terminal-title">FIXED_INCOME // YIELD_CURVE.ts</span>
+            <span class="terminal-badge">AAA RATED</span>
+          </div>
+          <div class="blog-terminal-body">
+            <pre><code><span class="code-keyword">const</span> fixedIncomeShield = {
+  <span class="code-prop">sovereign10Y</span>: <span class="code-str">"7.12% G-Sec Benchmark"</span>,
+  <span class="code-prop">corporateAAA</span>: <span class="code-str">"7.85% Spread Shield"</span>,
+  <span class="code-prop">creditFilter</span>: <span class="code-str">"Zero Default High-Grade"</span>
+};</code></pre>
           </div>
           <div class="blog-card-content">
-            <h3>Debt & Corporate FDs: Building a Resilient Fixed-Income Shell</h3>
-            <span class="blog-card-link">Read Article <i class="fa-solid fa-arrow-right-long"></i></span>
+            <div class="blog-card-meta-strip">
+              <span class="blog-sde-tag"><i class="fa-solid fa-vault"></i> FIXED INCOME</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 4 MIN READ</span>
+            </div>
+            <h3>Debt Instruments & Corporate FDs: Building a Resilient Shield</h3>
+            <p class="blog-excerpt">
+              Structuring fixed-income allocation to mitigate equity drawdown risks. Evaluating CRISIL AAA corporate deposit credit spreads and sovereign bond duration.
+            </p>
+            <div class="blog-footer-action">
+              <span class="blog-desk-tag">Fixed Income Desk</span>
+              <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
         </div>
 
@@ -561,7 +625,7 @@
           <!-- Logo & Brand Description -->
           <div class="footer-brand-info">
             <div class="logo-wrapper" style="display: flex; align-items: center; gap: 10px;">
-              <img src="logo.png?v=136.0" alt="4X Wealth Logo" style="height: 32px; width: auto;" class="brand-logo-img">
+              <img src="logo.png?v=137.0" alt="4X Wealth Logo" style="height: 32px; width: auto;" class="brand-logo-img">
               <div class="logo-text">4X<span>WEALTH</span></div>
             </div>
             <p class="brand-sub">Registered AMFI Mutual Fund distributor partner (ARN-268488) specializing in quantitative-research wealth mapping structures.</p>
@@ -639,7 +703,7 @@
         <span class="blog-article-meta" id="blogArticleMeta">MUTUAL FUND</span>
         <h2 class="blog-article-title" id="blogArticleTitle">What is a Mutual Fund?</h2>
         <div class="blog-article-body" id="blogArticleBody">
-          <!-- Populated dynamically via script.js?v=136.0 -->
+          <!-- Populated dynamically via script.js?v=137.0 -->
         </div>
       </div>
     </div>
@@ -649,7 +713,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   
   <!-- Local scripts -->
-  <script src="blogs.js?v=136.0"></script>
-  <script src="chatbot.js?v=136.0"></script>
+  <script src="blogs.js?v=137.0"></script>
+  <script src="chatbot.js?v=137.0"></script>
 </body>
 </html>
