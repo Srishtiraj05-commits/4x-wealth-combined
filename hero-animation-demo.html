@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4X WEALTH - Building Wealth. Managing Risk. Creating Possibilities.</title>
+  <!-- Google Fonts for precision typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #f8fafc;
+      --bg-white: #ffffff;
+      --text-dark: #0f172a;
+      --text-slate: #334155;
+      --text-muted: #64748b;
+      --primary-cyan: #06b6d4;
+      --primary-teal: #0891b2;
+      --primary-blue: #0284c7;
+      --accent-orange: #f97316;
+      --accent-amber: #f59e0b;
+      --accent-pink: #ec4899;
+      --accent-purple: #8b5cf6;
+      --accent-green: #10b981;
+      --accent-red: #ef4444;
+      --card-glass: rgba(255, 255, 255, 0.65);
+      --card-border: rgba(255, 255, 255, 0.85);
+      --card-shadow: 0 25px 60px -15px rgba(6, 182, 212, 0.18), 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Instrument Serif', 'Playfair Display', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Subtle ambient background mesh */
+    .ambient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background: 
+        radial-gradient(circle at 10% 15%, rgba(6, 182, 212, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 70%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .main-wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* =========================================================
+       1. TOP NAVIGATION HEADER
+       ========================================================= */
+    header.site-header {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* Brand Logo */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .logo-icon-svg {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 6px rgba(6, 182, 212, 0.25));
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .brand-logo:hover .logo-icon-svg {
+      transform: rotate(15deg) scale(1.06);
+    }
+
+    .logo-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-title span {
+      color: #0891b2;
+      font-weight: 800;
+    }
+
+    .logo-subtitle {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: #64748b;
+      margin-top: 1px;
+    }
+
+    /* Nav Links */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+      text-decoration: none;
+      padding: 6px 4px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      color: #0891b2;
+    }
+
+    .nav-link svg.chevron {
+      width: 12px;
+      height: 12px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-item:hover svg.chevron {
+      transform: translateY(2px);
+    }
+
+    /* Header Actions */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f1f5f9;
+      border: 1px solid transparent;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      font-size: 13px;
+      color: #64748b;
+      transition: all 0.25s ease;
+    }
+
+    .search-box:hover, .search-box:focus-within {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      color: #0f172a;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 13px;
+      font-family: inherit;
+      color: #0f172a;
+      width: 65px;
+      transition: width 0.3s ease;
+    }
+
+    .search-box input:focus {
+      width: 110px;
+    }
+
+    .btn-login {
+      padding: 8px 18px;
+      border-radius: 9999px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #334155;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-login:hover {
+      border-color: #94a3b8;
+      background: #f8fafc;
+      color: #0f172a;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-consult {
+      padding: 9px 20px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(6, 182, 212, 0.38);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    .btn-consult:hover {
+      transform: translateY(-1.5px);
+      box-shadow: 0 6px 20px rgba(6, 182, 212, 0.52);
+    }
+
+    /* =========================================================
+       2. LIVE MARKET TICKER SUB-BAR
+       ========================================================= */
+    .market-ticker-bar {
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 8px 24px;
+      font-size: 12.5px;
+      font-weight: 600;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+      position: relative;
+      z-index: 90;
+    }
+
+    .ticker-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .live-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      padding-right: 15px;
+      border-right: 2px solid #e2e8f0;
+      font-size: 11.5px;
+    }
+
+    .live-pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .live-pulse-dot::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #10b981;
+      opacity: 0.75;
+      animation: radarPulse 1.8s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    }
+
+    @keyframes radarPulse {
+      0% { transform: scale(0.5); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    .ticker-scroll-window {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    }
+
+    .ticker-track {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      width: max-content;
+      animation: tickerContinuous 45s linear infinite;
+    }
+
+    .ticker-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes tickerContinuous {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+      font-size: 12px;
+      color: #334155;
+      padding: 3px 8px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .ticker-item:hover {
+      background: #f1f5f9;
+    }
+
+    .ticker-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9.5px;
+      font-weight: 800;
+      color: #64748b;
+      background: #e2e8f0;
+    }
+
+    .ticker-symbol {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .ticker-val {
+      font-weight: 600;
+      color: #0284c7;
+    }
+
+    .ticker-chg {
+      font-weight: 700;
+      font-size: 11.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      padding: 1px 4px;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .ticker-chg.up {
+      color: #059669;
+      background: rgba(16, 185, 129, 0.08);
+    }
+
+    .ticker-chg.down {
+      color: #dc2626;
+      background: rgba(239, 68, 68, 0.08);
+    }
+
+    .ticker-link {
+      color: #0284c7;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding-left: 14px;
+      border-left: 1px solid #e2e8f0;
+      transition: color 0.2s;
+    }
+
+    .ticker-link:hover {
+      color: #0891b2;
+      text-decoration: underline;
+    }
+
+    /* =========================================================
+       3. HERO SECTION
+       ========================================================= */
+    .hero-section {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 48px 36px 64px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 48px;
+      position: relative;
+      flex: 1;
+    }
+
+    /* --- Left Column --- */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 10;
+    }
+
+    /* Regulatory pill badge */
+    .compliance-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #cbd5e1;
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .compliance-pill:hover {
+      border-color: #94a3b8;
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.12);
+    }
+
+    .compliance-dot {
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+    }
+
+    .compliance-code {
+      color: #64748b;
+      font-weight: 700;
+    }
+
+    /* Hero Typography */
+    .hero-title {
+      font-size: clamp(38px, 4.4vw, 58px);
+      line-height: 1.12;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+      margin-bottom: 22px;
+    }
+
+    .hero-title .line-1,
+    .hero-title .line-2 {
+      display: block;
+      font-family: var(--font-main);
+      color: #0f172a;
+    }
+
+    .hero-title .line-3 {
+      display: block;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 500;
+      color: #0e7490;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, #0e7490 0%, #0891b2 50%, #0284c7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+
+    .hero-desc {
+      font-size: 16.5px;
+      line-height: 1.6;
+      color: #475569;
+      max-width: 520px;
+      margin-bottom: 34px;
+      font-weight: 450;
+    }
+
+    /* CTA Buttons Group */
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 38px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary-consult {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.45), 0 4px 10px rgba(2, 132, 199, 0.25);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .btn-primary-consult::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transform: rotate(30deg) translateX(-100%);
+      transition: transform 0.75s ease;
+    }
+
+    .btn-primary-consult:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 30px -4px rgba(6, 182, 212, 0.6);
+    }
+
+    .btn-primary-consult:hover::before {
+      transform: rotate(30deg) translateX(100%);
+    }
+
+    .btn-primary-consult svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-primary-consult:hover svg {
+      transform: translateX(3px);
+    }
+
+    .btn-secondary-solutions {
+      display: inline-flex;
+      align-items: center;
+      padding: 13px 26px;
+      border-radius: 9999px;
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      color: #334155;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-secondary-solutions:hover {
+      border-color: #0891b2;
+      color: #0891b2;
+      background: #f8fafc;
+      transform: translateY(-1.5px);
+      box-shadow: 0 4px 12px rgba(8, 145, 178, 0.1);
+    }
+
+    /* Bottom Audience Badges */
+    .audience-tags {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .audience-tag {
+      padding: 8px 18px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #e2e8f0;
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+      transition: all 0.25s ease;
+      cursor: default;
+    }
+
+    .audience-tag:hover {
+      border-color: #06b6d4;
+      color: #0e7490;
+      background: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.12);
+    }
+
+    /* =========================================================
+       4. HERO RIGHT COLUMN: 3D CARD & ANIMATED AURA
+       ========================================================= */
+    .hero-visual-stage {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+      user-select: none;
+    }
+
+    /* Canvas background for glowing laser / orbital ribbons */
+    #waveCanvas {
+      position: absolute;
+      top: -15%;
+      left: -15%;
+      width: 130%;
+      height: 130%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* 3D Glassmorphism Card Outer */
+    .card-3d-wrapper {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: 540px;
+      height: 440px;
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease-out;
+      will-change: transform;
+    }
+
+    .card-3d-inner {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(240, 253, 250, 0.45) 50%, rgba(241, 245, 249, 0.65) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 28px;
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 
+        0 30px 70px -15px rgba(6, 182, 212, 0.22),
+        0 15px 35px -10px rgba(15, 23, 42, 0.12),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9),
+        inset 0 -1px 2px rgba(6, 182, 212, 0.2);
+      position: relative;
+      padding: 32px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Specular Light Reflection Sweep */
+    .card-specular-light {
+      position: absolute;
+      top: -80%;
+      left: -80%;
+      width: 260%;
+      height: 260%;
+      background: radial-gradient(circle at 45% 45%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 60%);
+      pointer-events: none;
+      transform: translate3d(0, 0, 40px);
+      opacity: 0.65;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Grid backdrop inside the glass card */
+    .card-grid-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    /* Floating Data Stats Badges */
+    .floating-stats-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+      transform: translate3d(0, 0, 35px);
+    }
+
+    .stat-chip {
+      position: absolute;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(6, 182, 212, 0.12);
+      font-size: 11px;
+      color: #334155;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      transition: transform 0.3s ease;
+      animation: chipFloat 4s ease-in-out infinite alternate;
+    }
+
+    .stat-chip .stat-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.02em;
+    }
+
+    .stat-chip .stat-values {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 800;
+    }
+
+    .stat-chip .val-green {
+      color: #059669;
+    }
+
+    .stat-chip .val-rose {
+      color: #e11d48;
+    }
+
+    .stat-chip .val-cyan {
+      color: #0891b2;
+    }
+
+    /* Position the micro badges accurately */
+    .chip-alpha-top {
+      top: 24px;
+      left: 32px;
+      animation-delay: 0s;
+    }
+
+    .chip-asset-alloc {
+      top: 24px;
+      right: 140px;
+      animation-delay: 1.2s;
+    }
+
+    .chip-alpha-mid {
+      top: 155px;
+      left: 32px;
+      animation-delay: 2s;
+    }
+
+    .chip-alpha-right {
+      top: 155px;
+      left: 170px;
+      animation-delay: 2.6s;
+    }
+
+    @keyframes chipFloat {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-7px); }
+    }
+
+    /* =========================================================
+       5. 3D ISOMETRIC BAR CHART & SURGING ARROW GRAPHIC
+       ========================================================= */
+    .chart-isometric-container {
+      position: absolute;
+      bottom: 24px;
+      left: 28px;
+      right: 28px;
+      height: 290px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 12px;
+      transform: translate3d(0, 0, 25px);
+      z-index: 6;
+    }
+
+    /* Individual 3D Isometric Column with true 3D extruded faces */
+    .iso-bar-group {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 52px;
+      height: 100%;
+      justify-content: flex-end;
+      transform-style: preserve-3d;
+    }
+
+    .iso-column {
+      position: relative;
+      width: 38px;
+      transform-style: preserve-3d;
+      transition: height 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: barPulse 3.6s ease-in-out infinite alternate;
+      border-radius: 4px 4px 0 0;
+    }
+
+    @keyframes barPulse {
+      0% { transform: scaleY(1); }
+      100% { transform: scaleY(1.03); }
+    }
+
+    /* Front Face */
+    .iso-column .face-front {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px 4px 0 0;
+      background: inherit;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Right 3D Side Extrusion Face */
+    .iso-column .face-side {
+      position: absolute;
+      top: -4px;
+      right: -10px;
+      width: 10px;
+      height: 100%;
+      background: inherit;
+      filter: brightness(0.72) saturate(1.2);
+      transform: skewY(-35deg);
+      transform-origin: left top;
+      border-radius: 0 4px 0 0;
+    }
+
+    /* Top Isometric Cap Face */
+    .iso-column .face-top {
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 38px;
+      height: 9px;
+      background: inherit;
+      filter: brightness(1.4) saturate(0.9);
+      transform: skewX(-55deg);
+      transform-origin: left bottom;
+      border-radius: 3px;
+      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    }
+
+    /* Specular shine down the front face */
+    .iso-column .bar-shine {
+      position: absolute;
+      top: 0;
+      left: 3px;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 85%);
+      border-radius: 4px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Column Color Variations */
+    .bar-1 {
+      height: 46%;
+      background: linear-gradient(180deg, #fbbf24 0%, #f97316 60%, #ea580c 100%);
+      animation-delay: 0.1s;
+    }
+
+    .bar-2 {
+      height: 68%;
+      background: linear-gradient(180deg, #38bdf8 0%, #0284c7 60%, #0369a1 100%);
+      animation-delay: 0.3s;
+    }
+
+    .bar-3 {
+      height: 60%;
+      background: linear-gradient(180deg, #fb7185 0%, #e11d48 60%, #be123c 100%);
+      animation-delay: 0.5s;
+    }
+
+    .bar-4 {
+      height: 84%;
+      background: linear-gradient(180deg, #22d3ee 0%, #0891b2 60%, #0e7490 100%);
+      animation-delay: 0.7s;
+    }
+
+    .bar-5 {
+      height: 94%;
+      background: linear-gradient(180deg, #38bdf8 0%, #0284c7 50%, #1e40af 100%);
+      animation-delay: 0.9s;
+    }
+
+    /* The Dynamic Surging Zig-Zag 3D Growth Arrow (SVG Overlay) */
+    .growth-arrow-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 15;
+      transform: translate3d(0, 0, 48px);
+      overflow: visible;
+    }
+
+    /* Glowing ribbon stroke */
+    .zigzag-trail-glow {
+      fill: none;
+      stroke: url(#trailGradient);
+      stroke-width: 14;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 6px 14px rgba(249, 115, 22, 0.5));
+    }
+
+    .zigzag-core {
+      fill: none;
+      stroke: url(#coreGradient);
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .zigzag-energy-pulse {
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-dasharray: 20 180;
+      animation: energyRun 2.4s linear infinite;
+    }
+
+    @keyframes energyRun {
+      0% { stroke-dashoffset: 200; }
+      100% { stroke-dashoffset: -200; }
+    }
+
+    /* Large 3D Arrowhead */
+    .arrow-3d-head {
+      filter: drop-shadow(0 8px 16px rgba(2, 132, 199, 0.65));
+      animation: arrowSurge 2.4s ease-in-out infinite alternate;
+      transform-origin: 430px 30px;
+    }
+
+    @keyframes arrowSurge {
+      0% { transform: scale(0.96) translate(0, 0); }
+      100% { transform: scale(1.04) translate(3px, -3px); }
+    }
+
+    /* Floating Interactive Control Widget at bottom corner */
+    .demo-controls-pill {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      z-index: 999;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .control-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: none;
+      color: #ffffff;
+      padding: 5px 10px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }
+
+    .control-btn:hover {
+      background: rgba(6, 182, 212, 0.5);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .hero-section {
+        grid-template-columns: 1fr;
+        padding: 32px 24px 48px;
+        gap: 40px;
+      }
+      .hero-content {
+        align-items: center;
+        text-align: center;
+      }
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-cta-group, .audience-tags {
+        justify-content: center;
+      }
+      .hero-visual-stage {
+        height: 460px;
+      }
+      .card-3d-wrapper {
+        max-width: 480px;
+        height: 400px;
+      }
+      .nav-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient background glow -->
+  <div class="ambient-bg"></div>
+
+  <div class="main-wrapper">
+    <!-- =========================================================
+         1. TOP NAVIGATION HEADER
+         ========================================================= -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="#" class="brand-logo" title="4X Wealth Financial Services">
+          <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGradOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f97316" />
+                <stop offset="100%" stop-color="#f59e0b" />
+              </linearGradient>
+              <linearGradient id="logoGradCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#06b6d4" />
+                <stop offset="100%" stop-color="#0284c7" />
+              </linearGradient>
+              <linearGradient id="logoGradMagenta" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ec4899" />
+                <stop offset="100%" stop-color="#be185d" />
+              </linearGradient>
+              <linearGradient id="logoGradTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#10b981" />
+                <stop offset="100%" stop-color="#06b6d4" />
+              </linearGradient>
+            </defs>
+            <!-- 4 Petal / ribbon knot -->
+            <path d="M50 50 C35 25 15 30 15 50 C15 70 35 75 50 50 Z" fill="url(#logoGradOrange)" opacity="0.9" />
+            <path d="M50 50 C25 65 30 85 50 85 C70 85 75 65 50 50 Z" fill="url(#logoGradCyan)" opacity="0.9" />
+            <path d="M50 50 C65 75 85 70 85 50 C85 30 65 25 50 50 Z" fill="url(#logoGradMagenta)" opacity="0.9" />
+            <path d="M50 50 C75 35 70 15 50 15 C30 15 25 35 50 50 Z" fill="url(#logoGradTeal)" opacity="0.9" />
+            <circle cx="50" cy="50" r="7" fill="#ffffff" />
+          </svg>
+          <div class="logo-text-group">
+            <div class="logo-title">4X<span>WEALTH</span></div>
+            <div class="logo-subtitle">FINANCIAL SERVICES</div>
+          </div>
+        </a>
+
+        <!-- Nav Links -->
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a class="nav-link">Home <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Solutions <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Research <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">AI Hedge Lab <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Calculators <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Resources <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">About <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          </li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="header-actions">
+          <div class="search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" placeholder="Search" aria-label="Search" />
+          </div>
+          <a href="#" class="btn-login">Login</a>
+          <a href="#" class="btn-consult">Book Consult</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         2. LIVE MARKET TICKER BAR
+         ========================================================= -->
+    <div class="market-ticker-bar">
+      <div class="ticker-container">
+        <div class="live-badge">
+          <span class="live-pulse-dot"></span>
+          LIVE MARKET
+        </div>
+
+        <div class="ticker-scroll-window">
+          <div class="ticker-track" id="tickerTrack">
+            <!-- Items repeated for infinite smooth loop -->
+            <div class="ticker-item"><span class="ticker-icon">M</span><span class="ticker-symbol">MSM</span><span class="ticker-val">13044.88</span><span class="ticker-chg down" id="tick-msm">▼ -8.55%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">N</span><span class="ticker-symbol">Nfge</span><span class="ticker-val">227.00</span><span class="ticker-chg up" id="tick-nfge">▲ +0.45%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">H</span><span class="ticker-symbol">Hef Tech</span><span class="ticker-val">11278.80</span><span class="ticker-chg down" id="tick-hef">▼ -0.85%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">M</span><span class="ticker-symbol">Maruti</span><span class="ticker-val">12299.90</span><span class="ticker-chg up" id="tick-maruti">▲ +2.10%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">N</span><span class="ticker-symbol">NIFTY 50</span><span class="ticker-val">24,850.30</span><span class="ticker-chg up">▲ +0.65%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">S</span><span class="ticker-symbol">SENSEX</span><span class="ticker-val">81,420.15</span><span class="ticker-chg up">▲ +0.58%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">R</span><span class="ticker-symbol">Reliance</span><span class="ticker-val">2,985.40</span><span class="ticker-chg up">▲ +1.12%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">H</span><span class="ticker-symbol">HDFC Bank</span><span class="ticker-val">1,642.50</span><span class="ticker-chg up">▲ +0.45%</span></div>
+
+            <!-- Duplicate set for seamless continuous marquee -->
+            <div class="ticker-item"><span class="ticker-icon">M</span><span class="ticker-symbol">MSM</span><span class="ticker-val">13044.88</span><span class="ticker-chg down">▼ -8.55%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">N</span><span class="ticker-symbol">Nfge</span><span class="ticker-val">227.00</span><span class="ticker-chg up">▲ +0.45%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">H</span><span class="ticker-symbol">Hef Tech</span><span class="ticker-val">11278.80</span><span class="ticker-chg down">▼ -0.85%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">M</span><span class="ticker-symbol">Maruti</span><span class="ticker-val">12299.90</span><span class="ticker-chg up">▲ +2.10%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">N</span><span class="ticker-symbol">NIFTY 50</span><span class="ticker-val">24,850.30</span><span class="ticker-chg up">▲ +0.65%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">S</span><span class="ticker-symbol">SENSEX</span><span class="ticker-val">81,420.15</span><span class="ticker-chg up">▲ +0.58%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">R</span><span class="ticker-symbol">Reliance</span><span class="ticker-val">2,985.40</span><span class="ticker-chg up">▲ +1.12%</span></div>
+            <div class="ticker-item"><span class="ticker-icon">H</span><span class="ticker-symbol">HDFC Bank</span><span class="ticker-val">1,642.50</span><span class="ticker-chg up">▲ +0.45%</span></div>
+          </div>
+        </div>
+
+        <a href="#" class="ticker-link">View Pulse →</a>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         3. HERO MAIN SECTION
+         ========================================================= -->
+    <main class="hero-section">
+      <!-- Left Column -->
+      <div class="hero-content">
+        <!-- SEBI Compliance pill -->
+        <div class="compliance-pill">
+          <span class="compliance-dot"></span>
+          <span>SEBI Compliant Fiduciary Wealth Architecture</span>
+          <span style="color:#cbd5e1;">•</span>
+          <span class="compliance-code">ABRNN596</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-title">
+          <span class="line-1">Building Wealth.</span>
+          <span class="line-2">Managing Risk.</span>
+          <span class="line-3">Creating Possibilities.</span>
+        </h1>
+
+        <!-- Subtitle paragraph -->
+        <p class="hero-desc">
+          A premier private wealth management firm bringing together human conviction, and data-driven intelligence — under one roof, in full daylight.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group">
+          <a href="#" class="btn-primary-consult">
+            <span>Schedule Advisory Consultation</span>
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="#" class="btn-secondary-solutions">Explore Solutions</a>
+        </div>
+
+        <!-- Audience Chips -->
+        <div class="audience-tags">
+          <div class="audience-tag">Engineers &amp; Tech Architects</div>
+          <div class="audience-tag">Professors &amp; Academicians</div>
+        </div>
+      </div>
+
+      <!-- Right Column: Animated Hologram Stage -->
+      <div class="hero-visual-stage" id="stageContainer">
+        <!-- Background Laser Wave Canvas -->
+        <canvas id="waveCanvas"></canvas>
+
+        <!-- 3D Glassmorphism Board -->
+        <div class="card-3d-wrapper" id="card3D">
+          <div class="card-3d-inner">
+            <div class="card-grid-bg"></div>
+            <div class="card-specular-light" id="cardSpecular"></div>
+
+            <!-- Floating Micro Stat Chips -->
+            <div class="floating-stats-layer">
+              <!-- Top Left: Alpha Returns -->
+              <div class="stat-chip chip-alpha-top">
+                <span class="stat-label">Alpha Returns</span>
+                <div class="stat-values">
+                  <span class="val-green">▲ +1.52%</span>
+                  <span style="color:#cbd5e1;">|</span>
+                  <span class="val-green">+130.18%</span>
+                  <span style="color:#cbd5e1;">|</span>
+                  <span class="val-green">▲ 15.56%</span>
+                </div>
+              </div>
+
+              <!-- Top Right: Asset Allocation -->
+              <div class="stat-chip chip-asset-alloc">
+                <span class="stat-label">Asset Allocation</span>
+                <div class="stat-values">
+                  <span class="val-cyan">● 49% • 27.6%</span>
+                  <span style="color:#cbd5e1;">|</span>
+                  <span class="val-rose">▲ 18.88%</span>
+                </div>
+              </div>
+
+              <!-- Mid Left: Alpha Returns -->
+              <div class="stat-chip chip-alpha-mid">
+                <span class="stat-label">Alpha Returns</span>
+                <div class="stat-values">
+                  <span class="val-green">▲ 15.42%</span>
+                </div>
+              </div>
+
+              <!-- Mid Right: Alpha Returns -->
+              <div class="stat-chip chip-alpha-right">
+                <span class="stat-label">Alpha Returns</span>
+                <div class="stat-values">
+                  <span class="val-green">▲ 13.57%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3D Isometric Bar Chart Columns -->
+            <div class="chart-isometric-container">
+              <!-- Bar 1: Amber / Orange -->
+              <div class="iso-bar-group">
+                <div class="iso-column bar-1">
+                  <div class="face-side"></div>
+                  <div class="face-top"></div>
+                  <div class="face-front"></div>
+                  <div class="bar-shine"></div>
+                </div>
+              </div>
+
+              <!-- Bar 2: Cyan / Light Blue -->
+              <div class="iso-bar-group">
+                <div class="iso-column bar-2">
+                  <div class="face-side"></div>
+                  <div class="face-top"></div>
+                  <div class="face-front"></div>
+                  <div class="bar-shine"></div>
+                </div>
+              </div>
+
+              <!-- Bar 3: Magenta / Rose -->
+              <div class="iso-bar-group">
+                <div class="iso-column bar-3">
+                  <div class="face-side"></div>
+                  <div class="face-top"></div>
+                  <div class="face-front"></div>
+                  <div class="bar-shine"></div>
+                </div>
+              </div>
+
+              <!-- Bar 4: Electric Cyan / Teal -->
+              <div class="iso-bar-group">
+                <div class="iso-column bar-4">
+                  <div class="face-side"></div>
+                  <div class="face-top"></div>
+                  <div class="face-front"></div>
+                  <div class="bar-shine"></div>
+                </div>
+              </div>
+
+              <!-- Bar 5: Sky Blue / Royal Indigo -->
+              <div class="iso-bar-group">
+                <div class="iso-column bar-5">
+                  <div class="face-side"></div>
+                  <div class="face-top"></div>
+                  <div class="face-front"></div>
+                  <div class="bar-shine"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dynamic Surging 3D Growth Trend Arrow SVG -->
+            <svg class="growth-arrow-svg" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Underneath glowing trail gradient (Orange to Hot Pink) -->
+                <linearGradient id="trailGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#f97316" stop-opacity="0.9" />
+                  <stop offset="40%" stop-color="#fb7185" stop-opacity="0.9" />
+                  <stop offset="70%" stop-color="#ec4899" stop-opacity="0.95" />
+                  <stop offset="100%" stop-color="#06b6d4" stop-opacity="1" />
+                </linearGradient>
+
+                <!-- Core crisp neon gradient (Yellow to Cyan) -->
+                <linearGradient id="coreGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#fef08a" />
+                  <stop offset="30%" stop-color="#fdba74" />
+                  <stop offset="60%" stop-color="#f472b6" />
+                  <stop offset="90%" stop-color="#38bdf8" />
+                  <stop offset="100%" stop-color="#e0f2fe" />
+                </linearGradient>
+
+                <!-- 3D Arrowhead gradient -->
+                <linearGradient id="arrowHeadGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#0284c7" />
+                  <stop offset="50%" stop-color="#06b6d4" />
+                  <stop offset="100%" stop-color="#38bdf8" />
+                </linearGradient>
+              </defs>
+
+              <!-- Zig-Zag Path crossing the tops of the bars -->
+              <!-- Bar positions roughly at X: 45, 135, 225, 315, 405 -->
+              <path class="zigzag-trail-glow" d="M 35 240 L 95 190 L 155 220 L 235 125 L 305 185 L 375 85 L 435 30" />
+              <path class="zigzag-core" d="M 35 240 L 95 190 L 155 220 L 235 125 L 305 185 L 375 85 L 435 30" />
+              <path class="zigzag-energy-pulse" d="M 35 240 L 95 190 L 155 220 L 235 125 L 305 185 L 375 85 L 435 30" />
+
+              <!-- 3D Arrowhead Group -->
+              <g class="arrow-3d-head" transform="translate(0, 0)">
+                <!-- Arrow shadow layer -->
+                <polygon points="435,30 388,44 410,58 402,82" fill="rgba(15, 23, 42, 0.25)" />
+                <!-- 3D Arrow Main Body -->
+                <polygon points="438,26 390,40 412,54 404,78" fill="url(#arrowHeadGrad)" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" />
+                <!-- Arrow Specular Highlight -->
+                <polygon points="438,26 414,33 412,54" fill="rgba(255, 255, 255, 0.7)" />
+              </g>
+
+              <!-- Particle nodes on peaks -->
+              <circle cx="35" cy="240" r="5" fill="#f97316" stroke="#ffffff" stroke-width="2" />
+              <circle cx="95" cy="190" r="5" fill="#fb7185" stroke="#ffffff" stroke-width="2" />
+              <circle cx="155" cy="220" r="5" fill="#fb7185" stroke="#ffffff" stroke-width="2" />
+              <circle cx="235" cy="125" r="5.5" fill="#ec4899" stroke="#ffffff" stroke-width="2" />
+              <circle cx="305" cy="185" r="5.5" fill="#a855f7" stroke="#ffffff" stroke-width="2" />
+              <circle cx="375" cy="85" r="6" fill="#06b6d4" stroke="#ffffff" stroke-width="2" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Bottom Floating Interactive Controls -->
+  <div class="demo-controls-pill">
+    <span>✨ Interactive Demo</span>
+    <button class="control-btn" id="btnToggleFloat">
+      <span id="floatStatusIcon">🎮</span> 3D Tilt: ON
+    </button>
+    <button class="control-btn" id="btnReplayAnim">
+      🔄 Replay
+    </button>
+  </div>
+
+  <!-- =========================================================
+       6. JAVASCRIPT: CANVAS WAVES, 3D PARALLAX & TICKER
+       ========================================================= -->
+  <script>
+    /* ---------------------------------------------------------
+       A. CANVAS AURA / ORBITAL LIGHT RIBBONS
+       --------------------------------------------------------- */
+    const canvas = document.getElementById('waveCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let animFrameId;
+    let time = 0;
+
+    function resizeCanvas() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      width = rect.width * 1.3;
+      height = rect.height * 1.3;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    // Ribbons mathematical curve parameters
+    const ribbons = [
+      { color: 'rgba(6, 182, 212, 0.45)', freqX: 0.004, freqY: 0.006, speed: 0.015, radX: 180, radY: 110, offset: 0 },
+      { color: 'rgba(245, 158, 11, 0.35)', freqX: 0.005, freqY: 0.004, speed: 0.018, radX: 160, radY: 130, offset: Math.PI / 3 },
+      { color: 'rgba(236, 72, 153, 0.38)', freqX: 0.003, freqY: 0.005, speed: 0.012, radX: 200, radY: 95, offset: Math.PI * 0.8 },
+      { color: 'rgba(16, 185, 129, 0.30)', freqX: 0.006, freqY: 0.003, speed: 0.020, radX: 140, radY: 140, offset: Math.PI * 1.4 },
+      { color: 'rgba(56, 189, 248, 0.40)', freqX: 0.004, freqY: 0.007, speed: 0.014, radX: 220, radY: 120, offset: Math.PI * 1.7 }
+    ];
+
+    function drawWaveAura() {
+      ctx.clearRect(0, 0, width, height);
+      time += 0.012;
+
+      const centerX = width / 2;
+      const centerY = height / 2;
+
+      ribbons.forEach((rib, idx) => {
+        ctx.beginPath();
+        ctx.strokeStyle = rib.color;
+        ctx.lineWidth = 2.2;
+        ctx.shadowColor = rib.color;
+        ctx.shadowBlur = 12;
+
+        const points = 120;
+        for (let i = 0; i <= points; i++) {
+          const theta = (i / points) * Math.PI * 2;
+          const wobble = Math.sin(theta * 4 + time * 2 + rib.offset) * 22;
+          const morph = Math.cos(time + idx) * 15;
+
+          const x = centerX + Math.cos(theta + time * rib.speed) * (rib.radX + wobble + morph);
+          const y = centerY + Math.sin(theta * 2 + time * rib.speed * 1.2 + rib.offset) * (rib.radY + wobble - morph);
+
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+
+        ctx.closePath();
+        ctx.stroke();
+      });
+
+      animFrameId = requestAnimationFrame(drawWaveAura);
+    }
+    drawWaveAura();
+
+    /* ---------------------------------------------------------
+       B. 3D INTERACTIVE TILT & PARALLAX ON CARD
+       --------------------------------------------------------- */
+    const stage = document.getElementById('stageContainer');
+    const card = document.getElementById('card3D');
+    const specular = document.getElementById('cardSpecular');
+    let isTiltEnabled = true;
+    let targetRotateX = 8;
+    let targetRotateY = -12;
+    let currentRotateX = 8;
+    let currentRotateY = -12;
+    let isHovering = false;
+
+    function updateCardTransform() {
+      // Smooth interpolation (Lerp)
+      currentRotateX += (targetRotateX - currentRotateX) * 0.1;
+      currentRotateY += (targetRotateY - currentRotateY) * 0.1;
+
+      if (!isHovering && isTiltEnabled) {
+        // Idle gentle breathing float
+        const idleX = Math.sin(time * 1.5) * 4 + 6;
+        const idleY = Math.cos(time * 1.2) * 5 - 10;
+        targetRotateX = idleX;
+        targetRotateY = idleY;
+      }
+
+      card.style.transform = `perspective(1200px) rotateX(${currentRotateX}deg) rotateY(${currentRotateY}deg)`;
+      requestAnimationFrame(updateCardTransform);
+    }
+    updateCardTransform();
+
+    stage.addEventListener('mousemove', (e) => {
+      if (!isTiltEnabled) return;
+      isHovering = true;
+      const rect = stage.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const normX = (x / rect.width) * 2 - 1; // -1 to 1
+      const normY = (y / rect.height) * 2 - 1; // -1 to 1
+
+      targetRotateY = normX * 18;
+      targetRotateX = -normY * 18;
+
+      // Move specular highlight
+      const specX = 50 + normX * 35;
+      const specY = 50 + normY * 35;
+      specular.style.background = `radial-gradient(circle at ${specX}% ${specY}%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 65%)`;
+    });
+
+    stage.addEventListener('mouseleave', () => {
+      isHovering = false;
+      targetRotateX = 6;
+      targetRotateY = -8;
+    });
+
+    /* ---------------------------------------------------------
+       C. LIVE MARKET REAL-TIME VALUE FLUCTUATIONS
+       --------------------------------------------------------- */
+    const tickerItems = [
+      { id: 'tick-msm', base: -8.55 },
+      { id: 'tick-nfge', base: 0.45 },
+      { id: 'tick-hef', base: -0.85 },
+      { id: 'tick-maruti', base: 2.10 }
+    ];
+
+    setInterval(() => {
+      const target = tickerItems[Math.floor(Math.random() * tickerItems.length)];
+      const el = document.getElementById(target.id);
+      if (!el) return;
+
+      const delta = (Math.random() * 0.3 - 0.15);
+      const newVal = (target.base + delta).toFixed(2);
+      const isPos = newVal >= 0;
+
+      el.textContent = `${isPos ? '▲ +' : '▼ '}${newVal}%`;
+      el.className = `ticker-chg ${isPos ? 'up' : 'down'}`;
+      el.style.transform = 'scale(1.1)';
+      setTimeout(() => {
+        el.style.transform = 'scale(1)';
+      }, 300);
+    }, 2400);
+
+    /* ---------------------------------------------------------
+       D. INTERACTIVE CONTROLS
+       --------------------------------------------------------- */
+    const btnToggleFloat = document.getElementById('btnToggleFloat');
+    const floatStatusIcon = document.getElementById('floatStatusIcon');
+    const btnReplayAnim = document.getElementById('btnReplayAnim');
+
+    btnToggleFloat.addEventListener('click', () => {
+      isTiltEnabled = !isTiltEnabled;
+      if (!isTiltEnabled) {
+        targetRotateX = 0;
+        targetRotateY = 0;
+        btnToggleFloat.innerHTML = '<span>⏸️</span> 3D Tilt: OFF';
+      } else {
+        btnToggleFloat.innerHTML = '<span>🎮</span> 3D Tilt: ON';
+      }
+    });
+
+    btnReplayAnim.addEventListener('click', () => {
+      const bars = document.querySelectorAll('.iso-column');
+      bars.forEach(bar => {
+        const originalHeight = bar.style.height || getComputedStyle(bar).height;
+        bar.style.height = '0%';
+        setTimeout(() => {
+          bar.style.height = '';
+        }, 150);
+      });
+
+      // Pulse the arrow
+      const arrow = document.querySelector('.zigzag-energy-pulse');
+      arrow.style.animation = 'none';
+      setTimeout(() => {
+        arrow.style.animation = 'energyRun 2.4s linear infinite';
+      }, 50);
+    });
+  </script>
+</body>
+</html>

@@ -12,177 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link rel="stylesheet" href="style.css?v=126.0">
+<link rel="stylesheet" href="style.css?v=128.0">
 
-  <style>
-    .product-page-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-top: 160px;
-      padding-bottom: 120px;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-
-    .product-hero-card {
-      text-align: center;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(238, 246, 255, 0.96));
-      border: 1px solid rgba(0, 122, 255, 0.22);
-      border-radius: 28px;
-      padding: 3.5rem 3rem;
-      box-shadow: 0 25px 60px rgba(0, 122, 255, 0.08);
-      margin-bottom: 3rem;
-    }
-
-    .product-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      font-weight: 700;
-      color: #007aff;
-      background: rgba(0, 122, 255, 0.1);
-      padding: 6px 16px;
-      border-radius: 20px;
-      border: 1px solid rgba(0, 122, 255, 0.2);
-      margin: 0 auto 1.2rem auto;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .product-hero-title {
-      text-align: center;
-      font-family: 'Fraunces', serif;
-      font-size: clamp(32px, 4vw, 48px);
-      font-weight: 400;
-      color: #0f172a;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .product-hero-desc {
-      font-size: 17px;
-      color: #475569;
-      line-height: 1.65;
-      max-width: 850px;
-      margin: 0 auto 2.5rem auto;
-      text-align: center;
-    }
-
-    .product-metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.8rem;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      border-radius: 20px;
-      padding: 2.2rem 2.5rem;
-      color: #ffffff;
-      margin-bottom: 3rem;
-    }
-
-    .prod-metric-box span {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .prod-metric-box b {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 24px;
-      color: #38bdf8;
-      font-weight: 700;
-    }
-
-    .features-section-title {
-      text-align: center;
-      font-family: 'Fraunces', serif;
-      font-size: 26px;
-      font-weight: 500;
-      color: #0f172a;
-      margin-bottom: 1.5rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.8rem;
-      margin-bottom: 3.5rem;
-    }
-
-    .feature-card {
-      background: #ffffff;
-      border: 1px solid rgba(0, 122, 255, 0.16);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 6px 20px rgba(0, 122, 255, 0.04);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 122, 255, 0.1);
-      border-color: rgba(0, 122, 255, 0.3);
-    }
-
-    .feature-card i {
-      font-size: 26px;
-      color: #007aff;
-      margin-bottom: 1rem;
-    }
-
-    .feature-card h3 {
-      font-family: var(--font-heading);
-      font-size: 18px;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 0.5rem;
-    }
-
-    .feature-card p {
-      font-size: 14px;
-      color: #475569;
-      line-height: 1.6;
-    }
-
-    .cta-consult-box {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(238, 246, 255, 0.96));
-      border: 1px solid rgba(0, 122, 255, 0.25);
-      border-radius: 24px;
-      padding: 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      box-shadow: 0 15px 40px rgba(0, 122, 255, 0.08);
-      flex-wrap: wrap;
-    }
-
-    .cta-consult-text h3 {
-      font-family: 'Fraunces', serif;
-      font-size: 24px;
-      font-weight: 500;
-      color: #0f172a;
-      margin-bottom: 0.5rem;
-    }
-
-    .cta-consult-text p {
-      font-size: 14.5px;
-      color: #475569;
-    }
-
-    @media (max-width: 992px) {
-      .product-metrics-grid, .features-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  
 </head>
-<body class="sk-dark-theme">
+<body>
 
           <!-- Header Navigation (Luxury Gold Theme - Matching Login Button Palette) -->
   <header class="header-wrapper" id="mainHeader">
@@ -191,7 +25,7 @@
       <!-- Brand Logo -->
       <a href="index.html" class="logo-link clickable" id="logoContainer">
         <div class="logo-wrapper">
-          <img src="logo.png?v=126.0" alt="4X Wealth Logo" class="brand-logo-img">
+          <img src="logo.png?v=128.0" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text-group">
             <div class="logo-text">4X<span>WEALTH</span></div>
             <span class="logo-sub">FINANCIAL SERVICES</span>
@@ -405,7 +239,7 @@
   <div class="sk-drawer" id="mobileDrawer">
     <button class="sk-drawer-close clickable" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
     <div class="sk-drawer-header">
-      <img src="logo.png?v=126.0" alt="4X Wealth Logo" class="brand-logo-img">
+      <img src="logo.png?v=128.0" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
                 <ul class="sk-drawer-links">
@@ -568,7 +402,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=126.0"></script>
+  <script src="script.js?v=128.0"></script>
 
   <!-- Search Modal -->
   <div class="search-modal" id="searchModal">
@@ -590,7 +424,7 @@
       </div>
 
       <div class="search-results-list" id="searchResultsList">
-        <!-- Dynamically rendered via script.js?v=126.0 -->
+        <!-- Dynamically rendered via script.js?v=128.0 -->
       </div>
     </div>
   </div>
