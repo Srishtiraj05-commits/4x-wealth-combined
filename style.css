@@ -239,19 +239,27 @@ a {
   padding: 0.65rem clamp(1rem, 2.5vw, 2.5rem) !important;
 }
 
-/* BRAND LOGO */
+/* BRAND LOGO — LUMINOUS GLOW SUITE */
 .logo-box, .logo-wrapper, a.logo-link {
   display: flex !important;
   align-items: center !important;
   gap: 12px !important;
   text-decoration: none !important;
   flex-shrink: 0 !important;
+  position: relative;
 }
 
 .brand-logo-img, img.brand-logo-img {
-  height: 42px !important;
+  height: 44px !important;
   width: auto !important;
   object-fit: contain !important;
+  filter: drop-shadow(0 0 8px rgba(0, 163, 255, 0.8)) drop-shadow(0 0 20px rgba(0, 119, 255, 0.5));
+  transition: all 0.3s var(--ease) !important;
+}
+
+.logo-link:hover .brand-logo-img, .logo-wrapper:hover .brand-logo-img {
+  filter: drop-shadow(0 0 14px rgba(0, 210, 255, 1)) drop-shadow(0 0 30px rgba(0, 163, 255, 0.8));
+  transform: scale(1.05);
 }
 
 .logo-text-group {
@@ -269,22 +277,24 @@ a {
   display: flex !important;
   align-items: baseline !important;
   gap: 2px !important;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
 }
 
 .logo-text span {
   color: var(--blue-cyan) !important;
   font-weight: 800 !important;
-  text-shadow: 0 0 12px rgba(0, 163, 255, 0.4);
+  text-shadow: 0 0 16px rgba(0, 163, 255, 0.85), 0 0 28px rgba(0, 119, 255, 0.5);
 }
 
 .logo-sub {
   font-family: var(--font-mono) !important;
   font-size: 8.5px !important;
-  color: rgba(255, 255, 255, 0.65) !important;
-  letter-spacing: 0.16em !important;
-  font-weight: 600 !important;
+  color: rgba(224, 242, 254, 0.85) !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 700 !important;
   display: block !important;
   margin-top: 3px !important;
+  text-shadow: 0 0 8px rgba(0, 163, 255, 0.35);
 }
 
 /* DESKTOP NAV MENU */
@@ -812,9 +822,9 @@ a {
   transform: translateY(-2px) !important;
 }
 
-/* ============ UNIVERSAL SECTIONS & GENEROUS SPACING (IMAGE 1 FIX) ============ */
+/* ============ UNIVERSAL SECTIONS & BALANCED SPACING ============ */
 section, .section-ivory, .section-ivory-alt {
-  padding: 105px 0 !important;
+  padding: 70px 0 !important;
   background-color: var(--bg-pure-white);
   color: var(--text-dark);
   position: relative;
@@ -825,21 +835,21 @@ section, .section-ivory, .section-ivory-alt {
 }
 
 .section-header {
-  margin-bottom: 3.8rem !important;
+  margin-bottom: 2.4rem !important;
   text-align: center;
 }
 
 .section-tag, .section-tag-badge, .hero-tag, .calc-tag, .sub-topic {
   color: #0077FF !important;
   font-family: var(--font-mono) !important;
-  font-size: 12px !important;
+  font-size: 11.5px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.16em !important;
+  letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
   text-align: center !important;
   display: inline-block !important;
-  margin-bottom: 1.2rem !important;
-  padding: 5px 16px !important;
+  margin-bottom: 0.9rem !important;
+  padding: 4px 14px !important;
   background: #F0F7FF !important;
   border: 1px solid #BAE6FD !important;
   border-radius: 20px !important;
@@ -1048,15 +1058,15 @@ section, .section-ivory, .section-ivory-alt {
   line-height: 1.6 !important;
 }
 
-/* ============ DIAGRAMMATIC 6-STEP FIDUCIARY DILIGENCE LOOP (IMAGE 2 FIX) ============ */
+/* ============ DIAGRAMMATIC 6-STEP FIDUCIARY DILIGENCE LOOP ============ */
 .diligence-diagram-wrap {
   background: #FFFFFF !important;
   border: 1px solid #BAE6FD !important;
-  border-radius: 24px !important;
-  padding: 3rem 2.5rem !important;
-  box-shadow: 0 10px 35px rgba(0, 119, 255, 0.06) !important;
-  margin-top: 1rem;
-  margin-bottom: 3.5rem !important;
+  border-radius: 20px !important;
+  padding: 2.2rem 2rem !important;
+  box-shadow: 0 8px 30px rgba(0, 119, 255, 0.06) !important;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem !important;
   position: relative;
   overflow: hidden;
 }
