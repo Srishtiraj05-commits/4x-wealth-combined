@@ -3,24 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Hedge Lab | 4X Wealth Financial Services</title>
-  <meta name="description" content="Access the core quantitative intelligence systems of 4X Wealth. Monitor real-time risk compliance, portfolio optimization, and sentiment forecast nodes.">
+  <title>Quantitative Research & AI Hedge Lab | 4X Wealth Financial Services</title>
+  <meta name="description" content="Access the institutional quantitative research, AI Hedge Lab quant core, volatility regimes, and market conviction signals of 4X Wealth (ARN-268488, APRN00969).">
+  
+  <!-- Google Fonts (Senior Dev Luxury Stack) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=125.0">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=126.0">
 </head>
-<body class="dark-theme">
+<body>
 
-          <!-- Header Navigation (Luxury Gold Theme - Matching Login Button Palette) -->
+  <!-- Spotlight Glow & Custom Cursor -->
+  <div class="spotlight" id="spotlight"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Header Navigation -->
   <header class="header-wrapper" id="mainHeader">
     <div class="nav-container">
       
       <!-- Brand Logo -->
       <a href="index.html" class="logo-link clickable" id="logoContainer">
         <div class="logo-wrapper">
-          <img src="logo.png?v=125.0" alt="4X Wealth Logo" class="brand-logo-img">
+          <img src="logo.png?v=126.0" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text-group">
             <div class="logo-text">4X<span>WEALTH</span></div>
             <span class="logo-sub">FINANCIAL SERVICES</span>
@@ -28,19 +39,19 @@
         </div>
       </a>
 
-                        <!-- Desktop Navigation Menu -->
+      <!-- Desktop Navigation Menu -->
       <ul class="sk-nav-menu" id="desktopMenu">
         
         <!-- Home Dropdown -->
         <li class="sk-nav-item dropdown-trigger">
           <a href="index.html" class="sk-nav-link clickable">Home <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="index.html#who-we-are" class="dropdown-link clickable"> Who We Are</a></li>
-            <li><a href="index.html#philosophy-section" class="dropdown-link clickable"> Investment Philosophy</a></li>
-            <li><a href="index.html#approach-section" class="dropdown-link clickable"> The 4X Approach</a></li>
-            <li><a href="index.html#universe-section" class="dropdown-link clickable"> Investment Universe</a></li>
-            <li><a href="solutions.html#fundzbazar-section" class="dropdown-link clickable"> Digital Journey</a></li>
-            <li><a href="index.html#consultation-section" class="dropdown-link clickable"> Contact Advisors</a></li>
+            <li><a href="index.html#who-we-are" class="dropdown-link clickable">Who We Are</a></li>
+            <li><a href="index.html#philosophy-section" class="dropdown-link clickable">Investment Philosophy</a></li>
+            <li><a href="index.html#approach-section" class="dropdown-link clickable">The 4X Approach</a></li>
+            <li><a href="index.html#universe-section" class="dropdown-link clickable">Investment Universe</a></li>
+            <li><a href="solutions.html#fundzbazar-section" class="dropdown-link clickable">Digital Journey</a></li>
+            <li><a href="index.html#consultation-section" class="dropdown-link clickable">Contact Advisors</a></li>
           </ul>
         </li>
 
@@ -92,23 +103,23 @@
           </div>
         </li>
 
-        <!-- Research (WITHOUT SIF Screener) -->
-        <li class="sk-nav-item dropdown-trigger">
+        <!-- Research Dropdown (All 3 Links pointing to dedicated sections on hedge-lab.html) -->
+        <li class="sk-nav-item dropdown-trigger active">
           <a class="sk-nav-link clickable" href="hedge-lab.html">Research <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-link clickable" href="index.html#research-section"> Market Conviction Signals</a></li>
-            <li><a class="dropdown-link clickable" href="hedge-lab.html"> AI Hedge Lab & Quant Core</a></li>
-            <li><a class="dropdown-link clickable" href="hedge-lab.html#risk-engine"> Volatility & Risk Models</a></li>
+            <li><a class="dropdown-link clickable" href="hedge-lab.html#market-signals">Market Conviction Signals</a></li>
+            <li><a class="dropdown-link clickable" href="hedge-lab.html#quant-core">AI Hedge Lab & Quant Core</a></li>
+            <li><a class="dropdown-link clickable" href="hedge-lab.html#risk-engine">Volatility & Risk Models</a></li>
           </ul>
         </li>
 
-        <!-- AI Hedge Lab -->
+        <!-- AI Hedge Lab Direct Link -->
         <li class="sk-nav-item dropdown-trigger">
-          <a class="sk-nav-link clickable" href="hedge-lab.html">AI Hedge Lab <i class="fa-solid fa-chevron-down"></i></a>
+          <a class="sk-nav-link clickable" href="hedge-lab.html#quant-core">AI Hedge Lab <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-link clickable" href="hedge-lab.html"> Quant Core Neural Engine</a></li>
-            <li><a class="dropdown-link clickable" href="hedge-lab.html#risk-engine"> Multi-Asset Risk Regime</a></li>
-            <li><a class="dropdown-link clickable" href="hedge-lab.html#backtest"> Alpha Backtest Suite</a></li>
+            <li><a class="dropdown-link clickable" href="hedge-lab.html#quant-core">Quant Core Neural Engine</a></li>
+            <li><a class="dropdown-link clickable" href="hedge-lab.html#risk-engine">Multi-Asset Risk Regime</a></li>
+            <li><a class="dropdown-link clickable" href="hedge-lab.html#market-signals">Market Breadth Signals</a></li>
           </ul>
         </li>
 
@@ -116,22 +127,22 @@
         <li class="sk-nav-item dropdown-trigger">
           <a class="sk-nav-link clickable" href="calculators.html">Calculators <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-link clickable" href="calculators.html#pane-sip"> SIP Compounding Engine</a></li>
-            <li><a class="dropdown-link clickable" href="calculators.html#pane-lumpsum"> Lumpsum Growth Planner</a></li>
-            <li><a class="dropdown-link clickable" href="calculators.html#pane-swp"> SWP Cash Flow Engine</a></li>
-            <li><a class="dropdown-link clickable" href="calculators.html#pane-emi"> EMI & Loan Amortization</a></li>
-            <li><a class="dropdown-link clickable" href="calculators.html#pane-retirement"> Retirement Corpus Planner</a></li>
-            <li><a class="dropdown-link clickable" href="calculators.html#pane-fire"> FIRE Freedom Calculator</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-sip">SIP Compounding Engine</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-lumpsum">Lumpsum Growth Planner</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-swp">SWP Cash Flow Engine</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-emi">EMI & Loan Amortization</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-retirement">Retirement Corpus Planner</a></li>
+            <li><a class="dropdown-link clickable" href="calculators.html#pane-fire">FIRE Freedom Calculator</a></li>
           </ul>
         </li>
 
-        <!-- Resources (WITH SIF Screener + Blogs + Reports) -->
+        <!-- Resources -->
         <li class="sk-nav-item dropdown-trigger">
           <a class="sk-nav-link clickable" href="blogs.html">Resources <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-link clickable" href="sif-tracker.html"> SIF Screener <span class="nav-badge-new" style="background: #0088FF; color: #FFFFFF; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-family: var(--font-mono);">NEW</span></a></li>
-            <li><a class="dropdown-link clickable" href="blogs.html"> Blogs & Knowledge Base</a></li>
-            <li><a class="dropdown-link clickable" href="blogs.html#reports"> Wealth Guides & Reports</a></li>
+            <li><a class="dropdown-link clickable" href="sif-tracker.html">SIF Screener <span class="nav-badge-new" style="background: #0077FF; color: #FFFFFF; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-family: var(--font-mono);">NEW</span></a></li>
+            <li><a class="dropdown-link clickable" href="blogs.html">Blogs & Knowledge Base</a></li>
+            <li><a class="dropdown-link clickable" href="blogs.html#reports">Wealth Guides & Reports</a></li>
           </ul>
         </li>
 
@@ -139,92 +150,42 @@
         <li class="sk-nav-item dropdown-trigger">
           <a class="sk-nav-link clickable" href="about.html">About <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="about.html#who-we-are" class="dropdown-link clickable"> Company Overview</a></li>
-            <li><a href="about.html#leadership" class="dropdown-link clickable"> Leadership & Team</a></li>
-            <li><a href="about.html#principles" class="dropdown-link clickable"> 4 Working Principles</a></li>
-            <li><a href="about.html#partners" class="dropdown-link clickable"> Institutional Partners</a></li>
+            <li><a href="about.html#who-we-are" class="dropdown-link clickable">Company Overview</a></li>
+            <li><a href="about.html#leadership" class="dropdown-link clickable">Leadership & Team</a></li>
+            <li><a href="about.html#principles" class="dropdown-link clickable">4 Working Principles</a></li>
+            <li><a href="about.html#partners" class="dropdown-link clickable">Institutional Partners</a></li>
           </ul>
         </li>
 
       </ul>
 
-      <!-- Header Action Items: Clearly Visible Search + Client Portal (Login) + Book Consultation (Sign Up) -->
-                        <div class="nav-actions">
-        
-        <!-- Search Trigger -->
-        <button class="search-btn clickable" id="searchTrigger" aria-label="Search site"><i class="fa-solid fa-magnifying-glass"></i> <span>Search</span>
-        </button>
-
-        <!-- Direct Login Button -->
-        <a href="login.html" class="vg-btn vg-btn-outline client-portal-btn clickable">
-          <span>Login</span>
-        </a>
-
-        <!-- Book Consultation Primary Button -->
-        <a href="index.html#consultation-section" class="vg-btn vg-btn-primary book-consult-btn clickable" style="text-decoration: none;">
-          <span>Book Consult</span> 
-        </a>
-
-        <!-- Mobile Drawer Toggle -->
-        <button class="mobile-toggle clickable" id="mobileMenuTrigger" aria-label="Toggle menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="search-btn clickable" id="searchTrigger" aria-label="Search site"><i class="fa-solid fa-magnifying-glass"></i> <span>Search</span></button>
+        <a href="login.html" class="vg-btn vg-btn-outline client-portal-btn clickable"><span>Login</span></a>
+        <a href="index.html#consultation-section" class="vg-btn vg-btn-primary book-consult-btn clickable" style="text-decoration: none;"><span>Book Consult</span></a>
+        <button class="mobile-toggle clickable" id="mobileMenuTrigger" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
       </div>
-    </div><!-- Live Market Ticker -->
+    </div>
+
+    <!-- Live Market Ticker -->
     <div class="live-market-bar">
       <div class="live-market-title">
         <span class="live-pulse"></span>
         <span class="live-label">LIVE MARKET</span>
       </div>
       <div class="marquee-wrapper">
-                <div class="marquee-track" id="marketMarqueeTrack">
+        <div class="marquee-track" id="marketMarqueeTrack">
           <div class="stock-card positive"><div class="stock-logo-container">N</div><span class="stock-symbol">NIFTY 50</span><span class="stock-price">₹24,850.30</span><span class="stock-change">▲ +0.65%</span></div>
-          
           <div class="stock-card positive"><div class="stock-logo-container">S</div><span class="stock-symbol">SENSEX</span><span class="stock-price">81,420.15</span><span class="stock-change">▲ +0.58%</span></div>
-          
           <div class="stock-card positive"><div class="stock-logo-container">R</div><span class="stock-symbol">Reliance</span><span class="stock-price">₹2,985.40</span><span class="stock-change">▲ +1.12%</span></div>
-          
           <div class="stock-card positive"><div class="stock-logo-container">H</div><span class="stock-symbol">HDFC Bank</span><span class="stock-price">₹1,642.50</span><span class="stock-change">▲ +0.45%</span></div>
-          
           <div class="stock-card negative"><div class="stock-logo-container">T</div><span class="stock-symbol">TCS</span><span class="stock-price">₹4,210.80</span><span class="stock-change">▼ -0.32%</span></div>
-          
           <div class="stock-card positive"><div class="stock-logo-container">I</div><span class="stock-symbol">Infosys</span><span class="stock-price">₹1,785.20</span><span class="stock-change">▲ +0.88%</span></div>
-          
-          <div class="stock-card positive"><div class="stock-logo-container">I</div><span class="stock-symbol">ICICI Bank</span><span class="stock-price">₹1,195.60</span><span class="stock-change">▲ +0.72%</span></div>
-          
-          <div class="stock-card positive"><div class="stock-logo-container">S</div><span class="stock-symbol">SBI</span><span class="stock-price">₹835.40</span><span class="stock-change">▲ +1.05%</span></div>
-          
-          <div class="stock-card positive"><div class="stock-logo-container">B</div><span class="stock-symbol">Bharti Airtel</span><span class="stock-price">₹1,817.20</span><span class="stock-change">▲ +0.65%</span></div>
-          
-          <div class="stock-card negative"><div class="stock-logo-container">L</div><span class="stock-symbol">L&T</span><span class="stock-price">₹3,560.00</span><span class="stock-change">▼ -0.25%</span></div>
-          
-          <div class="stock-card positive"><div class="stock-logo-container">N</div><span class="stock-symbol">NIFTY 50</span><span class="stock-price">₹24,850.30</span><span class="stock-change">▲ +0.65%</span></div>
-          
-          <div class="stock-card positive"><div class="stock-logo-container">S</div><span class="stock-symbol">SENSEX</span><span class="stock-price">81,420.15</span><span class="stock-change">▲ +0.58%</span></div>
-          
-          <div class="stock-card positive"><div class="stock-logo-container">R</div><span class="stock-symbol">Reliance</span><span class="stock-price">₹2,985.40</span><span class="stock-change">▲ +1.12%</span></div>
-          
-          <div class="stock-card positive"><div class="stock-logo-container">H</div><span class="stock-symbol">HDFC Bank</span><span class="stock-price">₹1,642.50</span><span class="stock-change">▲ +0.45%</span></div>
-          
-          <div class="stock-card negative"><div class="stock-logo-container">T</div><span class="stock-symbol">TCS</span><span class="stock-price">₹4,210.80</span><span class="stock-change">▼ -0.32%</span></div>
-          
-          <div class="stock-card positive"><div class="stock-logo-container">I</div><span class="stock-symbol">Infosys</span><span class="stock-price">₹1,785.20</span><span class="stock-change">▲ +0.88%</span></div>
-          
-          <div class="stock-card positive"><div class="stock-logo-container">I</div><span class="stock-symbol">ICICI Bank</span><span class="stock-price">₹1,195.60</span><span class="stock-change">▲ +0.72%</span></div>
-          
-          <div class="stock-card positive"><div class="stock-logo-container">S</div><span class="stock-symbol">SBI</span><span class="stock-price">₹835.40</span><span class="stock-change">▲ +1.05%</span></div>
-          
-          <div class="stock-card positive"><div class="stock-logo-container">B</div><span class="stock-symbol">Bharti Airtel</span><span class="stock-price">₹1,817.20</span><span class="stock-change">▲ +0.65%</span></div>
-          
-          <div class="stock-card negative"><div class="stock-logo-container">L</div><span class="stock-symbol">L&T</span><span class="stock-price">₹3,560.00</span><span class="stock-change">▼ -0.25%</span></div>
         </div>
       </div>
       <div class="view-market-container">
-        <a href="index.html#research-section" class="view-market-link">
-          <span>View Pulse</span>
-          
-        </a>
+        <a href="#market-signals" class="view-market-link"><span>View Pulse</span></a>
       </div>
     </div>
   </header>
@@ -234,21 +195,19 @@
   <div class="sk-drawer" id="mobileDrawer">
     <button class="sk-drawer-close clickable" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
     <div class="sk-drawer-header">
-      <img src="logo.png?v=125.0" alt="4X Wealth Logo" class="brand-logo-img">
+      <img src="logo.png?v=126.0" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
-                <ul class="sk-drawer-links">
+    <ul class="sk-drawer-links">
       <li><a href="index.html" class="sk-drawer-link clickable">Home</a></li>
       <li><a href="solutions.html" class="sk-drawer-link clickable">Solutions</a></li>
-      <li><a href="hedge-lab.html" class="sk-drawer-link clickable">Research</a></li>
-      <li><a href="hedge-lab.html" class="sk-drawer-link clickable">AI Hedge Lab</a></li>
+      <li><a href="hedge-lab.html" class="sk-drawer-link clickable">Research & AI Lab</a></li>
       <li><a href="calculators.html" class="sk-drawer-link clickable">Calculators</a></li>
       <li><a href="sif-tracker.html" class="sk-drawer-link clickable">SIF Screener</a></li>
       <li><a href="blogs.html" class="sk-drawer-link clickable">Resources</a></li>
       <li><a href="about.html" class="sk-drawer-link clickable">About Us</a></li>
     </ul>
-
-        <div class="sk-drawer-auth-section">
+    <div class="sk-drawer-auth-section">
       <div class="sk-drawer-section-title">CLIENT ACCESS</div>
       <div class="sk-drawer-btn-group">
         <a href="login.html" class="vg-btn vg-btn-primary clickable" style="text-decoration:none;">Login</a>
@@ -257,145 +216,470 @@
     </div>
   </div>
 
-  <div class="main-wrapper">
-    <div class="lab-page-container">
-      <div class="section-header center">
-        <span class="section-tag">CORE INFRASTRUCTURE</span>
-        <h1 class="section-title">Institutional <span style="background: linear-gradient(135deg, #007aff, #ff2d55); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Quant Core</span></h1>
-        <p class="section-desc">Analyze risk metrics, portfolio optimization bounds, and NLP sentiment forecasts generated by our neural processing core.</p>
-      </div>
+  <main id="main-content">
 
-      <div class="lab-page-grid">
-        <!-- Sidebar Panel -->
-        <div class="lab-sidebar">
-          <div class="module-info-panel glass-card" id="moduleInfoPanel" style="margin-top: 0;">
-            <h4 class="info-title" id="infoTitle">QUANTITATIVE CORE</h4>
-            <p class="info-desc" id="infoDesc">Hover over or tap a neural module card to initialize diagnostics and check the real-time load parameters.</p>
-            <div class="info-data-row">
-              <span class="data-label">ACTIVATION LEVEL:</span>
-              <span class="data-value" id="infoActivation">100% ONLINE</span>
-            </div>
-            <div class="info-data-row">
-              <span class="data-label">ALGORITHMIC LOAD:</span>
-              <span class="data-value" id="infoLoad">0.00 FLOPS</span>
-            </div>
+    <!-- ==========================================
+         HERO STRIP: QUANT RESEARCH & AI HEDGE LAB
+         ========================================== -->
+    <section class="lab-hero-strip">
+      <div class="container-luxury">
+        <div class="hero-ivory-badge" style="margin-bottom: 1.2rem;">
+          <span class="live-cyan-dot"></span>
+          <span>QUANTITATIVE RESEARCH SUITE &bull; NEURAL CORE v4.8 &bull; AMFI ARN-268488 &bull; APRN00969</span>
+        </div>
+
+        <h1 class="hero-title-main" style="font-size: clamp(32px, 4.2vw, 54px);">
+          Quantitative Research &
+        </h1>
+        <div class="hero-title-sub-serif" style="color: #0077FF; font-size: clamp(28px, 3.8vw, 48px); margin-bottom: 1rem;">
+          AI Hedge Lab Core.
+        </div>
+
+        <p class="hero-sub-text" style="max-width: 820px; margin: 0 auto 2.5rem auto;">
+          Institutional-grade quantitative intelligence, multi-horizon volatility regime modeling, algorithmic factor optimization, and live market conviction analytics — powering systematic capital decisions.
+        </p>
+
+        <!-- KPI Metrics Strip -->
+        <div class="lab-stats-grid">
+          <div class="lab-stat-box">
+            <div class="lab-stat-num">4.82 GFLOPS</div>
+            <div class="lab-stat-label">Neural Processing Load</div>
           </div>
-
-          <!-- 3D WebGL Canvas Card -->
-          <div class="lab-canvas-card">
-            <canvas id="labCanvas3d"></canvas>
+          <div class="lab-stat-box">
+            <div class="lab-stat-num">99.98%</div>
+            <div class="lab-stat-label">Algorithmic Signal Uptime</div>
+          </div>
+          <div class="lab-stat-box">
+            <div class="lab-stat-num">18 Nodes</div>
+            <div class="lab-stat-label">Multi-Asset Conviction Grid</div>
+          </div>
+          <div class="lab-stat-box">
+            <div class="lab-stat-num">100K+ Paths</div>
+            <div class="lab-stat-label">Monte Carlo VaR Simulators</div>
           </div>
         </div>
 
-        <!-- HTML Overlay Grid for Modules -->
-        <div class="lab-modules-container">
-          <div class="module-node glass-card hover-tilt clickable" data-module="portfolio">
-            <i class="fa-solid fa-chart-pie" style="color: #007aff;"></i>
-            <h5>Portfolio Intelligence</h5>
-            <p>Mathematical optimization of cross-asset allocations using Markowitz frontiers and Black-Litterman conviction modeling overlays.</p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 01: MARKET CONVICTION SIGNALS
+         ========================================== -->
+    <section id="market-signals" class="section-ivory" style="padding: 85px 0; border-top: 1px solid #BAE6FD;">
+      <div class="container-luxury">
+        
+        <div class="section-header center" style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="section-tag" style="color: #0077FF; font-weight: 700; letter-spacing: 0.15em;">01 / REAL-TIME CONVICTION PULSE</span>
+          <h2 class="section-title" style="color: #0F172A; font-size: clamp(28px, 3.6vw, 44px);">Market Conviction Signals & <span style="color: #0077FF;">Macro Breadth.</span></h2>
+          <div class="gold-divider-wrap" style="display: flex; align-items: center; justify-content: center; gap: 12px; margin: 1rem auto 1.4rem auto;">
+            <span class="gold-divider-line" style="height: 1px; width: 60px; background: #0077FF;"></span>
+            <span class="gold-divider-diamond" style="width: 6px; height: 6px; background: #0077FF; transform: rotate(45deg);"></span>
+            <span class="gold-divider-line" style="height: 1px; width: 60px; background: #0077FF;"></span>
           </div>
-          <div class="module-node glass-card hover-tilt clickable" data-module="risk">
-            <i class="fa-solid fa-shield-halved" style="color: #ff2d55;"></i>
-            <h5>Risk Engine</h5>
-            <p>Stochastic analysis of structural downside vectors, executing Monte Carlo stress testing against global macro fluctuations.</p>
+          <p class="section-desc" style="color: #64748B; font-size: 15.5px; max-width: 780px; margin: 0 auto;">
+            Aggregating multi-layer institutional flow dynamics, domestic mutual fund liquidity pipelines, and implied volatility regimes into actionable conviction metrics.
+          </p>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="signal-dashboard-grid">
+          
+          <!-- Card 1: Primary Regime Gauge -->
+          <div class="signal-metric-card">
+            <div class="signal-card-header">
+              <h3>Macro Conviction Meter</h3>
+              <span class="signal-status-tag bullish"><i class="fa-solid fa-circle-check"></i> BULLISH ACCUMULATION</span>
+            </div>
+            
+            <div style="background: #F0F8FF; border: 1px solid #BAE6FD; border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-family: var(--font-mono); font-size: 12px; color: #64748B; font-weight: 700;">CONVICTION INDEX</span>
+                <span style="font-family: var(--font-mono); font-size: 20px; color: #0077FF; font-weight: 800;">87.4 / 100</span>
+              </div>
+              <div style="height: 8px; background: #E2E8F0; border-radius: 10px; overflow: hidden;">
+                <div style="width: 87.4%; height: 100%; background: linear-gradient(90deg, #0077FF, #00C6FF); border-radius: 10px;"></div>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-family: var(--font-mono); font-size: 12px;">
+              <div style="background: #F8FAFC; padding: 1rem; border-radius: 10px; border: 1px solid #E2E8F0;">
+                <span style="color: #64748B; display: block; margin-bottom: 4px;">INDIA VIX</span>
+                <span style="color: #10B981; font-weight: 700; font-size: 15px;">13.20 (Low Vol)</span>
+              </div>
+              <div style="background: #F8FAFC; padding: 1rem; border-radius: 10px; border: 1px solid #E2E8F0;">
+                <span style="color: #64748B; display: block; margin-bottom: 4px;">ADVANCE/DECLINE</span>
+                <span style="color: #0077FF; font-weight: 700; font-size: 15px;">1.85 : 1.00</span>
+              </div>
+            </div>
           </div>
-          <div class="module-node glass-card hover-tilt clickable" data-module="forecast">
-            <i class="fa-solid fa-brain" style="color: #ff9500;"></i>
-            <h5>Market Forecast</h5>
-            <p>Predictive temporal modeling on historical structures using multi-layer LSTM neural nets to map vector momentum.</p>
+
+          <!-- Card 2: Institutional Liquidity Flow -->
+          <div class="signal-metric-card">
+            <div class="signal-card-header">
+              <h3>Institutional Liquidity Barometer</h3>
+              <span class="signal-status-tag neutral"><i class="fa-solid fa-arrows-spin"></i> LIVE FLOWS</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1rem; background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <i class="fa-solid fa-globe" style="color: #0077FF; font-size: 16px;"></i>
+                  <div>
+                    <span style="font-weight: 700; font-size: 13.5px; color: #0F172A; display: block;">FII Net Flow (Monthly)</span>
+                    <span style="font-size: 11px; color: #64748B;">Foreign Institutional Investors</span>
+                  </div>
+                </div>
+                <span style="font-family: var(--font-mono); font-weight: 700; color: #10B981; font-size: 14px;">+₹1,840.50 Cr</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1rem; background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <i class="fa-solid fa-landmark" style="color: #0077FF; font-size: 16px;"></i>
+                  <div>
+                    <span style="font-weight: 700; font-size: 13.5px; color: #0F172A; display: block;">DII SIP Net Pipeline</span>
+                    <span style="font-size: 11px; color: #64748B;">Domestic Mutual Funds & Insurers</span>
+                  </div>
+                </div>
+                <span style="font-family: var(--font-mono); font-weight: 700; color: #10B981; font-size: 14px;">+₹24,800+ Cr/Mo</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1rem; background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <i class="fa-solid fa-chart-line" style="color: #0077FF; font-size: 16px;"></i>
+                  <div>
+                    <span style="font-weight: 700; font-size: 13.5px; color: #0F172A; display: block;">Systemic Liquidity Stance</span>
+                    <span style="font-size: 11px; color: #64748B;">RBI Liquidity Adjustment Facility</span>
+                  </div>
+                </div>
+                <span style="font-family: var(--font-mono); font-weight: 700; color: #0077FF; font-size: 14px;">Neutral-Accommodative</span>
+              </div>
+            </div>
           </div>
-          <div class="module-node glass-card hover-tilt clickable" data-module="alternative">
-            <i class="fa-solid fa-satellite" style="color: #34aadc;"></i>
-            <h5>Alternative Data</h5>
-            <p>NLP analysis on unstructured global feeds, tracking institutional filings, news sentiment, and capital pipeline routing.</p>
+
+        </div>
+
+        <!-- Sector Heatmap Matrix -->
+        <div style="background: #FFFFFF; border: 1px solid #BAE6FD; border-radius: 20px; padding: 2.2rem; box-shadow: 0 4px 20px rgba(0, 119, 255, 0.05);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 0.5rem;">
+            <div>
+              <h3 style="font-family: var(--font-heading); font-size: 20px; font-weight: 800; color: #0F172A;">Multi-Sector Rotation & Conviction Matrix</h3>
+              <p style="font-size: 13.5px; color: #64748B;">Systematic quantitative factor score across key institutional industry clusters.</p>
+            </div>
+            <span class="signal-status-tag neutral"><i class="fa-solid fa-arrows-spin"></i> ROTATION ENGINE ACTIVE</span>
+          </div>
+
+          <div class="sector-heatmap-grid">
+            <div class="sector-tile">
+              <div class="sector-tile-top">
+                <span class="sector-tile-name">Banking & Financials</span>
+                <span class="sector-tile-change up">▲ +1.45%</span>
+              </div>
+              <span class="sector-tile-sub">Stance: Overweight | ROE Accretive</span>
+            </div>
+
+            <div class="sector-tile">
+              <div class="sector-tile-top">
+                <span class="sector-tile-name">Capital Goods & Infra</span>
+                <span class="sector-tile-change up">▲ +2.10%</span>
+              </div>
+              <span class="sector-tile-sub">Stance: High Conviction | Orderbook Expansion</span>
+            </div>
+
+            <div class="sector-tile">
+              <div class="sector-tile-top">
+                <span class="sector-tile-name">Auto & EV Mobility</span>
+                <span class="sector-tile-change up">▲ +1.80%</span>
+              </div>
+              <span class="sector-tile-sub">Stance: Overweight | Volume Growth</span>
+            </div>
+
+            <div class="sector-tile">
+              <div class="sector-tile-top">
+                <span class="sector-tile-name">Information Technology</span>
+                <span class="sector-tile-change neutral">● +0.22%</span>
+              </div>
+              <span class="sector-tile-sub">Stance: Neutral Accumulate | Margin Resilient</span>
+            </div>
+
+            <div class="sector-tile">
+              <div class="sector-tile-top">
+                <span class="sector-tile-name">Healthcare & Pharma</span>
+                <span class="sector-tile-change up">▲ +0.95%</span>
+              </div>
+              <span class="sector-tile-sub">Stance: Defensive Growth | US Generics Pricing</span>
+            </div>
+
+            <div class="sector-tile">
+              <div class="sector-tile-top">
+                <span class="sector-tile-name">Power & Energy Transition</span>
+                <span class="sector-tile-change up">▲ +1.65%</span>
+              </div>
+              <span class="sector-tile-sub">Stance: Structural Overweight | High CapEx</span>
+            </div>
           </div>
         </div>
+
       </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 02: AI HEDGE LAB & QUANT CORE
+         ========================================== -->
+    <section id="quant-core" class="section-ivory-alt" style="padding: 85px 0;">
+      <div class="container-luxury">
+        
+        <div class="section-header center" style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="section-tag" style="color: #0077FF; font-weight: 700; letter-spacing: 0.15em;">02 / NEURAL PROCESSING CORE</span>
+          <h2 class="section-title" style="color: #0F172A; font-size: clamp(28px, 3.6vw, 44px);">Institutional <span style="color: #0077FF;">Quant Core Architecture.</span></h2>
+          <div class="gold-divider-wrap" style="display: flex; align-items: center; justify-content: center; gap: 12px; margin: 1rem auto 1.4rem auto;">
+            <span class="gold-divider-line" style="height: 1px; width: 60px; background: #0077FF;"></span>
+            <span class="gold-divider-diamond" style="width: 6px; height: 6px; background: #0077FF; transform: rotate(45deg);"></span>
+            <span class="gold-divider-line" style="height: 1px; width: 60px; background: #0077FF;"></span>
+          </div>
+          <p class="section-desc" style="color: #64748B; font-size: 15.5px; max-width: 780px; margin: 0 auto;">
+            Evaluate mathematical optimization bounds, factor risk weights, and NLP sentiment forecasts generated by our quantitative computing pipeline.
+          </p>
+        </div>
+
+        <div class="lab-page-grid">
+          
+          <!-- Sidebar Panel: Diagnostics & Live Pulse -->
+          <div class="lab-sidebar">
+            <div class="module-info-panel" id="moduleInfoPanel">
+              <h4 class="info-title" id="infoTitle"><i class="fa-solid fa-microchip" style="color: #0077FF;"></i> QUANTITATIVE CORE</h4>
+              <p class="info-desc" id="infoDesc">Hover over or tap any neural module card to inspect active algorithmic load parameters, optimization constraints, and real-time telemetry.</p>
+              
+              <div class="info-data-row">
+                <span class="data-label">SYSTEM STATUS:</span>
+                <span class="data-value" id="infoActivation">100% ONLINE</span>
+              </div>
+              <div class="info-data-row">
+                <span class="data-label">COMPUTATIONAL LOAD:</span>
+                <span class="data-value" id="infoLoad">4.82 GFLOPS</span>
+              </div>
+              <div class="info-data-row">
+                <span class="data-label">PORTFOLIO REGIME:</span>
+                <span class="data-value">FACTOR BALANCED</span>
+              </div>
+              <div class="info-data-row">
+                <span class="data-label">REBALANCING LATENCY:</span>
+                <span class="data-value">12.4 ms</span>
+              </div>
+            </div>
+
+            <!-- Visualizer Card (Dynamic Waveform Canvas) -->
+            <div class="lab-canvas-card">
+              <canvas id="labOscilloscope" width="340" height="220" style="width: 100%; height: 100%;"></canvas>
+            </div>
+          </div>
+
+          <!-- HTML 4-Module Interactive Grid -->
+          <div class="lab-modules-container">
+            
+            <div class="module-node active clickable" data-module="portfolio">
+              <i class="fa-solid fa-chart-pie" style="color: #0077FF;"></i>
+              <h5>Portfolio Intelligence</h5>
+              <p>Mathematical optimization of cross-asset allocations using Markowitz efficient frontiers, Black-Litterman conviction overlays, and factor risk budgeting.</p>
+            </div>
+
+            <div class="module-node clickable" data-module="risk">
+              <i class="fa-solid fa-shield-halved" style="color: #00A3FF;"></i>
+              <h5>Risk Engine & VaR</h5>
+              <p>Stochastic analysis of structural downside vectors, executing 100,000+ Monte Carlo stress tests against historical macroeconomic shocks and volatility spikes.</p>
+            </div>
+
+            <div class="module-node clickable" data-module="forecast">
+              <i class="fa-solid fa-brain" style="color: #0077FF;"></i>
+              <h5>Market Forecast Models</h5>
+              <p>Predictive temporal modeling on historical financial structures using LSTM neural networks to map asset class vector momentum and mean-reversion horizons.</p>
+            </div>
+
+            <div class="module-node clickable" data-module="alternative">
+              <i class="fa-solid fa-satellite" style="color: #00C6FF;"></i>
+              <h5>Alternative NLP Analytics</h5>
+              <p>Natural Language Processing engines parsing statutory corporate filings, institutional quarterly transcripts, export manifests, and real-time news pipelines.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 03: VOLATILITY & RISK REGIMES
+         ========================================== -->
+    <section id="risk-engine" class="section-ivory" style="padding: 85px 0; border-top: 1px solid #BAE6FD;">
+      <div class="container-luxury">
+        
+        <div class="section-header center" style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="section-tag" style="color: #0077FF; font-weight: 700; letter-spacing: 0.15em;">03 / VOLATILITY & DOWNSIDE ARCHITECTURE</span>
+          <h2 class="section-title" style="color: #0F172A; font-size: clamp(28px, 3.6vw, 44px);">Multi-Asset Risk Regimes & <span style="color: #0077FF;">Stress Controls.</span></h2>
+          <div class="gold-divider-wrap" style="display: flex; align-items: center; justify-content: center; gap: 12px; margin: 1rem auto 1.4rem auto;">
+            <span class="gold-divider-line" style="height: 1px; width: 60px; background: #0077FF;"></span>
+            <span class="gold-divider-diamond" style="width: 6px; height: 6px; background: #0077FF; transform: rotate(45deg);"></span>
+            <span class="gold-divider-line" style="height: 1px; width: 60px; background: #0077FF;"></span>
+          </div>
+          <p class="section-desc" style="color: #64748B; font-size: 15.5px; max-width: 780px; margin: 0 auto;">
+            Capital preservation requires recognizing that risk is non-linear. Our multi-regime architecture automatically calibrates equity exposure and hedging based on prevailing volatility states.
+          </p>
+        </div>
+
+        <!-- 4 Regime Classification Cards -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3.5rem;">
+          
+          <div class="approach-card" style="background: #FFFFFF; border: 1px solid #BAE6FD; border-radius: 18px; padding: 2rem 1.6rem; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.04);">
+            <span class="approach-badge-num" style="color: #10B981; font-family: var(--font-mono); font-size: 11px; font-weight: 700; margin-bottom: 0.8rem; display: block;">REGIME 01</span>
+            <h3 style="font-size: 17px; font-weight: 700; color: #0F172A; margin-bottom: 0.6rem;">Low-Vol Expansion</h3>
+            <p style="font-size: 13.5px; color: #64748B; line-height: 1.6;">Maximum growth positioning with high-beta equities, quality mid-caps, and active sector momentum strategies.</p>
+          </div>
+
+          <div class="approach-card" style="background: #FFFFFF; border: 1px solid #BAE6FD; border-radius: 18px; padding: 2rem 1.6rem; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.04);">
+            <span class="approach-badge-num" style="color: #0077FF; font-family: var(--font-mono); font-size: 11px; font-weight: 700; margin-bottom: 0.8rem; display: block;">REGIME 02</span>
+            <h3 style="font-size: 17px; font-weight: 700; color: #0F172A; margin-bottom: 0.6rem;">Inflationary Shift</h3>
+            <p style="font-size: 13.5px; color: #64748B; line-height: 1.6;">Rotation to high free-cash-flow value companies, corporate fixed income, and short-duration yield securities.</p>
+          </div>
+
+          <div class="approach-card" style="background: #FFFFFF; border: 1px solid #BAE6FD; border-radius: 18px; padding: 2rem 1.6rem; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.04);">
+            <span class="approach-badge-num" style="color: #F59E0B; font-family: var(--font-mono); font-size: 11px; font-weight: 700; margin-bottom: 0.8rem; display: block;">REGIME 03</span>
+            <h3 style="font-size: 17px; font-weight: 700; color: #0F172A; margin-bottom: 0.6rem;">Vol Compression</h3>
+            <p style="font-size: 13.5px; color: #64748B; line-height: 1.6;">Systematic derivative hedging overlays, low-beta allocation, and tactical long-short alternative fund buffers.</p>
+          </div>
+
+          <div class="approach-card" style="background: #FFFFFF; border: 1px solid #BAE6FD; border-radius: 18px; padding: 2rem 1.6rem; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.04);">
+            <span class="approach-badge-num" style="color: #EF4444; font-family: var(--font-mono); font-size: 11px; font-weight: 700; margin-bottom: 0.8rem; display: block;">REGIME 04</span>
+            <h3 style="font-size: 17px; font-weight: 700; color: #0F172A; margin-bottom: 0.6rem;">Structural Drawdown</h3>
+            <p style="font-size: 13.5px; color: #64748B; line-height: 1.6;">Full capital protection mode with Sovereign G-Secs, overnight liquidity shelters, and gold hedges.</p>
+          </div>
+
+        </div>
+
+        <!-- Fiduciary Advisory CTA Box -->
+        <div style="background: linear-gradient(180deg, #FFFFFF 0%, #F0F8FF 100%); border: 1.5px solid #BAE6FD; border-radius: 24px; padding: 3rem; text-align: center; box-shadow: 0 8px 30px rgba(0, 119, 255, 0.08);">
+          <span class="diligence-diagram-badge" style="margin-bottom: 1rem;"><i class="fa-solid fa-shield-halved"></i> INSTITUTIONAL FIDUCIARY ACCESS</span>
+          <h3 style="font-family: var(--font-heading); font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: #0F172A; margin-bottom: 1rem;">Deploy Quantitative Rigor In Your Wealth Architecture.</h3>
+          <p style="font-size: 15.5px; color: #64748B; max-width: 680px; margin: 0 auto 2rem auto; line-height: 1.65;">
+            Discover how 4X Wealth integrates algorithmic factor intelligence, PMS/AIF research, and structured risk controls for private clients, family offices, and corporate treasuries.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap;">
+            <a href="index.html#consultation-section" class="btn-primary clickable"><span>Schedule Advisor Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="solutions.html" class="btn-secondary-ivory clickable"><span>Explore Solutions Suite</span></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       MASTER LUXURY FOOTER (LUMINOUS WHITE & CYAN)
+       ========================================== -->
+  <footer class="luxury-footer">
+    <div class="container-luxury">
+      
+      <div class="footer-top-grid">
+        <!-- Brand Summary -->
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+            <img src="logo.png?v=126.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
+            <h3>4X<span>WEALTH</span></h3>
+          </div>
+          <p>
+            A premier private wealth management firm delivering systematic wealth planning, PMS, AIF, SIF, and Quantitative Research intelligence under disciplined fiduciary stewardship.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 12px; color: #0077FF; font-weight: 700; margin-top: 1rem;">
+            AMFI ARN-268488 &bull; APMI APRN00969
+          </div>
+        </div>
+
+        <!-- Quick Links: Invest -->
+        <div class="footer-col">
+          <div class="footer-col-title">Invest</div>
+          <ul class="footer-links">
+            <li><a href="mutual-funds.html">Mutual Funds</a></li>
+            <li><a href="stocks.html">Direct Equities</a></li>
+            <li><a href="pms.html">PMS Portfolio Desk</a></li>
+            <li><a href="aif.html">AIF Private Funds</a></li>
+            <li><a href="sif-tracker.html">SIF Screener</a></li>
+            <li><a href="unlisted-shares.html">Unlisted Shares</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links: Preserve & Plan -->
+        <div class="footer-col">
+          <div class="footer-col-title">Plan & Protect</div>
+          <ul class="footer-links">
+            <li><a href="bonds.html">Government Bonds</a></li>
+            <li><a href="insurance.html">Life & Asset Insurance</a></li>
+            <li><a href="retirement-planning.html">Retirement Planning</a></li>
+            <li><a href="goal-planning.html">Goal-Based Wealth</a></li>
+            <li><a href="tax-planning.html">Tax Optimization</a></li>
+            <li><a href="gift-city.html">GIFT City IFSC</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links: Research & Tools -->
+        <div class="footer-col">
+          <div class="footer-col-title">Research & Tools</div>
+          <ul class="footer-links">
+            <li><a href="hedge-lab.html#market-signals">Market Conviction Signals</a></li>
+            <li><a href="hedge-lab.html#quant-core">AI Hedge Lab</a></li>
+            <li><a href="hedge-lab.html#risk-engine">Volatility Models</a></li>
+            <li><a href="calculators.html">Wealth Calculators</a></li>
+            <li><a href="blogs.html">Market Insights</a></li>
+            <li><a href="about.html">About 4X Wealth</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Regulatory Disclaimer Box -->
+      <div class="footer-disclaimer-box">
+        <p class="footer-disclaimer-bold">AMFI REGISTERED MUTUAL FUND DISTRIBUTOR (ARN-268488) & APMI REGISTERED PMS DESK (APRN00969).</p>
+        <p style="font-size: 12px; color: #64748B; line-height: 1.6; margin-bottom: 1rem;">
+          Mutual fund investments are subject to market risks. Read all scheme-related documents carefully before investing. PMS & AIF products are offered in strict compliance with applicable SEBI guidelines. Quantitative analytics and model outputs are for research and asset allocation purposes and do not constitute guaranteed returns.
+        </p>
+        <div class="legal-links-row">
+          <a href="#">Disclaimer</a> &bull;
+          <a href="#">Commission Disclosures</a> &bull;
+          <a href="#">Privacy Policy</a> &bull;
+          <a href="#">Terms & Conditions</a> &bull;
+          <a href="#">SID / SAI / KIM</a> &bull;
+          <a href="#">Investor Grievance Redressal</a>
+        </div>
+      </div>
+
+      <!-- Bottom Strip -->
+      <div class="footer-bottom-strip">
+        <p>&copy; 2026 4X Wealth Financial Services. All Rights Reserved. Thane, Mumbai, India.</p>
+      </div>
+
     </div>
-
-    <!-- MINIMAL FOOTER SECTION -->
-    <footer id="footer-section">
-      <div class="footer-wrapper">
-        <div class="footer-primary-grid">
-          <!-- Logo & Brand Description -->
-          <div class="footer-brand-info">
-            <div class="logo-wrapper" style="display: flex; align-items: center; gap: 10px;">
-              <img src="logo.png?v=125.0" alt="4X Wealth Logo" style="height: 32px; width: auto;" class="brand-logo-img">
-              <div class="logo-text">4X<span>WEALTH</span></div>
-            </div>
-            <p class="brand-sub">Registered AMFI Mutual Fund distributor partner (ARN-268488) specializing in quantitative-research wealth mapping structures.</p>
-            <div class="social-channels">
-              <a href="https://www.instagram.com/4x_wealth_financial_services" class="social-link clickable" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/4x-wealth-financial-services" class="social-link clickable" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="#" class="social-link clickable" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-            </div>
-          </div>
-
-          <!-- Links -->
-          <div class="footer-links-col">
-            <h4>Mandates</h4>
-            <ul class="footer-nav">
-              <li><a href="index.html#services-section" class="clickable">Mutual Funds</a></li>
-              <li><a href="index.html#services-section" class="clickable">PMS Portfolios</a></li>
-              <li><a href="index.html#services-section" class="clickable">Alternative Funds</a></li>
-              <li><a href="index.html#services-section" class="clickable">Corporate Bonds</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-col">
-            <h4>Strategies</h4>
-            <ul class="footer-nav">
-              <li><a href="index.html#services-section" class="clickable">Retirement Shield</a></li>
-              <li><a href="index.html#services-section" class="clickable">Goal Compounding</a></li>
-              <li><a href="index.html#services-section" class="clickable">Tax Maximization</a></li>
-              <li><a href="index.html#services-section" class="clickable">Estate Insurance</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-col">
-            <h4>Ingest Tools</h4>
-            <ul class="footer-nav">
-              <li><a href="index.html#simulator-section" class="clickable">SIP Calculator</a></li>
-              <li><a href="index.html#dashboard-section" class="clickable">System conviction</a></li>
-              <li><a href="index.html#intelligence-section" class="clickable">Ingest Calendar</a></li>
-              <li><a href="#" class="clickable">Forms & Downloads</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-col">
-            <h4>Offices</h4>
-            <ul class="footer-nav">
-              <li><a href="#" class="clickable">Thane, Mumbai (HQ)</a></li>
-              <li><a href="#" class="clickable">ARN Registrations</a></li>
-              <li><a href="#" class="clickable">Support Terminal</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer-bottom-compliance">
-          <p>&copy; 2026 4X Wealth Financial Services. All rights reserved. Registered ARN-268488. Mutual fund investments are subject to market risks, read all scheme related documents carefully. Past performance does not guarantee future capital yield trajectories.</p>
-          <p class="location-stamp">HQ Terminal Location: Thane, Mumbai, India</p>
-        </div>
-      </div>
-    </footer>
-  </div>
+  </footer>
 
   <!-- Search Modal -->
   <div class="search-modal" id="searchModal">
     <div class="search-modal-content">
       <div class="search-input-wrapper">
-        <input type="text" class="search-input" placeholder="Search wealth products, calculators, or blogs..." id="searchInput">
-        <button class="search-close-btn clickable" id="searchModalClose"><i class="fa-solid fa-xmark"></i></button>
+        <i class="fa-solid fa-magnifying-glass search-icon-inside"></i>
+        <input type="text" class="search-input" placeholder="Search mutual funds, PMS, AIF, calculators, bonds, blogs..." id="searchInput" autocomplete="off">
+        <button class="search-close-btn clickable" id="searchModalClose" aria-label="Close search"><i class="fa-solid fa-xmark"></i></button>
       </div>
+      <div class="search-quick-tags">
+        <span class="search-quick-label">Quick:</span>
+        <button class="search-tag-chip" data-tag="SIP">SIP Calculator</button>
+        <button class="search-tag-chip" data-tag="PMS">PMS Desk</button>
+        <button class="search-tag-chip" data-tag="SIF">SIF Tracker</button>
+        <button class="search-tag-chip" data-tag="AIF">AIF Funds</button>
+        <button class="search-tag-chip" data-tag="Bonds">Bonds</button>
+        <button class="search-tag-chip" data-tag="Tax">Tax Planning</button>
+      </div>
+      <div class="search-results-list" id="searchResultsList"></div>
     </div>
   </div>
 
-  <!-- Dual Login Modal (Client & Retail) -->
-  
-
-  <!-- CDN scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  
-  <!-- Local scripts -->
-  <script src="hedge-lab.js?v=3.2"></script>
-  <script src="chatbot.js?v=1.1"></script>
+  <!-- Scripts -->
+  <script src="hedge-lab.js?v=126.0"></script>
 </body>
 </html>

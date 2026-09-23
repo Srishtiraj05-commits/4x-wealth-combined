@@ -298,30 +298,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 4. MODULE HOVER INTERACTION DATA
+  // 4. MODULE HOVER/CLICK INTERACTION DATA
   // ==========================================
   const moduleData = {
     portfolio: {
       title: "PORTFOLIO INTELLIGENCE",
-      desc: "Black-Litterman mathematical optimization balances systemic allocation weightings across 18 capital nodes.",
+      desc: "Black-Litterman mathematical optimization balances systemic allocation weightings across 18 capital nodes with factor risk budgeting.",
       activation: "100% SECURE",
       load: "4.82 GFLOPS"
     },
     risk: {
-      title: "RISK ENGINE",
-      desc: "Stochastic Monte Carlo simulators stress-test volatility matrices against active regulatory profiles.",
+      title: "RISK ENGINE & VaR",
+      desc: "Stochastic Monte Carlo simulators stress-test volatility matrices and CVaR tail vectors against active multi-asset regulatory profiles.",
       activation: "100% ONLINE",
       load: "12.04 GFLOPS"
     },
     forecast: {
-      title: "MARKET FORECAST",
-      desc: "LSTM recurrent neural networks evaluate historical structural nodes to determine near-term price patterns.",
+      title: "MARKET FORECAST MODELS",
+      desc: "LSTM recurrent neural networks evaluate multi-horizon historical structural nodes to determine near-term price regimes and vector momentum.",
       activation: "94.2% OPTIMAL",
       load: "22.50 GFLOPS"
     },
     alternative: {
-      title: "ALTERNATIVE DATA",
-      desc: "NLP spiders scrape global corporate press pipelines, sentiment feeds, and cargo shipping manifests.",
+      title: "ALTERNATIVE NLP ANALYTICS",
+      desc: "NLP intelligence pipelines scrape corporate statutory filings, institutional earnings calls, sentiment feeds, and cargo shipping manifests.",
       activation: "88.6% MONITOR",
       load: "8.15 GFLOPS"
     }
@@ -331,158 +331,103 @@ document.addEventListener('DOMContentLoaded', () => {
   const infoDesc = document.getElementById('infoDesc');
   const infoActivation = document.getElementById('infoActivation');
   const infoLoad = document.getElementById('infoLoad');
+  const moduleNodes = document.querySelectorAll('.module-node');
 
-  document.querySelectorAll('.module-node').forEach(node => {
+  const updateModuleInfo = (moduleKey) => {
+    const data = moduleData[moduleKey];
+    if (data) {
+      if (infoTitle) infoTitle.innerHTML = `<i class="fa-solid fa-microchip" style="color: #0077FF;"></i> ${data.title}`;
+      if (infoDesc) infoDesc.textContent = data.desc;
+      if (infoActivation) infoActivation.textContent = data.activation;
+      if (infoLoad) infoLoad.textContent = data.load;
+    }
+  };
+
+  moduleNodes.forEach(node => {
     node.addEventListener('mouseenter', () => {
+      moduleNodes.forEach(n => n.classList.remove('active'));
+      node.classList.add('active');
       const moduleKey = node.getAttribute('data-module');
-      const data = moduleData[moduleKey];
-      if (data) {
-        if (infoTitle) infoTitle.textContent = data.title;
-        if (infoDesc) infoDesc.textContent = data.desc;
-        if (infoActivation) infoActivation.textContent = data.activation;
-        if (infoLoad) infoLoad.textContent = data.load;
-      }
+      updateModuleInfo(moduleKey);
     });
 
-    node.addEventListener('mouseleave', () => {
-      if (infoTitle) infoTitle.textContent = "QUANTITATIVE CORE";
-      if (infoDesc) infoDesc.textContent = "Hover over or tap a neural module card to initialize diagnostics and check the real-time load parameters.";
-      if (infoActivation) infoActivation.textContent = "100% ONLINE";
-      if (infoLoad) infoLoad.textContent = "0.00 GFLOPS";
+    node.addEventListener('click', () => {
+      moduleNodes.forEach(n => n.classList.remove('active'));
+      node.classList.add('active');
+      const moduleKey = node.getAttribute('data-module');
+      updateModuleInfo(moduleKey);
     });
   });
 
   // ==========================================
-  // 5. LOCAL 3D CANVAS WEBGL INITIALIZER
+  // 5. DYNAMIC OSCILLOSCOPE WAVEFORM VISUALIZER
   // ==========================================
-  const canvas3d = document.getElementById('labCanvas3d');
-  if (canvas3d && false) {
-    const rect = canvas3d.parentElement.getBoundingClientRect();
+  const oscCanvas = document.getElementById('labOscilloscope');
+  if (oscCanvas) {
+    const ctx = oscCanvas.getContext('2d');
+    let phase = 0;
     
-    // Scene & Camera Setup
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, rect.width / rect.height, 0.1, 100);
-    camera.position.set(0, 0, 16);
-
-    const renderer = new THREE.WebGLRenderer({
-      canvas: canvas3d,
-      alpha: true,
-      antialias: true
-    });
-    renderer.setSize(rect.width, rect.height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-    // Glowing Central Core Mesh
-    const coreGeo = new THREE.SphereGeometry(3.2, 24, 24);
-    const coreMat = new THREE.MeshBasicMaterial({
-      color: 0x007aff,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.35
-    });
-    const coreMesh = new THREE.Mesh(coreGeo, coreMat);
-    scene.add(coreMesh);
-
-    // Outer neon particle cloud points
-    const cloudGeo = new THREE.SphereGeometry(4.8, 18, 18);
-    const cloudPoints = new THREE.Points(cloudGeo, new THREE.PointsMaterial({
-      color: 0xff2d55,
-      size: 0.08,
-      transparent: true,
-      opacity: 0.4
-    }));
-    scene.add(cloudPoints);
-
-    // Module Floating Nodes
-    const moduleCoords = [
-      { x: -5.5, y: 3, z: -2, color: 0x007aff },  // Portfolio
-      { x: 5.5, y: -2.5, z: 1, color: 0xff2d55 }, // Risk
-      { x: -4, y: -4, z: -3, color: 0xff9500 },   // Forecast
-      { x: 5, y: 4, z: -4, color: 0x34aadc }      // Alternative
-    ];
-
-    const nodeGeo = new THREE.IcosahedronGeometry(0.8, 1);
-    const nodesList = [];
-
-    moduleCoords.forEach(coord => {
-      const nodeMat = new THREE.MeshBasicMaterial({
-        color: coord.color,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.55
-      });
-      const nodeMesh = new THREE.Mesh(nodeGeo, nodeMat);
-      nodeMesh.position.set(coord.x, coord.y, coord.z);
-      scene.add(nodeMesh);
-      nodesList.push(nodeMesh);
-
-      // Connection lines
-      const points = [
-        new THREE.Vector3(0, 0, 0),
-        new THREE.Vector3(coord.x, coord.y, coord.z)
-      ];
-      const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
-      const lineMat = new THREE.LineBasicMaterial({
-        color: coord.color,
-        transparent: true,
-        opacity: 0.25
-      });
-      const line = new THREE.Line(lineGeo, lineMat);
-      scene.add(line);
-    });
-
-    // Handle cursor interactive parallax movement
-    let targetMouseX = 0, targetMouseY = 0;
-    let currentMouseX = 0, currentMouseY = 0;
-
-    window.addEventListener('mousemove', (e) => {
-      const containerRect = canvas3d.getBoundingClientRect();
-      const x = e.clientX - containerRect.left;
-      const y = e.clientY - containerRect.top;
+    const drawWave = () => {
+      const w = oscCanvas.width = oscCanvas.offsetWidth;
+      const h = oscCanvas.height = oscCanvas.offsetHeight;
       
-      if (x >= 0 && x <= containerRect.width && y >= 0 && y <= containerRect.height) {
-        targetMouseX = (x / containerRect.width - 0.5) * 4;
-        targetMouseY = (y / containerRect.height - 0.5) * 4;
+      ctx.clearRect(0, 0, w, h);
+      
+      // Grid lines
+      ctx.strokeStyle = 'rgba(0, 163, 255, 0.08)';
+      ctx.lineWidth = 1;
+      const step = 25;
+      for (let x = 0; x < w; x += step) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
+        ctx.stroke();
       }
-    });
+      for (let y = 0; y < h; y += step) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+      }
 
-    // Resize handling
-    window.addEventListener('resize', () => {
-      const newRect = canvas3d.parentElement.getBoundingClientRect();
-      camera.aspect = newRect.width / newRect.height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(newRect.width, newRect.height);
-    });
+      // Sine Wave 1 (Cyan)
+      ctx.beginPath();
+      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = '#0077FF';
+      for (let x = 0; x < w; x++) {
+        const y = h / 2 + Math.sin((x * 0.03) + phase) * 28 + Math.cos((x * 0.015) + phase * 0.7) * 12;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
 
-    // 60FPS animation loop
-    const clock = new THREE.Clock();
-    const tick = () => {
-      requestAnimationFrame(tick);
-      const elapsed = clock.getElapsedTime();
+      // Sine Wave 2 (Electric Sky Blue)
+      ctx.beginPath();
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = 'rgba(0, 198, 255, 0.6)';
+      for (let x = 0; x < w; x++) {
+        const y = h / 2 + Math.sin((x * 0.02) - phase * 1.2) * 20 + Math.sin((x * 0.05) + phase) * 8;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
 
-      // Core rotation
-      coreMesh.rotation.y = elapsed * 0.12;
-      coreMesh.rotation.z = elapsed * 0.05;
-      cloudPoints.rotation.y = -elapsed * 0.08;
+      // Scan dot
+      const dotX = (phase * 60) % w;
+      const dotY = h / 2 + Math.sin((dotX * 0.03) + phase) * 28 + Math.cos((dotX * 0.015) + phase * 0.7) * 12;
+      ctx.fillStyle = '#00C6FF';
+      ctx.shadowColor = '#0077FF';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc(dotX, dotY, 4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
 
-      // Module nodes local rotations
-      nodesList.forEach((node, i) => {
-        node.rotation.x = elapsed * 0.2 * (i % 2 === 0 ? 1 : -1);
-        node.rotation.y = elapsed * 0.15;
-      });
-
-      // Smooth mouse damping
-      currentMouseX += (targetMouseX - currentMouseX) * 0.08;
-      currentMouseY += (targetMouseY - currentMouseY) * 0.08;
-
-      // Pan camera slightly based on mouse
-      camera.position.x = currentMouseX;
-      camera.position.y = -currentMouseY;
-      camera.lookAt(new THREE.Vector3(0, 0, 0));
-
-      renderer.render(scene, camera);
+      phase += 0.03;
+      requestAnimationFrame(drawWave);
     };
-    tick();
+
+    drawWave();
   }
 
 });
