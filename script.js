@@ -1141,6 +1141,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Dedicated Book Consultation / Anchor Smooth Scroll Handler
+  document.querySelectorAll('a[href*="#consultation-section"], .book-consult-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const href = btn.getAttribute('href');
+      const target = document.getElementById('consultation-section');
+      const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
+      if (target && (isHomePage || href === '#consultation-section')) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, null, '#consultation-section');
+        }
+      }
+    });
+  });
+
   // CTA consultation submit response
   const consultForm = document.getElementById('consultationForm');
   if (consultForm) {
