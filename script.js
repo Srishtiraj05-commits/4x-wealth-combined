@@ -6,47 +6,142 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
-  // 1. ENTRANCE SEQUENCE & WORD-BY-WORD POP
+  // 1. ENTRANCE SEQUENCE & WORD-BY-WORD POP (SMOOTH & ZERO BLINK)
   // ==========================================
   function initializeEntranceAnimations() {
     const heroWords = document.querySelectorAll('.hero-word');
-    if (heroWords.length > 0 && typeof gsap !== 'undefined') {
-      gsap.fromTo(heroWords, 
-        { 
-          opacity: 0, 
-          y: 26, 
-          scale: 0.84,
-          filter: 'blur(5px)'
-        }, 
-        { 
-          opacity: 1, 
-          y: 0, 
-          scale: 1,
-          filter: 'blur(0px)',
-          duration: 0.6, 
-          stagger: 0.16, 
-          ease: 'back.out(1.7)',
-          delay: 0.25,
-          clearProps: 'transform,filter'
-        }
-      );
+    if (heroWords.length > 0) {
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo(heroWords, 
+          { 
+            opacity: 0, 
+            y: 18, 
+            scale: 0.92
+          }, 
+          { 
+            opacity: 1, 
+            y: 0, 
+            scale: 1,
+            duration: 0.55, 
+            stagger: 0.14, 
+            ease: 'back.out(1.5)',
+            delay: 0.2
+          }
+        );
+      } else {
+        heroWords.forEach((el) => {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        });
+      }
     }
     if (typeof gsap !== 'undefined') {
       if (document.querySelector('.hero-ivory-badge')) {
-        gsap.from('.hero-ivory-badge', { opacity: 0, y: -10, duration: 0.6, delay: 0.1, ease: 'power2.out' });
+        gsap.from('.hero-ivory-badge', { opacity: 0, y: -10, duration: 0.5, delay: 0.05, ease: 'power2.out' });
       }
       if (document.querySelector('.hero-sub-text')) {
-        gsap.from('.hero-sub-text', { opacity: 0, y: 12, duration: 0.7, delay: 1.25, ease: 'power2.out' });
+        gsap.from('.hero-sub-text', { opacity: 0, y: 12, duration: 0.6, delay: 1.1, ease: 'power2.out' });
       }
       if (document.querySelector('.hero-cta-group')) {
-        gsap.from('.hero-cta-group', { opacity: 0, y: 12, duration: 0.7, delay: 1.45, ease: 'power2.out' });
+        gsap.from('.hero-cta-group', { opacity: 0, y: 12, duration: 0.6, delay: 1.25, ease: 'power2.out' });
       }
       if (document.querySelector('.hero-credentials-strip')) {
-        gsap.from('.hero-credentials-strip', { opacity: 0, y: 12, duration: 0.7, delay: 1.65, ease: 'power2.out' });
+        gsap.from('.hero-credentials-strip', { opacity: 0, y: 12, duration: 0.6, delay: 1.4, ease: 'power2.out' });
       }
     }
   }
   initializeEntranceAnimations();
+
+  // ==========================================
+  // 2. GLOBAL SCROLL-TRIGGERED SEQUENTIAL POP FOR ALL CARDS
+  // ==========================================
+  function initGlobalCardScrollPop() {
+    const cardSelectors = [
+      '.who-pillars-list',
+      '.philosophy-cycle-grid',
+      '.diligence-steps-grid',
+      '.approach-steps-container',
+      '.universe-grid',
+      '.pillars-3-grid',
+      '.pillar-services-list',
+      '.serve-5-grid',
+      '.team-leadership-grid',
+      '.team-execution-grid',
+      '.partners-cards-grid',
+      '.fb-steps-3',
+      '.fb-metrics-bar',
+      '.lab-stats-grid',
+      '.lab-modules-container',
+      '.sector-heatmap-grid',
+      '.features-grid',
+      '.product-metrics-grid',
+      '.calc-layout-grid',
+      '.blog-grid',
+      '.reports-grid'
+    ];
+
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      cardSelectors.forEach(selector => {
+        const containers = document.querySelectorAll(selector);
+        containers.forEach(container => {
+          const items = Array.from(container.children);
+          if (items.length > 0) {
+            gsap.fromTo(items, 
+              { 
+                opacity: 0, 
+                y: 30, 
+                scale: 0.94 
+              },
+              {
+                scrollTrigger: {
+                  trigger: container,
+                  start: 'top 88%',
+                  toggleActions: 'play none none none',
+                  once: true
+                },
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.55,
+                stagger: 0.1,
+                ease: 'power2.out'
+              }
+            );
+          }
+        });
+      });
+    } else {
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const children = Array.from(entry.target.children);
+              children.forEach((child, index) => {
+                setTimeout(() => {
+                  child.style.opacity = '1';
+                  child.style.transform = 'translateY(0) scale(1)';
+                }, index * 90);
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        cardSelectors.forEach(selector => {
+          document.querySelectorAll(selector).forEach(c => {
+            Array.from(c.children).forEach(child => {
+              child.style.opacity = '0';
+              child.style.transform = 'translateY(28px) scale(0.94)';
+              child.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+            });
+            observer.observe(c);
+          });
+        });
+      }
+    }
+  }
+  initGlobalCardScrollPop();
 
   // ==========================================
   // 2. SMOOTH SCROLL (LENIS)
@@ -640,7 +735,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { symbol: "RELIANCE", name: "Reliance", price: 1322.0, change: 1.5, logo: "R" },
     { symbol: "TCS", name: "Tcs", price: 2304.0, change: -0.69, logo: "T" },
     { symbol: "HDFC BANK", name: "Hdfc Bank", price: 712.1, change: 0.77, logo: "H" },
-    { symbol: "INFOSYS", name: "Infosys", price: 1133.0, change: -0.03, logo: "I" },
+    { symbol: "INFOSYS", name: "Infosys", price: 1134.0, change: -0.03, logo: "I" },
     { symbol: "ICICI BANK", name: "Icici Bank", price: 1423.2, change: -0.48, logo: "I" },
     { symbol: "SBI", name: "Sbi", price: 1016.1, change: -0.71, logo: "S" },
     { symbol: "ADANI PORTS", name: "Adani Ports", price: 1707.3, change: 0.05, logo: "A" },

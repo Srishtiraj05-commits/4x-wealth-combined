@@ -24,13 +24,13 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=133.0">
+  <link rel="stylesheet" href="style.css?v=134.0">
 
-  <!-- Guaranteed Direct Hero Styles & Sequential Word Pop Animation -->
+  <!-- Guaranteed Direct Hero Styles & Clean Word Styling -->
   <style>
     #hero-section {
-      padding-top: clamp(28px, 4.2vh, 48px) !important;
-      padding-bottom: clamp(30px, 4.2vh, 50px) !important;
+      padding-top: clamp(16px, 2.2vh, 24px) !important;
+      padding-bottom: clamp(16px, 2vh, 22px) !important;
       text-align: left !important;
       background: #FFFFFF !important;
       position: relative !important;
@@ -45,38 +45,33 @@
     #hero-section .hero-ivory-badge {
       display: inline-flex !important;
       align-self: flex-start !important;
-      margin-bottom: 1.1rem !important;
-      padding: 6px 18px !important;
-      font-size: 12px !important;
+      margin-bottom: 0.65rem !important;
+      padding: 4px 14px !important;
+      font-size: 11px !important;
     }
     #hero-section .hero-title-main {
       text-align: left !important;
-      font-size: clamp(48px, 6vw, 76px) !important;
+      font-size: clamp(38px, 4.4vw, 56px) !important;
       font-weight: 800 !important;
-      letter-spacing: -0.035em !important;
-      line-height: 1.08 !important;
-      margin-bottom: 0.35rem !important;
+      letter-spacing: -0.03em !important;
+      line-height: 1.1 !important;
+      margin-bottom: 0.15rem !important;
       color: #0F172A !important;
       width: 100% !important;
     }
     #hero-section .hero-title-sub-serif {
       text-align: left !important;
-      font-size: clamp(38px, 4.8vw, 62px) !important;
+      font-size: clamp(30px, 3.6vw, 46px) !important;
       font-style: italic !important;
       font-family: var(--font-serif), 'Instrument Serif', Georgia, serif !important;
       line-height: 1.15 !important;
-      margin-bottom: 1.1rem !important;
+      margin-bottom: 0.65rem !important;
       width: 100% !important;
     }
     #hero-section .hero-word {
       display: inline-block !important;
-      opacity: 0;
-      transform: translateY(24px) scale(0.85);
-      filter: blur(5px);
-      animation: heroWordPop 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
-      animation-delay: calc(0.2s + (var(--w-i, 1) * 0.16s)) !important;
       margin-right: 0.22em !important;
-      will-change: transform, opacity, filter !important;
+      will-change: transform, opacity !important;
     }
     #hero-section .hero-word:last-child {
       margin-right: 0 !important;
@@ -86,71 +81,53 @@
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent !important;
     }
-    @keyframes heroWordPop {
-      0% {
-        opacity: 0;
-        transform: translateY(24px) scale(0.85);
-        filter: blur(5px);
-      }
-      60% {
-        opacity: 1;
-        transform: translateY(-4px) scale(1.06);
-        filter: blur(0px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0px);
-      }
-    }
     #hero-section .hero-sub-text {
       text-align: left !important;
-      margin: 0 0 1.6rem 0 !important;
-      max-width: 840px !important;
-      font-size: clamp(16px, 1.4vw, 19px) !important;
-      line-height: 1.65 !important;
+      margin: 0 0 1.1rem 0 !important;
+      max-width: 740px !important;
+      font-size: clamp(14.5px, 1.15vw, 15.5px) !important;
+      line-height: 1.5 !important;
       color: #475569 !important;
     }
     #hero-section .hero-cta-group {
       display: flex !important;
       justify-content: flex-start !important;
       align-items: center !important;
-      gap: 1.2rem !important;
+      gap: 0.9rem !important;
       flex-wrap: wrap !important;
-      margin-bottom: 1.8rem !important;
+      margin-bottom: 1.1rem !important;
       width: 100% !important;
     }
     #hero-section .hero-cta-group .btn-primary, 
     #hero-section .hero-cta-group .btn-secondary-ivory {
-      padding: 13px 32px !important;
-      font-size: 15px !important;
-      font-weight: 700 !important;
+      padding: 10px 24px !important;
+      font-size: 13.5px !important;
     }
     #hero-section .hero-credentials-strip {
       width: 100% !important;
-      padding-top: 1.4rem !important;
+      padding-top: 0.85rem !important;
       border-top: 1px solid #BAE6FD !important;
     }
     .hero-trust-grid {
       display: grid !important;
       grid-template-columns: repeat(4, 1fr) !important;
-      gap: 1.3rem !important;
+      gap: 0.9rem !important;
       width: 100% !important;
       text-align: left !important;
     }
     .hero-trust-grid > div {
-      padding: 1.15rem 1.35rem !important;
-      border-radius: 16px !important;
-      box-shadow: 0 4px 18px rgba(0, 119, 255, 0.05) !important;
+      padding: 0.75rem 0.95rem !important;
+      border-radius: 12px !important;
+      box-shadow: 0 2px 10px rgba(0, 119, 255, 0.04) !important;
     }
     .hero-trust-grid h3 {
-      font-size: clamp(22px, 2vw, 26px) !important;
-      margin-bottom: 5px !important;
+      font-size: clamp(19px, 1.6vw, 22px) !important;
+      margin-bottom: 2px !important;
     }
     .hero-trust-grid .metric-pill, 
     .hero-trust-grid .sparkline-badge {
-      font-size: 12px !important;
-      padding: 4px 10px !important;
+      font-size: 11px !important;
+      padding: 2px 8px !important;
     }
     @media (max-width: 840px) {
       .hero-trust-grid {
@@ -178,7 +155,7 @@
       <!-- Brand Logo -->
       <a href="index.html" class="logo-link clickable" id="logoContainer">
         <div class="logo-wrapper">
-          <img src="logo.png?v=133.0" alt="4X Wealth Logo" class="brand-logo-img">
+          <img src="logo.png?v=134.0" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text-group">
             <div class="logo-text">4X<span>WEALTH</span></div>
             <span class="logo-sub">FINANCIAL SERVICES</span>
@@ -392,7 +369,7 @@
   <div class="sk-drawer" id="mobileDrawer">
     <button class="sk-drawer-close clickable" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
     <div class="sk-drawer-header">
-      <img src="logo.png?v=133.0" alt="4X Wealth Logo" class="brand-logo-img">
+      <img src="logo.png?v=134.0" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
                 <ul class="sk-drawer-links">
@@ -420,24 +397,24 @@
     <!-- ====
          01. LUMINOUS TECH-WEALTH HERO (MATCHING THEME)
          ==== -->
-    <section id="hero-section" class="section-ivory" style="padding-top: clamp(28px, 4.2vh, 48px); padding-bottom: clamp(30px, 4.2vh, 50px); text-align: left; position: relative; overflow: hidden; background: #FFFFFF;">
+    <section id="hero-section" class="section-ivory" style="padding-top: clamp(16px, 2.2vh, 24px); padding-bottom: clamp(16px, 2vh, 22px); text-align: left; position: relative; overflow: hidden; background: #FFFFFF;">
       <!-- Subtle Ambient Cyan Glow (Left-Weighted) -->
-      <div style="position: absolute; top: 0; left: 0; width: 950px; height: 500px; background: radial-gradient(ellipse at 12% 0%, rgba(0, 163, 255, 0.12) 0%, rgba(255, 255, 255, 0) 70%); pointer-events: none; z-index: 1;"></div>
+      <div style="position: absolute; top: 0; left: 0; width: 850px; height: 420px; background: radial-gradient(ellipse at 12% 0%, rgba(0, 163, 255, 0.10) 0%, rgba(255, 255, 255, 0) 70%); pointer-events: none; z-index: 1;"></div>
       
       <div class="container-luxury" style="position: relative; z-index: 2; text-align: left;">
         
         <!-- Regulatory Credentials Pill -->
-        <div class="hero-ivory-badge" style="margin-bottom: 1.1rem; align-self: flex-start;">
+        <div class="hero-ivory-badge" style="margin-bottom: 0.65rem; align-self: flex-start;">
           <span class="live-cyan-dot"></span>
           <span>SEBI Compliant Fiduciary Wealth Architecture &bull; ARN-268488 &bull; APRN00969</span>
         </div>
 
         <!-- Main Title with Word-by-Word Sequential Pop Animation -->
-        <h1 class="hero-title-main" style="text-align: left; margin-bottom: 0.35rem;">
+        <h1 class="hero-title-main" style="text-align: left; margin-bottom: 0.15rem;">
           <span class="hero-word" style="--w-i: 1;">Building</span>
           <span class="hero-word" style="--w-i: 2;">Wealth.</span>
         </h1>
-        <div class="hero-title-sub-serif" style="text-align: left; margin-bottom: 1.1rem;">
+        <div class="hero-title-sub-serif" style="text-align: left; margin-bottom: 0.65rem;">
           <span class="hero-word" style="--w-i: 3;">Managing</span>
           <span class="hero-word" style="--w-i: 4;">Risk.</span>
           <span class="hero-word" style="--w-i: 5;">Creating</span>
@@ -445,12 +422,12 @@
         </div>
 
         <!-- Subtitle Copy -->
-        <p class="hero-sub-text" style="text-align: left; margin: 0 0 1.6rem 0; max-width: 840px;">
+        <p class="hero-sub-text" style="text-align: left; margin: 0 0 1.1rem 0; max-width: 740px;">
           A premier private wealth management firm bringing together human conviction, institutional discipline, and data-driven intelligence — under one roof, in full daylight.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="hero-cta-group" style="display: flex; justify-content: flex-start; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 1.8rem;">
+        <div class="hero-cta-group" style="display: flex; justify-content: flex-start; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 1.1rem;">
           <a href="#consultation-section" class="btn-primary clickable">
             <span>Schedule Advisory Consultation</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -460,23 +437,23 @@
         </div>
 
         <!-- Regulatory Credentials & Trust Strip -->
-        <div class="hero-credentials-strip" style="padding-top: 1.4rem; border-top: 1px solid #BAE6FD;">
+        <div class="hero-credentials-strip" style="padding-top: 0.85rem; border-top: 1px solid #BAE6FD;">
           <div class="hero-trust-grid">
-            <div style="background: #FFFFFF; padding: 1.15rem 1.35rem; border-radius: 16px; border: 1px solid #BAE6FD; box-shadow: 0 4px 18px rgba(0, 119, 255, 0.05);">
-              <h3 style="font-family: var(--font-mono); font-size: clamp(22px, 2vw, 26px); color: #0F172A; font-weight: 800; margin-bottom: 5px;">ARN-268488</h3>
-              <span class="metric-pill" style="font-size: 12px; padding: 4px 10px;"><i class="fa-solid fa-certificate"></i> AMFI MFD</span>
+            <div style="background: #FFFFFF; padding: 0.75rem 0.95rem; border-radius: 12px; border: 1px solid #BAE6FD; box-shadow: 0 2px 10px rgba(0, 119, 255, 0.04);">
+              <h3 style="font-family: var(--font-mono); font-size: clamp(19px, 1.6vw, 22px); color: #0F172A; font-weight: 800; margin-bottom: 2px;">ARN-268488</h3>
+              <span class="metric-pill" style="font-size: 11px; padding: 2px 8px;"><i class="fa-solid fa-certificate"></i> AMFI MFD</span>
             </div>
-            <div style="background: #FFFFFF; padding: 1.15rem 1.35rem; border-radius: 16px; border: 1px solid #BAE6FD; box-shadow: 0 4px 18px rgba(0, 119, 255, 0.05);">
-              <h3 style="font-family: var(--font-mono); font-size: clamp(22px, 2vw, 26px); color: #0F172A; font-weight: 800; margin-bottom: 5px;">APRN00969</h3>
-              <span class="metric-pill" style="font-size: 12px; padding: 4px 10px;"><i class="fa-solid fa-shield-halved"></i> APMI PMS Desk</span>
+            <div style="background: #FFFFFF; padding: 0.75rem 0.95rem; border-radius: 12px; border: 1px solid #BAE6FD; box-shadow: 0 2px 10px rgba(0, 119, 255, 0.04);">
+              <h3 style="font-family: var(--font-mono); font-size: clamp(19px, 1.6vw, 22px); color: #0F172A; font-weight: 800; margin-bottom: 2px;">APRN00969</h3>
+              <span class="metric-pill" style="font-size: 11px; padding: 2px 8px;"><i class="fa-solid fa-shield-halved"></i> APMI PMS Desk</span>
             </div>
-            <div style="background: #FFFFFF; padding: 1.15rem 1.35rem; border-radius: 16px; border: 1px solid #BAE6FD; box-shadow: 0 4px 18px rgba(0, 119, 255, 0.05);">
-              <h3 style="font-family: var(--font-mono); font-size: clamp(22px, 2vw, 26px); color: #0F172A; font-weight: 800; margin-bottom: 5px;">₹1,400+ Cr</h3>
-              <span class="sparkline-badge" style="font-size: 12px; padding: 4px 10px;"><svg class="sparkline-svg" viewBox="0 0 38 16" style="height: 14px;"><path d="M1,14 L8,11 L16,13 L24,7 L31,9 L37,2" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/></svg> Portfolios</span>
+            <div style="background: #FFFFFF; padding: 0.75rem 0.95rem; border-radius: 12px; border: 1px solid #BAE6FD; box-shadow: 0 2px 10px rgba(0, 119, 255, 0.04);">
+              <h3 style="font-family: var(--font-mono); font-size: clamp(19px, 1.6vw, 22px); color: #0F172A; font-weight: 800; margin-bottom: 2px;">₹1,400+ Cr</h3>
+              <span class="sparkline-badge" style="font-size: 11px; padding: 2px 8px;"><svg class="sparkline-svg" viewBox="0 0 38 16" style="height: 12px;"><path d="M1,14 L8,11 L16,13 L24,7 L31,9 L37,2" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/></svg> Portfolios</span>
             </div>
-            <div style="background: #FFFFFF; padding: 1.15rem 1.35rem; border-radius: 16px; border: 1px solid #BAE6FD; box-shadow: 0 4px 18px rgba(0, 119, 255, 0.05);">
-              <h3 style="font-family: var(--font-mono); font-size: clamp(22px, 2vw, 26px); color: #0F172A; font-weight: 800; margin-bottom: 5px;">27+ Yrs</h3>
-              <span class="metric-pill" style="font-size: 12px; padding: 4px 10px;"><i class="fa-solid fa-award"></i> Multi-Cycle</span>
+            <div style="background: #FFFFFF; padding: 0.75rem 0.95rem; border-radius: 12px; border: 1px solid #BAE6FD; box-shadow: 0 2px 10px rgba(0, 119, 255, 0.04);">
+              <h3 style="font-family: var(--font-mono); font-size: clamp(19px, 1.6vw, 22px); color: #0F172A; font-weight: 800; margin-bottom: 2px;">27+ Yrs</h3>
+              <span class="metric-pill" style="font-size: 11px; padding: 2px 8px;"><i class="fa-solid fa-award"></i> Multi-Cycle</span>
             </div>
           </div>
         </div>
@@ -1681,7 +1658,7 @@
         <!-- Brand Summary -->
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-            <img src="logo.png?v=133.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
+            <img src="logo.png?v=134.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
             <h3>4X<span>WEALTH</span></h3>
           </div>
           <p>
@@ -1783,7 +1760,7 @@
       </div>
 
       <div class="search-results-list" id="searchResultsList">
-        <!-- Dynamically rendered via script.js?v=133.0 -->
+        <!-- Dynamically rendered via script.js?v=134.0 -->
       </div>
     </div>
   </div>
@@ -1796,6 +1773,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   
   <!-- Main Logic -->
-  <script src="script.js?v=133.0"></script>
+  <script src="script.js?v=134.0"></script>
 </body>
 </html>
