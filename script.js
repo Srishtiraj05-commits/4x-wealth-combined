@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeEntranceAnimations();
 
   // ==========================================
-  // 2. GLOBAL SCROLL-TRIGGERED SEQUENTIAL POP FOR ALL CARDS
+  // 2. GLOBAL SCROLL-TRIGGERED SEQUENTIAL POP FOR ALL CARDS (RE-TRIGGERS ON EVERY ENTRY)
   // ==========================================
   function initGlobalCardScrollPop() {
     const cardSelectors = [
@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '.product-metrics-grid',
       '.calc-layout-grid',
       '.calc-results-grid',
+      '.resources-cards-grid',
       '.blog-grid',
       '.blogs-page-grid',
       '.reports-grid',
@@ -78,27 +79,22 @@ document.addEventListener('DOMContentLoaded', () => {
             !el.classList.contains('diligence-loop-connector')
           );
           if (items.length > 0) {
-            gsap.fromTo(items, 
-              { 
-                opacity: 0, 
-                y: 32, 
-                scale: 0.94 
+            ScrollTrigger.create({
+              trigger: container,
+              start: 'top 88%',
+              onEnter: () => {
+                gsap.fromTo(items, 
+                  { opacity: 0, y: 32, scale: 0.94 },
+                  { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.09, ease: 'back.out(1.4)', overwrite: 'auto' }
+                );
               },
-              {
-                scrollTrigger: {
-                  trigger: container,
-                  start: 'top 86%',
-                  toggleActions: 'play none none none',
-                  once: true
-                },
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.55,
-                stagger: 0.09,
-                ease: 'back.out(1.4)'
+              onEnterBack: () => {
+                gsap.fromTo(items, 
+                  { opacity: 0, y: 32, scale: 0.94 },
+                  { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.09, ease: 'back.out(1.4)', overwrite: 'auto' }
+                );
               }
-            );
+            });
           }
         });
       });
@@ -106,18 +102,22 @@ document.addEventListener('DOMContentLoaded', () => {
       if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
+            const children = Array.from(entry.target.children).filter(el => 
+              !el.classList.contains('gold-divider-wrap') && 
+              !el.classList.contains('diligence-loop-connector')
+            );
             if (entry.isIntersecting) {
-              const children = Array.from(entry.target.children).filter(el => 
-                !el.classList.contains('gold-divider-wrap') && 
-                !el.classList.contains('diligence-loop-connector')
-              );
               children.forEach((child, index) => {
                 setTimeout(() => {
                   child.style.opacity = '1';
                   child.style.transform = 'translateY(0) scale(1)';
                 }, index * 90);
               });
-              observer.unobserve(entry.target);
+            } else {
+              children.forEach(child => {
+                child.style.opacity = '0';
+                child.style.transform = 'translateY(30px) scale(0.94)';
+              });
             }
           });
         }, { threshold: 0.12 });
@@ -1723,7 +1723,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const x4ChatLoader = document.createElement('script');
-  x4ChatLoader.src = 'chatbot.js?v=135.0';
+  x4ChatLoader.src = 'chatbot.js?v=136.0';
   x4ChatLoader.defer = true;
   document.body.appendChild(x4ChatLoader);
 });

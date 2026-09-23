@@ -3454,4 +3454,221 @@ footer.luxury-footer, .footer-wrapper {
   .lab-stats-grid { grid-template-columns: 1fr; }
   .lab-modules-container { grid-template-columns: 1fr; }
   .sector-heatmap-grid { grid-template-columns: 1fr; }
+  .resources-cards-grid { grid-template-columns: 1fr !important; }
+  .blogs-page-grid { grid-template-columns: 1fr !important; }
+  .reports-grid { grid-template-columns: 1fr !important; }
 }
+
+/* ============ RESOURCES, BLOGS & WEALTH GUIDES STYLES ============ */
+.resources-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+}
+
+.resource-feature-card {
+  background: #FFFFFF;
+  border: 1px solid #BAE6FD;
+  border-radius: 18px;
+  padding: 2.2rem 1.8rem;
+  box-shadow: 0 4px 20px rgba(0, 119, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.resource-feature-card:hover {
+  transform: translateY(-6px);
+  border-color: #0077FF;
+  box-shadow: 0 16px 36px rgba(0, 119, 255, 0.14);
+}
+
+.blogs-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+}
+
+.blog-card {
+  background: #FFFFFF;
+  border: 1px solid #BAE6FD;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 119, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  border-color: #0077FF;
+  box-shadow: 0 16px 36px rgba(0, 119, 255, 0.14);
+}
+
+.blog-card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #F0F8FF;
+}
+
+.blog-category-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #BAE6FD;
+  color: #0077FF;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(4px);
+}
+
+.blog-card-content {
+  padding: 1.5rem 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-card-content h3 {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
+
+.blog-card-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: #0077FF;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  transition: gap 0.2s ease;
+}
+
+.blog-card:hover .blog-card-link {
+  gap: 10px;
+  color: #0055CC;
+}
+
+/* Wealth Guides & Reports Grid */
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  margin-top: 1.8rem;
+}
+
+.report-card {
+  background: #FFFFFF;
+  border: 1px solid #BAE6FD;
+  border-radius: 18px;
+  padding: 2.2rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 119, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.report-card:hover {
+  transform: translateY(-5px);
+  border-color: #0077FF;
+  box-shadow: 0 16px 36px rgba(0, 119, 255, 0.14);
+}
+
+.report-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.report-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #F0F8FF;
+  border: 1px solid #BAE6FD;
+  color: #0077FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.report-meta-info {
+  flex: 1;
+}
+
+.report-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #0077FF;
+  background: #F0F8FF;
+  border: 1px solid #BAE6FD;
+  padding: 3px 9px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.report-card h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+
+.report-card p {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+}
+
+.report-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.2rem;
+  border-top: 1px solid #F1F5F9;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.report-specs-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+

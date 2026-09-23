@@ -446,4 +446,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==========================================
+  // 7. CARD ENTRANCE ANIMATIONS
+  // ==========================================
+  if (typeof gsap !== 'undefined') {
+    const blogCards = document.querySelectorAll('.blog-card');
+    if (blogCards.length > 0) {
+      gsap.from(blogCards, {
+        opacity: 0,
+        y: 25,
+        scale: 0.95,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: 'back.out(1.4)'
+      });
+    }
+    const reportCards = document.querySelectorAll('.report-card');
+    if (reportCards.length > 0) {
+      gsap.from(reportCards, {
+        opacity: 0,
+        y: 25,
+        scale: 0.95,
+        duration: 0.5,
+        stagger: 0.08,
+        delay: 0.2,
+        ease: 'back.out(1.4)'
+      });
+    }
+  }
+
 });
