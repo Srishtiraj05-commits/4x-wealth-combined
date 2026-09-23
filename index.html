@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=128.0">
+  <link rel="stylesheet" href="style.css?v=130.0">
 </head>
 <body>
 
@@ -35,7 +35,7 @@
       <!-- Brand Logo -->
       <a href="index.html" class="logo-link clickable" id="logoContainer">
         <div class="logo-wrapper">
-          <img src="logo.png?v=128.0" alt="4X Wealth Logo" class="brand-logo-img">
+          <img src="logo.png?v=130.0" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text-group">
             <div class="logo-text">4X<span>WEALTH</span></div>
             <span class="logo-sub">FINANCIAL SERVICES</span>
@@ -249,7 +249,7 @@
   <div class="sk-drawer" id="mobileDrawer">
     <button class="sk-drawer-close clickable" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
     <div class="sk-drawer-header">
-      <img src="logo.png?v=128.0" alt="4X Wealth Logo" class="brand-logo-img">
+      <img src="logo.png?v=130.0" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
                 <ul class="sk-drawer-links">
@@ -277,33 +277,37 @@
     <!-- ====
          01. LUMINOUS TECH-WEALTH HERO (MATCHING THEME)
          ==== -->
-    <section id="hero-section" class="section-ivory" style="padding-top: 35px; padding-bottom: 45px; text-align: center; position: relative; overflow: hidden; background: #FFFFFF;">
-      <!-- Subtle Ambient Cyan Glow -->
-      <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 900px; height: 450px; background: radial-gradient(ellipse at 50% 0%, rgba(0, 163, 255, 0.12) 0%, rgba(255, 255, 255, 0) 70%); pointer-events: none; z-index: 1;"></div>
+    <section id="hero-section" class="section-ivory" style="padding-top: clamp(16px, 2.2vh, 24px); padding-bottom: clamp(14px, 1.8vh, 20px); text-align: left; position: relative; overflow: hidden; background: #FFFFFF;">
+      <!-- Subtle Ambient Cyan Glow (Left-Weighted) -->
+      <div style="position: absolute; top: 0; left: 0; width: 850px; height: 400px; background: radial-gradient(ellipse at 12% 0%, rgba(0, 163, 255, 0.10) 0%, rgba(255, 255, 255, 0) 70%); pointer-events: none; z-index: 1;"></div>
       
-      <div class="container-luxury" style="position: relative; z-index: 2;">
+      <div class="container-luxury" style="position: relative; z-index: 2; text-align: left;">
         
-        <!-- Regulatory Credentials Pill (Image Match) -->
-        <div class="hero-ivory-badge">
+        <!-- Regulatory Credentials Pill -->
+        <div class="hero-ivory-badge" style="margin-bottom: 0.6rem; align-self: flex-start;">
           <span class="live-cyan-dot"></span>
           <span>SEBI Compliant Fiduciary Wealth Architecture &bull; ARN-268488 &bull; APRN00969</span>
         </div>
 
-        <!-- Main Title (Image Match) -->
-        <h1 class="hero-title-main">
-          Building Wealth.
+        <!-- Main Title with Word-by-Word Sequential Pop Animation -->
+        <h1 class="hero-title-main" style="text-align: left; margin-bottom: 0.15rem;">
+          <span class="hero-word" style="--w-i: 1;">Building</span>
+          <span class="hero-word" style="--w-i: 2;">Wealth.</span>
         </h1>
-        <div class="hero-title-sub-serif">
-          Managing Risk. Creating Possibilities.
+        <div class="hero-title-sub-serif" style="text-align: left; margin-bottom: 0.65rem;">
+          <span class="hero-word" style="--w-i: 3;">Managing</span>
+          <span class="hero-word" style="--w-i: 4;">Risk.</span>
+          <span class="hero-word" style="--w-i: 5;">Creating</span>
+          <span class="hero-word" style="--w-i: 6;">Possibilities.</span>
         </div>
 
         <!-- Subtitle Copy -->
-        <p class="hero-sub-text">
+        <p class="hero-sub-text" style="text-align: left; margin: 0 0 1rem 0; max-width: 720px;">
           A premier private wealth management firm bringing together human conviction, institutional discipline, and data-driven intelligence — under one roof, in full daylight.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="hero-cta-group" style="display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 1.8rem;">
+        <div class="hero-cta-group" style="display: flex; justify-content: flex-start; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 1.1rem;">
           <a href="#consultation-section" class="btn-primary clickable">
             <span>Schedule Advisory Consultation</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -313,23 +317,23 @@
         </div>
 
         <!-- Regulatory Credentials & Trust Strip -->
-        <div class="hero-credentials-strip" style="padding-top: 1.5rem; border-top: 1px solid #BAE6FD;">
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; text-align: center;">
-            <div style="background: #FFFFFF; padding: 1.1rem 0.9rem; border-radius: 14px; border: 1px solid #BAE6FD; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.04);">
-              <h3 style="font-family: var(--font-mono); font-size: 22px; color: #0F172A; font-weight: 800; margin-bottom: 4px;">ARN-268488</h3>
-              <span class="metric-pill"><i class="fa-solid fa-certificate"></i> AMFI MFD</span>
+        <div class="hero-credentials-strip" style="padding-top: 0.85rem; border-top: 1px solid #BAE6FD;">
+          <div class="hero-trust-grid">
+            <div style="background: #FFFFFF; padding: 0.6rem 0.8rem; border-radius: 12px; border: 1px solid #BAE6FD; box-shadow: 0 2px 10px rgba(0, 119, 255, 0.04);">
+              <h3 style="font-family: var(--font-mono); font-size: clamp(17px, 1.4vw, 20px); color: #0F172A; font-weight: 800; margin-bottom: 2px;">ARN-268488</h3>
+              <span class="metric-pill" style="font-size: 10.5px; padding: 2px 7px;"><i class="fa-solid fa-certificate"></i> AMFI MFD</span>
             </div>
-            <div style="background: #FFFFFF; padding: 1.1rem 0.9rem; border-radius: 14px; border: 1px solid #BAE6FD; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.04);">
-              <h3 style="font-family: var(--font-mono); font-size: 22px; color: #0F172A; font-weight: 800; margin-bottom: 4px;">APRN00969</h3>
-              <span class="metric-pill"><i class="fa-solid fa-shield-halved"></i> APMI PMS Desk</span>
+            <div style="background: #FFFFFF; padding: 0.6rem 0.8rem; border-radius: 12px; border: 1px solid #BAE6FD; box-shadow: 0 2px 10px rgba(0, 119, 255, 0.04);">
+              <h3 style="font-family: var(--font-mono); font-size: clamp(17px, 1.4vw, 20px); color: #0F172A; font-weight: 800; margin-bottom: 2px;">APRN00969</h3>
+              <span class="metric-pill" style="font-size: 10.5px; padding: 2px 7px;"><i class="fa-solid fa-shield-halved"></i> APMI PMS Desk</span>
             </div>
-            <div style="background: #FFFFFF; padding: 1.1rem 0.9rem; border-radius: 14px; border: 1px solid #BAE6FD; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.04);">
-              <h3 style="font-family: var(--font-mono); font-size: 22px; color: #0F172A; font-weight: 800; margin-bottom: 4px;">₹1,400+ Cr</h3>
-              <span class="sparkline-badge"><svg class="sparkline-svg" viewBox="0 0 38 16"><path d="M1,14 L8,11 L16,13 L24,7 L31,9 L37,2" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/></svg> Portfolios</span>
+            <div style="background: #FFFFFF; padding: 0.6rem 0.8rem; border-radius: 12px; border: 1px solid #BAE6FD; box-shadow: 0 2px 10px rgba(0, 119, 255, 0.04);">
+              <h3 style="font-family: var(--font-mono); font-size: clamp(17px, 1.4vw, 20px); color: #0F172A; font-weight: 800; margin-bottom: 2px;">₹1,400+ Cr</h3>
+              <span class="sparkline-badge" style="font-size: 10.5px; padding: 2px 7px;"><svg class="sparkline-svg" viewBox="0 0 38 16" style="height: 12px;"><path d="M1,14 L8,11 L16,13 L24,7 L31,9 L37,2" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/></svg> Portfolios</span>
             </div>
-            <div style="background: #FFFFFF; padding: 1.1rem 0.9rem; border-radius: 14px; border: 1px solid #BAE6FD; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.04);">
-              <h3 style="font-family: var(--font-mono); font-size: 22px; color: #0F172A; font-weight: 800; margin-bottom: 4px;">27+ Yrs</h3>
-              <span class="metric-pill"><i class="fa-solid fa-award"></i> Multi-Cycle</span>
+            <div style="background: #FFFFFF; padding: 0.6rem 0.8rem; border-radius: 12px; border: 1px solid #BAE6FD; box-shadow: 0 2px 10px rgba(0, 119, 255, 0.04);">
+              <h3 style="font-family: var(--font-mono); font-size: clamp(17px, 1.4vw, 20px); color: #0F172A; font-weight: 800; margin-bottom: 2px;">27+ Yrs</h3>
+              <span class="metric-pill" style="font-size: 10.5px; padding: 2px 7px;"><i class="fa-solid fa-award"></i> Multi-Cycle</span>
             </div>
           </div>
         </div>
@@ -1534,7 +1538,7 @@
         <!-- Brand Summary -->
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-            <img src="logo.png?v=128.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
+            <img src="logo.png?v=130.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
             <h3>4X<span>WEALTH</span></h3>
           </div>
           <p>
@@ -1636,7 +1640,7 @@
       </div>
 
       <div class="search-results-list" id="searchResultsList">
-        <!-- Dynamically rendered via script.js?v=128.0 -->
+        <!-- Dynamically rendered via script.js?v=130.0 -->
       </div>
     </div>
   </div>
@@ -1649,6 +1653,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   
   <!-- Main Logic -->
-  <script src="script.js?v=128.0"></script>
+  <script src="script.js?v=130.0"></script>
 </body>
 </html>

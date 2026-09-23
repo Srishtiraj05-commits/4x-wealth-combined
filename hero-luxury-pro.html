@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4X WEALTH | Institutional Wealth Architecture & Quantitative Intelligence</title>
+  <!-- Google Fonts for Ultra-Luxury Precision Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --navy-950: #070d1e;
+      --navy-900: #0c1836;
+      --navy-800: #14244d;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #94a3b8;
+      --cyan-400: #22d3ee;
+      --cyan-500: #06b6d4;
+      --cyan-600: #0891b2;
+      --blue-500: #0ea5e9;
+      --blue-600: #0284c7;
+      --emerald-500: #10b981;
+      --emerald-600: #059669;
+      --border-subtle: rgba(226, 232, 240, 0.85);
+      --font-ui: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Instrument Serif', Georgia, serif;
+      --font-mono: 'Space Grotesk', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-ui);
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Ambient Kinetic Canvas & Spotlights */
+    .ambient-canvas-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .spotlight-cyan {
+      position: absolute;
+      top: 10%;
+      right: 15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(2, 132, 199, 0.05) 50%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+    }
+
+    .spotlight-navy {
+      position: absolute;
+      bottom: 5%;
+      left: 10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .layout-root {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* =========================================================
+       1. LUXURY NAVIGATION HEADER
+       ========================================================= */
+    header.luxury-header {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 14px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .brand-svg-mark {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 8px rgba(6, 182, 212, 0.28));
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .brand-group:hover .brand-svg-mark {
+      transform: rotate(12deg) scale(1.05);
+    }
+
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #0c1a30;
+      line-height: 1;
+    }
+
+    .brand-name span {
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-tagline {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #64748b;
+      margin-top: 3px;
+    }
+
+    .nav-links-list {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+    }
+
+    .nav-item-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+      text-decoration: none;
+      padding: 6px 4px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-item-link:hover {
+      color: #0284c7;
+    }
+
+    .nav-item-link svg {
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-item-link:hover svg {
+      transform: translateY(2px);
+    }
+
+    .header-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .search-pill-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      padding: 7px 16px;
+      border-radius: 9999px;
+      font-size: 13px;
+      color: #64748b;
+      transition: all 0.25s ease;
+    }
+
+    .search-pill-box:focus-within {
+      background: #ffffff;
+      border-color: #06b6d4;
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+      color: #0f172a;
+    }
+
+    .search-pill-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 13px;
+      font-family: inherit;
+      color: inherit;
+      width: 70px;
+      transition: width 0.3s ease;
+    }
+
+    .search-pill-box input:focus {
+      width: 120px;
+    }
+
+    .btn-header-login {
+      padding: 8px 20px;
+      border-radius: 9999px;
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #334155;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-header-login:hover {
+      border-color: #0284c7;
+      color: #0284c7;
+      background: #f8fafc;
+    }
+
+    .btn-header-consult {
+      padding: 9px 22px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(6, 182, 212, 0.35);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-header-consult:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(6, 182, 212, 0.5);
+    }
+
+    /* =========================================================
+       2. REFINED MARKET TICKER
+       ========================================================= */
+    .market-tape {
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 8px 36px;
+      font-size: 12.5px;
+      font-weight: 600;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 90;
+    }
+
+    .market-tape-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .tape-live-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      padding-right: 18px;
+      border-right: 2px solid #e2e8f0;
+      font-size: 11.5px;
+    }
+
+    .pulse-dot-beacon {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    .pulse-dot-beacon::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #10b981;
+      opacity: 0.75;
+      animation: beaconPulse 1.8s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    }
+
+    @keyframes beaconPulse {
+      0% { transform: scale(0.5); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    .tape-marquee-window {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+    }
+
+    .tape-track {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      width: max-content;
+      animation: continuousTape 40s linear infinite;
+    }
+
+    .tape-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes continuousTape {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .tape-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      font-size: 12px;
+      color: #334155;
+      padding: 3px 10px;
+      border-radius: 6px;
+      transition: background-color 0.25s ease;
+    }
+
+    .tape-item:hover {
+      background: #f1f5f9;
+    }
+
+    .tape-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+      color: #0284c7;
+      background: #e0f2fe;
+    }
+
+    .tape-symbol {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .tape-val {
+      font-weight: 600;
+      color: #0284c7;
+      font-family: var(--font-mono);
+    }
+
+    .tape-chg {
+      font-weight: 700;
+      font-size: 11px;
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+    }
+
+    .tape-chg.up {
+      color: #059669;
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .tape-chg.down {
+      color: #dc2626;
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    .tape-link-pulse {
+      color: #0284c7;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding-left: 16px;
+      border-left: 1px solid #e2e8f0;
+      transition: color 0.2s;
+    }
+
+    .tape-link-pulse:hover {
+      color: #0891b2;
+    }
+
+    /* =========================================================
+       3. HERO SECTION - ULTRA BESPOKE LAYOUT
+       ========================================================= */
+    .hero-main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 52px 36px 72px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 56px;
+      position: relative;
+      flex: 1;
+    }
+
+    /* Left Copy Column */
+    .hero-copy-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 10;
+    }
+
+    .regulatory-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 18px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      font-size: 12px;
+      font-weight: 600;
+      color: #0e7490;
+      box-shadow: 0 4px 14px rgba(6, 182, 212, 0.08);
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+    }
+
+    .reg-beacon {
+      width: 7px;
+      height: 7px;
+      background: #06b6d4;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #06b6d4;
+    }
+
+    .reg-num {
+      color: #0284c7;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+
+    .hero-heading {
+      font-size: clamp(40px, 4.6vw, 62px);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: #0c1836;
+      margin-bottom: 24px;
+    }
+
+    .hero-heading .h-line-1,
+    .hero-heading .h-line-2 {
+      display: block;
+      color: #0c1836;
+    }
+
+    .hero-heading .h-line-3 {
+      display: block;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #0891b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-top: 2px;
+    }
+
+    .hero-description {
+      font-size: 17px;
+      line-height: 1.62;
+      color: #475569;
+      max-width: 530px;
+      margin-bottom: 36px;
+      font-weight: 450;
+    }
+
+    .hero-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 42px;
+      flex-wrap: wrap;
+    }
+
+    .btn-main-consult {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 12px 28px -6px rgba(6, 182, 212, 0.45);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .btn-main-consult::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transform: rotate(30deg) translateX(-100%);
+      transition: transform 0.75s ease;
+    }
+
+    .btn-main-consult:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 16px 36px -4px rgba(6, 182, 212, 0.6);
+    }
+
+    .btn-main-consult:hover::before {
+      transform: rotate(30deg) translateX(100%);
+    }
+
+    .btn-main-consult svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-main-consult:hover svg {
+      transform: translateX(4px);
+    }
+
+    .btn-sub-explore {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      color: #334155;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-sub-explore:hover {
+      border-color: #06b6d4;
+      color: #0891b2;
+      background: #f8fafc;
+      transform: translateY(-1.5px);
+      box-shadow: 0 4px 16px rgba(6, 182, 212, 0.12);
+    }
+
+    /* Trust Metrics Row */
+    .trust-metrics-strip {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding-top: 14px;
+      border-top: 1px solid #e2e8f0;
+      width: 100%;
+      max-width: 530px;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .trust-number {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0c1836;
+      font-family: var(--font-mono);
+      letter-spacing: -0.02em;
+    }
+
+    .trust-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    /* =========================================================
+       4. RIGHT COLUMN: MULTI-LAYERED WEALTH ENGINE STAGE
+       ========================================================= */
+    .engine-stage-wrapper {
+      position: relative;
+      width: 100%;
+      height: 540px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1400px;
+      user-select: none;
+    }
+
+    /* Interactive Holographic Background Mesh Canvas */
+    #kineticCanvas {
+      position: absolute;
+      top: -15%;
+      left: -15%;
+      width: 130%;
+      height: 130%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* The Main 3D Card Architecture */
+    .card-master-3d {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: 560px;
+      height: 460px;
+      transform-style: preserve-3d;
+      transition: transform 0.18s cubic-bezier(0.2, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    .card-glass-body {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(240, 253, 250, 0.65) 50%, rgba(241, 245, 249, 0.85) 100%);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border-radius: 28px;
+      border: 1.5px solid rgba(255, 255, 255, 0.98);
+      box-shadow: 
+        0 30px 80px -15px rgba(6, 182, 212, 0.25),
+        0 15px 35px -10px rgba(15, 23, 42, 0.12),
+        inset 0 1px 3px rgba(255, 255, 255, 1);
+      position: relative;
+      padding: 28px 30px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Specular Light Glide */
+    .card-specular-sheen {
+      position: absolute;
+      top: -80%;
+      left: -80%;
+      width: 260%;
+      height: 260%;
+      background: radial-gradient(circle at 45% 45%, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 60%);
+      pointer-events: none;
+      transform: translate3d(0, 0, 40px);
+      opacity: 0.65;
+    }
+
+    /* Card Top Header: Strategy & Interactive Range Pills */
+    .card-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+      transform: translate3d(0, 0, 30px);
+    }
+
+    .strategy-info-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .strat-icon-pulse {
+      width: 10px;
+      height: 10px;
+      background: #06b6d4;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #06b6d4;
+    }
+
+    .strat-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .strat-sub {
+      font-size: 10px;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .time-selector-pills {
+      display: flex;
+      align-items: center;
+      background: rgba(241, 245, 249, 0.9);
+      padding: 3px;
+      border-radius: 9999px;
+      border: 1px solid #e2e8f0;
+      gap: 2px;
+    }
+
+    .time-pill-btn {
+      padding: 4px 10px;
+      border-radius: 9999px;
+      border: none;
+      background: transparent;
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-mono);
+    }
+
+    .time-pill-btn.active {
+      background: #ffffff;
+      color: #0284c7;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Main Yield & Live Counter Display */
+    .card-metric-banner {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-top: 14px;
+      position: relative;
+      z-index: 10;
+      transform: translate3d(0, 0, 32px);
+    }
+
+    .metric-value-large {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0c1836;
+      font-family: var(--font-mono);
+      letter-spacing: -0.03em;
+    }
+
+    .metric-alpha-tag {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #059669;
+      font-size: 12.5px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+    }
+
+    /* =========================================================
+       5. INTERACTIVE LIVE ALPHA WAVE CANVAS & DATA SCANNER
+       ========================================================= */
+    .chart-alpha-stage {
+      position: relative;
+      width: 100%;
+      height: 140px;
+      margin: 10px 0;
+      transform: translate3d(0, 0, 35px);
+    }
+
+    #alphaChartCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Live Data Scanner Laser line */
+    .laser-scanner-line {
+      position: absolute;
+      top: 0;
+      width: 1.5px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent 0%, #06b6d4 50%, transparent 100%);
+      pointer-events: none;
+      box-shadow: 0 0 10px #06b6d4;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: left 0.1s ease-out;
+    }
+
+    /* Floating Data Tooltip tracking scanner */
+    .scanner-tooltip-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      white-space: nowrap;
+      pointer-events: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: left 0.1s ease-out, top 0.1s ease-out;
+    }
+
+    .scanner-tooltip-badge span.dot {
+      width: 6px;
+      height: 6px;
+      background: #06b6d4;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #06b6d4;
+    }
+
+    /* =========================================================
+       6. 3D ISOMETRIC HARMONIC COLUMNS & SURGING TRAJECTORY
+       ========================================================= */
+    .chart-isometric-bottom {
+      position: relative;
+      width: 100%;
+      height: 130px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 14px;
+      transform: translate3d(0, 0, 28px);
+      z-index: 6;
+    }
+
+    .iso-bar-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 48px;
+      height: 100%;
+      justify-content: flex-end;
+      transform-style: preserve-3d;
+    }
+
+    .iso-block {
+      position: relative;
+      width: 36px;
+      transform-style: preserve-3d;
+      border-radius: 4px 4px 0 0;
+      transform-origin: bottom center;
+      transition: height 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: harmonicFloat 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes harmonicFloat {
+      0% { transform: scaleY(1); }
+      100% { transform: scaleY(1.04); }
+    }
+
+    /* 3D Faces */
+    .iso-block .face-front {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px 4px 0 0;
+      background: inherit;
+      box-shadow: 0 12px 24px rgba(6, 182, 212, 0.2);
+    }
+
+    .iso-block .face-side {
+      position: absolute;
+      top: -4px;
+      right: -9px;
+      width: 9px;
+      height: 100%;
+      background: inherit;
+      filter: brightness(0.72) saturate(1.2);
+      transform: skewY(-35deg);
+      transform-origin: left top;
+      border-radius: 0 4px 0 0;
+    }
+
+    .iso-block .face-top {
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 36px;
+      height: 9px;
+      background: inherit;
+      filter: brightness(1.4) saturate(0.9);
+      transform: skewX(-55deg);
+      transform-origin: left bottom;
+      border-radius: 3px;
+      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 1);
+    }
+
+    .iso-block .bar-shine {
+      position: absolute;
+      top: 0;
+      left: 3px;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 85%);
+      border-radius: 3px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Coordinated Gradients */
+    .b-1 { height: 48%; background: linear-gradient(180deg, #67e8f9 0%, #22d3ee 50%, #0891b2 100%); animation-delay: 0.1s; }
+    .b-2 { height: 72%; background: linear-gradient(180deg, #a5f3fc 0%, #38bdf8 50%, #0284c7 100%); animation-delay: 0.3s; }
+    .b-3 { height: 60%; background: linear-gradient(180deg, #38bdf8 0%, #0ea5e9 50%, #0369a1 100%); animation-delay: 0.5s; }
+    .b-4 { height: 86%; background: linear-gradient(180deg, #67e8f9 0%, #06b6d4 50%, #0e7490 100%); animation-delay: 0.7s; }
+    .b-5 { height: 96%; background: linear-gradient(180deg, #ffffff 0%, #38bdf8 40%, #0284c7 80%, #0c4a6e 100%); animation-delay: 0.9s; }
+
+    /* The Overlay SVG with continuous kinetic trajectory */
+    .iso-trajectory-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 15;
+      transform: translate3d(0, 0, 48px);
+      overflow: visible;
+    }
+
+    .trajectory-trail {
+      fill: none;
+      stroke: url(#cyanTrailGrad);
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 4px 14px rgba(6, 182, 212, 0.6));
+    }
+
+    .trajectory-core {
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .trajectory-pulse {
+      fill: none;
+      stroke: #67e8f9;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 24 160;
+      animation: pulseFly 2.2s linear infinite;
+    }
+
+    @keyframes pulseFly {
+      0% { stroke-dashoffset: 184; }
+      100% { stroke-dashoffset: -184; }
+    }
+
+    .arrow-apex-head {
+      filter: drop-shadow(0 6px 16px rgba(6, 182, 212, 0.8));
+      animation: arrowGlide 2.4s ease-in-out infinite alternate;
+    }
+
+    @keyframes arrowGlide {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.05) translate(2px, -2px); }
+    }
+
+    /* =========================================================
+       7. FLOATING SATELLITE WIDGETS (PARALLAX DEPTH)
+       ========================================================= */
+    .satellite-card-top {
+      position: absolute;
+      top: -24px;
+      right: -24px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 1);
+      border-radius: 16px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 12px 30px rgba(6, 182, 212, 0.18), 0 2px 6px rgba(0, 0, 0, 0.04);
+      z-index: 20;
+      transform: translate3d(0, 0, 60px);
+      animation: floatWidgetA 4.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatWidgetA {
+      0% { transform: translate3d(0, 0, 60px) translateY(0); }
+      100% { transform: translate3d(0, 0, 60px) translateY(-8px); }
+    }
+
+    .shield-badge-icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+    }
+
+    .satellite-card-bottom {
+      position: absolute;
+      bottom: -18px;
+      left: -20px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 1);
+      border-radius: 16px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(2, 132, 199, 0.16), 0 2px 6px rgba(0, 0, 0, 0.04);
+      z-index: 20;
+      transform: translate3d(0, 0, 55px);
+      animation: floatWidgetB 4.2s ease-in-out infinite alternate 1s;
+    }
+
+    @keyframes floatWidgetB {
+      0% { transform: translate3d(0, 0, 55px) translateY(0); }
+      100% { transform: translate3d(0, 0, 55px) translateY(7px); }
+    }
+
+    .circular-progress-wrap {
+      position: relative;
+      width: 32px;
+      height: 32px;
+    }
+
+    .circular-progress-wrap svg {
+      width: 32px;
+      height: 32px;
+      transform: rotate(-90deg);
+    }
+
+    .circular-progress-wrap circle.bg {
+      stroke: #e2e8f0;
+      stroke-width: 3;
+      fill: none;
+    }
+
+    .circular-progress-wrap circle.bar {
+      stroke: #06b6d4;
+      stroke-width: 3;
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 88;
+      stroke-dashoffset: 12;
+    }
+
+    /* Floating Interactive Mode Switcher */
+    .floating-mode-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(12, 24, 54, 0.94);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(186, 230, 253, 0.3);
+      border-radius: 9999px;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      z-index: 999;
+      box-shadow: 0 12px 36px rgba(2, 132, 199, 0.4);
+    }
+
+    .mode-btn {
+      background: rgba(6, 182, 212, 0.25);
+      border: 1px solid rgba(165, 243, 252, 0.3);
+      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .mode-btn:hover {
+      background: #06b6d4;
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-main {
+        grid-template-columns: 1fr;
+        padding: 32px 24px 56px;
+        gap: 44px;
+      }
+      .hero-copy-column {
+        align-items: center;
+        text-align: center;
+      }
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-actions-row, .trust-metrics-strip {
+        justify-content: center;
+      }
+      .engine-stage-wrapper {
+        height: 480px;
+      }
+      .card-master-3d {
+        max-width: 480px;
+        height: 420px;
+      }
+      .nav-links-list {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient Atmospheric Layers -->
+  <div class="ambient-canvas-layer">
+    <div class="spotlight-cyan"></div>
+    <div class="spotlight-navy"></div>
+  </div>
+
+  <div class="layout-root">
+    <!-- 1. NAVIGATION HEADER -->
+    <header class="luxury-header">
+      <div class="header-content">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-group" title="4X Wealth - Private Fiduciary Wealth">
+          <svg class="brand-svg-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="gCyan1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8" /><stop offset="100%" stop-color="#0284c7" />
+              </linearGradient>
+              <linearGradient id="gCyan2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#22d3ee" /><stop offset="100%" stop-color="#0891b2" />
+              </linearGradient>
+              <linearGradient id="gIce" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#67e8f9" /><stop offset="100%" stop-color="#0e7490" />
+              </linearGradient>
+              <linearGradient id="gTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#a5f3fc" /><stop offset="100%" stop-color="#06b6d4" />
+              </linearGradient>
+            </defs>
+            <path d="M50 50 C35 25 15 30 15 50 C15 70 35 75 50 50 Z" fill="url(#gCyan1)" opacity="0.92" />
+            <path d="M50 50 C25 65 30 85 50 85 C70 85 75 65 50 50 Z" fill="url(#gCyan2)" opacity="0.92" />
+            <path d="M50 50 C65 75 85 70 85 50 C85 30 65 25 50 50 Z" fill="url(#gIce)" opacity="0.92" />
+            <path d="M50 50 C75 35 70 15 50 15 C30 15 25 35 50 50 Z" fill="url(#gTeal)" opacity="0.92" />
+            <circle cx="50" cy="50" r="7" fill="#ffffff" />
+          </svg>
+          <div class="brand-text-block">
+            <div class="brand-name">4X<span>WEALTH</span></div>
+            <div class="brand-tagline">FINANCIAL SERVICES</div>
+          </div>
+        </a>
+
+        <!-- Nav Menu -->
+        <ul class="nav-links-list">
+          <li><a href="#" class="nav-item-link">Home <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a></li>
+          <li><a href="#" class="nav-item-link">Solutions <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a></li>
+          <li><a href="#" class="nav-item-link">Research <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a></li>
+          <li><a href="#" class="nav-item-link">AI Hedge Lab <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a></li>
+          <li><a href="#" class="nav-item-link">Calculators <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a></li>
+          <li><a href="#" class="nav-item-link">Resources <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a></li>
+          <li><a href="#" class="nav-item-link">About <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="header-actions-group">
+          <div class="search-pill-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" placeholder="Search" aria-label="Search" />
+          </div>
+          <a href="#" class="btn-header-login">Login</a>
+          <a href="#" class="btn-header-consult">Book Consult</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. REFINED MARKET TICKER -->
+    <div class="market-tape">
+      <div class="market-tape-inner">
+        <div class="tape-live-status">
+          <span class="pulse-dot-beacon"></span>
+          LIVE MARKET
+        </div>
+
+        <div class="tape-marquee-window">
+          <div class="tape-track" id="tapeTrack">
+            <div class="tape-item"><span class="tape-icon">M</span><span class="tape-symbol">MSM</span><span class="tape-val">13044.88</span><span class="tape-chg down">▼ -8.55%</span></div>
+            <div class="tape-item"><span class="tape-icon">N</span><span class="tape-symbol">Nfge</span><span class="tape-val">227.00</span><span class="tape-chg up">▲ +0.45%</span></div>
+            <div class="tape-item"><span class="tape-icon">H</span><span class="tape-symbol">Hef Tech</span><span class="tape-val">11278.80</span><span class="tape-chg down">▼ -0.85%</span></div>
+            <div class="tape-item"><span class="tape-icon">M</span><span class="tape-symbol">Maruti</span><span class="tape-val">12299.90</span><span class="tape-chg up">▲ +2.10%</span></div>
+            <div class="tape-item"><span class="tape-icon">N</span><span class="tape-symbol">NIFTY 50</span><span class="tape-val">24,850.30</span><span class="tape-chg up">▲ +0.65%</span></div>
+            <div class="tape-item"><span class="tape-icon">S</span><span class="tape-symbol">SENSEX</span><span class="tape-val">81,420.15</span><span class="tape-chg up">▲ +0.58%</span></div>
+
+            <!-- Repeated -->
+            <div class="tape-item"><span class="tape-icon">M</span><span class="tape-symbol">MSM</span><span class="tape-val">13044.88</span><span class="tape-chg down">▼ -8.55%</span></div>
+            <div class="tape-item"><span class="tape-icon">N</span><span class="tape-symbol">Nfge</span><span class="tape-val">227.00</span><span class="tape-chg up">▲ +0.45%</span></div>
+            <div class="tape-item"><span class="tape-icon">H</span><span class="tape-symbol">Hef Tech</span><span class="tape-val">11278.80</span><span class="tape-chg down">▼ -0.85%</span></div>
+            <div class="tape-item"><span class="tape-icon">M</span><span class="tape-symbol">Maruti</span><span class="tape-val">12299.90</span><span class="tape-chg up">▲ +2.10%</span></div>
+          </div>
+        </div>
+
+        <a href="#" class="tape-link-pulse">View Pulse →</a>
+      </div>
+    </div>
+
+    <!-- 3. HERO MAIN SECTION -->
+    <main class="hero-main">
+      <!-- Left Copy Column -->
+      <div class="hero-copy-column">
+        <div class="regulatory-tag">
+          <span class="reg-beacon"></span>
+          <span>SEBI Compliant Fiduciary Wealth Architecture</span>
+          <span style="color:#bae6fd;">•</span>
+          <span class="reg-num">ABRNN596</span>
+        </div>
+
+        <h1 class="hero-heading">
+          <span class="h-line-1">Building Wealth.</span>
+          <span class="h-line-2">Managing Risk.</span>
+          <span class="h-line-3">Creating Possibilities.</span>
+        </h1>
+
+        <p class="hero-description">
+          A premier private wealth management firm bringing together human conviction, and data-driven intelligence — under one roof, in full daylight.
+        </p>
+
+        <div class="hero-actions-row">
+          <a href="#" class="btn-main-consult">
+            <span>Schedule Advisory Consultation</span>
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="#" class="btn-sub-explore">Explore Solutions</a>
+        </div>
+
+        <!-- Trust Metrics -->
+        <div class="trust-metrics-strip">
+          <div class="trust-item">
+            <span class="trust-number">₹1,240+ Cr</span>
+            <span class="trust-label">AUM Under Advisory</span>
+          </div>
+          <div style="width:1px; height:28px; background:#e2e8f0;"></div>
+          <div class="trust-item">
+            <span class="trust-number">100%</span>
+            <span class="trust-label">SEBI Fiduciary Regulated</span>
+          </div>
+          <div style="width:1px; height:28px; background:#e2e8f0;"></div>
+          <div class="trust-item">
+            <span class="trust-number">+16.4%</span>
+            <span class="trust-label">5Y Alpha Outperformance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Multi-Layered Wealth Engine 3D Stage -->
+      <div class="engine-stage-wrapper" id="engineStage">
+        <!-- Interactive Luminous Wave Mesh Canvas -->
+        <canvas id="kineticCanvas"></canvas>
+
+        <!-- Main 3D Card -->
+        <div class="card-master-3d" id="cardMaster">
+          <div class="card-glass-body">
+            <div class="card-specular-sheen" id="cardSheen"></div>
+
+            <!-- Card Top Bar -->
+            <div class="card-top-bar">
+              <div class="strategy-info-badge">
+                <span class="strat-icon-pulse"></span>
+                <div>
+                  <div class="strat-title">Dynamic Alpha Hedge Model</div>
+                  <div class="strat-sub">Strategy 4X-Sigma • High Conviction</div>
+                </div>
+              </div>
+
+              <!-- Time Range Selector Pills -->
+              <div class="time-selector-pills">
+                <button class="time-pill-btn" data-range="1M">1M</button>
+                <button class="time-pill-btn" data-range="6M">6M</button>
+                <button class="time-pill-btn active" data-range="1Y">1Y</button>
+                <button class="time-pill-btn" data-range="3Y">3Y</button>
+                <button class="time-pill-btn" data-range="MAX">ALL</button>
+              </div>
+            </div>
+
+            <!-- Big Yield & Value Banner -->
+            <div class="card-metric-banner">
+              <div>
+                <div style="font-size:11px; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px;">Portfolio Yield</div>
+                <div class="metric-value-large" id="metricValueDisplay">₹ 2,48,92,000</div>
+              </div>
+              <div class="metric-alpha-tag" id="metricAlphaTag">
+                <span>▲ +34.82%</span>
+                <span style="font-size:10px; opacity:0.8;">Alpha</span>
+              </div>
+            </div>
+
+            <!-- Interactive Dynamic Alpha Wave Canvas & Laser Scanner -->
+            <div class="chart-alpha-stage" id="alphaChartStage">
+              <canvas id="alphaChartCanvas"></canvas>
+              <div class="laser-scanner-line" id="laserScanner"></div>
+              <div class="scanner-tooltip-badge" id="scannerTooltip">
+                <span class="dot"></span>
+                <span id="tooltipText">Yield: +34.8% | Sharpe: 3.42</span>
+              </div>
+            </div>
+
+            <!-- 3D Isometric Columns & Continuous Trajectory Line -->
+            <div class="chart-isometric-bottom">
+              <!-- Bar 1 -->
+              <div class="iso-bar-wrapper">
+                <div class="iso-block b-1">
+                  <div class="face-side"></div>
+                  <div class="face-top"></div>
+                  <div class="face-front"></div>
+                  <div class="bar-shine"></div>
+                </div>
+              </div>
+
+              <!-- Bar 2 -->
+              <div class="iso-bar-wrapper">
+                <div class="iso-block b-2">
+                  <div class="face-side"></div>
+                  <div class="face-top"></div>
+                  <div class="face-front"></div>
+                  <div class="bar-shine"></div>
+                </div>
+              </div>
+
+              <!-- Bar 3 -->
+              <div class="iso-bar-wrapper">
+                <div class="iso-block b-3">
+                  <div class="face-side"></div>
+                  <div class="face-top"></div>
+                  <div class="face-front"></div>
+                  <div class="bar-shine"></div>
+                </div>
+              </div>
+
+              <!-- Bar 4 -->
+              <div class="iso-bar-wrapper">
+                <div class="iso-block b-4">
+                  <div class="face-side"></div>
+                  <div class="face-top"></div>
+                  <div class="face-front"></div>
+                  <div class="bar-shine"></div>
+                </div>
+              </div>
+
+              <!-- Bar 5 -->
+              <div class="iso-bar-wrapper">
+                <div class="iso-block b-5">
+                  <div class="face-side"></div>
+                  <div class="face-top"></div>
+                  <div class="face-front"></div>
+                  <div class="bar-shine"></div>
+                </div>
+              </div>
+
+              <!-- Surging Trajectory Line Overlay SVG -->
+              <svg class="iso-trajectory-svg" viewBox="0 0 480 140" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="cyanTrailGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#0891b2" stop-opacity="0.9" />
+                    <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.95" />
+                    <stop offset="100%" stop-color="#38bdf8" stop-opacity="1" />
+                  </linearGradient>
+                  <linearGradient id="apexHeadGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#0284c7" />
+                    <stop offset="50%" stop-color="#06b6d4" />
+                    <stop offset="100%" stop-color="#a5f3fc" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Zigzag Trajectory Line -->
+                <path class="trajectory-trail" d="M 45 92 L 138 52 L 230 70 L 322 30 L 415 10" />
+                <path class="trajectory-core" d="M 45 92 L 138 52 L 230 70 L 322 30 L 415 10" />
+                <path class="trajectory-pulse" d="M 45 92 L 138 52 L 230 70 L 322 30 L 415 10" />
+
+                <!-- Milestone Nodes -->
+                <circle cx="45" cy="92" r="5" fill="#67e8f9" stroke="#ffffff" stroke-width="2" />
+                <circle cx="138" cy="52" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="2" />
+                <circle cx="230" cy="70" r="5" fill="#0ea5e9" stroke="#ffffff" stroke-width="2" />
+                <circle cx="322" cy="30" r="5.5" fill="#06b6d4" stroke="#ffffff" stroke-width="2" />
+                <circle cx="415" cy="10" r="6" fill="#ffffff" stroke="#06b6d4" stroke-width="2" />
+
+                <!-- 3D Arrowhead -->
+                <g class="arrow-apex-head">
+                  <polygon points="415,10 380,20 395,30 390,46" fill="url(#apexHeadGrad)" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Satellite Widget Top-Right: SEBI Fiduciary Shield -->
+          <div class="satellite-card-top">
+            <div class="shield-badge-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div>
+              <div style="font-size:11px; font-weight:700; color:#0f172a;">SEBI Shielded</div>
+              <div style="font-size:9.5px; font-weight:600; color:#059669;">A++ Fiduciary Architecture</div>
+            </div>
+          </div>
+
+          <!-- Satellite Widget Bottom-Left: Real-Time Optimization -->
+          <div class="satellite-card-bottom">
+            <div class="circular-progress-wrap">
+              <svg>
+                <circle class="bg" cx="16" cy="16" r="14" />
+                <circle class="bar" cx="16" cy="16" r="14" />
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:11px; font-weight:700; color:#0f172a;">Quantum Hedged</div>
+              <div style="font-size:9.5px; font-weight:600; color:#0284c7;">98.4% Drawdown Protected</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Interactive Floating Mode Switcher -->
+  <div class="floating-mode-bar">
+    <span>💎 Bespoke Wealth Architecture</span>
+    <button class="mode-btn" id="btnSimulateGrowth">
+      ⚡ Live Alpha Surge
+    </button>
+  </div>
+
+  <!-- =========================================================
+       8. JAVASCRIPT: PRECISION KINETIC ENGINE & INTERACTION
+       ========================================================= */ -->
+  <script>
+    /* ---------------------------------------------------------
+       A. KINETIC FLUID AURA CANVAS
+       --------------------------------------------------------- */
+    const kineticCanvas = document.getElementById('kineticCanvas');
+    const kCtx = kineticCanvas.getContext('2d');
+    let kWidth, kHeight;
+    let kTime = 0;
+
+    function resizeKinetic() {
+      const rect = kineticCanvas.parentElement.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      kWidth = rect.width * 1.3;
+      kHeight = rect.height * 1.3;
+      kineticCanvas.width = kWidth * dpr;
+      kineticCanvas.height = kHeight * dpr;
+      kCtx.scale(dpr, dpr);
+    }
+    window.addEventListener('resize', resizeKinetic);
+    resizeKinetic();
+
+    const fluidStrands = [
+      { color: 'rgba(6, 182, 212, 0.45)', radX: 200, radY: 110, speed: 0.012, offset: 0 },
+      { color: 'rgba(56, 189, 248, 0.40)', radX: 170, radY: 130, speed: 0.016, offset: Math.PI / 3 },
+      { color: 'rgba(165, 243, 252, 0.50)', radX: 220, radY: 95, speed: 0.010, offset: Math.PI * 0.7 }
+    ];
+
+    function renderKineticAura() {
+      kCtx.clearRect(0, 0, kWidth, kHeight);
+      kTime += 0.012;
+      const cx = kWidth / 2;
+      const cy = kHeight / 2;
+
+      fluidStrands.forEach((strand, idx) => {
+        kCtx.beginPath();
+        kCtx.strokeStyle = strand.color;
+        kCtx.lineWidth = 2.2;
+        kCtx.shadowColor = strand.color;
+        kCtx.shadowBlur = 16;
+
+        const pts = 100;
+        for (let i = 0; i <= pts; i++) {
+          const theta = (i / pts) * Math.PI * 2;
+          const wave = Math.sin(theta * 3 + kTime * 2 + strand.offset) * 20;
+          const x = cx + Math.cos(theta + kTime * strand.speed) * (strand.radX + wave);
+          const y = cy + Math.sin(theta * 2 + kTime * strand.speed * 1.3 + strand.offset) * (strand.radY + wave);
+          if (i === 0) kCtx.moveTo(x, y);
+          else kCtx.lineTo(x, y);
+        }
+        kCtx.closePath();
+        kCtx.stroke();
+      });
+
+      requestAnimationFrame(renderKineticAura);
+    }
+    renderKineticAura();
+
+    /* ---------------------------------------------------------
+       B. INTERACTIVE ALPHA WAVE CHART & LASER SCANNER
+       --------------------------------------------------------- */
+    const alphaCanvas = document.getElementById('alphaChartCanvas');
+    const aCtx = alphaCanvas.getContext('2d');
+    let aWidth, aHeight;
+
+    function resizeAlphaChart() {
+      const rect = alphaCanvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      aWidth = rect.width;
+      aHeight = rect.height;
+      alphaCanvas.width = aWidth * dpr;
+      alphaCanvas.height = aHeight * dpr;
+      aCtx.scale(dpr, dpr);
+    }
+    window.addEventListener('resize', resizeAlphaChart);
+    resizeAlphaChart();
+
+    // Data points for timeframes
+    const timeframeData = {
+      '1M': { value: '₹ 2,12,40,000', alpha: '+12.4%', points: [0.3, 0.4, 0.35, 0.55, 0.5, 0.65, 0.72] },
+      '6M': { value: '₹ 2,31,15,000', alpha: '+24.1%', points: [0.25, 0.32, 0.45, 0.4, 0.62, 0.7, 0.82] },
+      '1Y': { value: '₹ 2,48,92,000', alpha: '+34.8%', points: [0.2, 0.35, 0.3, 0.52, 0.48, 0.75, 0.9] },
+      '3Y': { value: '₹ 3,42,80,000', alpha: '+78.5%', points: [0.15, 0.28, 0.42, 0.6, 0.55, 0.8, 0.95] },
+      'MAX': { value: '₹ 5,84,60,000', alpha: '+142.8%', points: [0.1, 0.25, 0.38, 0.58, 0.7, 0.85, 0.98] }
+    };
+
+    let currentPoints = [...timeframeData['1Y'].points];
+    let targetPoints = [...timeframeData['1Y'].points];
+    let scanPos = 0.5; // 0 to 1
+
+    function drawAlphaCurve() {
+      aCtx.clearRect(0, 0, aWidth, aHeight);
+
+      // Lerp points for silky smooth path morphing
+      for (let i = 0; i < currentPoints.length; i++) {
+        currentPoints[i] += (targetPoints[i] - currentPoints[i]) * 0.12;
+      }
+
+      // Build Bezier curve
+      const stepX = aWidth / (currentPoints.length - 1);
+      const coords = currentPoints.map((val, idx) => ({
+        x: idx * stepX,
+        y: aHeight - val * (aHeight - 20) - 10
+      }));
+
+      // Gradient Fill Under Curve
+      const gradFill = aCtx.createLinearGradient(0, 0, 0, aHeight);
+      gradFill.addColorStop(0, 'rgba(6, 182, 212, 0.28)');
+      gradFill.addColorStop(1, 'rgba(6, 182, 212, 0.0)');
+
+      aCtx.beginPath();
+      aCtx.moveTo(coords[0].x, coords[0].y);
+      for (let i = 0; i < coords.length - 1; i++) {
+        const xc = (coords[i].x + coords[i + 1].x) / 2;
+        const yc = (coords[i].y + coords[i + 1].y) / 2;
+        aCtx.quadraticCurveTo(coords[i].x, coords[i].y, xc, yc);
+      }
+      aCtx.lineTo(coords[coords.length - 1].x, coords[coords.length - 1].y);
+      aCtx.lineTo(aWidth, aHeight);
+      aCtx.lineTo(0, aHeight);
+      aCtx.closePath();
+      aCtx.fillStyle = gradFill;
+      aCtx.fill();
+
+      // Stroke Line
+      aCtx.beginPath();
+      aCtx.moveTo(coords[0].x, coords[0].y);
+      for (let i = 0; i < coords.length - 1; i++) {
+        const xc = (coords[i].x + coords[i + 1].x) / 2;
+        const yc = (coords[i].y + coords[i + 1].y) / 2;
+        aCtx.quadraticCurveTo(coords[i].x, coords[i].y, xc, yc);
+      }
+      aCtx.lineTo(coords[coords.length - 1].x, coords[coords.length - 1].y);
+      aCtx.strokeStyle = '#06b6d4';
+      aCtx.lineWidth = 3;
+      aCtx.shadowColor = 'rgba(6, 182, 212, 0.8)';
+      aCtx.shadowBlur = 10;
+      aCtx.stroke();
+
+      requestAnimationFrame(drawAlphaCurve);
+    }
+    drawAlphaCurve();
+
+    // Laser Scanner Motion
+    const laserScanner = document.getElementById('laserScanner');
+    const scannerTooltip = document.getElementById('scannerTooltip');
+    const tooltipText = document.getElementById('tooltipText');
+    const alphaStage = document.getElementById('alphaChartStage');
+    let isUserScanning = false;
+    let autoScanDir = 1;
+
+    function updateScanner() {
+      if (!isUserScanning) {
+        scanPos += 0.0035 * autoScanDir;
+        if (scanPos > 0.95) autoScanDir = -1;
+        if (scanPos < 0.05) autoScanDir = 1;
+      }
+
+      const leftPx = scanPos * aWidth;
+      laserScanner.style.left = `${leftPx}px`;
+      scannerTooltip.style.left = `${leftPx}px`;
+
+      // Interpolate current yield along scan position
+      const approxYield = (24 + scanPos * 18).toFixed(1);
+      const approxSharpe = (2.8 + scanPos * 0.9).toFixed(2);
+      tooltipText.textContent = `Yield: +${approxYield}% | Sharpe: ${approxSharpe}`;
+
+      requestAnimationFrame(updateScanner);
+    }
+    updateScanner();
+
+    alphaStage.addEventListener('mousemove', (e) => {
+      isUserScanning = true;
+      const rect = alphaStage.getBoundingClientRect();
+      scanPos = Math.max(0.02, Math.min(0.98, (e.clientX - rect.left) / rect.width));
+    });
+
+    alphaStage.addEventListener('mouseleave', () => {
+      isUserScanning = false;
+    });
+
+    // Timeframe selector clicks
+    const timeBtns = document.querySelectorAll('.time-pill-btn');
+    const metricDisplay = document.getElementById('metricValueDisplay');
+    const alphaTag = document.getElementById('metricAlphaTag');
+
+    timeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        timeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const range = btn.getAttribute('data-range');
+        const data = timeframeData[range];
+        targetPoints = [...data.points];
+        metricDisplay.textContent = data.value;
+        alphaTag.innerHTML = `<span>▲ ${data.alpha}</span> <span style="font-size:10px; opacity:0.8;">Alpha</span>`;
+      });
+    });
+
+    /* ---------------------------------------------------------
+       C. 3D INTERACTIVE TILT & PARALLAX
+       --------------------------------------------------------- */
+    const stage = document.getElementById('engineStage');
+    const card = document.getElementById('cardMaster');
+    const sheen = document.getElementById('cardSheen');
+    let rX = 6, rY = -10;
+    let currRX = 6, currRY = -10;
+    let isHover = false;
+
+    function applyCardTilt() {
+      currRX += (rX - currRX) * 0.1;
+      currRY += (rY - currRY) * 0.1;
+
+      if (!isHover) {
+        rX = Math.sin(kTime * 1.4) * 3 + 5;
+        rY = Math.cos(kTime * 1.1) * 4 - 8;
+      }
+
+      card.style.transform = `perspective(1400px) rotateX(${currRX}deg) rotateY(${currRY}deg)`;
+      requestAnimationFrame(applyCardTilt);
+    }
+    applyCardTilt();
+
+    stage.addEventListener('mousemove', (e) => {
+      isHover = true;
+      const rect = stage.getBoundingClientRect();
+      const normX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      const normY = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+
+      rY = normX * 16;
+      rX = -normY * 16;
+
+      const sx = 50 + normX * 35;
+      const sy = 50 + normY * 35;
+      sheen.style.background = `radial-gradient(circle at ${sx}% ${sy}%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 65%)`;
+    });
+
+    stage.addEventListener('mouseleave', () => {
+      isHover = false;
+      rX = 5;
+      rY = -8;
+    });
+
+    // Simulate Alpha Surge
+    document.getElementById('btnSimulateGrowth').addEventListener('click', () => {
+      const blocks = document.querySelectorAll('.iso-block');
+      blocks.forEach(b => {
+        b.style.transform = 'scaleY(1.15)';
+        setTimeout(() => { b.style.transform = ''; }, 600);
+      });
+
+      // Jump to MAX range temporarily
+      const maxBtn = document.querySelector('[data-range="MAX"]');
+      maxBtn.click();
+    });
+  </script>
+</body>
+</html>
