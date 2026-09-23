@@ -343,10 +343,27 @@ a {
   background: #F0F7FF !important;
 }
 
-.sk-nav-link i, 
+.sk-nav-link i {
+  display: inline-block !important;
+  font-size: 8px !important;
+  color: #64748B !important;
+  margin-left: 2px !important;
+  transition: transform 0.25s var(--ease), color 0.25s ease !important;
+}
+
+.sk-nav-item:hover .sk-nav-link i {
+  color: #0077FF !important;
+  transform: rotate(180deg) !important;
+}
+
+.search-btn i {
+  display: inline-block !important;
+  color: #0077FF !important;
+  font-size: 10.5px !important;
+}
+
 .dropdown-link i, 
 .mega-dropdown i, 
-.search-btn i, 
 .book-consult-btn i, 
 .client-portal-btn i, 
 .view-market-link i,
