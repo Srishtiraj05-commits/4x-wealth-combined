@@ -6,24 +6,44 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
-  // 1. ENTRANCE SEQUENCE
+  // 1. ENTRANCE SEQUENCE & WORD-BY-WORD POP
   // ==========================================
   function initializeEntranceAnimations() {
-    if (typeof gsap === 'undefined') return;
-    if (document.querySelector('.hero-eyebrow')) {
-      gsap.from('.hero-eyebrow', { opacity: 0, y: 30, duration: 0.8, ease: 'power3.out' });
+    const heroWords = document.querySelectorAll('.hero-word');
+    if (heroWords.length > 0 && typeof gsap !== 'undefined') {
+      gsap.fromTo(heroWords, 
+        { 
+          opacity: 0, 
+          y: 26, 
+          scale: 0.84,
+          filter: 'blur(5px)'
+        }, 
+        { 
+          opacity: 1, 
+          y: 0, 
+          scale: 1,
+          filter: 'blur(0px)',
+          duration: 0.6, 
+          stagger: 0.16, 
+          ease: 'back.out(1.7)',
+          delay: 0.25,
+          clearProps: 'transform,filter'
+        }
+      );
     }
-    if (document.querySelector('.hero-headline .text-line span')) {
-      gsap.from('.hero-headline .text-line span', { y: '100%', duration: 1.2, ease: 'power4.out', stagger: 0.15 });
-    }
-    if (document.querySelector('.hero-subtext')) {
-      gsap.from('.hero-subtext', { opacity: 0, y: 30, duration: 1, delay: 0.5, ease: 'power3.out' });
-    }
-    if (document.querySelector('.hero-cta-buttons')) {
-      gsap.from('.hero-cta-buttons', { opacity: 0, y: 20, duration: 0.8, delay: 0.8, ease: 'power3.out' });
-    }
-    if (document.querySelector('.header-wrapper')) {
-      gsap.from('.header-wrapper', { y: -100, opacity: 0, duration: 1.2, ease: 'power4.out' });
+    if (typeof gsap !== 'undefined') {
+      if (document.querySelector('.hero-ivory-badge')) {
+        gsap.from('.hero-ivory-badge', { opacity: 0, y: -10, duration: 0.6, delay: 0.1, ease: 'power2.out' });
+      }
+      if (document.querySelector('.hero-sub-text')) {
+        gsap.from('.hero-sub-text', { opacity: 0, y: 12, duration: 0.7, delay: 1.25, ease: 'power2.out' });
+      }
+      if (document.querySelector('.hero-cta-group')) {
+        gsap.from('.hero-cta-group', { opacity: 0, y: 12, duration: 0.7, delay: 1.45, ease: 'power2.out' });
+      }
+      if (document.querySelector('.hero-credentials-strip')) {
+        gsap.from('.hero-credentials-strip', { opacity: 0, y: 12, duration: 0.7, delay: 1.65, ease: 'power2.out' });
+      }
     }
   }
   initializeEntranceAnimations();
@@ -620,7 +640,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { symbol: "RELIANCE", name: "Reliance", price: 1322.0, change: 1.5, logo: "R" },
     { symbol: "TCS", name: "Tcs", price: 2304.0, change: -0.69, logo: "T" },
     { symbol: "HDFC BANK", name: "Hdfc Bank", price: 712.1, change: 0.77, logo: "H" },
-    { symbol: "INFOSYS", name: "Infosys", price: 1130.0, change: -0.03, logo: "I" },
+    { symbol: "INFOSYS", name: "Infosys", price: 1131.0, change: -0.03, logo: "I" },
     { symbol: "ICICI BANK", name: "Icici Bank", price: 1423.2, change: -0.48, logo: "I" },
     { symbol: "SBI", name: "Sbi", price: 1016.1, change: -0.71, logo: "S" },
     { symbol: "ADANI PORTS", name: "Adani Ports", price: 1707.3, change: 0.05, logo: "A" },

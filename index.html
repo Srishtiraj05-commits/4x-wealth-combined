@@ -18,8 +18,130 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <!-- Anti-Cache Meta Tags -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=130.0">
+  <link rel="stylesheet" href="style.css?v=131.0">
+
+  <!-- Guaranteed Direct Hero Styles & Sequential Word Pop Animation -->
+  <style>
+    #hero-section {
+      padding-top: clamp(14px, 2vh, 22px) !important;
+      padding-bottom: clamp(14px, 1.8vh, 20px) !important;
+      text-align: left !important;
+      background: #FFFFFF !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    #hero-section .container-luxury {
+      text-align: left !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
+    #hero-section .hero-ivory-badge {
+      display: inline-flex !important;
+      align-self: flex-start !important;
+      margin-bottom: 0.6rem !important;
+      padding: 4px 14px !important;
+      font-size: 11px !important;
+    }
+    #hero-section .hero-title-main {
+      text-align: left !important;
+      font-size: clamp(34px, 4vw, 50px) !important;
+      font-weight: 800 !important;
+      line-height: 1.1 !important;
+      margin-bottom: 0.15rem !important;
+      color: #0F172A !important;
+      width: 100% !important;
+    }
+    #hero-section .hero-title-sub-serif {
+      text-align: left !important;
+      font-size: clamp(28px, 3.4vw, 42px) !important;
+      font-style: italic !important;
+      font-family: var(--font-serif), 'Instrument Serif', Georgia, serif !important;
+      line-height: 1.15 !important;
+      margin-bottom: 0.65rem !important;
+      width: 100% !important;
+    }
+    #hero-section .hero-word {
+      display: inline-block !important;
+      opacity: 0;
+      transform: translateY(24px) scale(0.85);
+      filter: blur(5px);
+      animation: heroWordPop 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+      animation-delay: calc(0.2s + (var(--w-i, 1) * 0.16s)) !important;
+      margin-right: 0.22em !important;
+      will-change: transform, opacity, filter !important;
+    }
+    #hero-section .hero-word:last-child {
+      margin-right: 0 !important;
+    }
+    #hero-section .hero-title-sub-serif .hero-word {
+      background: linear-gradient(135deg, #0055FF 0%, #0088FF 50%, #00C8FF 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+    @keyframes heroWordPop {
+      0% {
+        opacity: 0;
+        transform: translateY(24px) scale(0.85);
+        filter: blur(5px);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.06);
+        filter: blur(0px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0px);
+      }
+    }
+    #hero-section .hero-sub-text {
+      text-align: left !important;
+      margin: 0 0 1rem 0 !important;
+      max-width: 720px !important;
+      font-size: clamp(13.5px, 1.1vw, 15px) !important;
+      line-height: 1.5 !important;
+      color: #475569 !important;
+    }
+    #hero-section .hero-cta-group {
+      display: flex !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      gap: 0.9rem !important;
+      flex-wrap: wrap !important;
+      margin-bottom: 1.1rem !important;
+      width: 100% !important;
+    }
+    #hero-section .hero-credentials-strip {
+      width: 100% !important;
+      padding-top: 0.85rem !important;
+      border-top: 1px solid #BAE6FD !important;
+    }
+    .hero-trust-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 0.9rem !important;
+      width: 100% !important;
+      text-align: left !important;
+    }
+    @media (max-width: 840px) {
+      .hero-trust-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-trust-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -35,7 +157,7 @@
       <!-- Brand Logo -->
       <a href="index.html" class="logo-link clickable" id="logoContainer">
         <div class="logo-wrapper">
-          <img src="logo.png?v=130.0" alt="4X Wealth Logo" class="brand-logo-img">
+          <img src="logo.png?v=131.0" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text-group">
             <div class="logo-text">4X<span>WEALTH</span></div>
             <span class="logo-sub">FINANCIAL SERVICES</span>
@@ -249,7 +371,7 @@
   <div class="sk-drawer" id="mobileDrawer">
     <button class="sk-drawer-close clickable" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
     <div class="sk-drawer-header">
-      <img src="logo.png?v=130.0" alt="4X Wealth Logo" class="brand-logo-img">
+      <img src="logo.png?v=131.0" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
                 <ul class="sk-drawer-links">
@@ -1538,7 +1660,7 @@
         <!-- Brand Summary -->
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-            <img src="logo.png?v=130.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
+            <img src="logo.png?v=131.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
             <h3>4X<span>WEALTH</span></h3>
           </div>
           <p>
@@ -1640,7 +1762,7 @@
       </div>
 
       <div class="search-results-list" id="searchResultsList">
-        <!-- Dynamically rendered via script.js?v=130.0 -->
+        <!-- Dynamically rendered via script.js?v=131.0 -->
       </div>
     </div>
   </div>
@@ -1653,6 +1775,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   
   <!-- Main Logic -->
-  <script src="script.js?v=130.0"></script>
+  <script src="script.js?v=131.0"></script>
 </body>
 </html>
