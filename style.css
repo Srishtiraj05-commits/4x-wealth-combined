@@ -600,6 +600,19 @@ body, html { cursor: default; }
   background: #0F172A;
   border-radius: 1px;
 }
+
+.nav-chevron {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  transition: transform 0.25s var(--ease);
+  color: #64748B;
+}
+
+.sk-nav-item:hover .nav-chevron,
+.dropdown-trigger:hover .nav-chevron {
+  transform: rotate(180deg);
+  color: #0077FF;
 }
 
 /* ============ LIVE MARKET TICKER BAR (TRANSPARENT FROSTED GLASS TAPE) ============ */
@@ -755,16 +768,31 @@ body, html { cursor: default; }
   border: 1px solid rgba(220, 38, 38, 0.2) !important;
 }
 
+.view-market-container {
+  display: flex !important;
+  align-items: center !important;
+  padding-left: 16px !important;
+  border-left: 1px solid #E2E8F0 !important;
+  height: 100% !important;
+  flex-shrink: 0 !important;
+}
+
 .view-market-link {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  font-weight: 700;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
   color: #0077FF !important;
-  white-space: nowrap;
-  flex-shrink: 0;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.view-market-link:hover {
+  text-decoration: underline !important;
 }
 
 /* ============ HERO SECTION (2-COLUMN LUXURY & 3D VECTOR STAGE) ============ */
