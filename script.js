@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeEntranceAnimations();
 
   // ==========================================
-  // 2. GLOBAL SCROLL-TRIGGERED SEQUENTIAL POP FOR ALL CARDS (RE-TRIGGERS ON EVERY ENTRY)
+  // 2. GLOBAL SCROLL-TRIGGERED SEQUENTIAL POP FOR ALL CARDS (SMOOTH & PERMANENTLY VISIBLE)
   // ==========================================
   function initGlobalCardScrollPop() {
     const cardSelectors = [
@@ -58,8 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
       '.sector-heatmap-grid',
       '.features-grid',
       '.product-metrics-grid',
-      '.calc-layout-grid',
-      '.calc-results-grid',
       '.resources-cards-grid',
       '.blog-grid',
       '.blogs-page-grid',
@@ -81,60 +79,49 @@ document.addEventListener('DOMContentLoaded', () => {
           if (items.length > 0) {
             ScrollTrigger.create({
               trigger: container,
-              start: 'top 88%',
+              start: 'top 90%',
+              once: true,
               onEnter: () => {
                 gsap.fromTo(items, 
-                  { opacity: 0, y: 32, scale: 0.94 },
-                  { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.09, ease: 'back.out(1.4)', overwrite: 'auto' }
-                );
-              },
-              onEnterBack: () => {
-                gsap.fromTo(items, 
-                  { opacity: 0, y: 32, scale: 0.94 },
-                  { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.09, ease: 'back.out(1.4)', overwrite: 'auto' }
+                  { opacity: 0, y: 24, scale: 0.96 },
+                  { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.08, ease: 'power2.out', clearProps: 'transform,opacity', overwrite: 'auto' }
                 );
               }
             });
           }
         });
       });
-    } else {
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
+    } else if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
             const children = Array.from(entry.target.children).filter(el => 
               !el.classList.contains('gold-divider-wrap') && 
               !el.classList.contains('diligence-loop-connector')
             );
-            if (entry.isIntersecting) {
-              children.forEach((child, index) => {
-                setTimeout(() => {
-                  child.style.opacity = '1';
-                  child.style.transform = 'translateY(0) scale(1)';
-                }, index * 90);
-              });
-            } else {
-              children.forEach(child => {
-                child.style.opacity = '0';
-                child.style.transform = 'translateY(30px) scale(0.94)';
-              });
+            children.forEach((child, index) => {
+              setTimeout(() => {
+                child.style.opacity = '1';
+                child.style.transform = 'translateY(0) scale(1)';
+              }, index * 70);
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      cardSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(c => {
+          Array.from(c.children).forEach(child => {
+            if (!child.classList.contains('gold-divider-wrap') && !child.classList.contains('diligence-loop-connector')) {
+              child.style.opacity = '0';
+              child.style.transform = 'translateY(24px) scale(0.96)';
+              child.style.transition = 'opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
             }
           });
-        }, { threshold: 0.12 });
-
-        cardSelectors.forEach(selector => {
-          document.querySelectorAll(selector).forEach(c => {
-            Array.from(c.children).forEach(child => {
-              if (!child.classList.contains('gold-divider-wrap') && !child.classList.contains('diligence-loop-connector')) {
-                child.style.opacity = '0';
-                child.style.transform = 'translateY(30px) scale(0.94)';
-                child.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
-              }
-            });
-            observer.observe(c);
-          });
+          observer.observe(c);
         });
-      }
+      });
     }
   }
   initGlobalCardScrollPop();
@@ -1723,7 +1710,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const x4ChatLoader = document.createElement('script');
-  x4ChatLoader.src = 'chatbot.js?v=139.0';
+  x4ChatLoader.src = 'chatbot.js?v=140.0';
   x4ChatLoader.defer = true;
   document.body.appendChild(x4ChatLoader);
 });

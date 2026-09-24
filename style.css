@@ -3167,60 +3167,59 @@ footer.luxury-footer, .footer-wrapper, #footer-section {
   color: #64748B;
 }
 
-/* ============ FINANCIAL CALCULATORS (DEVELOPER GRADE) ============ */
+/* ============ FINANCIAL CALCULATORS (DEVELOPER GRADE — HORIZONTAL TABS) ============ */
 .calc-page-wrapper {
   padding: 40px 0 80px 0;
   background: #FFFFFF;
 }
 
-.calc-layout-grid {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2.2rem;
-  align-items: flex-start;
-  margin-top: 2rem;
-}
-
-.calc-sidebar {
+.calc-horizontal-tabs-bar {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  position: sticky;
-  top: 90px;
-}
-
-.calc-tab-btn {
-  width: 100%;
-  padding: 14px 18px;
-  background: #F8FAFC !important;
-  border: 1.5px solid #E2E8F0 !important;
-  border-radius: 14px;
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 700;
-  color: #0F172A !important;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 12px;
+  margin: 1.8rem auto 2.2rem auto;
+  max-width: 1120px;
+  padding: 8px;
+  background: #F8FAFC;
+  border: 1px solid #BAE6FD;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 119, 255, 0.05);
+}
+
+.calc-horizontal-tabs-bar .calc-tab-btn, .calc-tab-btn {
+  flex: 1 1 auto;
+  min-width: 155px;
+  padding: 13px 18px;
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155 !important;
+  text-align: center;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
   transition: all 0.25s var(--ease);
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.02);
 }
 
 .calc-tab-btn i {
-  font-size: 16px;
+  font-size: 15px;
   color: #64748B;
   transition: color 0.25s, transform 0.25s;
-  width: 20px;
-  text-align: center;
 }
 
 .calc-tab-btn:hover {
   background: #FFFFFF !important;
   border-color: #BAE6FD !important;
   color: #0077FF !important;
-  transform: translateX(4px);
+  transform: translateY(-2px);
 }
 
 .calc-tab-btn:hover i {
@@ -3232,8 +3231,8 @@ footer.luxury-footer, .footer-wrapper, #footer-section {
   border-color: #0077FF !important;
   border-width: 2px !important;
   color: #0077FF !important;
-  box-shadow: 0 4px 20px rgba(0, 119, 255, 0.14) !important;
-  transform: translateX(6px);
+  box-shadow: 0 4px 22px rgba(0, 119, 255, 0.25) !important;
+  transform: translateY(-2px);
 }
 
 .calc-tab-btn.active i {
@@ -3245,20 +3244,50 @@ footer.luxury-footer, .footer-wrapper, #footer-section {
   background: #FFFFFF !important;
   border: 1px solid #BAE6FD !important;
   border-radius: 20px !important;
-  padding: 2.2rem !important;
-  box-shadow: 0 4px 25px rgba(0, 119, 255, 0.05) !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 6px 30px rgba(0, 119, 255, 0.06) !important;
+  max-width: 1120px;
+  margin: 0 auto;
   min-height: 520px;
 }
 
 .calc-pane {
   display: none;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 2.5rem;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 2.8rem;
   animation: calcFadeIn 0.3s ease-out;
 }
 
 .calc-pane.active {
   display: grid;
+}
+
+/* ============ RESOURCES & INTELLIGENCE SECTION ============ */
+.resources-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-top: 1.8rem;
+}
+
+.resource-feature-card {
+  background: #FFFFFF !important;
+  border: 1px solid #BAE6FD !important;
+  border-radius: 18px !important;
+  padding: 2.2rem 1.8rem !important;
+  box-shadow: 0 4px 20px rgba(0, 119, 255, 0.04) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 1 !important;
+  transform: none;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s;
+}
+
+.resource-feature-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #0077FF !important;
+  box-shadow: 0 12px 35px rgba(0, 119, 255, 0.12) !important;
 }
 
 @keyframes calcFadeIn {
