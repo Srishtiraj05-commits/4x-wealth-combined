@@ -1725,27 +1725,75 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeCanvas();
 
         const ribbons = [
-          { color: 'rgba(6, 182, 212, 0.45)', freqX: 0.004, freqY: 0.006, speed: 0.015, radX: 180, radY: 110, offset: 0 },
-          { color: 'rgba(245, 158, 11, 0.35)', freqX: 0.005, freqY: 0.004, speed: 0.018, radX: 160, radY: 130, offset: Math.PI / 3 },
-          { color: 'rgba(236, 72, 153, 0.38)', freqX: 0.003, freqY: 0.005, speed: 0.012, radX: 200, radY: 95, offset: Math.PI * 0.8 },
-          { color: 'rgba(16, 185, 129, 0.30)', freqX: 0.006, freqY: 0.003, speed: 0.020, radX: 140, radY: 140, offset: Math.PI * 1.4 },
-          { color: 'rgba(56, 189, 248, 0.40)', freqX: 0.004, freqY: 0.007, speed: 0.014, radX: 220, radY: 120, offset: Math.PI * 1.7 }
+          { color: 'rgba(6, 182, 212, 0.40)', freqX: 0.004, freqY: 0.006, speed: 0.015, radX: 180, radY: 110, offset: 0 },
+          { color: 'rgba(245, 158, 11, 0.30)', freqX: 0.005, freqY: 0.004, speed: 0.018, radX: 160, radY: 130, offset: Math.PI / 3 },
+          { color: 'rgba(236, 72, 153, 0.32)', freqX: 0.003, freqY: 0.005, speed: 0.012, radX: 200, radY: 95, offset: Math.PI * 0.8 },
+          { color: 'rgba(16, 185, 129, 0.28)', freqX: 0.006, freqY: 0.003, speed: 0.020, radX: 140, radY: 140, offset: Math.PI * 1.4 },
+          { color: 'rgba(56, 189, 248, 0.38)', freqX: 0.004, freqY: 0.007, speed: 0.014, radX: 220, radY: 120, offset: Math.PI * 1.7 }
         ];
+
+        // Flowing Constellation Network Nodes (Matching User Image Reference)
+        const nodeCount = 36;
+        const nodes = [];
+        for (let i = 0; i < nodeCount; i++) {
+          nodes.push({
+            x: Math.random() * (width || 640),
+            y: Math.random() * (height || 540),
+            vx: (Math.random() - 0.5) * 0.8,
+            vy: (Math.random() - 0.5) * 0.8,
+            radius: Math.random() * 2.6 + 2.2,
+            color: i % 3 === 0 ? 'rgba(6, 182, 212, 0.75)' : (i % 3 === 1 ? 'rgba(56, 189, 248, 0.85)' : 'rgba(99, 102, 241, 0.65)')
+          });
+        }
 
         function drawWaveAura() {
           if (!canvas.parentElement) return;
           ctx.clearRect(0, 0, width, height);
           time += 0.012;
 
+          // 1. Draw Flowing Connected Constellation Network (Geometric Mesh)
+          for (let i = 0; i < nodes.length; i++) {
+            const n1 = nodes[i];
+            n1.x += n1.vx;
+            n1.y += n1.vy;
+            if (n1.x < 0 || n1.x > width) n1.vx *= -1;
+            if (n1.y < 0 || n1.y > height) n1.vy *= -1;
+
+            for (let j = i + 1; j < nodes.length; j++) {
+              const n2 = nodes[j];
+              const dx = n1.x - n2.x;
+              const dy = n1.y - n2.y;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+              if (dist < 140) {
+                const alpha = (1 - dist / 140) * 0.32;
+                ctx.beginPath();
+                ctx.strokeStyle = `rgba(14, 165, 233, ${alpha})`;
+                ctx.lineWidth = 1.2;
+                ctx.moveTo(n1.x, n1.y);
+                ctx.lineTo(n2.x, n2.y);
+                ctx.stroke();
+              }
+            }
+
+            // Node Circle
+            ctx.beginPath();
+            ctx.arc(n1.x, n1.y, n1.radius, 0, Math.PI * 2);
+            ctx.fillStyle = n1.color;
+            ctx.shadowColor = n1.color;
+            ctx.shadowBlur = 8;
+            ctx.fill();
+          }
+
+          // 2. Draw Orbital Light Wave Ribbons
           const centerX = width / 2;
           const centerY = height / 2;
 
           ribbons.forEach((rib, idx) => {
             ctx.beginPath();
             ctx.strokeStyle = rib.color;
-            ctx.lineWidth = 2.2;
+            ctx.lineWidth = 2.0;
             ctx.shadowColor = rib.color;
-            ctx.shadowBlur = 12;
+            ctx.shadowBlur = 10;
 
             const points = 120;
             for (let i = 0; i <= points; i++) {
@@ -1772,10 +1820,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (stage && card) {
       let isTiltEnabled = true;
-      let targetRotateX = 6;
-      let targetRotateY = -8;
-      let currentRotateX = 6;
-      let currentRotateY = -8;
+      let targetRotateX = 5;
+      let targetRotateY = -7;
+      let currentRotateX = 5;
+      let currentRotateY = -7;
       let isHovering = false;
       let timeTilt = 0;
 
@@ -1785,8 +1833,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentRotateY += (targetRotateY - currentRotateY) * 0.1;
 
         if (!isHovering && isTiltEnabled) {
-          const idleX = Math.sin(timeTilt * 1.5) * 3 + 5;
-          const idleY = Math.cos(timeTilt * 1.2) * 4 - 8;
+          const idleX = Math.sin(timeTilt * 1.4) * 3 + 4;
+          const idleY = Math.cos(timeTilt * 1.1) * 4 - 6;
           targetRotateX = idleX;
           targetRotateY = idleY;
         }
@@ -1818,16 +1866,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       stage.addEventListener('mouseleave', () => {
         isHovering = false;
-        targetRotateX = 6;
-        targetRotateY = -8;
+        targetRotateX = 5;
+        targetRotateY = -7;
       });
     }
   }
   initHeroVisualStage();
-
-  const x4ChatLoader = document.createElement('script');
-  x4ChatLoader.src = 'chatbot.js?v=148.0';
-  x4ChatLoader.defer = true;
-  document.body.appendChild(x4ChatLoader);
 });
 
