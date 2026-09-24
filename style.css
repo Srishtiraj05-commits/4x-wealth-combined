@@ -1709,20 +1709,6 @@ section, .section-ivory, .section-ivory-alt, .section-dark {
   border: 1px solid #BAE6FD;
 }
 
-.diligence-node-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: #FFFFFF;
-  border: 1px solid #BAE6FD;
-  color: #0077FF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  box-shadow: 0 2px 8px rgba(0, 119, 255, 0.08);
-}
-
 .diligence-step-node h4 {
   font-family: var(--font-heading);
   font-size: 16px;
@@ -1816,20 +1802,32 @@ section, .section-ivory, .section-ivory-alt, .section-dark {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.65rem;
+  padding: 0;
+  margin: 0;
 }
 
 .approach-card ul li {
   font-size: 13px;
-  color: #64748B;
+  color: #475569;
+  font-weight: 500;
   display: flex;
-  align-items: center;
-  gap: 6px;
+  align-items: flex-start;
+  line-height: 1.45;
+  position: relative;
+  padding-left: 14px;
 }
 
-.approach-card ul li i {
-  color: #0077FF;
-  font-size: 10px;
+.approach-card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #0077FF;
+  flex-shrink: 0;
 }
 
 /* ============ THE 4X INVESTMENT UNIVERSE (SLIDE 5) ============ */
