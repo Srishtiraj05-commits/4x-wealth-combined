@@ -1710,7 +1710,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const x4ChatLoader = document.createElement('script');
-  x4ChatLoader.src = 'chatbot.js?v=141.0';
+  x4ChatLoader.src = 'chatbot.js?v=142.0';
   x4ChatLoader.defer = true;
   document.body.appendChild(x4ChatLoader);
 });

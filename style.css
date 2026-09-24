@@ -706,45 +706,69 @@ a {
 }
 
 .stock-card {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #FFFFFF !important;
-  border: 1px solid #E2E8F0 !important;
-  padding: 4px 12px;
-  border-radius: 20px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 6px !important;
   color: #0F172A !important;
-  font-size: 12.5px;
-  white-space: nowrap;
-  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04) !important;
+  font-size: 12.5px !important;
+  white-space: nowrap !important;
+  box-shadow: none !important;
+}
+
+.stock-logo-container {
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 6px !important;
+  background: #E0F2FE !important;
+  color: #0077FF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  font-size: 11px !important;
+  flex-shrink: 0 !important;
 }
 
 .stock-symbol, .stock-name {
-  font-weight: 600 !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
   color: #0F172A !important;
-  font-size: 12px !important;
+  font-size: 12.5px !important;
+  letter-spacing: -0.01em !important;
 }
 
 .stock-price {
   font-family: var(--font-mono) !important;
   font-variant-numeric: tabular-nums !important;
   color: #0077FF !important;
-  font-weight: 700;
+  font-weight: 700 !important;
+  font-size: 12.5px !important;
 }
 
 .stock-change {
   font-family: var(--font-mono) !important;
   font-variant-numeric: tabular-nums !important;
-  font-size: 11.5px;
-  font-weight: 600;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 2px 7px !important;
+  border-radius: 4px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 2px !important;
 }
 
-.stock-change.positive, .stock-change.up {
-  color: #10B981 !important;
+.stock-card.positive .stock-change, .stock-change.positive, .stock-change.up {
+  background: #E6F9F0 !important;
+  color: #059669 !important;
 }
 
-.stock-change.negative, .stock-change.down {
-  color: #EF4444 !important;
+.stock-card.negative .stock-change, .stock-change.negative, .stock-change.down {
+  background: #FEE2E2 !important;
+  color: #DC2626 !important;
 }
 
 .view-market-link {
@@ -764,8 +788,8 @@ a {
   position: relative !important;
   overflow: hidden !important;
   background: #FFFFFF !important;
-  padding-top: clamp(24px, 3.2vh, 36px) !important;
-  padding-bottom: clamp(22px, 3vh, 32px) !important;
+  padding-top: clamp(32px, 4vh, 48px) !important;
+  padding-bottom: clamp(36px, 4.5vh, 52px) !important;
   text-align: left !important;
 }
 
@@ -801,13 +825,13 @@ a {
   -webkit-backdrop-filter: blur(8px) !important;
   border: 1px solid #BAE6FD !important;
   border-radius: 50px !important;
-  padding: 5px 16px !important;
+  padding: 6px 18px !important;
   box-shadow: 0 2px 10px rgba(0, 119, 255, 0.05) !important;
   font-family: var(--font-mono) !important;
   font-size: 11.5px !important;
   color: #0369A1 !important;
   font-weight: 600 !important;
-  margin-bottom: 0.9rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .live-cyan-dot {
@@ -850,11 +874,11 @@ a {
 .hero-title-main, h1.hero-title-main {
   color: #0F172A !important;
   font-family: var(--font-heading) !important;
-  font-size: clamp(42px, 5.2vw, 62px) !important;
+  font-size: clamp(46px, 5.8vw, 68px) !important;
   font-weight: 800 !important;
   letter-spacing: -0.03em !important;
-  line-height: 1.1 !important;
-  margin-bottom: 0.25rem !important;
+  line-height: 1.08 !important;
+  margin-bottom: 0.35rem !important;
   text-align: left !important;
 }
 
@@ -862,10 +886,10 @@ a {
   font-family: var(--font-heading) !important;
   font-style: normal !important;
   font-weight: 800 !important;
-  font-size: clamp(32px, 4vw, 48px) !important;
+  font-size: clamp(36px, 4.5vw, 54px) !important;
   letter-spacing: -0.03em !important;
-  line-height: 1.15 !important;
-  margin-bottom: 0.9rem !important;
+  line-height: 1.12 !important;
+  margin-bottom: 1.1rem !important;
   text-align: left !important;
   background: linear-gradient(135deg, #0055FF 0%, #0088FF 50%, #00C8FF 100%) !important;
   -webkit-background-clip: text !important;
@@ -881,10 +905,10 @@ a {
 
 .hero-sub-text {
   color: #475569 !important;
-  font-size: clamp(15px, 1.25vw, 17px) !important;
-  line-height: 1.6 !important;
-  max-width: 780px !important;
-  margin: 0 0 1.3rem 0 !important;
+  font-size: clamp(16px, 1.3vw, 17.5px) !important;
+  line-height: 1.65 !important;
+  max-width: 800px !important;
+  margin: 0 0 1.5rem 0 !important;
   text-align: left !important;
 }
 
@@ -894,7 +918,7 @@ a {
   align-items: center !important;
   gap: 1.1rem !important;
   flex-wrap: wrap !important;
-  margin-bottom: 1.4rem !important;
+  margin-bottom: 1.6rem !important;
 }
 
 .btn-primary {
@@ -902,9 +926,9 @@ a {
   color: #FFFFFF !important;
   border: none !important;
   border-radius: 50px !important;
-  padding: 11px 26px !important;
+  padding: 12px 28px !important;
   font-weight: 700 !important;
-  font-size: 14px !important;
+  font-size: 14.5px !important;
   box-shadow: 0 4px 16px rgba(0, 163, 255, 0.3) !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -924,9 +948,9 @@ a {
   color: #0077FF !important;
   border: 1.5px solid #00A3FF !important;
   border-radius: 50px !important;
-  padding: 11px 26px !important;
+  padding: 12px 28px !important;
   font-weight: 600 !important;
-  font-size: 14px !important;
+  font-size: 14.5px !important;
   box-shadow: 0 2px 8px rgba(0, 119, 255, 0.06) !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -945,32 +969,47 @@ a {
 
 .hero-credentials-strip {
   width: 100% !important;
-  padding-top: 1.1rem !important;
+  padding-top: 1.3rem !important;
   border-top: 1px solid #BAE6FD !important;
 }
 
 .hero-trust-grid {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 1.1rem !important;
+  gap: 1.25rem !important;
   width: 100% !important;
   text-align: left !important;
 }
 
 .hero-trust-grid > div {
-  padding: 0.9rem 1.1rem !important;
-  border-radius: 14px !important;
+  padding: 1.15rem 1.35rem !important;
+  border-radius: 16px !important;
+  background: #FFFFFF !important;
+  border: 1px solid #BAE6FD !important;
+  box-shadow: 0 4px 18px rgba(0, 119, 255, 0.05) !important;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease) !important;
+}
+
+.hero-trust-grid > div:hover {
+  transform: translateY(-4px) !important;
+  border-color: #0077FF !important;
+  box-shadow: 0 12px 28px rgba(0, 119, 255, 0.12) !important;
 }
 
 .hero-trust-grid h3 {
-  font-size: clamp(20px, 1.8vw, 24px) !important;
-  margin-bottom: 4px !important;
+  font-family: var(--font-mono) !important;
+  font-size: clamp(21px, 2vw, 25px) !important;
+  color: #0F172A !important;
+  font-weight: 800 !important;
+  margin-bottom: 6px !important;
+  letter-spacing: -0.01em !important;
 }
 
 .hero-trust-grid .metric-pill, 
 .hero-trust-grid .sparkline-badge {
-  font-size: 11.5px !important;
-  padding: 3px 9px !important;
+  font-size: 12px !important;
+  padding: 3px 10px !important;
+  font-weight: 700 !important;
 }
 
 @media (max-width: 840px) {

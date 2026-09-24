@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=141.0">
+<link rel="stylesheet" href="style.css?v=142.0">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
       <!-- Brand Logo -->
       <a href="index.html" class="logo-link clickable" id="logoContainer">
         <div class="logo-wrapper">
-          <img src="logo.png?v=141.0" alt="4X Wealth Logo" class="brand-logo-img">
+          <img src="logo.png?v=142.0" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text-group">
             <div class="logo-text">4X<span>WEALTH</span></div>
             <span class="logo-sub">FINANCIAL SERVICES</span>
@@ -234,7 +234,7 @@
   <div class="sk-drawer" id="mobileDrawer">
     <button class="sk-drawer-close clickable" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
     <div class="sk-drawer-header">
-      <img src="logo.png?v=141.0" alt="4X Wealth Logo" class="brand-logo-img">
+      <img src="logo.png?v=142.0" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
                 <ul class="sk-drawer-links">
@@ -326,27 +326,11 @@
         <button class="blog-filter-pill" data-filter="debt">Fixed Income & Bonds</button>
       </div>
 
-      <!-- Grid Layout for Blogs (Technical SDE Architecture) -->
+      <!-- Grid Layout for Blogs (Clean Luxury Fiduciary Architecture) -->
       <div class="blogs-page-grid" id="blogPageGrid">
         
         <!-- Blog 1 -->
         <div class="blog-card clickable" data-blog-id="mutual-funds" data-category="mutual-funds">
-          <div class="blog-terminal-header">
-            <div class="terminal-dots">
-              <span class="t-dot red"></span>
-              <span class="t-dot yellow"></span>
-              <span class="t-dot green"></span>
-            </div>
-            <span class="terminal-title">ALLOCATION_ENGINE // MUTUAL_FUNDS.ts</span>
-            <span class="terminal-badge">ARN-268488</span>
-          </div>
-          <div class="blog-terminal-body">
-            <pre><code><span class="code-keyword">const</span> portfolio = <span class="code-keyword">new</span> <span class="code-fn">EquityAllocator</span>({
-  <span class="code-prop">benchmark</span>: <span class="code-str">"NIFTY 50 TRI"</span>,
-  <span class="code-prop">activeShare</span>: <span class="code-num">0.78</span>, <span class="code-comment">// Alpha over index</span>
-  <span class="code-prop">rebalance</span>: <span class="code-str">"Quarterly Mean Reversion"</span>
-});</code></pre>
-          </div>
           <div class="blog-card-content">
             <div class="blog-card-meta-strip">
               <span class="blog-sde-tag"><i class="fa-solid fa-layer-group"></i> MUTUAL FUNDS</span>
@@ -356,8 +340,13 @@
             <p class="blog-excerpt">
               A systematic analysis of unit-holding structures, daily NAV mechanics, active versus passive tracking error, and fiduciary distribution channels.
             </p>
+            <div class="blog-tags-row">
+              <span class="blog-mini-tag">Active Alpha</span>
+              <span class="blog-mini-tag">SEBI Regulated</span>
+              <span class="blog-mini-tag">NAV Mechanics</span>
+            </div>
             <div class="blog-footer-action">
-              <span class="blog-desk-tag">Quant Research Desk</span>
+              <span class="blog-desk-tag"><i class="fa-solid fa-user-tie" style="color: #0077FF; margin-right: 4px;"></i> Quant Research Desk</span>
               <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
             </div>
           </div>
@@ -365,22 +354,6 @@
 
         <!-- Blog 2 -->
         <div class="blog-card clickable" data-blog-id="compounding" data-category="compounding">
-          <div class="blog-terminal-header">
-            <div class="terminal-dots">
-              <span class="t-dot red"></span>
-              <span class="t-dot yellow"></span>
-              <span class="t-dot green"></span>
-            </div>
-            <span class="terminal-title">LIQUIDITY_ROUTER // CASHFLOW.ts</span>
-            <span class="terminal-badge">SYSTEMATIC</span>
-          </div>
-          <div class="blog-terminal-body">
-            <pre><code><span class="code-keyword">const</span> routing = <span class="code-fn">executeSystematicPlan</span>({
-  <span class="code-prop">accumulation</span>: <span class="code-str">"SIP (Rupee Cost Avg)"</span>,
-  <span class="code-prop">migration</span>: <span class="code-str">"STP (Debt -> Equity)"</span>,
-  <span class="code-prop">harvest</span>: <span class="code-str">"SWP (Tax-Shield Payout)"</span>
-});</code></pre>
-          </div>
           <div class="blog-card-content">
             <div class="blog-card-meta-strip">
               <span class="blog-sde-tag"><i class="fa-solid fa-arrows-rotate"></i> CASHFLOW ROUTING</span>
@@ -390,8 +363,13 @@
             <p class="blog-excerpt">
               Deconstructing the three essential cash-flow mechanisms. How to deploy capital via STP during market corrections and harvest tax-efficient SWP yields.
             </p>
+            <div class="blog-tags-row">
+              <span class="blog-mini-tag">Rupee Cost Avg</span>
+              <span class="blog-mini-tag">Tax-Shield Payout</span>
+              <span class="blog-mini-tag">STP Migration</span>
+            </div>
             <div class="blog-footer-action">
-              <span class="blog-desk-tag">Advisory Desk</span>
+              <span class="blog-desk-tag"><i class="fa-solid fa-user-tie" style="color: #0077FF; margin-right: 4px;"></i> Advisory Desk</span>
               <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
             </div>
           </div>
@@ -399,21 +377,6 @@
 
         <!-- Blog 3 -->
         <div class="blog-card clickable" data-blog-id="growth" data-category="compounding">
-          <div class="blog-terminal-header">
-            <div class="terminal-dots">
-              <span class="t-dot red"></span>
-              <span class="t-dot yellow"></span>
-              <span class="t-dot green"></span>
-            </div>
-            <span class="terminal-title">COMPOUNDING_MATH // EXPONENTIAL.ts</span>
-            <span class="terminal-badge">MATHEMATICS</span>
-          </div>
-          <div class="blog-terminal-body">
-            <pre><code><span class="code-keyword">function</span> <span class="code-fn">futureValue</span>(P, r, n, t) {
-  <span class="code-keyword">return</span> P * Math.<span class="code-fn">pow</span>(1 + (r / n), n * t);
-}
-<span class="code-comment">// Age 25 vs 35: 3.5x Final Corpus Multiplier</span></code></pre>
-          </div>
           <div class="blog-card-content">
             <div class="blog-card-meta-strip">
               <span class="blog-sde-tag"><i class="fa-solid fa-chart-line"></i> QUANT FORMULA</span>
@@ -423,8 +386,13 @@
             <p class="blog-excerpt">
               Why time horizon dominates nominal return yield. Step-by-step mathematical proofs demonstrating the massive capital cost of delay in systematic investing.
             </p>
+            <div class="blog-tags-row">
+              <span class="blog-mini-tag">Time Horizon Model</span>
+              <span class="blog-mini-tag">Exponential Growth</span>
+              <span class="blog-mini-tag">Cost of Delay</span>
+            </div>
             <div class="blog-footer-action">
-              <span class="blog-desk-tag">Quant Lab</span>
+              <span class="blog-desk-tag"><i class="fa-solid fa-user-tie" style="color: #0077FF; margin-right: 4px;"></i> Quant Lab</span>
               <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
             </div>
           </div>
@@ -432,22 +400,6 @@
 
         <!-- Blog 4 -->
         <div class="blog-card clickable" data-blog-id="nps" data-category="nps">
-          <div class="blog-terminal-header">
-            <div class="terminal-dots">
-              <span class="t-dot red"></span>
-              <span class="t-dot yellow"></span>
-              <span class="t-dot green"></span>
-            </div>
-            <span class="terminal-title">TAX_SHIELD // SEC_80CCD.ts</span>
-            <span class="terminal-badge">PFRDA REG</span>
-          </div>
-          <div class="blog-terminal-body">
-            <pre><code><span class="code-keyword">const</span> taxBenefit = <span class="code-fn">calculateHarvest</span>({
-  <span class="code-prop">sec80CCD_1B</span>: <span class="code-num">50000</span>, <span class="code-comment">// Exclusive NPS</span>
-  <span class="code-prop">marginalTaxRate</span>: <span class="code-num">0.312</span>, <span class="code-comment">// 30% + cess</span>
-  <span class="code-prop">annualSavings</span>: <span class="code-str">"₹15,600 / Year"</span>
-});</code></pre>
-          </div>
           <div class="blog-card-content">
             <div class="blog-card-meta-strip">
               <span class="blog-sde-tag"><i class="fa-solid fa-shield-halved"></i> TAX OPTIMIZER</span>
@@ -457,8 +409,13 @@
             <p class="blog-excerpt">
               Analyzing Section 80CCD(1B) tax write-offs, Active vs Auto lifecycle allocations, and Tier-1 vs Tier-2 operational mechanics for senior professionals.
             </p>
+            <div class="blog-tags-row">
+              <span class="blog-mini-tag">Sec 80CCD(1B)</span>
+              <span class="blog-mini-tag">Triple Tax Benefit</span>
+              <span class="blog-mini-tag">PFRDA Regulated</span>
+            </div>
             <div class="blog-footer-action">
-              <span class="blog-desk-tag">Tax Strategy Desk</span>
+              <span class="blog-desk-tag"><i class="fa-solid fa-user-tie" style="color: #0077FF; margin-right: 4px;"></i> Tax Strategy Desk</span>
               <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
             </div>
           </div>
@@ -466,22 +423,6 @@
 
         <!-- Blog 5 -->
         <div class="blog-card clickable" data-blog-id="pms" data-category="pms">
-          <div class="blog-terminal-header">
-            <div class="terminal-dots">
-              <span class="t-dot red"></span>
-              <span class="t-dot yellow"></span>
-              <span class="t-dot green"></span>
-            </div>
-            <span class="terminal-title">HNW_MANDATE // DISCRETIONARY_PMS.ts</span>
-            <span class="terminal-badge">APRN00969</span>
-          </div>
-          <div class="blog-terminal-body">
-            <pre><code><span class="code-keyword">const</span> pmsMandate = <span class="code-keyword">new</span> <span class="code-fn">PMSDesk</span>({
-  <span class="code-prop">minTicket</span>: <span class="code-str">"₹50,00,000"</span>,
-  <span class="code-prop">custody</span>: <span class="code-str">"Direct Demat Ownership (PoA)"</span>,
-  <span class="code-prop">drawdownLimit</span>: <span class="code-num">12.4%</span>
-});</code></pre>
-          </div>
           <div class="blog-card-content">
             <div class="blog-card-meta-strip">
               <span class="blog-sde-tag"><i class="fa-solid fa-briefcase"></i> PMS DESK</span>
@@ -491,8 +432,13 @@
             <p class="blog-excerpt">
               Comparative study of regulatory tick sizes, Demat equity ownership under PoA, pass-through capital gains liabilities, and bespoke sector exclusions.
             </p>
+            <div class="blog-tags-row">
+              <span class="blog-mini-tag">₹50L+ Ticket</span>
+              <span class="blog-mini-tag">Demat Ownership</span>
+              <span class="blog-mini-tag">Custom Mandates</span>
+            </div>
             <div class="blog-footer-action">
-              <span class="blog-desk-tag">PMS Portfolio Desk</span>
+              <span class="blog-desk-tag"><i class="fa-solid fa-user-tie" style="color: #0077FF; margin-right: 4px;"></i> PMS Portfolio Desk</span>
               <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
             </div>
           </div>
@@ -500,22 +446,6 @@
 
         <!-- Blog 6 -->
         <div class="blog-card clickable" data-blog-id="debt" data-category="debt">
-          <div class="blog-terminal-header">
-            <div class="terminal-dots">
-              <span class="t-dot red"></span>
-              <span class="t-dot yellow"></span>
-              <span class="t-dot green"></span>
-            </div>
-            <span class="terminal-title">FIXED_INCOME // YIELD_CURVE.ts</span>
-            <span class="terminal-badge">AAA RATED</span>
-          </div>
-          <div class="blog-terminal-body">
-            <pre><code><span class="code-keyword">const</span> fixedIncomeShield = {
-  <span class="code-prop">sovereign10Y</span>: <span class="code-str">"7.12% G-Sec Benchmark"</span>,
-  <span class="code-prop">corporateAAA</span>: <span class="code-str">"7.85% Spread Shield"</span>,
-  <span class="code-prop">creditFilter</span>: <span class="code-str">"Zero Default High-Grade"</span>
-};</code></pre>
-          </div>
           <div class="blog-card-content">
             <div class="blog-card-meta-strip">
               <span class="blog-sde-tag"><i class="fa-solid fa-vault"></i> FIXED INCOME</span>
@@ -525,8 +455,13 @@
             <p class="blog-excerpt">
               Structuring fixed-income allocation to mitigate equity drawdown risks. Evaluating CRISIL AAA corporate deposit credit spreads and sovereign bond duration.
             </p>
+            <div class="blog-tags-row">
+              <span class="blog-mini-tag">AAA Corporate FDs</span>
+              <span class="blog-mini-tag">Sovereign 10Y</span>
+              <span class="blog-mini-tag">Capital Preservation</span>
+            </div>
             <div class="blog-footer-action">
-              <span class="blog-desk-tag">Fixed Income Desk</span>
+              <span class="blog-desk-tag"><i class="fa-solid fa-user-tie" style="color: #0077FF; margin-right: 4px;"></i> Fixed Income Desk</span>
               <span class="blog-card-link">Read Analysis <i class="fa-solid fa-arrow-right"></i></span>
             </div>
           </div>
@@ -673,7 +608,7 @@
         <!-- Brand Summary -->
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-            <img src="logo.png?v=141.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
+            <img src="logo.png?v=142.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
             <h3>4X<span>WEALTH</span></h3>
           </div>
           <p>
@@ -776,7 +711,7 @@
         <span class="blog-article-meta" id="blogArticleMeta">MUTUAL FUND</span>
         <h2 class="blog-article-title" id="blogArticleTitle">What is a Mutual Fund?</h2>
         <div class="blog-article-body" id="blogArticleBody">
-          <!-- Populated dynamically via script.js?v=141.0 -->
+          <!-- Populated dynamically via script.js?v=142.0 -->
         </div>
       </div>
     </div>
@@ -786,7 +721,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   
   <!-- Local scripts -->
-  <script src="blogs.js?v=141.0"></script>
-  <script src="chatbot.js?v=141.0"></script>
+  <script src="blogs.js?v=142.0"></script>
+  <script src="chatbot.js?v=142.0"></script>
 </body>
 </html>
