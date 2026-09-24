@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Master Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=152.0">
+  <link rel="stylesheet" href="style.css?v=153.0">
 </head>
 <body class="auth-page-body">
 
@@ -24,7 +24,7 @@
     <div class="nav-container">
       <a href="index.html" class="logo-link">
         <div class="logo-wrapper">
-          <img src="logo.png?v=152.0" alt="4X Wealth Logo" class="brand-logo-img">
+          <img src="logo.png?v=153.0" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text-group">
             <div class="logo-text">4X<span>WEALTH</span></div>
             <span class="logo-sub">FINANCIAL SERVICES</span>
@@ -51,8 +51,7 @@
         
         <!-- Header / Logo Subtitle -->
         <div class="auth-header-block">
-          <div class="auth-badge">
-            <i class="fa-solid fa-shield-halved"></i> 256-BIT SSL ENCRYPTED SECURE ACCESS
+          <div class="auth-badge">256-BIT SSL ENCRYPTED SECURE ACCESS
           </div>
           <h1 class="auth-title">Client Access Portal</h1>
           <p class="auth-subtitle">Select your account classification to access your investment portfolio, analytics, and reports.</p>
@@ -60,36 +59,29 @@
 
         <!-- 3-Tier Mode Selector Tabs -->
         <div class="auth-tabs-row" id="authModeTabs">
-          <button class="auth-tab active" data-target="retail-login">
-            <i class="fa-solid fa-user"></i>
-            <span>Retail Investor</span>
+          <button class="auth-tab active" data-target="retail-login"><span>Retail Investor</span>
           </button>
-          <button class="auth-tab" data-target="corporate-login">
-            <i class="fa-solid fa-building-columns"></i>
-            <span>Corporate Treasury</span>
+          <button class="auth-tab" data-target="corporate-login"><span>Corporate Treasury</span>
           </button>
-          <button class="auth-tab" data-target="partner-login">
-            <i class="fa-solid fa-handshake"></i>
-            <span>Partner / ARN</span>
+          <button class="auth-tab" data-target="partner-login"><span>Partner / ARN</span>
           </button>
         </div>
 
         <!-- Tab Content 1: Retail Investor Login -->
         <div class="auth-tab-content active" id="retail-login">
-          <div class="auth-type-pill">
-            <i class="fa-solid fa-user"></i> Individual & HUF Portfolios
+          <div class="auth-type-pill">Individual & HUF Portfolios
           </div>
           <form class="auth-form" onsubmit="event.preventDefault(); alert('Redirecting to Retail Investor Dashboard...');">
             <div class="form-group-field">
-              <label><i class="fa-solid fa-id-card"></i> PAN Card / Client Code</label>
+              <label>PAN Card / Client Code</label>
               <input type="text" placeholder="e.g. ABCDE1234F" required maxlength="10" style="text-transform: uppercase;">
             </div>
             <div class="form-group-field">
-              <label><i class="fa-solid fa-mobile-screen"></i> Registered Mobile Number</label>
+              <label>Registered Mobile Number</label>
               <input type="tel" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
             </div>
             <div class="form-group-field">
-              <label><i class="fa-solid fa-lock"></i> Password / MPIN</label>
+              <label>Password / MPIN</label>
               <input type="password" placeholder="••••••••" required>
             </div>
             <div class="auth-form-aux">
@@ -99,27 +91,26 @@
               <a href="#" class="auth-forgot" onclick="alert('Password reset link has been sent to your registered email/phone.');">Forgot Password?</a>
             </div>
             <button type="submit" class="auth-submit-btn">
-              <span>Login to Portfolio</span> <i class="fa-solid fa-arrow-right"></i>
+              <span>Login to Portfolio</span>
             </button>
           </form>
         </div>
 
         <!-- Tab Content 2: Corporate Treasury Login -->
         <div class="auth-tab-content" id="corporate-login" style="display: none;">
-          <div class="auth-type-pill">
-            <i class="fa-solid fa-building-columns"></i> Enterprise & Treasury Desk
+          <div class="auth-type-pill">Enterprise & Treasury Desk
           </div>
           <form class="auth-form" onsubmit="event.preventDefault(); alert('Redirecting to Corporate Treasury Desk...');">
             <div class="form-group-field">
-              <label><i class="fa-solid fa-building"></i> Corporate Entity PAN</label>
+              <label>Corporate Entity PAN</label>
               <input type="text" placeholder="e.g. AAACX1234K" required maxlength="10" style="text-transform: uppercase;">
             </div>
             <div class="form-group-field">
-              <label><i class="fa-solid fa-user-tie"></i> Authorized Signatory ID / Email</label>
+              <label>Authorized Signatory ID / Email</label>
               <input type="email" placeholder="treasury@company.com" required>
             </div>
             <div class="form-group-field">
-              <label><i class="fa-solid fa-key"></i> Enterprise 2FA Password</label>
+              <label>Enterprise 2FA Password</label>
               <input type="password" placeholder="••••••••" required>
             </div>
             <div class="auth-form-aux">
@@ -129,27 +120,26 @@
               <a href="#" class="auth-forgot" onclick="alert('Contact corporate support desk at support@4xwealthfinancialservices.com');">Corporate Support</a>
             </div>
             <button type="submit" class="auth-submit-btn">
-              <span>Access Treasury Portal</span> <i class="fa-solid fa-arrow-right"></i>
+              <span>Access Treasury Portal</span>
             </button>
           </form>
         </div>
 
         <!-- Tab Content 3: Partner / ARN Login -->
         <div class="auth-tab-content" id="partner-login" style="display: none;">
-          <div class="auth-type-pill">
-            <i class="fa-solid fa-handshake"></i> Sub-Broker & Distributor Desk
+          <div class="auth-type-pill">Sub-Broker & Distributor Desk
           </div>
           <form class="auth-form" onsubmit="event.preventDefault(); alert('Redirecting to Partner ARN Portal...');">
             <div class="form-group-field">
-              <label><i class="fa-solid fa-certificate"></i> AMFI Registration Number (ARN)</label>
+              <label>AMFI Registration Number (ARN)</label>
               <input type="text" placeholder="e.g. ARN-268488" required>
             </div>
             <div class="form-group-field">
-              <label><i class="fa-solid fa-envelope"></i> Empaneled Partner Email</label>
+              <label>Empaneled Partner Email</label>
               <input type="email" placeholder="partner@domain.com" required>
             </div>
             <div class="form-group-field">
-              <label><i class="fa-solid fa-lock"></i> Partner Portal Password</label>
+              <label>Partner Portal Password</label>
               <input type="password" placeholder="••••••••" required>
             </div>
             <div class="auth-form-aux">
@@ -159,7 +149,7 @@
               <a href="#" class="auth-forgot" onclick="alert('Partner reset instructions sent to registered ARN email.');">Partner Helpdesk</a>
             </div>
             <button type="submit" class="auth-submit-btn">
-              <span>Sign In to Partner Desk</span> <i class="fa-solid fa-arrow-right"></i>
+              <span>Sign In to Partner Desk</span>
             </button>
           </form>
         </div>
@@ -168,7 +158,7 @@
         <div class="auth-footer-prompt">
           <p>Don't have an active account with 4X Wealth?</p>
           <a href="signup.html" class="auth-switch-link">
-            <span>Open a New Account / Register Here</span> <i class="fa-solid fa-arrow-right"></i>
+            <span>Open a New Account / Register Here</span>
           </a>
         </div>
 
@@ -205,6 +195,6 @@
   </script>
 
   <!-- 4X Chatbot Assistant -->
-  <script src="chatbot.js?v=152.0"></script>
+  <script src="chatbot.js?v=153.0"></script>
 </body>
 </html>

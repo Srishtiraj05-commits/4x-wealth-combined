@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Master Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=152.0">
+  <link rel="stylesheet" href="style.css?v=153.0">
 </head>
 <body class="auth-page-body">
 
@@ -24,7 +24,7 @@
     <div class="nav-container">
       <a href="index.html" class="logo-link">
         <div class="logo-wrapper">
-          <img src="logo.png?v=152.0" alt="4X Wealth Logo" class="brand-logo-img">
+          <img src="logo.png?v=153.0" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text-group">
             <div class="logo-text">4X<span>WEALTH</span></div>
             <span class="logo-sub">FINANCIAL SERVICES</span>
@@ -60,50 +60,43 @@
 
         <!-- 3-Tier Mode Selector Tabs -->
         <div class="auth-tabs-row" id="signupModeTabs">
-          <button class="auth-tab active" data-target="retail-signup">
-            <i class="fa-solid fa-user-plus"></i>
-            <span>Retail Investor</span>
+          <button class="auth-tab active" data-target="retail-signup"><span>Retail Investor</span>
           </button>
-          <button class="auth-tab" data-target="corporate-signup">
-            <i class="fa-solid fa-building-circle-check"></i>
-            <span>Corporate Treasury</span>
+          <button class="auth-tab" data-target="corporate-signup"><span>Corporate Treasury</span>
           </button>
-          <button class="auth-tab" data-target="partner-signup">
-            <i class="fa-solid fa-user-group"></i>
-            <span>Partner / ARN</span>
+          <button class="auth-tab" data-target="partner-signup"><span>Partner / ARN</span>
           </button>
         </div>
 
         <!-- Tab Content 1: Retail Investor Onboarding -->
         <div class="auth-tab-content active" id="retail-signup">
-          <div class="auth-type-pill">
-            <i class="fa-solid fa-seedling"></i> Individual, HUF & NRI Wealth Account
+          <div class="auth-type-pill">Individual, HUF & NRI Wealth Account
           </div>
           <form class="auth-form" onsubmit="event.preventDefault(); alert('Thank you! Our onboarding desk will initiate your KYC verification link on your mobile/email.');">
             <div class="form-grid-2col">
               <div class="form-group-field">
-                <label><i class="fa-solid fa-user"></i> Full Legal Name (as per PAN)</label>
+                <label>Full Legal Name (as per PAN)</label>
                 <input type="text" placeholder="e.g. Rahul Sharma" required>
               </div>
               <div class="form-group-field">
-                <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+                <label>Email Address</label>
                 <input type="email" placeholder="rahul@example.com" required>
               </div>
             </div>
             
             <div class="form-grid-2col">
               <div class="form-group-field">
-                <label><i class="fa-solid fa-mobile-screen"></i> Mobile Number (Aadhaar linked)</label>
+                <label>Mobile Number (Aadhaar linked)</label>
                 <input type="tel" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
               </div>
               <div class="form-group-field">
-                <label><i class="fa-solid fa-id-card"></i> Permanent Account Number (PAN)</label>
+                <label>Permanent Account Number (PAN)</label>
                 <input type="text" placeholder="e.g. ABCDE1234F" required maxlength="10" style="text-transform: uppercase;">
               </div>
             </div>
 
             <div class="form-group-field">
-              <label><i class="fa-solid fa-chart-pie"></i> Primary Investment Objective</label>
+              <label>Primary Investment Objective</label>
               <select required>
                 <option value="" disabled selected>Select Primary Goal...</option>
                 <option value="wealth">Long-term Compounding (Mutual Funds & Direct Equity)</option>
@@ -121,35 +114,34 @@
             </div>
             
             <button type="submit" class="auth-submit-btn">
-              <span>Initiate Paperless Onboarding</span> <i class="fa-solid fa-arrow-right"></i>
+              <span>Initiate Paperless Onboarding</span>
             </button>
           </form>
         </div>
 
         <!-- Tab Content 2: Corporate Treasury Onboarding -->
         <div class="auth-tab-content" id="corporate-signup" style="display: none;">
-          <div class="auth-type-pill">
-            <i class="fa-solid fa-building-circle-check"></i> Enterprise Treasury & Institutional Account
+          <div class="auth-type-pill">Enterprise Treasury & Institutional Account
           </div>
           <form class="auth-form" onsubmit="event.preventDefault(); alert('Corporate Treasury desk inquiry received. Our Managing Director will contact you within 4 business hours.');">
             <div class="form-grid-2col">
               <div class="form-group-field">
-                <label><i class="fa-solid fa-building"></i> Company / Entity Name</label>
+                <label>Company / Entity Name</label>
                 <input type="text" placeholder="e.g. Acme Enterprises Pvt Ltd" required>
               </div>
               <div class="form-group-field">
-                <label><i class="fa-solid fa-id-badge"></i> Entity PAN / CIN</label>
+                <label>Entity PAN / CIN</label>
                 <input type="text" placeholder="e.g. AAACA1234F" required style="text-transform: uppercase;">
               </div>
             </div>
 
             <div class="form-grid-2col">
               <div class="form-group-field">
-                <label><i class="fa-solid fa-user-tie"></i> Authorized Person Name</label>
+                <label>Authorized Person Name</label>
                 <input type="text" placeholder="Chief Financial Officer / Director" required>
               </div>
               <div class="form-group-field">
-                <label><i class="fa-solid fa-envelope"></i> Official Corporate Email</label>
+                <label>Official Corporate Email</label>
                 <input type="email" placeholder="cfo@company.com" required>
               </div>
             </div>
@@ -165,46 +157,45 @@
             </div>
 
             <button type="submit" class="auth-submit-btn">
-              <span>Submit Treasury Mandate</span> <i class="fa-solid fa-arrow-right"></i>
+              <span>Submit Treasury Mandate</span>
             </button>
           </form>
         </div>
 
         <!-- Tab Content 3: Partner / ARN Registration -->
         <div class="auth-tab-content" id="partner-signup" style="display: none;">
-          <div class="auth-type-pill">
-            <i class="fa-solid fa-handshake"></i> Sub-Broker & Distributor Empanelment
+          <div class="auth-type-pill">Sub-Broker & Distributor Empanelment
           </div>
           <form class="auth-form" onsubmit="event.preventDefault(); alert('Partner empanelment request submitted. ARN verification team will reach out shortly.');">
             <div class="form-grid-2col">
               <div class="form-group-field">
-                <label><i class="fa-solid fa-user"></i> Full Partner / Agency Name</label>
+                <label>Full Partner / Agency Name</label>
                 <input type="text" placeholder="e.g. Apex Wealth Solutions" required>
               </div>
               <div class="form-group-field">
-                <label><i class="fa-solid fa-certificate"></i> AMFI ARN Code</label>
+                <label>AMFI ARN Code</label>
                 <input type="text" placeholder="e.g. ARN-123456" required>
               </div>
             </div>
 
             <div class="form-grid-2col">
               <div class="form-group-field">
-                <label><i class="fa-solid fa-envelope"></i> Professional Email</label>
+                <label>Professional Email</label>
                 <input type="email" placeholder="partner@agency.com" required>
               </div>
               <div class="form-group-field">
-                <label><i class="fa-solid fa-phone"></i> Contact Number</label>
+                <label>Contact Number</label>
                 <input type="tel" placeholder="10-digit mobile" required>
               </div>
             </div>
 
             <div class="form-group-field">
-              <label><i class="fa-solid fa-city"></i> Operating City / Region</label>
+              <label>Operating City / Region</label>
               <input type="text" placeholder="e.g. Mumbai, Delhi NCR, Bangalore, Pune" required>
             </div>
 
             <button type="submit" class="auth-submit-btn">
-              <span>Apply for Partner Empanelment</span> <i class="fa-solid fa-arrow-right"></i>
+              <span>Apply for Partner Empanelment</span>
             </button>
           </form>
         </div>
@@ -213,7 +204,7 @@
         <div class="auth-footer-prompt">
           <p>Already have an active account with 4X Wealth?</p>
           <a href="login.html" class="auth-switch-link">
-            <span>Click Here to Sign In to Client Portal</span> <i class="fa-solid fa-arrow-right"></i>
+            <span>Click Here to Sign In to Client Portal</span>
           </a>
         </div>
 
@@ -250,6 +241,6 @@
   </script>
 
   <!-- 4X Chatbot Assistant -->
-  <script src="chatbot.js?v=152.0"></script>
+  <script src="chatbot.js?v=153.0"></script>
 </body>
 </html>
