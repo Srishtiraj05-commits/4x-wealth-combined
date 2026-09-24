@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (trustCards.length > 0) {
         tl.fromTo(trustCards, 
           { opacity: 0, y: 18, scale: 0.94 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.45, stagger: 0.09, ease: 'back.out(1.5)' },
+          { opacity: 1, y: 0, scale: 1, duration: 0.45, stagger: 0.09, ease: 'power2.out' },
           0.95
         );
       }
@@ -457,31 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
   }
 
-  // ==========================================
-  // 6. SPOTLIGHT & CUSTOM CURSOR INTERACTS
-  // ==========================================
-  const spotlight = document.getElementById('spotlight');
-  const cursorRing = document.getElementById('cursorRing');
-  const cursorDot = document.getElementById('cursorDot');
-
-  if (spotlight || cursorRing || cursorDot) {
-    window.addEventListener('mousemove', (e) => {
-      const tgtX = e.clientX;
-      const tgtY = e.clientY;
-      
-      if (spotlight) {
-        spotlight.style.left = `${tgtX}px`;
-        spotlight.style.top = `${tgtY}px`;
-      }
-      if (cursorDot) {
-        cursorDot.style.left = `${tgtX}px`;
-        cursorDot.style.top = `${tgtY}px`;
-      }
-      if (cursorRing) {
-        cursorRing.style.left = `${tgtX}px`;
-        cursorRing.style.top = `${tgtY}px`;
-      }
-    }, { passive: true });
+  // 6. NATIVE POINTER HANDLING (Spotlight & Custom Cursor Removed for Institutional Performance), { passive: true });
 
     // Hover states for links and interactive elements
     if (cursorRing) {
@@ -1850,7 +1826,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroVisualStage();
 
   const x4ChatLoader = document.createElement('script');
-  x4ChatLoader.src = 'chatbot.js?v=145.0';
+  x4ChatLoader.src = 'chatbot.js?v=146.0';
   x4ChatLoader.defer = true;
   document.body.appendChild(x4ChatLoader);
 });
