@@ -1,0 +1,149 @@
+PAGE: about.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 16
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: aif.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 4
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: atrium.html
+  - Spotlight / Custom Cursor: YES
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: blogs.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 4
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: bonds.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 4
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: calculators.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 4
+  - Body Decorative Icons (FontAwesome): 18 -> ['fa-solid fa-piggy-bank', 'legend-dot gold', 'fa-solid fa-hand-holding-dollar', 'fa-solid fa-fire-flame-curved', 'fa-solid fa-house-laptop', 'legend-dot cyan']
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: corporate-wealth.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: etfs.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: gift-city.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 4
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: goal-planning.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: hedge-lab.html
+  - Spotlight / Custom Cursor: YES
+  - Gold Dividers with Diamonds: 12
+  - Body Decorative Icons (FontAwesome): 10 -> ['fa-solid fa-globe', 'fa-solid fa-shield-halved', 'fa-solid fa-brain', 'fa-solid fa-satellite', 'fa-solid fa-circle-check', 'fa-solid fa-chart-line']
+  - Body Decorative Unicode Symbols: 6 -> ['●', '▲']
+
+PAGE: index.html
+  - Spotlight / Custom Cursor: YES
+  - Gold Dividers with Diamonds: 48
+  - Body Decorative Icons (FontAwesome): 167 -> ['fa-solid fa-passport', 'fa-solid fa-layer-group', 'fa-solid fa-receipt', 'fa-solid fa-building-flag', 'fa-solid fa-person-cane', 'fa-solid fa-building-shield']
+  - Body Decorative Unicode Symbols: 6 -> ['●', '▲']
+
+PAGE: insurance.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: login.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 16 -> ['fa-solid fa-handshake', 'fa-solid fa-shield-halved', 'fa-solid fa-lock', 'fa-solid fa-key', 'fa-solid fa-user', 'fa-solid fa-user-tie']
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: mutual-funds.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 4
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: nri-services.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: pms.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 4
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: retirement-planning.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: sif-screener.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 21 -> ['fa-solid fa-globe', 'fa-solid fa-vault', 'fa-solid fa-shield-halved', 'fa-solid fa-layer-group', 'fa-solid fa-rocket', 'fa-solid fa-magnifying-glass']
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: sif-tracker.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: signup.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 22 -> ['fa-solid fa-handshake', 'fa-solid fa-id-badge', 'fa-solid fa-vault', 'fa-solid fa-sparkles', 'fa-solid fa-user-plus', 'fa-solid fa-user']
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: solutions.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: stocks.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 4
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: tax-planning.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 0
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []
+
+PAGE: unlisted-shares.html
+  - Spotlight / Custom Cursor: NO
+  - Gold Dividers with Diamonds: 4
+  - Body Decorative Icons (FontAwesome): 0 -> []
+  - Body Decorative Unicode Symbols: 0 -> []

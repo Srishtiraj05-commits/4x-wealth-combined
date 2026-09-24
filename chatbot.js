@@ -348,14 +348,14 @@
     fab.className = 'x4-chat-fab';
     fab.id = 'x4-chatbot-fab';
     fab.setAttribute('aria-label', 'Open chat');
-    fab.innerHTML = '<img src="xiyi-bot.png?v=145.0" alt="Xiyi">';
+    fab.innerHTML = '<img src="xiyi-bot.png?v=147.0" alt="Xiyi">';
 
     const win = document.createElement('div');
     win.className = 'x4-chat-window';
     win.id = 'x4-chatbot-window';
     win.innerHTML = `
       <div class="x4-chat-header">
-        <div class="x4-chat-avatar"><img src="xiyi-bot.png?v=145.0" alt="Xiyi"></div>
+        <div class="x4-chat-avatar"><img src="xiyi-bot.png?v=147.0" alt="Xiyi"></div>
         <div class="x4-chat-title">
           <strong>Xiyi</strong>
           <span>Your 4X Wealth Assistant</span>

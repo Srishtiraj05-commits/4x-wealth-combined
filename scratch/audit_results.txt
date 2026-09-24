@@ -1,0 +1,141 @@
+PAGE: index.html
+  Sections (13): hero-section, who-we-are, philosophy-section, approach-section, universe-section, services-section...
+  Custom Cursor/Spotlight: YES
+  Inline style attributes: 197
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab', 'Matrix']
+
+PAGE: about.html
+  Sections (4): principles, leadership, team, partners
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 25
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: solutions.html
+  Sections (1): fundzbazar-section
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 19
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: mutual-funds.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 19
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab', 'Matrix']
+
+PAGE: stocks.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 15
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: pms.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 22
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab', 'Matrix']
+
+PAGE: aif.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 26
+  Buzzwords: ['MATRIX', 'Neural Engine', 'ultra-high', 'AI Hedge Lab']
+
+PAGE: sif-tracker.html
+  Sections (1): screener-section
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 84
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: unlisted-shares.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 8
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: bonds.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 13
+  Buzzwords: ['MATRIX', 'Neural Engine', 'AI Hedge Lab']
+
+PAGE: insurance.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 11
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: gift-city.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 8
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: corporate-wealth.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 11
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: tax-planning.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 11
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: goal-planning.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 11
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: retirement-planning.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 11
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: nri-services.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 11
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: etfs.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 11
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: calculators.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 85
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab']
+
+PAGE: blogs.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 67
+  Buzzwords: ['Neural Engine', 'AI Hedge Lab', 'Matrix']
+
+PAGE: hedge-lab.html
+  Sections (3): market-signals, quant-core, risk-engine
+  Custom Cursor/Spotlight: YES
+  Inline style attributes: 106
+  Buzzwords: ['Neural Engine', 'AI HEDGE LAB', 'AI Hedge Lab', 'Matrix']
+
+PAGE: atrium.html
+  Sections (1): hero
+  Custom Cursor/Spotlight: YES
+  Inline style attributes: 1
+  Buzzwords: ['AI Hedge Lab']
+
+PAGE: login.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 4
+
+PAGE: signup.html
+  Sections (0): 
+  Custom Cursor/Spotlight: NO
+  Inline style attributes: 4
