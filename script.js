@@ -1717,8 +1717,140 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300);
   }
 
+  // ==========================================
+  // 17. HERO 3D VECTOR STAGE: CANVAS WAVE AURA & 3D PARALLAX TILT
+  // ==========================================
+  function initHeroVisualStage() {
+    const canvas = document.getElementById('waveCanvas');
+    const stage = document.getElementById('stageContainer');
+    const card = document.getElementById('card3D');
+    const specular = document.getElementById('cardSpecular');
+
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        let width, height;
+        let time = 0;
+        let animFrameId;
+
+        function resizeCanvas() {
+          if (!canvas.parentElement) return;
+          const rect = canvas.parentElement.getBoundingClientRect();
+          const dpr = window.devicePixelRatio || 1;
+          width = (rect.width || 500) * 1.3;
+          height = (rect.height || 450) * 1.3;
+          canvas.width = width * dpr;
+          canvas.height = height * dpr;
+          ctx.setTransform(1, 0, 0, 1, 0, 0);
+          ctx.scale(dpr, dpr);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const ribbons = [
+          { color: 'rgba(6, 182, 212, 0.45)', freqX: 0.004, freqY: 0.006, speed: 0.015, radX: 180, radY: 110, offset: 0 },
+          { color: 'rgba(245, 158, 11, 0.35)', freqX: 0.005, freqY: 0.004, speed: 0.018, radX: 160, radY: 130, offset: Math.PI / 3 },
+          { color: 'rgba(236, 72, 153, 0.38)', freqX: 0.003, freqY: 0.005, speed: 0.012, radX: 200, radY: 95, offset: Math.PI * 0.8 },
+          { color: 'rgba(16, 185, 129, 0.30)', freqX: 0.006, freqY: 0.003, speed: 0.020, radX: 140, radY: 140, offset: Math.PI * 1.4 },
+          { color: 'rgba(56, 189, 248, 0.40)', freqX: 0.004, freqY: 0.007, speed: 0.014, radX: 220, radY: 120, offset: Math.PI * 1.7 }
+        ];
+
+        function drawWaveAura() {
+          if (!canvas.parentElement) return;
+          ctx.clearRect(0, 0, width, height);
+          time += 0.012;
+
+          const centerX = width / 2;
+          const centerY = height / 2;
+
+          ribbons.forEach((rib, idx) => {
+            ctx.beginPath();
+            ctx.strokeStyle = rib.color;
+            ctx.lineWidth = 2.2;
+            ctx.shadowColor = rib.color;
+            ctx.shadowBlur = 12;
+
+            const points = 120;
+            for (let i = 0; i <= points; i++) {
+              const theta = (i / points) * Math.PI * 2;
+              const wobble = Math.sin(theta * 4 + time * 2 + rib.offset) * 22;
+              const morph = Math.cos(time + idx) * 15;
+
+              const x = centerX + Math.cos(theta + time * rib.speed) * (rib.radX + wobble + morph);
+              const y = centerY + Math.sin(theta * 2 + time * rib.speed * 1.2 + rib.offset) * (rib.radY + wobble - morph);
+
+              if (i === 0) ctx.moveTo(x, y);
+              else ctx.lineTo(x, y);
+            }
+
+            ctx.closePath();
+            ctx.stroke();
+          });
+
+          animFrameId = requestAnimationFrame(drawWaveAura);
+        }
+        drawWaveAura();
+      }
+    }
+
+    if (stage && card) {
+      let isTiltEnabled = true;
+      let targetRotateX = 6;
+      let targetRotateY = -8;
+      let currentRotateX = 6;
+      let currentRotateY = -8;
+      let isHovering = false;
+      let timeTilt = 0;
+
+      function updateCardTransform() {
+        timeTilt += 0.02;
+        currentRotateX += (targetRotateX - currentRotateX) * 0.1;
+        currentRotateY += (targetRotateY - currentRotateY) * 0.1;
+
+        if (!isHovering && isTiltEnabled) {
+          const idleX = Math.sin(timeTilt * 1.5) * 3 + 5;
+          const idleY = Math.cos(timeTilt * 1.2) * 4 - 8;
+          targetRotateX = idleX;
+          targetRotateY = idleY;
+        }
+
+        card.style.transform = `perspective(1200px) rotateX(${currentRotateX}deg) rotateY(${currentRotateY}deg)`;
+        requestAnimationFrame(updateCardTransform);
+      }
+      updateCardTransform();
+
+      stage.addEventListener('mousemove', (e) => {
+        if (!isTiltEnabled) return;
+        isHovering = true;
+        const rect = stage.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const normX = (x / rect.width) * 2 - 1;
+        const normY = (y / rect.height) * 2 - 1;
+
+        targetRotateY = normX * 16;
+        targetRotateX = -normY * 16;
+
+        if (specular) {
+          const specX = 50 + normX * 35;
+          const specY = 50 + normY * 35;
+          specular.style.background = `radial-gradient(circle at ${specX}% ${specY}%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 65%)`;
+        }
+      });
+
+      stage.addEventListener('mouseleave', () => {
+        isHovering = false;
+        targetRotateX = 6;
+        targetRotateY = -8;
+      });
+    }
+  }
+  initHeroVisualStage();
+
   const x4ChatLoader = document.createElement('script');
-  x4ChatLoader.src = 'chatbot.js?v=144.0';
+  x4ChatLoader.src = 'chatbot.js?v=145.0';
   x4ChatLoader.defer = true;
   document.body.appendChild(x4ChatLoader);
 });
