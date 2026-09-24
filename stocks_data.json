@@ -1,242 +1,30 @@
 [
-  {
-    "symbol": "RELIANCE",
-    "name": "Reliance",
-    "price": 1240.4,
-    "vwap": 1240.4,
-    "change": -0.56,
-    "logo": "R"
-  },
-  {
-    "symbol": "TCS",
-    "name": "Tcs",
-    "price": 2105.0,
-    "vwap": 2105.0,
-    "change": -1.11,
-    "logo": "T"
-  },
-  {
-    "symbol": "HDFC BANK",
-    "name": "Hdfc Bank",
-    "price": 738.6,
-    "vwap": 738.6,
-    "change": -0.12,
-    "logo": "H"
-  },
-  {
-    "symbol": "INFOSYS",
-    "name": "Infosys",
-    "price": 1029.4,
-    "vwap": 1029.4,
-    "change": -0.88,
-    "logo": "I"
-  },
-  {
-    "symbol": "ICICI BANK",
-    "name": "Icici Bank",
-    "price": 1339.6,
-    "vwap": 1339.6,
-    "change": -0.4,
-    "logo": "I"
-  },
-  {
-    "symbol": "SBI",
-    "name": "Sbi",
-    "price": 987.0,
-    "vwap": 987.0,
-    "change": -0.9,
-    "logo": "S"
-  },
-  {
-    "symbol": "ADANI PORTS",
-    "name": "Adani Ports",
-    "price": 1795.0,
-    "vwap": 1795.0,
-    "change": 0.44,
-    "logo": "A"
-  },
-  {
-    "symbol": "TATA MOTORS",
-    "name": "Tata Motors",
-    "price": 0.0,
-    "vwap": 0.0,
-    "change": 0.0,
-    "logo": "T"
-  },
-  {
-    "symbol": "L&T",
-    "name": "L&T",
-    "price": 3866.4,
-    "vwap": 3866.4,
-    "change": -0.98,
-    "logo": "L"
-  },
-  {
-    "symbol": "ITC",
-    "name": "Itc",
-    "price": 265.8,
-    "vwap": 265.8,
-    "change": -0.45,
-    "logo": "I"
-  },
-  {
-    "symbol": "BHARTI AIRTEL",
-    "name": "Bharti Airtel",
-    "price": 1817.2,
-    "vwap": 1817.2,
-    "change": -0.71,
-    "logo": "B"
-  },
-  {
-    "symbol": "KOTAK BANK",
-    "name": "Kotak Bank",
-    "price": 412.65,
-    "vwap": 412.65,
-    "change": -0.52,
-    "logo": "K"
-  },
-  {
-    "symbol": "AXIS BANK",
-    "name": "Axis Bank",
-    "price": 1242.7,
-    "vwap": 1242.7,
-    "change": -0.58,
-    "logo": "A"
-  },
-  {
-    "symbol": "HUL",
-    "name": "Hul",
-    "price": 1933.8,
-    "vwap": 1933.8,
-    "change": -0.68,
-    "logo": "H"
-  },
-  {
-    "symbol": "BAJAJ FINANCE",
-    "name": "Bajaj Finance",
-    "price": 1008.8,
-    "vwap": 1008.8,
-    "change": -1.22,
-    "logo": "B"
-  },
-  {
-    "symbol": "M&M",
-    "name": "M&M",
-    "price": 3044.5,
-    "vwap": 3044.5,
-    "change": -0.35,
-    "logo": "M"
-  },
-  {
-    "symbol": "NTPC",
-    "name": "Ntpc",
-    "price": 327.8,
-    "vwap": 327.8,
-    "change": 0.43,
-    "logo": "N"
-  },
-  {
-    "symbol": "HCL TECH",
-    "name": "Hcl Tech",
-    "price": 1270.4,
-    "vwap": 1270.4,
-    "change": -0.83,
-    "logo": "H"
-  },
-  {
-    "symbol": "MARUTI",
-    "name": "Maruti",
-    "price": 12190.0,
-    "vwap": 12190.0,
-    "change": 0.3,
-    "logo": "M"
-  },
-  {
-    "symbol": "SUN PHARMA",
-    "name": "Sun Pharma",
-    "price": 1846.4,
-    "vwap": 1846.4,
-    "change": -1.2,
-    "logo": "S"
-  },
-  {
-    "symbol": "TITAN",
-    "name": "Titan",
-    "price": 4928.5,
-    "vwap": 4928.5,
-    "change": 1.1,
-    "logo": "T"
-  },
-  {
-    "symbol": "ULTRATECH",
-    "name": "Ultratech",
-    "price": 11000.0,
-    "vwap": 11000.0,
-    "change": -0.9,
-    "logo": "U"
-  },
-  {
-    "symbol": "POWER GRID",
-    "name": "Power Grid",
-    "price": 265.95,
-    "vwap": 265.95,
-    "change": -0.06,
-    "logo": "P"
-  },
-  {
-    "symbol": "COAL INDIA",
-    "name": "Coal India",
-    "price": 428.0,
-    "vwap": 428.0,
-    "change": 3.21,
-    "logo": "C"
-  },
-  {
-    "symbol": "TATA STEEL",
-    "name": "Tata Steel",
-    "price": 184.97,
-    "vwap": 184.97,
-    "change": 0.86,
-    "logo": "T"
-  },
-  {
-    "symbol": "ASIAN PAINTS",
-    "name": "Asian Paints",
-    "price": 2448.5,
-    "vwap": 2448.5,
-    "change": 0.34,
-    "logo": "A"
-  },
-  {
-    "symbol": "JSW STEEL",
-    "name": "Jsw Steel",
-    "price": 1267.0,
-    "vwap": 1267.0,
-    "change": -0.13,
-    "logo": "J"
-  },
-  {
-    "symbol": "HINDALCO",
-    "name": "Hindalco",
-    "price": 973.0,
-    "vwap": 973.0,
-    "change": -0.84,
-    "logo": "H"
-  },
-  {
-    "symbol": "GRASIM",
-    "name": "Grasim",
-    "price": 3128.2,
-    "vwap": 3128.2,
-    "change": -1.19,
-    "logo": "G"
-  },
-  {
-    "symbol": "LTI MINDTREE",
-    "name": "Lti Mindtree",
-    "price": 0.0,
-    "vwap": 0.0,
-    "change": 0.0,
-    "logo": "L"
-  }
+  { "symbol": "NIFTY 50", "name": "NIFTY 50", "price": 24850.30, "vwap": 24850.30, "change": 0.65, "logo": "N" },
+  { "symbol": "SENSEX", "name": "SENSEX", "price": 81420.15, "vwap": 81420.15, "change": 0.58, "logo": "S" },
+  { "symbol": "RELIANCE", "name": "Reliance", "price": 2985.40, "vwap": 2985.40, "change": 1.12, "logo": "R" },
+  { "symbol": "HDFC BANK", "name": "HDFC Bank", "price": 1642.50, "vwap": 1642.50, "change": 0.45, "logo": "H" },
+  { "symbol": "TCS", "name": "TCS", "price": 4210.80, "vwap": 4210.80, "change": -0.32, "logo": "T" },
+  { "symbol": "INFOSYS", "name": "Infosys", "price": 1785.20, "vwap": 1785.20, "change": 0.88, "logo": "I" },
+  { "symbol": "ICICI BANK", "name": "ICICI Bank", "price": 1195.60, "vwap": 1195.60, "change": 0.72, "logo": "I" },
+  { "symbol": "SBI", "name": "SBI", "price": 835.40, "vwap": 835.40, "change": 1.05, "logo": "S" },
+  { "symbol": "BHARTI AIRTEL", "name": "Bharti Airtel", "price": 1817.20, "vwap": 1817.20, "change": 0.65, "logo": "B" },
+  { "symbol": "L&T", "name": "L&T", "price": 3560.00, "vwap": 3560.00, "change": -0.25, "logo": "L" },
+  { "symbol": "TATA MOTORS", "name": "Tata Motors", "price": 985.40, "vwap": 985.40, "change": 1.45, "logo": "T" },
+  { "symbol": "ITC", "name": "ITC", "price": 482.60, "vwap": 482.60, "change": 0.35, "logo": "I" },
+  { "symbol": "KOTAK BANK", "name": "Kotak Bank", "price": 1792.10, "vwap": 1792.10, "change": -0.42, "logo": "K" },
+  { "symbol": "AXIS BANK", "name": "Axis Bank", "price": 1178.50, "vwap": 1178.50, "change": 0.68, "logo": "A" },
+  { "symbol": "HUL", "name": "HUL", "price": 2654.30, "vwap": 2654.30, "change": -0.18, "logo": "H" },
+  { "symbol": "BAJAJ FINANCE", "name": "Bajaj Finance", "price": 7240.00, "vwap": 7240.00, "change": 1.25, "logo": "B" },
+  { "symbol": "M&M", "name": "M&M", "price": 2890.50, "vwap": 2890.50, "change": 0.92, "logo": "M" },
+  { "symbol": "NTPC", "name": "NTPC", "price": 392.40, "vwap": 392.40, "change": 0.55, "logo": "N" },
+  { "symbol": "HCL TECH", "name": "HCL Tech", "price": 1634.00, "vwap": 1634.00, "change": -0.65, "logo": "H" },
+  { "symbol": "MARUTI", "name": "Maruti", "price": 12450.00, "vwap": 12450.00, "change": 0.78, "logo": "M" },
+  { "symbol": "SUN PHARMA", "name": "Sun Pharma", "price": 1710.20, "vwap": 1710.20, "change": -0.30, "logo": "S" },
+  { "symbol": "TITAN", "name": "Titan", "price": 3420.00, "vwap": 3420.00, "change": 1.15, "logo": "T" },
+  { "symbol": "ULTRATECH", "name": "UltraTech", "price": 11250.00, "vwap": 11250.00, "change": -0.40, "logo": "U" },
+  { "symbol": "POWER GRID", "name": "Power Grid", "price": 318.50, "vwap": 318.50, "change": 0.42, "logo": "P" },
+  { "symbol": "COAL INDIA", "name": "Coal India", "price": 492.00, "vwap": 492.00, "change": 1.80, "logo": "C" },
+  { "symbol": "TATA STEEL", "name": "Tata Steel", "price": 158.40, "vwap": 158.40, "change": 0.95, "logo": "T" },
+  { "symbol": "ASIAN PAINTS", "name": "Asian Paints", "price": 2860.00, "vwap": 2860.00, "change": -0.52, "logo": "A" },
+  { "symbol": "JSW STEEL", "name": "JSW Steel", "price": 945.00, "vwap": 945.00, "change": 0.82, "logo": "J" }
 ]

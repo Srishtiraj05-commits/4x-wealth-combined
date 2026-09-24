@@ -717,36 +717,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // LIVE MARKET TICKER TAPE
   // ==========================================
   const tickerData = [
-    { symbol: "RELIANCE", name: "Reliance", price: 1322.0, change: 1.5, logo: "R" },
-    { symbol: "TCS", name: "Tcs", price: 2304.0, change: -0.69, logo: "T" },
-    { symbol: "HDFC BANK", name: "Hdfc Bank", price: 712.1, change: 0.77, logo: "H" },
-    { symbol: "INFOSYS", name: "Infosys", price: 1134.0, change: -0.03, logo: "I" },
-    { symbol: "ICICI BANK", name: "Icici Bank", price: 1423.2, change: -0.48, logo: "I" },
-    { symbol: "SBI", name: "Sbi", price: 1016.1, change: -0.71, logo: "S" },
-    { symbol: "ADANI PORTS", name: "Adani Ports", price: 1707.3, change: 0.05, logo: "A" },
-    { symbol: "TATA MOTORS", name: "Tata Motors", price: 311.5, change: -0.16, logo: "T" },
-    { symbol: "L&T", name: "L&T", price: 3964.1, change: -0.27, logo: "L" },
-    { symbol: "ITC", name: "Itc", price: 264.1, change: 0.42, logo: "I" },
-    { symbol: "BHARTI AIRTEL", name: "Bharti Airtel", price: 1840.0, change: -1.55, logo: "B" },
-    { symbol: "KOTAK BANK", name: "Kotak Bank", price: 424.5, change: 0.8, logo: "K" },
-    { symbol: "AXIS BANK", name: "Axis Bank", price: 1273.0, change: 0.47, logo: "A" },
-    { symbol: "HUL", name: "Hul", price: 1973.4, change: 0.58, logo: "H" },
-    { symbol: "BAJAJ FINANCE", name: "Bajaj Finance", price: 1060.5, change: 1.1, logo: "B" },
-    { symbol: "M&M", name: "M&M", price: 3170.0, change: 0.63, logo: "M" },
-    { symbol: "NTPC", name: "Ntpc", price: 332.5, change: 0.48, logo: "N" },
-    { symbol: "HCL TECH", name: "Hcl Tech", price: 1293.4, change: -1.94, logo: "H" },
-    { symbol: "MARUTI", name: "Maruti", price: 12694.0, change: -1.27, logo: "M" },
-    { symbol: "SUN PHARMA", name: "Sun Pharma", price: 1899.0, change: -0.89, logo: "S" },
-    { symbol: "TITAN", name: "Titan", price: 5020.0, change: -0.14, logo: "T" },
-    { symbol: "ULTRATECH", name: "Ultratech", price: 11408.0, change: 1.18, logo: "U" },
-    { symbol: "POWER GRID", name: "Power Grid", price: 266.0, change: 0.15, logo: "P" },
-    { symbol: "COAL INDIA", name: "Coal India", price: 415.35, change: -1.12, logo: "C" },
-    { symbol: "TATA STEEL", name: "Tata Steel", price: 188.79, change: 2.49, logo: "T" },
-    { symbol: "ASIAN PAINTS", name: "Asian Paints", price: 2527.3, change: -0.56, logo: "A" },
-    { symbol: "JSW STEEL", name: "Jsw Steel", price: 1325.0, change: 1.3, logo: "J" },
-    { symbol: "HINDALCO", name: "Hindalco", price: 1011.0, change: 0.1, logo: "H" },
-    { symbol: "GRASIM", name: "Grasim", price: 3322.0, change: 0.36, logo: "G" },
-    { symbol: "LTI MINDTREE", name: "Lti Mindtree", price: 4554.0, change: -0.13, logo: "L" }
+    { symbol: "NIFTY 50", name: "NIFTY 50", price: 24850.30, change: 0.65, logo: "N" },
+    { symbol: "SENSEX", name: "SENSEX", price: 81420.15, change: 0.58, logo: "S" },
+    { symbol: "RELIANCE", name: "Reliance", price: 2985.40, change: 1.12, logo: "R" },
+    { symbol: "HDFC BANK", name: "HDFC Bank", price: 1642.50, change: 0.45, logo: "H" },
+    { symbol: "TCS", name: "TCS", price: 4210.80, change: -0.32, logo: "T" },
+    { symbol: "INFOSYS", name: "Infosys", price: 1785.20, change: 0.88, logo: "I" },
+    { symbol: "ICICI BANK", name: "ICICI Bank", price: 1195.60, change: 0.72, logo: "I" },
+    { symbol: "SBI", name: "SBI", price: 835.40, change: 1.05, logo: "S" },
+    { symbol: "BHARTI AIRTEL", name: "Bharti Airtel", price: 1817.20, change: 0.65, logo: "B" },
+    { symbol: "L&T", name: "L&T", price: 3560.00, change: -0.25, logo: "L" },
+    { symbol: "TATA MOTORS", name: "Tata Motors", price: 985.40, change: 1.45, logo: "T" },
+    { symbol: "ITC", name: "ITC", price: 482.60, change: 0.35, logo: "I" },
+    { symbol: "KOTAK BANK", name: "Kotak Bank", price: 1792.10, change: -0.42, logo: "K" },
+    { symbol: "AXIS BANK", name: "Axis Bank", price: 1178.50, change: 0.68, logo: "A" },
+    { symbol: "HUL", name: "HUL", price: 2654.30, change: -0.18, logo: "H" },
+    { symbol: "BAJAJ FINANCE", name: "Bajaj Finance", price: 7240.00, change: 1.25, logo: "B" },
+    { symbol: "M&M", name: "M&M", price: 2890.50, change: 0.92, logo: "M" },
+    { symbol: "NTPC", name: "NTPC", price: 392.40, change: 0.55, logo: "N" },
+    { symbol: "HCL TECH", name: "HCL Tech", price: 1634.00, change: -0.65, logo: "H" },
+    { symbol: "MARUTI", name: "Maruti", price: 12450.00, change: 0.78, logo: "M" },
+    { symbol: "SUN PHARMA", name: "Sun Pharma", price: 1710.20, change: -0.30, logo: "S" },
+    { symbol: "TITAN", name: "Titan", price: 3420.00, change: 1.15, logo: "T" },
+    { symbol: "ULTRATECH", name: "UltraTech", price: 11250.00, change: -0.40, logo: "U" },
+    { symbol: "POWER GRID", name: "Power Grid", price: 318.50, change: 0.42, logo: "P" },
+    { symbol: "COAL INDIA", name: "Coal India", price: 492.00, change: 1.80, logo: "C" },
+    { symbol: "TATA STEEL", name: "Tata Steel", price: 158.40, change: 0.95, logo: "T" },
+    { symbol: "ASIAN PAINTS", name: "Asian Paints", price: 2860.00, change: -0.52, logo: "A" },
+    { symbol: "JSW STEEL", name: "JSW Steel", price: 945.00, change: 0.82, logo: "J" }
   ];
 
   const marqueeTrack = document.getElementById('marketMarqueeTrack');
@@ -754,7 +752,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isInitialRender = true;
 
     const renderMovers = (data) => {
-      if (!Array.isArray(data)) return;
+      if (!Array.isArray(data) || data.length === 0) return;
       if (isInitialRender || marqueeTrack.children.length === 0) {
         let htmlContent = '';
         data.forEach(stock => {
@@ -768,10 +766,10 @@ document.addEventListener('DOMContentLoaded', () => {
           
           htmlContent += `
             <div class="stock-card ${cardClass}" data-ticker-symbol="${stock.symbol || ''}">
-              <div class="stock-logo-container">${stock.logo || (stock.symbol ? stock.symbol[0] : '•')}</div>
+              <div class="stock-logo-container">${stock.logo || (stock.name ? stock.name[0] : '•')}</div>
               <span class="stock-symbol">${stock.name || stock.symbol || ''}</span>
-              <span class="stock-price">₹${price.toFixed(2)}</span>
-              <span class="stock-change">${arrow} ${sign}${change.toFixed(2)}%</span>
+              <span class="stock-price">₹${price.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+              <span class="stock-change ${cardClass}">${arrow} ${sign}${change.toFixed(2)}%</span>
             </div>
             <span class="marquee-separator">✦</span>
           `;
@@ -784,9 +782,10 @@ document.addEventListener('DOMContentLoaded', () => {
           const price = Number(stock.price) || 0;
           const change = Number(stock.change) || 0;
           const isPositive = change >= 0;
+          const cardClass = isPositive ? 'positive' : 'negative';
           const arrow = isPositive ? '▲' : '▼';
           const sign = isPositive ? '+' : '';
-          const newPriceText = `₹${price.toFixed(2)}`;
+          const newPriceText = `₹${price.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
           const newChangeText = `${arrow} ${sign}${change.toFixed(2)}%`;
           
           const cards = marqueeTrack.querySelectorAll(`[data-ticker-symbol="${stock.symbol}"]`);
@@ -801,7 +800,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (changeEl && changeEl.textContent !== newChangeText) {
               changeEl.textContent = newChangeText;
             }
-            card.className = `stock-card ${isPositive ? 'positive' : 'negative'}`;
+            card.className = `stock-card ${cardClass}`;
+            if (changeEl) {
+              changeEl.className = `stock-change ${cardClass}`;
+            }
+            card.setAttribute('data-ticker-symbol', stock.symbol);
           });
         });
       }
@@ -814,7 +817,7 @@ document.addEventListener('DOMContentLoaded', () => {
           return response.json();
         })
         .then(data => {
-          renderMovers(data);
+          if (data && data.length > 0) renderMovers(data);
         })
         .catch(() => {
           renderMovers(tickerData);
@@ -822,7 +825,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     loadRealtimeStocks();
-    setInterval(loadRealtimeStocks, 3000);
+    setInterval(loadRealtimeStocks, 10000);
   }
 
   // Mobile Drawer toggle

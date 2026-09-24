@@ -761,14 +761,24 @@ a {
   gap: 2px !important;
 }
 
-.stock-card.positive .stock-change, .stock-change.positive, .stock-change.up {
+.stock-card.positive .stock-change, 
+.stock-change.positive, 
+.stock-change.up,
+.ticker-chg.up,
+.ticker-chg.positive {
   background: #E6F9F0 !important;
   color: #059669 !important;
+  border: 1px solid rgba(5, 150, 105, 0.2) !important;
 }
 
-.stock-card.negative .stock-change, .stock-change.negative, .stock-change.down {
+.stock-card.negative .stock-change, 
+.stock-change.negative, 
+.stock-change.down,
+.ticker-chg.down,
+.ticker-chg.negative {
   background: #FEE2E2 !important;
   color: #DC2626 !important;
+  border: 1px solid rgba(220, 38, 38, 0.2) !important;
 }
 
 .view-market-link {
