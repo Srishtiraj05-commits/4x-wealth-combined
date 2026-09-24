@@ -2467,92 +2467,83 @@ section, .section-ivory, .section-ivory-alt, .section-dark {
   color: #0077FF !important;
 }
 
-/* ============ FOOTER SECTION (LUMINOUS ICE & CYAN COMBO) ============ */
-footer.luxury-footer, .footer-wrapper {
+/* ============ FOOTER SECTION (MASTER UNIVERSAL LUXURY & CYAN) ============ */
+footer.luxury-footer, .footer-wrapper, #footer-section {
   background: linear-gradient(180deg, #FFFFFF 0%, #F0F8FF 50%, #E6F4FE 100%) !important;
   color: #0F172A !important;
   padding: 48px 0 24px 0 !important;
   border-top: 1px solid #BAE6FD !important;
+  width: 100%;
 }
 
-.footer-top-grid {
+.footer-top-grid, .footer-primary-grid, .footer-new-container .footer-top-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
   gap: 2.5rem;
   margin-bottom: 2rem;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* ============ DEVELOPER-GRADE SPARKLINES & INTERACTIVE GRAPHICS ============ */
-.sparkline-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #F0FDF4;
-  border: 1px solid #BBF7D0;
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  color: #16A34A;
+.footer-brand, .footer-brand-info {
+  display: flex;
+  flex-direction: column;
 }
 
-.sparkline-svg {
-  width: 38px;
-  height: 16px;
-  overflow: visible;
-}
-
-.metric-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #F0F7FF;
-  border: 1px solid #BAE6FD;
-  padding: 3px 10px;
-  border-radius: 6px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  color: #0077FF;
-}
-
-.live-pulse-emerald {
-  width: 7px;
-  height: 7px;
-  background: #10B981;
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-  animation: pulseGreen 1.8s infinite;
-}
-
-@keyframes pulseGreen {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-  70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-}
-
-.footer-brand h3 {
+.footer-brand h3, .footer-brand-info .logo-text {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 22px;
   color: #0F172A !important;
   margin-bottom: 0.8rem;
   font-weight: 800;
 }
 
-.footer-brand h3 span {
+.footer-brand h3 span, .footer-brand-info .logo-text span {
   color: #0077FF !important;
 }
 
-.footer-brand p {
+.footer-brand p, .footer-brand-info .brand-sub {
   font-size: 13.5px;
   color: #475569 !important;
   line-height: 1.65;
   margin-bottom: 1.5rem;
 }
 
-.footer-col h4 {
+.social-channels, .social-circles-grid {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-channels a, .social-circles-grid a, .social-link {
+  color: #0077FF !important;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  border: 1px solid #BAE6FD;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.social-channels a:hover, .social-circles-grid a:hover, .social-link:hover {
+  background: #0077FF;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 255, 0.25);
+}
+
+.footer-col, .footer-links-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col h4, .footer-links-col h4 {
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.12em;
@@ -2562,30 +2553,65 @@ footer.luxury-footer, .footer-wrapper {
   font-weight: 700;
 }
 
-.footer-links {
+.footer-links, .footer-nav, .footer-list {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links a, .footer-nav a, .footer-list a {
+  font-size: 13.5px;
+  color: #475569 !important;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover, .footer-nav a:hover, .footer-list a:hover {
+  color: #0077FF !important;
+}
+
+.contact-info-list {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
-.footer-links a {
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
   font-size: 13.5px;
-  color: #475569 !important;
-  transition: color 0.2s;
+  color: #475569;
 }
 
-.footer-links a:hover {
-  color: #0077FF !important;
+.contact-info-item i {
+  color: #0077FF;
+  margin-top: 4px;
 }
 
-.footer-disclaimer-box {
+.contact-info-item a {
+  color: #475569;
+  text-decoration: none;
+}
+
+.contact-info-item a:hover {
+  color: #0077FF;
+}
+
+.footer-disclaimer-box, .footer-bottom-compliance {
   background: #FFFFFF !important;
   border: 1px solid #BAE6FD !important;
   border-radius: 14px;
-  padding: 2rem;
-  margin-bottom: 2.5rem;
+  padding: 1.8rem 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 119, 255, 0.05) !important;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-disclaimer-bold {
@@ -2611,6 +2637,7 @@ footer.luxury-footer, .footer-wrapper {
 
 .legal-links-row a {
   color: #475569 !important;
+  text-decoration: none;
 }
 
 .legal-links-row a:hover {
@@ -2630,6 +2657,9 @@ footer.luxury-footer, .footer-wrapper {
   border-top: 1px solid #E2E8F0 !important;
   font-size: 12.5px;
   color: #64748B !important;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ============ PRODUCT & SPECIALTY PAGES STYLES ============ */
@@ -2684,71 +2714,6 @@ footer.luxury-footer, .footer-wrapper {
   max-width: 780px;
   margin: 0 auto 2rem auto;
   line-height: 1.65;
-}
-
-/* ============ CALCULATOR PAGES STYLING ============ */
-.calc-page-wrapper {
-  padding-top: 45px;
-  padding-bottom: 100px;
-  background: #FFFFFF;
-}
-
-.calc-layout-grid {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 3rem;
-  align-items: flex-start;
-  margin-top: 3rem;
-}
-
-.calc-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.calc-tab-btn {
-  width: 100%;
-  padding: 1.1rem 1.4rem;
-  background: #F8FAFC !important;
-  border: 1px solid #E2E8F0 !important;
-  border-radius: 12px;
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 600;
-  color: #0F172A !important;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: all 0.25s var(--ease);
-}
-
-.calc-tab-btn i {
-  font-size: 16px;
-  color: #64748B;
-  transition: color 0.25s;
-}
-
-.calc-tab-btn:hover, .calc-tab-btn.active {
-  background: #FFFFFF !important;
-  border-color: #0077FF !important;
-  color: #0077FF !important;
-  box-shadow: 0 4px 15px rgba(0, 119, 255, 0.12) !important;
-  transform: translateX(4px);
-}
-
-.calc-tab-btn.active i, .calc-tab-btn:hover i {
-  color: #0077FF;
-}
-
-.calc-workspace-card {
-  background: #FFFFFF !important;
-  border: 1px solid #E2E8F0 !important;
-  border-radius: 20px !important;
-  padding: 2.5rem !important;
-  box-shadow: 0 4px 25px rgba(15, 23, 42, 0.04) !important;
 }
 
 /* ============ AI HEDGE LAB & QUANT RESEARCH STYLES ============ */
@@ -3204,76 +3169,137 @@ footer.luxury-footer, .footer-wrapper {
 
 /* ============ FINANCIAL CALCULATORS (DEVELOPER GRADE) ============ */
 .calc-page-wrapper {
-  padding: 35px 0 60px 0;
+  padding: 40px 0 80px 0;
   background: #FFFFFF;
 }
 
 .calc-layout-grid {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 2rem;
+  grid-template-columns: 280px 1fr;
+  gap: 2.2rem;
   align-items: flex-start;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .calc-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.75rem;
+  position: sticky;
+  top: 90px;
 }
 
 .calc-tab-btn {
   width: 100%;
-  padding: 0.9rem 1.2rem;
+  padding: 14px 18px;
   background: #F8FAFC !important;
-  border: 1px solid #E2E8F0 !important;
-  border-radius: 12px;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 14px;
   font-family: var(--font-heading);
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 700;
   color: #0F172A !important;
   text-align: left;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
-  transition: all 0.2s var(--ease);
+  gap: 12px;
+  transition: all 0.25s var(--ease);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
 }
 
 .calc-tab-btn i {
-  font-size: 15px;
+  font-size: 16px;
   color: #64748B;
-  transition: color 0.2s;
+  transition: color 0.25s, transform 0.25s;
+  width: 20px;
+  text-align: center;
 }
 
-.calc-tab-btn:hover, .calc-tab-btn.active {
+.calc-tab-btn:hover {
   background: #FFFFFF !important;
-  border-color: #0077FF !important;
+  border-color: #BAE6FD !important;
   color: #0077FF !important;
-  box-shadow: 0 4px 15px rgba(0, 119, 255, 0.1) !important;
   transform: translateX(4px);
 }
 
-.calc-tab-btn.active i, .calc-tab-btn:hover i {
+.calc-tab-btn:hover i {
   color: #0077FF;
+}
+
+.calc-tab-btn.active {
+  background: #FFFFFF !important;
+  border-color: #0077FF !important;
+  border-width: 2px !important;
+  color: #0077FF !important;
+  box-shadow: 0 4px 20px rgba(0, 119, 255, 0.14) !important;
+  transform: translateX(6px);
+}
+
+.calc-tab-btn.active i {
+  color: #0077FF;
+  transform: scale(1.15);
 }
 
 .calc-workspace-card {
   background: #FFFFFF !important;
   border: 1px solid #BAE6FD !important;
   border-radius: 20px !important;
-  padding: 2rem !important;
+  padding: 2.2rem !important;
   box-shadow: 0 4px 25px rgba(0, 119, 255, 0.05) !important;
+  min-height: 520px;
 }
 
 .calc-pane {
   display: none;
   grid-template-columns: 1fr 1.1fr;
   gap: 2.5rem;
+  animation: calcFadeIn 0.3s ease-out;
 }
 
 .calc-pane.active {
   display: grid;
+}
+
+@keyframes calcFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sip-type-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 0.8rem;
+  background: #F1F5F9;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.sip-type-btn {
+  flex: 1;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #475569;
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sip-type-btn.active {
+  background: #FFFFFF !important;
+  color: #0077FF !important;
+  border-color: #BAE6FD !important;
+  box-shadow: 0 2px 8px rgba(0, 119, 255, 0.12) !important;
 }
 
 .calc-inputs {
@@ -3329,7 +3355,7 @@ footer.luxury-footer, .footer-wrapper {
 
 .calc-range {
   width: 100%;
-  height: 5px;
+  height: 6px;
   background: #E2E8F0;
   border-radius: 3px;
   outline: none;

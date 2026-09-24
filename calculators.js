@@ -290,29 +290,71 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 4. TAB CONTROLS PANEL SWITCHER
+  // 4. TAB CONTROLS PANEL SWITCHER & HASH ROUTER
   // ==========================================
   const tabButtons = document.querySelectorAll('.calc-tab-btn');
   const panes = document.querySelectorAll('.calc-pane');
 
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tabId = btn.getAttribute('data-tab');
-      
-      // Update buttons
-      tabButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  const switchTab = (tabId, shouldScroll = false) => {
+    if (!tabId) return;
+    const cleanId = tabId.replace(/^#/, '').replace(/^pane-/, '').toLowerCase();
+    
+    // Update tab buttons
+    tabButtons.forEach(btn => {
+      if (btn.getAttribute('data-tab') === cleanId) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
 
-      // Update panes
-      panes.forEach(p => p.classList.remove('active'));
-      const activePane = document.getElementById(`pane-${tabId}`);
-      if (activePane) {
-        activePane.classList.add('active');
-        // Trigger calculate loop of active pane
-        triggerCalculation(tabId);
+    // Update panes
+    let foundPane = null;
+    panes.forEach(p => {
+      if (p.id === `pane-${cleanId}` || p.id === cleanId) {
+        p.classList.add('active');
+        foundPane = p;
+      } else {
+        p.classList.remove('active');
+      }
+    });
+
+    if (foundPane) {
+      triggerCalculation(cleanId);
+      if (shouldScroll) {
+        const workspace = document.querySelector('.calc-workspace-card') || document.querySelector('.calc-layout-grid');
+        if (workspace) {
+          workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+  };
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tabId = btn.getAttribute('data-tab');
+      switchTab(tabId, false);
+      if (history.pushState) {
+        history.pushState(null, null, `#pane-${tabId}`);
       }
     });
   });
+
+  // Handle URL hash on load or hash change
+  const handleHashRouting = () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const cleanHash = hash.replace(/^#pane-/, '').replace(/^#/, '');
+      const validTabs = ['sip', 'lumpsum', 'swp', 'emi', 'retirement', 'fire'];
+      if (validTabs.includes(cleanHash)) {
+        switchTab(cleanHash, true);
+      }
+    }
+  };
+
+  window.addEventListener('hashchange', handleHashRouting);
+  handleHashRouting();
 
   // Helper currency formatter
   const formatCurrency = (val) => {
@@ -387,15 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sipTypeRegular.addEventListener('click', () => {
       currentSipType = 'regular';
       sipTypeRegular.classList.add('active');
-      sipTypeRegular.style.background = 'var(--champagne)';
-      sipTypeRegular.style.color = 'var(--black)';
-      sipTypeRegular.style.borderColor = 'var(--champagne)';
-
       sipTypeStepUp.classList.remove('active');
-      sipTypeStepUp.style.background = 'rgba(255,255,255,0.05)';
-      sipTypeStepUp.style.color = 'var(--white)';
-      sipTypeStepUp.style.borderColor = 'rgba(255,255,255,0.15)';
-
       if (sipStepupGroup) sipStepupGroup.style.display = 'none';
       calculateSIP();
     });
@@ -403,15 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sipTypeStepUp.addEventListener('click', () => {
       currentSipType = 'stepup';
       sipTypeStepUp.classList.add('active');
-      sipTypeStepUp.style.background = 'var(--champagne)';
-      sipTypeStepUp.style.color = 'var(--black)';
-      sipTypeStepUp.style.borderColor = 'var(--champagne)';
-
       sipTypeRegular.classList.remove('active');
-      sipTypeRegular.style.background = 'rgba(255,255,255,0.05)';
-      sipTypeRegular.style.color = 'var(--white)';
-      sipTypeRegular.style.borderColor = 'rgba(255,255,255,0.15)';
-
       if (sipStepupGroup) sipStepupGroup.style.display = 'flex';
       calculateSIP();
     });
