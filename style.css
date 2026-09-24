@@ -1196,11 +1196,31 @@ body, html { cursor: default; }
   z-index: 2 !important;
 }
 
-.bar-1 { height: 46% !important; background: linear-gradient(180deg, #fef08a 0%, #fdba74 50%, #fb923c 100%) !important; animation-delay: 0.1s !important; }
-.bar-2 { height: 68% !important; background: linear-gradient(180deg, #bae6fd 0%, #38bdf8 55%, #0ea5e9 100%) !important; animation-delay: 0.3s !important; }
-.bar-3 { height: 60% !important; background: linear-gradient(180deg, #fecdd3 0%, #fb7185 55%, #f43f5e 100%) !important; animation-delay: 0.5s !important; }
-.bar-4 { height: 84% !important; background: linear-gradient(180deg, #a5f3fc 0%, #22d3ee 55%, #06b6d4 100%) !important; animation-delay: 0.7s !important; }
-.bar-5 { height: 94% !important; background: linear-gradient(180deg, #bfdbfe 0%, #60a5fa 50%, #3b82f6 100%) !important; animation-delay: 0.9s !important; }
+/* Explicit Vibrant Gradients for each 3D column and its faces */
+.bar-1, .bar-1 .face-front, .bar-1 .face-side, .bar-1 .face-top {
+  background: linear-gradient(180deg, #fef08a 0%, #fdba74 50%, #fb923c 100%) !important;
+}
+.bar-1 { height: 46% !important; animation-delay: 0.1s !important; }
+
+.bar-2, .bar-2 .face-front, .bar-2 .face-side, .bar-2 .face-top {
+  background: linear-gradient(180deg, #bae6fd 0%, #38bdf8 55%, #0ea5e9 100%) !important;
+}
+.bar-2 { height: 68% !important; animation-delay: 0.3s !important; }
+
+.bar-3, .bar-3 .face-front, .bar-3 .face-side, .bar-3 .face-top {
+  background: linear-gradient(180deg, #fecdd3 0%, #fb7185 55%, #f43f5e 100%) !important;
+}
+.bar-3 { height: 60% !important; animation-delay: 0.5s !important; }
+
+.bar-4, .bar-4 .face-front, .bar-4 .face-side, .bar-4 .face-top {
+  background: linear-gradient(180deg, #a5f3fc 0%, #22d3ee 55%, #06b6d4 100%) !important;
+}
+.bar-4 { height: 84% !important; animation-delay: 0.7s !important; }
+
+.bar-5, .bar-5 .face-front, .bar-5 .face-side, .bar-5 .face-top {
+  background: linear-gradient(180deg, #bfdbfe 0%, #60a5fa 50%, #3b82f6 100%) !important;
+}
+.bar-5 { height: 94% !important; animation-delay: 0.9s !important; }
 
 /* Dynamic Surging Zig-Zag 3D Growth Arrow (Upward Vector Animation) */
 .growth-arrow-svg {
