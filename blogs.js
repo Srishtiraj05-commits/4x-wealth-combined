@@ -298,94 +298,145 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 4. BLOG CONTENT DATABASE
+  // 4. BLOG CONTENT DATABASE (INSTITUTIONAL SDE GRADE)
   // ==========================================
   const blogContents = {
     "mutual-funds": {
       category: "Mutual Funds",
-      title: "What is a Mutual Fund?",
+      title: "What is a Mutual Fund? Active Alpha vs. Index Replication",
       body: `
-        <p>A mutual fund is a professionally managed investment fund that pools money from many investors to purchase securities. These securities include equity shares, bonds, short-term debt, and other assets. The primary advantage of a mutual fund is diversification: by spreading capital across dozens or hundreds of different companies, mutual funds dilute the impact of any single asset class downturn.</p>
-        <h4>How do Mutual Funds Work?</h4>
-        <p>When you invest in a mutual fund, you purchase shares or units of the fund. Each unit represents a proportional ownership interest in the fund's underlying assets and the income it generates. The Net Asset Value (NAV) represents the cumulative per-unit market value of the fund's portfolio and is calculated at the close of every business day.</p>
-        <h4>Active vs. Passive Mandates</h4>
+        <p>A mutual fund is an institutional pooled investment vehicle regulated by SEBI under the Mutual Funds Regulations, 1996. It aggregates capital from individual and corporate investors to deploy across a diversified basket of exchange-listed equities, debt instruments, and money-market securities.</p>
+        
+        <h4>1. Operational Architecture & Daily NAV Mechanics</h4>
+        <p>When capital is invested in a mutual fund scheme, investors are allotted fractional units based on the prevailing <strong>Net Asset Value (NAV)</strong> calculated at the close of each trading day:</p>
+        <div style="background: #F8FAFC; border: 1px solid #BAE6FD; padding: 14px 18px; border-radius: 10px; font-family: var(--font-mono); font-size: 13px; color: #0F172A; margin: 1.2rem 0;">
+          NAV = [Total Market Value of Assets + Current Receivables - Liabilities & Accrued Expenses] / Total Units Outstanding
+        </div>
+        <p>This daily mark-to-market structure guarantees full fiduciary transparency, third-party custodian custody (via SEBI-registered custodians), and daily liquidity under T+2/T+1 settlement cycles.</p>
+
+        <h4>2. Active Management vs. Passive Index Replication</h4>
         <ul>
-          <li><strong>Active Funds:</strong> Managed by professional fund managers who actively analyze markets, balance assets, and select specific companies to outperform baseline benchmark indices (e.g. NIFTY 50).</li>
-          <li><strong>Passive Funds (ETFs/Index):</strong> Replicate benchmark portfolios directly, matching baseline index returns at lower expense ratios.</li>
+          <li><strong>Active Mandates:</strong> Research teams perform bottom-up fundamental diligence and macroeconomic factor screening to achieve positive <em>alpha</em> (excess return over benchmark indices like NIFTY 50 TRI or BSE 500 TRI).</li>
+          <li><strong>Passive Index & ETF Mandates:</strong> Rule-based replication tracking an underlying index with minimized tracking error and compressed total expense ratios (TER).</li>
         </ul>
-        <h4>Direct vs. Regular Plans</h4>
-        <p>Mutual funds are distributed via Direct plans (purchased directly from the AMC, with lower expense ratios) or Regular plans (distributed through certified distributors like ARN partners, which include structured investment advice and portfolio reviews).</p>
+
+        <h4>3. Direct Plans vs. Regular Distribution Channels</h4>
+        <p>Mutual funds operate under two execution formats: Direct plans (for self-directed algorithmic execution) and Regular plans (distributed through certified AMFI ARN partners who provide asset allocation advisory, quarterly rebalancing, tax-harvesting, and disciplined risk-regime management).</p>
       `
     },
     "compounding": {
-      category: "General",
-      title: "Difference between SIP, SWP and STP: When to Use Which?",
+      category: "Compounding & SIP",
+      title: "SIP vs. SWP vs. STP: Capital Accumulation, Migration & Harvest",
       body: `
-        <p>Navigating systematic financial planning requires understanding the three core routing mechanisms: Systematic Investment Plans (SIP), Systematic Withdrawal Plans (SWP), and Systematic Transfer Plans (STP). Each serves a distinct phase of your wealth cycle.</p>
-        <h4>1. Systematic Investment Plan (SIP)</h4>
-        <p>SIP is the vehicle for capital accumulation. It allows you to invest a fixed sum of money at regular intervals (monthly, weekly) into a mutual fund. By committing a fixed sum, you practice <strong>rupee cost averaging</strong>: buying more units when prices are low and fewer units when prices are high, eliminating the need to time volatile markets.</p>
-        <h4>2. Systematic Withdrawal Plan (SWP)</h4>
-        <p>SWP is the vehicle for tax-efficient cash flow creation. Instead of withdrawing a lump sum, you set a fixed monthly payout. The AMC redeems equivalent mutual fund units to provide this income. Unlike dividends or interest which are taxed at slab rates, SWP redemptions are subject to capital gains tax, making it highly efficient for retirement income.</p>
-        <h4>3. Systematic Transfer Plan (STP)</h4>
-        <p>STP is the vehicle for systematic capital migration. If you receive a lump sum (e.g., land sale, corporate bonus), investing it all at once into equities exposes you to timing risk. Instead, you park the capital in a low-risk liquid/debt fund, and set an STP to transfer a fixed amount into equity funds every month, balancing growth and security.</p>
+        <p>Institutional portfolio engineering utilizes three core programmatic cash-flow mechanisms to automate capital deployment, risk hedging, and tax-efficient drawdown across market cycles.</p>
+        
+        <h4>1. Systematic Investment Plan (SIP) — Capital Accumulation</h4>
+        <p>SIP enforces programmatic dollar-cost (rupee-cost) averaging by deploying a fixed capital quantum at defined intervals (monthly/weekly). When markets experience volatility drawdowns, the fixed installment purchases a larger quantity of fund units at lower NAVs, mathematically reducing the weighted average acquisition cost without requiring speculative market timing.</p>
+
+        <h4>2. Systematic Transfer Plan (STP) — Volatility-Shielded Migration</h4>
+        <p>When substantial liquid liquidity is realized (e.g. business exits, real estate monetization, annual bonuses), deploying a single lump sum directly into equity assets exposes capital to peak-cycle risk. STP solves this by parking the capital in low-volatility overnight/liquid debt schemes and systematically migrating tranches into diversified equities over 6–24 months.</p>
+
+        <h4>3. Systematic Withdrawal Plan (SWP) — Tax-Efficient Harvesting</h4>
+        <p>SWP automates predictable cash flows for retirement or passive income mandates. Rather than liquidating arbitrary blocks or receiving dividend distributions taxed at marginal slab rates (up to 39%), SWP redeems units proportionally. Under Indian income tax law, redemptions are subject to Long-Term/Short-Term Capital Gains rules, allowing significant annual capital tax shields.</p>
       `
     },
     "growth": {
-      category: "General",
-      title: "How Compounding Works: Making Time Your Wealth Accelerator",
+      category: "Quant Formula",
+      title: "The Compounding Equation: Mathematical Time Horizon Model",
       body: `
-        <p>Compounding is the process where the earnings generated by an investment are reinvested to generate additional earnings over time. Unlike simple interest which only pays yields on the initial principal, compound growth generates interest on interest, creating an exponential growth trajectory.</p>
-        <h4>The Mathematical Formula</h4>
-        <p>The future value of compound interest is represented by the formula:</p>
-        <p style="text-align: center; font-family: monospace; font-size: 16px; margin: 1rem 0;">A = P * (1 + r)^n</p>
-        <p>Where <em>P</em> is your principal, <em>r</em> is the periodic growth rate, and <em>n</em> is the number of periods. Because <em>n</em> is an exponent, time is the single most powerful multiplier of compounding.</p>
-        <h4>The Cost of Delay</h4>
-        <p>Consider two investors, A and B, who both target a 12% annual return:</p>
+        <p>Compounding is the exponential engine of long-term wealth creation. In simple interest regimes, returns are linear; in compound regimes, realized returns are reinvested to produce secondary and tertiary returns, generating a convex growth curve.</p>
+        
+        <h4>1. Mathematical Proof of Convexity</h4>
+        <p>The standard future value formulation for continuous systematic compounding is:</p>
+        <div style="background: #090D16; color: #38BDF8; border: 1px solid #BAE6FD; padding: 16px 20px; border-radius: 10px; font-family: var(--font-mono); font-size: 14px; margin: 1.2rem 0; text-align: center;">
+          FV = P &times; [ ( (1 + r)^n - 1 ) / r ] &times; (1 + r)
+        </div>
+        <p>Because the variable <em>n</em> (time periods) is in the exponent, increasing the time horizon by a factor of 2 can multiply the cumulative output by a factor of 4x to 8x.</p>
+
+        <h4>2. Quantitative Cost of Delayed Execution</h4>
+        <p>Consider an identical monthly commitment of ₹25,000 at a modeled CAGR of 12.5%:</p>
         <ul>
-          <li><strong>Investor A:</strong> Starts a monthly SIP of ₹10,000 at age 25. By age 55 (30 years horizon), they have invested ₹36 Lakhs. Their final future value is approximately <strong>₹3.5 Crores</strong>.</li>
-          <li><strong>Investor B:</strong> Starts the same monthly SIP of ₹10,000 at age 35. By age 55 (20 years horizon), they have invested ₹24 Lakhs. Their final future value is approximately <strong>₹1.0 Crore</strong>.</li>
+          <li><strong>Investor A (Start Age 25, 35-Yr Horizon):</strong> Total Invested = ₹1.05 Cr &bull; Final Portfolio Value = <strong>₹16.85 Crores</strong></li>
+          <li><strong>Investor B (Start Age 35, 25-Yr Horizon):</strong> Total Invested = ₹75.0 Lakhs &bull; Final Portfolio Value = <strong>₹4.74 Crores</strong></li>
         </ul>
-        <p>For just 10 years of delay, Investor B receives less than one-third of the final wealth of Investor A. Start early, stay invested, and let compounding execute the growth.</p>
+        <p>A 10-year delay requires a sacrifice of over ₹12 Crores in cumulative terminal wealth. In portfolio mathematics, starting early dominates nominal return variation.</p>
       `
     },
     "nps": {
-      category: "Retirement",
-      title: "Understanding NPS: How to Maximize Tax-Savings and Pension Yields",
+      category: "Retirement & NPS",
+      title: "Understanding NPS: Fiduciary Tax Optimization & Pension Shell",
       body: `
-        <p>The National Pension System (NPS) is a voluntary, long-term retirement savings scheme regulated by the Pension Fund Regulatory and Development Authority (PFRDA). It is designed to enable systematic savings during your working life, mapping to a stable pension shell at retirement.</p>
-        <h4>Tier 1 vs. Tier 2 Accounts</h4>
+        <p>The National Pension System (NPS) is an institutional long-term retirement framework established under the Pension Fund Regulatory and Development Authority (PFRDA) Act, 2013. It offers the lowest asset management expense ratio globally (approx. 0.03% to 0.09% p.a.).</p>
+        
+        <h4>1. Dual-Tier Account Architecture</h4>
         <ul>
-          <li><strong>Tier 1 Account:</strong> The core pension account with tax-saving benefits. Withdrawals are locked until age 60, except in specific conditional cases. Contributions are eligible for deductions under Section 80C and an additional ₹50,000 deduction under Section 80CCD(1B).</li>
-          <li><strong>Tier 2 Account:</strong> A voluntary savings account that allows unrestricted withdrawals, behaving similarly to a mutual fund but without tax deductions.</li>
+          <li><strong>Tier-1 (Retirement Locked):</strong> Mandatory lock-in until age 60 with structured withdrawal rules. Offers exclusive tax incentives under Section 80CCD(1) and Section 80CCD(1B).</li>
+          <li><strong>Tier-2 (Unrestricted Liquidity):</strong> Voluntary investment account without lock-in or exit penalties, providing seamless withdrawals similar to open-ended mutual funds.</li>
         </ul>
-        <h4>Active vs. Auto Choices</h4>
-        <p>Investors can opt for the <strong>Active Choice</strong> (specifying allocation split across Equities, Corporate Debt, Government Bonds, and Alternative Assets up to 75% limit) or <strong>Auto Choice</strong> (Life Cycle funds that automatically reduce equity exposures as you age).</p>
+
+        <h4>2. Triple Tax Advantage (E-E-E Regime)</h4>
+        <p>Contributions to NPS qualify for up to ₹1.5 Lakhs under Section 80CCD(1) plus an exclusive additional deduction of ₹50,000 under Section 80CCD(1B), resulting in up to ₹15,600 annual net tax savings for individuals in the highest 30% (+ cess) bracket. At age 60, 60% of the corpus is 100% tax-free upon lumpsum withdrawal, with the remaining 40% converted into a lifelong pension annuity.</p>
       `
     },
     "pms": {
-      category: "Advanced",
-      title: "PMS vs. Mutual Funds: Which Investment Route Fits Your Portfolio?",
+      category: "PMS Desk",
+      title: "PMS vs. Mutual Funds: Strategic High-Ticket Allocation (₹50L+)",
       body: `
-        <p>For high-net-worth investors, choosing between Portfolio Management Services (PMS) and Mutual Funds represents a critical strategic decision. Both routes invest in equities but differ in tick size, customization, and legal structure.</p>
-        <h4>Key Technical Differences</h4>
-        <ul>
-          <li><strong>Minimum Ticket Size:</strong> Mutual funds allow micro-SIP investments starting at ₹500, whereas PMS requires a regulatory minimum entry ticket of ₹50 Lakhs.</li>
-          <li><strong>Ownership of Securities:</strong> Mutual fund investors own units of a pooled fund, whereas PMS clients hold direct stock shares inside a personal Demat account mapped under a Power of Attorney (PoA).</li>
-          <li><strong>Customization:</strong> PMS portfolios can be tailored to exclude specific sectors (e.g. ESG filters, promoter lock-ins), while mutual funds operate strict uniform portfolios for all unit-holders.</li>
-        </ul>
-        <h4>Tax Implication</h4>
-        <p>Mutual funds do not trigger capital gains tax when the fund manager rotates stock positions inside the fund. In a PMS, every buy/sell trade executed by the manager is a transaction on your personal Demat, triggering capital gains liability for that financial year.</p>
+        <p>For High-Net-Worth Individuals (HNIs) and family offices, evaluating Portfolio Management Services (PMS) versus Mutual Funds requires examining regulatory thresholds, beneficial asset ownership, and strategy customization.</p>
+        
+        <h4>1. Structural & Legal Distinctions</h4>
+        <table style="width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 13.5px;">
+          <thead>
+            <tr style="background: #F0F8FF; border-bottom: 2px solid #BAE6FD;">
+              <th style="padding: 10px; text-align: left; font-family: var(--font-mono);">Parameter</th>
+              <th style="padding: 10px; text-align: left; font-family: var(--font-mono);">Mutual Funds</th>
+              <th style="padding: 10px; text-align: left; font-family: var(--font-mono);">Discretionary PMS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #E2E8F0;">
+              <td style="padding: 10px; font-weight: 700;">Min Ticket Size</td>
+              <td style="padding: 10px;">₹500 (SIP)</td>
+              <td style="padding: 10px; font-weight: 700; color: #0077FF;">₹50 Lakhs (SEBI Mandate)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E2E8F0;">
+              <td style="padding: 10px; font-weight: 700;">Ownership</td>
+              <td style="padding: 10px;">Pooled Units in Trust</td>
+              <td style="padding: 10px;">Direct Demat Shares under PoA</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E2E8F0;">
+              <td style="padding: 10px; font-weight: 700;">Customization</td>
+              <td style="padding: 10px;">Uniform Scheme Mandate</td>
+              <td style="padding: 10px;">Bespoke Filters / Sector Exclusions</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; font-weight: 700;">Tax Recognition</td>
+              <td style="padding: 10px;">Internal churn untaxed</td>
+              <td style="padding: 10px;">Direct capital gains per trade</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>2. Strategy Selection Framework</h4>
+        <p>Mutual funds provide optimal tax shielding for aggressive active churn, while PMS is ideally suited for concentrated alpha strategies (15–25 high-conviction stocks) and direct demat corporate action benefits.</p>
       `
     },
     "debt": {
-      category: "Bonds",
-      title: "Debt & Corporate FDs: Building a Resilient Fixed-Income Shell",
+      category: "Fixed Income",
+      title: "Debt Instruments & Corporate FDs: Building a Resilient Shield",
       body: `
-        <p>Fixed-income securities represent the stabilizing layer of a well-balanced wealth portfolio. While equities generate long-term capital compounding, debt instruments provide yield stability, capital protection, and liquid dry powder to deploy during market corrections.</p>
-        <h4>Corporate Fixed Deposits (FDs)</h4>
-        <p>Unlike bank FDs, corporate FDs are unsecured deposits raised by financial institutions and manufacturing conglomerates. They offer higher interest rates than bank FDs. However, they carry credit risk. Investors must monitor credit ratings (e.g., AAA rating from CRISIL/ICRA indicates the highest safety check).</p>
-        <h4>Debt Mutual Funds vs. Direct Bonds</h4>
-        <p>Debt mutual funds invest in a diversified basket of commercial papers, treasury bills, and government bonds. They eliminate default risk of individual companies via massive diversification. Direct bonds allow you to lock in specific coupons, but demand higher initial capital outlays.</p>
+        <p>Fixed-income instruments form the sovereign ballast of an institutional wealth portfolio, providing contractual cash-flow certainty, capital preservation, and drawdown mitigation during equity volatility shocks.</p>
+        
+        <h4>1. Credit Spread Optimization & Rating Tiers</h4>
+        <p>Fixed income allocations are structured across three credit categories:</p>
+        <ul>
+          <li><strong>Sovereign & G-Secs:</strong> Zero default risk backed by the Government of India, offering benchmark risk-free rate structures and duration matching.</li>
+          <li><strong>CRISIL/ICRA AAA Corporate Deposits:</strong> High-grade institutional fixed deposits offering 70–120 bps spreads over bank deposits with rigorous balance sheet covenants.</li>
+          <li><strong>Target Maturity Debt Index Funds:</strong> Passively managed roll-down duration funds locking in prevailing yields to maturity (YTM) while eliminating interest rate timing risk.</li>
+        </ul>
+
+        <h4>2. Fiduciary Risk Controls</h4>
+        <p>At 4X Wealth, fixed-income mandates adhere strictly to high-quality credit guidelines: zero exposure to unrated or speculative-grade paper, rigorous duration monitoring against RBI monetary policy cycles, and programmatic rebalancing into equity during severe market corrections.</p>
       `
     }
   };
@@ -399,28 +450,57 @@ document.addEventListener('DOMContentLoaded', () => {
   const blogArticleMeta = document.getElementById('blogArticleMeta');
   const blogArticleBody = document.getElementById('blogArticleBody');
 
+  const openBlogArticle = (blogId) => {
+    const data = blogContents[blogId];
+    if (data && blogModal) {
+      if (blogArticleMeta) blogArticleMeta.textContent = (data.category || '').toUpperCase();
+      if (blogArticleTitle) blogArticleTitle.textContent = data.title || '';
+      if (blogArticleBody) {
+        blogArticleBody.innerHTML = `
+          ${data.body || ''}
+          <div style="margin-top: 2.2rem; padding: 1.5rem; background: #F0F8FF; border: 1px solid #BAE6FD; border-radius: 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="font-weight: 800; font-size: 15px; color: #0F172A;">Need customized guidance on this strategy?</div>
+              <div style="font-size: 13px; color: #64748B;">Connect directly with 4X Wealth certified fiduciary advisors.</div>
+            </div>
+            <a href="index.html#consultation-section" class="btn-primary clickable" style="padding: 9px 18px; font-size: 13px; text-decoration: none;">
+              <span>Book Fiduciary Consultation</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        `;
+      }
+      blogModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const closeBlogArticle = () => {
+    if (blogModal) {
+      blogModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  };
+
   document.querySelectorAll('.blog-card').forEach(card => {
     card.addEventListener('click', () => {
       const blogId = card.getAttribute('data-blog-id');
-      const data = blogContents[blogId];
-      if (data && blogModal) {
-        if (blogArticleMeta) blogArticleMeta.textContent = (data.category || '').toUpperCase();
-        if (blogArticleTitle) blogArticleTitle.textContent = data.title || '';
-        if (blogArticleBody) blogArticleBody.innerHTML = data.body || '';
-        blogModal.classList.add('open');
-      }
+      if (blogId) openBlogArticle(blogId);
     });
   });
 
-  if (blogModalClose && blogModal) {
-    blogModalClose.addEventListener('click', () => {
-      blogModal.classList.remove('open');
-    });
+  if (blogModalClose) {
+    blogModalClose.addEventListener('click', closeBlogArticle);
   }
 
   window.addEventListener('click', (e) => {
     if (blogModal && e.target === blogModal) {
-      blogModal.classList.remove('open');
+      closeBlogArticle();
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && blogModal && blogModal.classList.contains('open')) {
+      closeBlogArticle();
     }
   });
 
@@ -469,33 +549,22 @@ document.addEventListener('DOMContentLoaded', () => {
     blogSearch.addEventListener('input', filterCards);
   }
 
-  // ==========================================
-  // 7. CARD ENTRANCE ANIMATIONS
-  // ==========================================
-  if (typeof gsap !== 'undefined') {
-    const blogCards = document.querySelectorAll('.blog-card');
-    if (blogCards.length > 0) {
-      gsap.from(blogCards, {
-        opacity: 0,
-        y: 25,
-        scale: 0.95,
-        duration: 0.5,
-        stagger: 0.08,
-        ease: 'back.out(1.4)'
-      });
-    }
-    const reportCards = document.querySelectorAll('.report-card');
-    if (reportCards.length > 0) {
-      gsap.from(reportCards, {
-        opacity: 0,
-        y: 25,
-        scale: 0.95,
-        duration: 0.5,
-        stagger: 0.08,
-        delay: 0.2,
-        ease: 'back.out(1.4)'
-      });
-    }
+  // Smooth scroll if URL has #reports
+  if (window.location.hash === '#reports') {
+    setTimeout(() => {
+      const reportsEl = document.getElementById('reports');
+      if (reportsEl) {
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = reportsEl.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 250);
   }
 
 });
