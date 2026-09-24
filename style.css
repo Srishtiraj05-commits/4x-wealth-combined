@@ -1421,9 +1421,8 @@ section, .section-ivory, .section-ivory-alt, .section-dark {
   font-style: normal !important;
   font-family: var(--font-heading) !important;
   font-weight: 800 !important;
-  background: linear-gradient(135deg, #0055FF 0%, #0088FF 50%, #00C8FF 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
 }
 
 
@@ -1517,13 +1516,6 @@ section, .section-ivory, .section-ivory-alt, .section-dark {
   box-shadow: 0 10px 25px rgba(0, 119, 255, 0.12) !important;
 }
 
-.who-pillar-card i {
-  font-size: 20px;
-  color: #0077FF;
-  margin-bottom: 0.6rem;
-  display: inline-block;
-}
-
 .who-pillar-card h4 {
   font-size: 15px;
   font-weight: 700;
@@ -1563,13 +1555,14 @@ section, .section-ivory, .section-ivory-alt, .section-dark {
 
 .philosophy-step-card .step-num {
   font-family: var(--font-mono) !important;
-  font-size: 12px !important;
+  font-size: 13px !important;
   font-weight: 700 !important;
-  color: #FFFFFF !important;
-  background: linear-gradient(135deg, #0077FF, #00C6FF) !important;
-  width: 36px !important;
-  height: 36px !important;
-  border-radius: 50% !important;
+  color: #0077FF !important;
+  background: #F0F7FF !important;
+  border: 1px solid #BAE6FD !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 8px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;

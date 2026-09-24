@@ -15,16 +15,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <!-- Anti-Cache Meta Tags -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=153.0">
+  <link rel="stylesheet" href="style.css?v=154.0">
 
   <!-- 2-Column Luxury Hero & 3D Hologram Stage Styles (Direct & Cached-Proof) -->
   <style>
@@ -132,9 +129,9 @@
     }
 
     .hero-word-gradient {
-      background: linear-gradient(135deg, #0055ff 0%, #0088ff 50%, #00c8ff 100%) !important;
-      -webkit-background-clip: text !important;
-      -webkit-text-fill-color: transparent !important;
+      color: #0077FF !important;
+      background: none !important;
+      -webkit-text-fill-color: initial !important;
     }
 
     @keyframes heroWordPop {
@@ -601,7 +598,7 @@
       <!-- Brand Logo -->
       <a href="index.html" class="logo-link clickable" id="logoContainer">
         <div class="logo-wrapper">
-          <img src="logo.png?v=153.0" alt="4X Wealth Logo" class="brand-logo-img">
+          <img src="logo.png?v=154.0" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text-group">
             <div class="logo-text">4X<span>WEALTH</span></div>
             <span class="logo-sub">FINANCIAL SERVICES</span>
@@ -786,7 +783,7 @@
   <div class="sk-drawer" id="mobileDrawer">
     <button class="sk-drawer-close clickable" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
     <div class="sk-drawer-header">
-      <img src="logo.png?v=153.0" alt="4X Wealth Logo" class="brand-logo-img">
+      <img src="logo.png?v=154.0" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
                 <ul class="sk-drawer-links">
@@ -874,47 +871,6 @@
                 <div class="card-grid-bg"></div>
                 <div class="card-specular-light" id="cardSpecular"></div>
 
-                <!-- Floating Micro Stat Chips -->
-                <div class="floating-stats-layer">
-                  <!-- Top Left: Alpha Returns -->
-                  <div class="stat-chip chip-alpha-top">
-                    <span class="stat-label">Alpha Returns</span>
-                    <div class="stat-values">
-                      <span class="val-green">▲ +1.52%</span>
-                      <span style="color:#cbd5e1;">|</span>
-                      <span class="val-green">+130.18%</span>
-                      <span style="color:#cbd5e1;">|</span>
-                      <span class="val-green">▲ 15.56%</span>
-                    </div>
-                  </div>
-
-                  <!-- Top Right: Asset Allocation -->
-                  <div class="stat-chip chip-asset-alloc">
-                    <span class="stat-label">Asset Allocation</span>
-                    <div class="stat-values">
-                      <span class="val-cyan">● 49% • 27.6%</span>
-                      <span style="color:#cbd5e1;">|</span>
-                      <span class="val-rose">▲ 18.88%</span>
-                    </div>
-                  </div>
-
-                  <!-- Mid Left: Alpha Returns -->
-                  <div class="stat-chip chip-alpha-mid">
-                    <span class="stat-label">Alpha Returns</span>
-                    <div class="stat-values">
-                      <span class="val-green">▲ 15.42%</span>
-                    </div>
-                  </div>
-
-                  <!-- Mid Right: Alpha Returns -->
-                  <div class="stat-chip chip-alpha-right">
-                    <span class="stat-label">Alpha Returns</span>
-                    <div class="stat-values">
-                      <span class="val-green">▲ 13.57%</span>
-                    </div>
-                  </div>
-                </div>
-
                 <!-- 3D Isometric Bar Chart Columns -->
                 <div class="chart-isometric-container">
                   <!-- Bar 1: Amber / Orange -->
@@ -968,56 +924,6 @@
                   </div>
                 </div>
 
-                <!-- Dynamic Surging 3D Growth Trend Arrow SVG -->
-                <svg class="growth-arrow-svg" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <!-- Soft, faded glowing trail gradient (Peach to Rose to Sky Cyan) -->
-                    <linearGradient id="trailGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="#fdba74" stop-opacity="0.85" />
-                      <stop offset="40%" stop-color="#f472b6" stop-opacity="0.85" />
-                      <stop offset="70%" stop-color="#38bdf8" stop-opacity="0.9" />
-                      <stop offset="100%" stop-color="#a5f3fc" stop-opacity="0.95" />
-                    </linearGradient>
-
-                    <!-- Core crisp neon gradient (Soft Peach to Pure White to Ice Cyan) -->
-                    <linearGradient id="coreGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="#fef08a" />
-                      <stop offset="35%" stop-color="#fecdd3" />
-                      <stop offset="65%" stop-color="#e0f2fe" />
-                      <stop offset="100%" stop-color="#ffffff" />
-                    </linearGradient>
-
-                    <!-- 3D Arrowhead gradient (Luminous Ice Sky Blue) -->
-                    <linearGradient id="arrowHeadGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="#0284c7" />
-                      <stop offset="50%" stop-color="#38bdf8" />
-                      <stop offset="100%" stop-color="#a5f3fc" />
-                    </linearGradient>
-                  </defs>
-
-                  <!-- Zig-Zag Path crossing the tops of the bars -->
-                  <path class="zigzag-trail-glow" d="M 35 240 L 95 190 L 155 220 L 235 125 L 305 185 L 375 85 L 435 30" />
-                  <path class="zigzag-core" d="M 35 240 L 95 190 L 155 220 L 235 125 L 305 185 L 375 85 L 435 30" />
-                  <path class="zigzag-energy-pulse" d="M 35 240 L 95 190 L 155 220 L 235 125 L 305 185 L 375 85 L 435 30" />
-
-                  <!-- 3D Arrowhead Group -->
-                  <g class="arrow-3d-head" transform="translate(0, 0)">
-                    <!-- Arrow shadow layer -->
-                    <polygon points="435,30 388,44 410,58 402,82" fill="rgba(6, 182, 212, 0.18)" />
-                    <!-- 3D Arrow Main Body -->
-                    <polygon points="438,26 390,40 412,54 404,78" fill="url(#arrowHeadGrad)" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" />
-                    <!-- Arrow Specular Highlight -->
-                    <polygon points="438,26 414,33 412,54" fill="rgba(255, 255, 255, 0.85)" />
-                  </g>
-
-                  <!-- Soft, faded pastel particle nodes on peaks -->
-                  <circle cx="35" cy="240" r="5" fill="#fdba74" stroke="#ffffff" stroke-width="2" />
-                  <circle cx="95" cy="190" r="5" fill="#f472b6" stroke="#ffffff" stroke-width="2" />
-                  <circle cx="155" cy="220" r="5" fill="#f472b6" stroke="#ffffff" stroke-width="2" />
-                  <circle cx="235" cy="125" r="5.5" fill="#38bdf8" stroke="#ffffff" stroke-width="2" />
-                  <circle cx="305" cy="185" r="5.5" fill="#22d3ee" stroke="#ffffff" stroke-width="2" />
-                  <circle cx="375" cy="85" r="6" fill="#67e8f9" stroke="#ffffff" stroke-width="2" />
-                </svg>
               </div>
             </div>
           </div>
@@ -1036,11 +942,11 @@
             </div>
             <div>
               <h3>₹1,400+ Cr</h3>
-              <span class="sparkline-badge"><svg class="sparkline-svg" viewBox="0 0 38 16" style="height: 12px;"><path d="M1,14 L8,11 L16,13 L24,7 L31,9 L37,2" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/></svg> Portfolios</span>
+              <span class="metric-pill">Portfolios Compounded</span>
             </div>
             <div>
               <h3>27+ Yrs</h3>
-              <span class="metric-pill">Multi-Cycle</span>
+              <span class="metric-pill">Multi-Cycle Experience</span>
             </div>
           </div>
         </div>
@@ -2213,7 +2119,7 @@
         <!-- Brand Summary -->
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-            <img src="logo.png?v=153.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
+            <img src="logo.png?v=154.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
             <h3>4X<span>WEALTH</span></h3>
           </div>
           <p>
@@ -2315,7 +2221,7 @@
       </div>
 
       <div class="search-results-list" id="searchResultsList">
-        <!-- Dynamically rendered via script.js?v=153.0 -->
+        <!-- Dynamically rendered via script.js?v=154.0 -->
       </div>
     </div>
   </div>
@@ -2328,8 +2234,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   
   <!-- Main Logic -->
-  <script src="script.js?v=153.0"></script>
+  <script src="script.js?v=154.0"></script>
   <!-- 4X Chatbot Assistant -->
-  <script src="chatbot.js?v=153.0"></script>
+  <script src="chatbot.js?v=154.0"></script>
 </body>
 </html>
