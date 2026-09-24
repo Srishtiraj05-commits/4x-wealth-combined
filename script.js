@@ -12,14 +12,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function initializeEntranceAnimations() {
     if (typeof gsap !== 'undefined') {
       const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-      if (document.querySelector('.hero-ivory-badge')) {
-        tl.from('.hero-ivory-badge', { opacity: 0, y: -12, duration: 0.45 }, 0.05);
+      const badge = document.querySelector('.hero-ivory-badge') || document.querySelector('.compliance-pill');
+      if (badge) {
+        tl.from(badge, { opacity: 0, y: -12, duration: 0.45 }, 0.05);
       }
-      if (document.querySelector('.hero-sub-text')) {
-        tl.from('.hero-sub-text', { opacity: 0, y: 14, duration: 0.5 }, 0.65);
+      const desc = document.querySelector('.hero-sub-text') || document.querySelector('.hero-desc');
+      if (desc) {
+        tl.from(desc, { opacity: 0, y: 14, duration: 0.5 }, 0.65);
       }
-      if (document.querySelector('.hero-cta-group')) {
-        tl.from('.hero-cta-group', { opacity: 0, y: 14, duration: 0.5 }, 0.8);
+      const cta = document.querySelector('.hero-cta-group');
+      if (cta) {
+        tl.from(cta, { opacity: 0, y: 14, duration: 0.5 }, 0.8);
+      }
+      const stageCard = document.querySelector('.card-3d-wrapper');
+      if (stageCard) {
+        tl.from(stageCard, { opacity: 0, scale: 0.94, y: 18, duration: 0.65 }, 0.4);
       }
       const trustCards = document.querySelectorAll('.hero-trust-grid > div');
       if (trustCards.length > 0) {
@@ -457,20 +464,8 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
   }
 
-  // 6. NATIVE POINTER HANDLING (Spotlight & Custom Cursor Removed for Institutional Performance), { passive: true });
-
-    // Hover states for links and interactive elements
-    if (cursorRing) {
-      document.querySelectorAll('.clickable, button, a, input, select, textarea, .glass-card, .blog-card, .stock-card').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          if (cursorRing) cursorRing.classList.add('hovered');
-        });
-        el.addEventListener('mouseleave', () => {
-          if (cursorRing) cursorRing.classList.remove('hovered');
-        });
-      });
-    }
-  }
+  // 6. NATIVE POINTER & TILT HANDLING
+  // (Spotlight & Custom Cursor Removed for Institutional Performance)
 
   // 3D Glass tilt card logic (bounded, stable micro-tilt)
   document.querySelectorAll('.hover-tilt').forEach(card => {
@@ -1732,17 +1727,17 @@ document.addEventListener('DOMContentLoaded', () => {
           { color: 'rgba(56, 189, 248, 0.38)', freqX: 0.004, freqY: 0.007, speed: 0.014, radX: 220, radY: 120, offset: Math.PI * 1.7 }
         ];
 
-        // Flowing Constellation Network Nodes (Matching User Image Reference)
-        const nodeCount = 36;
+        // Flowing Constellation Network Nodes (Matching User Reference Image)
+        const nodeCount = 50;
         const nodes = [];
         for (let i = 0; i < nodeCount; i++) {
           nodes.push({
-            x: Math.random() * (width || 640),
-            y: Math.random() * (height || 540),
-            vx: (Math.random() - 0.5) * 0.8,
-            vy: (Math.random() - 0.5) * 0.8,
-            radius: Math.random() * 2.6 + 2.2,
-            color: i % 3 === 0 ? 'rgba(6, 182, 212, 0.75)' : (i % 3 === 1 ? 'rgba(56, 189, 248, 0.85)' : 'rgba(99, 102, 241, 0.65)')
+            x: Math.random() * (width || 700),
+            y: Math.random() * (height || 600),
+            vx: (Math.random() - 0.5) * 0.75,
+            vy: (Math.random() - 0.5) * 0.75,
+            radius: Math.random() * 2.8 + 2.5,
+            color: i % 3 === 0 ? 'rgba(2, 132, 199, 0.85)' : (i % 3 === 1 ? 'rgba(14, 165, 233, 0.95)' : 'rgba(56, 189, 248, 0.90)')
           });
         }
 
@@ -1764,24 +1759,31 @@ document.addEventListener('DOMContentLoaded', () => {
               const dx = n1.x - n2.x;
               const dy = n1.y - n2.y;
               const dist = Math.sqrt(dx * dx + dy * dy);
-              if (dist < 140) {
-                const alpha = (1 - dist / 140) * 0.32;
+              if (dist < 160) {
+                const alpha = (1 - dist / 160) * 0.45;
                 ctx.beginPath();
                 ctx.strokeStyle = `rgba(14, 165, 233, ${alpha})`;
-                ctx.lineWidth = 1.2;
+                ctx.lineWidth = 1.3;
                 ctx.moveTo(n1.x, n1.y);
                 ctx.lineTo(n2.x, n2.y);
                 ctx.stroke();
               }
             }
 
-            // Node Circle
+            // Outer Soft Halo Ring
+            ctx.beginPath();
+            ctx.arc(n1.x, n1.y, n1.radius * 2.8, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(56, 189, 248, 0.16)';
+            ctx.fill();
+
+            // Core Node Circle
             ctx.beginPath();
             ctx.arc(n1.x, n1.y, n1.radius, 0, Math.PI * 2);
             ctx.fillStyle = n1.color;
-            ctx.shadowColor = n1.color;
-            ctx.shadowBlur = 8;
+            ctx.shadowColor = '#38bdf8';
+            ctx.shadowBlur = 10;
             ctx.fill();
+            ctx.shadowBlur = 0;
           }
 
           // 2. Draw Orbital Light Wave Ribbons
