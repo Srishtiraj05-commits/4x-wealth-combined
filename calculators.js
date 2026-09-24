@@ -351,21 +351,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Handle URL hash on load or hash change
-  const handleHashRouting = () => {
-    const hash = window.location.hash;
-    if (hash) {
-      const cleanHash = hash.replace(/^#pane-/, '').replace(/^#/, '');
-      const validTabs = ['sip', 'lumpsum', 'swp', 'emi', 'retirement', 'fire'];
-      if (validTabs.includes(cleanHash)) {
-        switchTab(cleanHash, true);
-      }
-    }
-  };
-
-  window.addEventListener('hashchange', handleHashRouting);
-  handleHashRouting();
-
   // Helper currency formatter
   const formatCurrency = (val) => {
     return new Intl.NumberFormat('en-IN', {
@@ -825,7 +810,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return d;
   };
 
-  const calculateSIP = () => {
+  function calculateSIP() {
     if (!sipAmtInput) return;
     const P = Math.max(0, readInputNum(sipAmtInput));
     const annualRate = Math.max(0, readInputNum(sipRateInput));
@@ -979,7 +964,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lumpRateInput = document.getElementById('lump-rate');
   const lumpYearsInput = document.getElementById('lump-years');
 
-  const calculateLumpsum = () => {
+  function calculateLumpsum() {
     if (!lumpAmtInput) return;
     const P = Math.max(0, readInputNum(lumpAmtInput));
     const R = Math.max(0, readInputNum(lumpRateInput)) / 100;
@@ -1098,7 +1083,7 @@ document.addEventListener('DOMContentLoaded', () => {
   syncSwpInputs(swpRateInput, swpRateNum);
   syncSwpInputs(swpYearsInput, swpYearsNum);
 
-  const calculateSWP = () => {
+  function calculateSWP() {
     if (!swpAmtInput) return;
     const initialCorpus = Math.max(0, readInputNum(swpAmtInput));
     const monthlyWithdrawal = Math.max(0, readInputNum(swpWithdrawInput));
@@ -1241,7 +1226,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const emiRateInput = document.getElementById('emi-rate');
   const emiYearsInput = document.getElementById('emi-years');
 
-  const calculateEMI = () => {
+  function calculateEMI() {
     if (!emiAmtInput || !emiRateInput || !emiYearsInput) return;
     const P = Math.max(0, readInputNum(emiAmtInput));
     const r = Math.max(0, readInputNum(emiRateInput)) / 12 / 100;
@@ -1361,7 +1346,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const retExpensesInput = document.getElementById('ret-expenses');
   const retInflationInput = document.getElementById('ret-inflation');
 
-  const calculateRetirement = () => {
+  function calculateRetirement() {
     if (!retCurrentInput || !retRetireInput || !retExpensesInput || !retInflationInput) return;
 
     // Safety check: planned retirement age must be > current age
@@ -1495,7 +1480,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const fireWealthInput = document.getElementById('fire-wealth');
   const fireSwrInput = document.getElementById('fire-swr');
 
-  const calculateFIRE = () => {
+  function calculateFIRE() {
     if (!fireExpInput || !fireWealthInput || !fireSwrInput) return;
     const exp = Math.max(0, readInputNum(fireExpInput));
     const wealth = Math.max(0, readInputNum(fireWealthInput));
@@ -1574,7 +1559,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderGraphAxes('fireChart', targetFIRE, 30);
-  };
+  }
 
   // Sync input pairs across all calculator tabs
   syncGenericInputPair(lumpAmtInput, document.getElementById('lump-amount-num'), calculateLumpsum);
@@ -1611,11 +1596,26 @@ document.addEventListener('DOMContentLoaded', () => {
   setupHoverTooltip('fireChart', 'Wealth Progress', '#007aff', 'FIRE Target', '#94a3b8');
 
   // Trigger initial calculate loops on DOM load
-  calculateSIP();
-  calculateLumpsum();
-  calculateSWP();
-  calculateEMI();
-  calculateRetirement();
-  calculateFIRE();
+  try { calculateSIP(); } catch (e) { console.warn(e); }
+  try { calculateLumpsum(); } catch (e) { console.warn(e); }
+  try { calculateSWP(); } catch (e) { console.warn(e); }
+  try { calculateEMI(); } catch (e) { console.warn(e); }
+  try { calculateRetirement(); } catch (e) { console.warn(e); }
+  try { calculateFIRE(); } catch (e) { console.warn(e); }
+
+  // Handle URL hash on load or hash change safely after all calculations are bound
+  const handleHashRouting = () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const cleanHash = hash.replace(/^#pane-/, '').replace(/^#/, '');
+      const validTabs = ['sip', 'lumpsum', 'swp', 'emi', 'retirement', 'fire'];
+      if (validTabs.includes(cleanHash)) {
+        switchTab(cleanHash, true);
+      }
+    }
+  };
+
+  window.addEventListener('hashchange', handleHashRouting);
+  handleHashRouting();
 
 });
