@@ -21,7 +21,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=156.0">
+  <link rel="stylesheet" href="style.css?v=157.0">
 
   <!-- 2-Column Luxury Hero & 3D Hologram Stage Styles (Direct & Cached-Proof) -->
   <style>
@@ -587,6 +587,54 @@
         grid-template-columns: 1fr !important;
       }
     }
+
+    /* 5-Step Approach List Styling */
+    .approach-steps-container {
+      display: grid !important;
+      grid-template-columns: repeat(5, 1fr) !important;
+      gap: 1.4rem !important;
+    }
+    .approach-card {
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 16px !important;
+      padding: 1.8rem 1.4rem !important;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s, border-color 0.3s !important;
+    }
+    .approach-card:hover {
+      transform: translateY(-6px) !important;
+      border-color: #0077FF !important;
+      box-shadow: 0 16px 35px rgba(0, 119, 255, 0.12) !important;
+    }
+    .approach-card ul {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.7rem !important;
+    }
+    .approach-card ul li {
+      font-size: 13px !important;
+      color: #475569 !important;
+      font-weight: 500 !important;
+      line-height: 1.4 !important;
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 8px !important;
+    }
+    .approach-card ul li .step-bullet {
+      color: #0077FF !important;
+      font-size: 15px !important;
+      line-height: 1 !important;
+      font-weight: 900 !important;
+      flex-shrink: 0 !important;
+      display: inline-block !important;
+    }
   </style>
 </head>
 <body>
@@ -598,7 +646,7 @@
       <!-- Brand Logo -->
       <a href="index.html" class="logo-link clickable" id="logoContainer">
         <div class="logo-wrapper">
-          <img src="logo.png?v=156.0" alt="4X Wealth Logo" class="brand-logo-img">
+          <img src="logo.png?v=157.0" alt="4X Wealth Logo" class="brand-logo-img">
           <div class="logo-text-group">
             <div class="logo-text">4X<span>WEALTH</span></div>
             <span class="logo-sub">FINANCIAL SERVICES</span>
@@ -783,7 +831,7 @@
   <div class="sk-drawer" id="mobileDrawer">
     <button class="sk-drawer-close clickable" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
     <div class="sk-drawer-header">
-      <img src="logo.png?v=156.0" alt="4X Wealth Logo" class="brand-logo-img">
+      <img src="logo.png?v=157.0" alt="4X Wealth Logo" class="brand-logo-img">
       <div class="logo-text">4X<span>WEALTH</span></div>
     </div>
                 <ul class="sk-drawer-links">
@@ -1184,9 +1232,9 @@
               <span class="approach-badge-num">STEP 01</span>
               <h3>Understand</h3>
               <ul>
-                <li>Financial Objectives</li>
-                <li>Current Asset Situation</li>
-                <li>Investment Time Horizon</li>
+                <li><span class="step-bullet">•</span> Financial Objectives</li>
+                <li><span class="step-bullet">•</span> Current Asset Situation</li>
+                <li><span class="step-bullet">•</span> Investment Time Horizon</li>
               </ul>
             </div>
           </div>
@@ -1197,9 +1245,9 @@
               <span class="approach-badge-num">STEP 02</span>
               <h3>Assess</h3>
               <ul>
-                <li>Risk Profile Evaluation</li>
-                <li>Short & Long-term Liquidity</li>
-                <li>Unique Cash Requirements</li>
+                <li><span class="step-bullet">•</span> Risk Profile Evaluation</li>
+                <li><span class="step-bullet">•</span> Short & Long-term Liquidity</li>
+                <li><span class="step-bullet">•</span> Unique Cash Requirements</li>
               </ul>
             </div>
           </div>
@@ -1210,9 +1258,9 @@
               <span class="approach-badge-num">STEP 03</span>
               <h3>Structure</h3>
               <ul>
-                <li>Strategic Asset Allocation</li>
-                <li>Multi-Asset Diversification</li>
-                <li>Product Suite Mapping</li>
+                <li><span class="step-bullet">•</span> Strategic Asset Allocation</li>
+                <li><span class="step-bullet">•</span> Multi-Asset Diversification</li>
+                <li><span class="step-bullet">•</span> Product Suite Mapping</li>
               </ul>
             </div>
           </div>
@@ -1223,9 +1271,9 @@
               <span class="approach-badge-num">STEP 04</span>
               <h3>Implement</h3>
               <ul>
-                <li>SEBI Compliant Execution</li>
-                <li>Digital FundzBazar Routing</li>
-                <li>Discretionary Onboarding</li>
+                <li><span class="step-bullet">•</span> SEBI Compliant Execution</li>
+                <li><span class="step-bullet">•</span> Digital FundzBazar Routing</li>
+                <li><span class="step-bullet">•</span> Discretionary Onboarding</li>
               </ul>
             </div>
           </div>
@@ -1236,9 +1284,9 @@
               <span class="approach-badge-num">STEP 05</span>
               <h3>Review</h3>
               <ul>
-                <li>Continuous Monitoring</li>
-                <li>Periodic Portfolio Review</li>
-                <li>Adapting to Life Changes</li>
+                <li><span class="step-bullet">•</span> Continuous Monitoring</li>
+                <li><span class="step-bullet">•</span> Periodic Portfolio Review</li>
+                <li><span class="step-bullet">•</span> Adapting to Life Changes</li>
               </ul>
             </div>
           </div>
@@ -2137,7 +2185,7 @@
         <!-- Brand Summary -->
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-            <img src="logo.png?v=156.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
+            <img src="logo.png?v=157.0" alt="4X Wealth Logo" style="height: 38px; width: auto;">
             <h3>4X<span>WEALTH</span></h3>
           </div>
           <p>
@@ -2239,7 +2287,7 @@
       </div>
 
       <div class="search-results-list" id="searchResultsList">
-        <!-- Dynamically rendered via script.js?v=156.0 -->
+        <!-- Dynamically rendered via script.js?v=157.0 -->
       </div>
     </div>
   </div>
@@ -2252,8 +2300,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   
   <!-- Main Logic -->
-  <script src="script.js?v=156.0"></script>
+  <script src="script.js?v=157.0"></script>
   <!-- 4X Chatbot Assistant -->
-  <script src="chatbot.js?v=156.0"></script>
+  <script src="chatbot.js?v=157.0"></script>
 </body>
 </html>

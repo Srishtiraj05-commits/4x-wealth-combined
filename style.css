@@ -1814,11 +1814,24 @@ section, .section-ivory, .section-ivory-alt, .section-dark {
   display: flex;
   align-items: flex-start;
   line-height: 1.45;
+  gap: 8px;
+}
+
+.approach-card ul li .step-bullet {
+  color: #0077FF;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 900;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.approach-card ul li:not(:has(.step-bullet)) {
   position: relative;
   padding-left: 14px;
 }
 
-.approach-card ul li::before {
+.approach-card ul li:not(:has(.step-bullet))::before {
   content: '';
   position: absolute;
   left: 0;
