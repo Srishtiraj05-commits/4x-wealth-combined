@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeEntranceAnimations();
 
   // ==========================================
-  // 2. GLOBAL SCROLL-TRIGGERED SEQUENTIAL POP FOR ALL CARDS (SMOOTH & PERMANENTLY VISIBLE)
+  // 2. GLOBAL SCROLL-TRIGGERED SEQUENTIAL POP FOR ALL CARDS (REPLAYS ON EVERY VISIT)
   // ==========================================
   function initGlobalCardScrollPop() {
     const cardSelectors = [
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '.philosophy-cycle-grid',
       '.diligence-steps-grid',
       '.approach-steps-container',
+      '.solutions-preview-3-grid',
       '.universe-grid',
       '.pillars-3-grid',
       '.pillar-services-list',
@@ -57,12 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
       '.team-leadership-grid',
       '.team-execution-grid',
       '.partners-cards-grid',
+      '.consultation-contact-cards',
       '.fb-steps-3',
       '.fb-metrics-bar',
       '.fb-grid',
       '.lab-stats-grid',
       '.lab-modules-container',
       '.sector-heatmap-grid',
+      '.signal-dashboard-grid',
       '.features-grid',
       '.product-metrics-grid',
       '.resources-cards-grid',
@@ -71,11 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
       '.reports-grid',
       '.sif-kpi-grid',
       '.sif-controls-grid',
-      '.testimonials-track'
+      '.testimonials-track',
+      '.kyc-checklist-box'
     ];
 
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
+
       cardSelectors.forEach(selector => {
         const containers = document.querySelectorAll(selector);
         containers.forEach(container => {
@@ -84,46 +89,78 @@ document.addEventListener('DOMContentLoaded', () => {
             !el.classList.contains('diligence-loop-connector')
           );
           if (items.length > 0) {
+            const playSequentialPop = (isUpward = false) => {
+              gsap.fromTo(items, 
+                { 
+                  opacity: 0, 
+                  y: isUpward ? -24 : 32, 
+                  scale: 0.93 
+                },
+                { 
+                  opacity: 1, 
+                  y: 0, 
+                  scale: 1, 
+                  duration: 0.55, 
+                  stagger: 0.09, 
+                  ease: 'back.out(1.35)', 
+                  overwrite: 'auto',
+                  onComplete: () => {
+                    items.forEach(el => {
+                      el.style.opacity = '1';
+                      el.style.transform = '';
+                    });
+                  }
+                }
+              );
+            };
+
             ScrollTrigger.create({
               trigger: container,
-              start: 'top 90%',
-              once: true,
-              onEnter: () => {
-                gsap.fromTo(items, 
-                  { opacity: 0, y: 24, scale: 0.96 },
-                  { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.08, ease: 'power2.out', clearProps: 'transform,opacity', overwrite: 'auto' }
-                );
+              start: 'top 92%',
+              end: 'bottom 8%',
+              onEnter: () => playSequentialPop(false),
+              onEnterBack: () => playSequentialPop(true),
+              onLeave: () => {
+                gsap.set(items, { opacity: 0, y: -24, scale: 0.93 });
+              },
+              onLeaveBack: () => {
+                gsap.set(items, { opacity: 0, y: 32, scale: 0.93 });
               }
             });
           }
         });
       });
     } else if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries, obs) => {
+      const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+          const children = Array.from(entry.target.children).filter(el => 
+            !el.classList.contains('gold-divider-wrap') && 
+            !el.classList.contains('diligence-loop-connector')
+          );
           if (entry.isIntersecting) {
-            const children = Array.from(entry.target.children).filter(el => 
-              !el.classList.contains('gold-divider-wrap') && 
-              !el.classList.contains('diligence-loop-connector')
-            );
             children.forEach((child, index) => {
-              setTimeout(() => {
-                child.style.opacity = '1';
-                child.style.transform = 'translateY(0) scale(1)';
-              }, index * 70);
+              child.style.transition = 'opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+              child.style.transitionDelay = `${index * 90}ms`;
+              child.style.opacity = '1';
+              child.style.transform = 'translateY(0) scale(1)';
             });
-            obs.unobserve(entry.target);
+          } else {
+            children.forEach(child => {
+              child.style.transition = 'none';
+              child.style.transitionDelay = '0ms';
+              child.style.opacity = '0';
+              child.style.transform = 'translateY(28px) scale(0.93)';
+            });
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.12 });
 
       cardSelectors.forEach(selector => {
         document.querySelectorAll(selector).forEach(c => {
           Array.from(c.children).forEach(child => {
             if (!child.classList.contains('gold-divider-wrap') && !child.classList.contains('diligence-loop-connector')) {
               child.style.opacity = '0';
-              child.style.transform = 'translateY(24px) scale(0.96)';
-              child.style.transition = 'opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+              child.style.transform = 'translateY(28px) scale(0.93)';
             }
           });
           observer.observe(c);

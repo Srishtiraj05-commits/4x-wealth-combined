@@ -305,28 +305,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   const moduleData = {
     portfolio: {
-      title: "PORTFOLIO INTELLIGENCE",
+      title: "PORTFOLIO OPTIMIZATION",
       desc: "Black-Litterman mathematical optimization balances systemic allocation weightings across 18 capital nodes with factor risk budgeting.",
-      activation: "100% SECURE",
-      load: "4.82 GFLOPS"
+      activation: "ACTIVE & REGULATED",
+      load: "MULTI-ASSET"
     },
     risk: {
-      title: "RISK ENGINE & VaR",
+      title: "RISK ENGINE & STRESS-TESTING",
       desc: "Stochastic Monte Carlo simulators stress-test volatility matrices and CVaR tail vectors against active multi-asset regulatory profiles.",
-      activation: "100% ONLINE",
-      load: "12.04 GFLOPS"
+      activation: "ACTIVE & REGULATED",
+      load: "100K+ PATHS"
     },
     forecast: {
-      title: "MARKET FORECAST MODELS",
-      desc: "LSTM recurrent neural networks evaluate multi-horizon historical structural nodes to determine near-term price regimes and vector momentum.",
-      activation: "94.2% OPTIMAL",
-      load: "22.50 GFLOPS"
+      title: "VALUATION & MACRO REGIMES",
+      desc: "Multi-horizon valuation modeling, yield curve trajectory assessments, and sector momentum metrics to identify emerging risk-reward asymmetry.",
+      activation: "ACTIVE & REGULATED",
+      load: "MULTI-HORIZON"
     },
     alternative: {
-      title: "ALTERNATIVE NLP ANALYTICS",
-      desc: "NLP intelligence pipelines scrape corporate statutory filings, institutional earnings calls, sentiment feeds, and cargo shipping manifests.",
-      activation: "88.6% MONITOR",
-      load: "8.15 GFLOPS"
+      title: "FUNDAMENTAL & GOVERNANCE SCREENING",
+      desc: "Rigorous diligence frameworks parsing statutory corporate filings, institutional quarterly earnings, management governance, and balance sheet quality.",
+      activation: "ACTIVE & REGULATED",
+      load: "CONTINUOUS"
     }
   };
 
